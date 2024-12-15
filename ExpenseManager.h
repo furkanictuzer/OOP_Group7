@@ -22,7 +22,7 @@ public:
     double calculateTotalIncome();
     std::vector<Expense> filterExpensesByDateRange(const std::string& startDate, const std::string& endDate);
     std::map<Category, double> analyzeExpenseDistributionByCategory();
-    double getTotalExpenseByMonth();
+    double getTotalExpenseByMonth(int month, int year);
 };
 
 #endif // EXPENSEMANAGER_H
