@@ -37,6 +37,7 @@ void User::updateUserInfo(const std::string& new_username, const std::string& ne
 }
 
 bool User::deleteAccount() {
+    //TODO
     std::cout << "Account deleted.\n";
     return true;
 }
