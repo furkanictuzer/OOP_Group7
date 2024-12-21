@@ -14,6 +14,8 @@ public:
     Report(const std::vector<Expense>& expenses, const std::string& start, const std::string& end);
 
     std::string generateReportDetails() const;
+
+    void generateFile();
 };
 
 #endif // REPORT_H
