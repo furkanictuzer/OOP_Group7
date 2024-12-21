@@ -1,15 +1,15 @@
 #include "ReportGenerator.h"
 
-Report ReportGenerator::generateWeeklyReport() {
-    return Report({}, "weekly_start", "weekly_end");
+Report ReportGenerator::generateWeeklyReport(std::string & startDate) {
+    return Report({}, startDate, DateParser::addDate(startDate, "07.00.0000"));
 }
 
-Report ReportGenerator::generateMonthlyReport() {
-    return Report({}, "monthly_start", "monthly_end");
+Report ReportGenerator::generateMonthlyReport(std::string & startDate) {
+    return Report({}, startDate, DateParser::addDate(startDate, "00.01.0000"));
 }
 
-Report ReportGenerator::generateAnnualReport() {
-    return Report({}, "annual_start", "annual_end");
+Report ReportGenerator::generateAnnualReport(std::string & startDate) {
+    return Report({}, startDate, DateParser::addDate(startDate, "00.00.0001"));
 }
 
 Report ReportGenerator::generateReport(const std::string& startDate, const std::string& endDate) {
