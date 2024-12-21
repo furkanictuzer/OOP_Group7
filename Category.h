@@ -3,17 +3,19 @@
 
 #include <string>
 #include <vector>
-#include "Expense.h"
+
+// Forward declaration
+class Expense;
 
 class Category {
 private:
     std::string name;
-    std::vector<Expense> expenses;
+    std::vector<Expense*> expenses;
 
 public:
     Category(const std::string& name);
-    void addExpense(const Expense& expense);
-    void removeExpense(const Expense& expense);
+    void addExpense(Expense* expense);
+    void removeExpense(Expense* expense);
     std::string getCategoryName() const;
     void setCategoryName(const std::string& name);
 };

@@ -35,9 +35,6 @@ void testFileManager() {
     std::cout << "All tests passed successfully!\n";
 }
 
-// Forward declaration of Category
-class Category;
-
 int main() {
     testFileManager();
     return 0;

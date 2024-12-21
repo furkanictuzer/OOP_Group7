@@ -1,13 +1,14 @@
 #include "Category.h"
 #include <algorithm>
+#include "Expense.h"
 
 Category::Category(const std::string& name) : name(name) {}
 
-void Category::addExpense(const Expense& expense) {
+void Category::addExpense(Expense* expense) {
     expenses.push_back(expense);
 }
 
-void Category::removeExpense(const Expense& expense) {
+void Category::removeExpense(Expense* expense) {
     expenses.erase(std::remove(expenses.begin(), expenses.end(), expense), expenses.end());
 }
 

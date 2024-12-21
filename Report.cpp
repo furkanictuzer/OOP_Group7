@@ -35,10 +35,10 @@ void Report::generateFile() //Function to generate report file
         outputFile << i + 1 << ". " << expenses[i].getExpenseDetails() << "\n";
     }
 
-    map<string, int> categories;
+    map<string, double> categories;
     for (int i = 0; i < expenses.size(); i++)
     {
-        categories[(expenses[i].getCategory().getCategoryName())] += expenses[i].getAmount();
+        categories[(expenses[i].getCategory()->getCategoryName())] += expenses[i].getAmount();
     }
 
     for (const auto& pair : categories)
