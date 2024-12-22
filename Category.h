@@ -17,6 +17,7 @@ public:
     void addExpense(Expense* expense);
     void removeExpense(Expense* expense);
     std::string getCategoryName() const;
+    const std::vector<Expense*>& getExpenses() const;
     void setCategoryName(const std::string& name);
 };
 
