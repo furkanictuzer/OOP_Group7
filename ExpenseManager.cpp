@@ -1,6 +1,8 @@
 #include "ExpenseManager.h"
 #include "DateParser.h"
 #include <algorithm>
+#include <sstream>
+#include <iomanip>
 
 void ExpenseManager::addExpense(const Expense& expense) {
     expenses.push_back(expense);
@@ -17,7 +19,7 @@ void ExpenseManager::addIncome(double income) {
 double ExpenseManager::calculateTotalExpenses() {
     totalExpenses = 0;
     for (const auto& exp : expenses) {
-        totalExpenses += exp.getAmount() ;
+        totalExpenses += exp.getAmount();
     }
     return totalExpenses;
 }
@@ -26,44 +28,48 @@ double ExpenseManager::calculateTotalIncome() {
     return totalIncome;
 }
 
-std::vector<Expense> ExpenseManager::filterExpensesByDateRange(const std::string& startDate, const std::string& endDate) {
+std::vector<Expense> ExpenseManager::filterExpensesByDateRange(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate) {
     std::vector<Expense> filtered;
+    for (const auto& expense : expenses) {
+        if (expense.getDate() >= startDate && expense.getDate() <= endDate) {
+            filtered.push_back(expense);
+        }
+    }
     return filtered;
 }
 
 std::map<Category, double> ExpenseManager::analyzeExpenseDistributionByCategory() {
     std::map<Category, double> distribution;
+    for (const auto& expense : expenses) {
+        distribution[*expense.getCategory()] += expense.getAmount();
+    }
     return distribution;
 }
 
 double ExpenseManager::getTotalExpenseByMonth(int month, int year) {
-    
-    vector<Expense> monthExpenses;
+    std::vector<Expense> monthExpenses;
 
-    for (size_t i = 0; i < expenses.size(); i++)
-    {
-        Expense& expense = expenses[i];
+    for (const auto& expense : expenses) {
+        auto date = expense.getDate();
+        std::time_t time = std::chrono::system_clock::to_time_t(date);
+        std::tm* tm = std::localtime(&time);
 
-        int expenseDay;
-        int expenseMonth;
-        int expenseYear;
-        string date = expense.getDate();
-
-        DateParser::parseDate(date, expenseDay, expenseMonth, expenseYear);
-
-        if (expenseYear == year && month == expenseMonth)
-        {
+        if (tm->tm_year + 1900 == year && tm->tm_mon + 1 == month) {
             monthExpenses.push_back(expense);
         }
     }
 
     double totalExpense = 0;
-
-    for (size_t i = 0; i < monthExpenses.size(); i++)
-    {
-        totalExpense += monthExpenses[i].getAmount();
-    }   
-    
-
+    for (const auto& expense : monthExpenses) {
+        totalExpense += expense.getAmount();
+    }
     return totalExpense;
+}
+
+// Helper function to convert string to time_point
+std::chrono::system_clock::time_point stringToTimePoint(const std::string& timeStr) {
+    std::tm tm = {};
+    std::istringstream ss(timeStr);
+    ss >> std::get_time(&tm, "%Y.%m.%d");
+    return std::chrono::system_clock::from_time_t(std::mktime(&tm));
 }

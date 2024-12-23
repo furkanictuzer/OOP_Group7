@@ -1,54 +1,47 @@
 #include "Report.h"
-
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <sstream>
+#include <iomanip>
+#include "DateUtils.h"
 using namespace std;
 
-Report::Report(const std::vector<Expense>& expenses, const std::string& start, const std::string& end)
-    : expenses(expenses), startDate(start), endDate(end) {}
+Report::Report(const std::vector<Expense>& expenses, const std::chrono::system_clock::time_point& start, const std::chrono::system_clock::time_point& end)
+    : expenses(expenses), start(start), end(end) {}
+
+// Example usage of the helper function
+void exampleUsage() {
+    std::string startTimeStr = "2021.05.01";
+    std::string endTimeStr = "2021.05.07";
+    auto startTime = DateUtils::stringToTimePoint(startTimeStr);
+    auto endTime = DateUtils::stringToTimePoint(endTimeStr);
+
+    std::vector<Expense> expenses;
+    Report report(expenses, startTime, endTime);
+}
 
 std::string Report::generateReportDetails() const {
-    return "Report Details from " + startDate + " to " + endDate;
+    std::ostringstream oss;
+    std::time_t startTime = std::chrono::system_clock::to_time_t(start);
+    std::time_t endTime = std::chrono::system_clock::to_time_t(end);
+    oss << "Report from " << std::put_time(std::localtime(&startTime), "%Y-%m-%d")
+        << " to " << std::put_time(std::localtime(&endTime), "%Y-%m-%d") << "\n";
+    for (const auto& expense : expenses) {
+        oss << "ID: " << expense.getId() << ", Amount: " << expense.getAmount() << ", Description: " << expense.getDescription() << "\n";
+    }
+    return oss.str();
 }
 
 void Report::generateFile() //Function to generate report file
 {
-    double totalAmount = 0;
-    for (int i = 0; i < expenses.size(); i++)
-        totalAmount += this->expenses[i].getAmount();
-
-    std::string fileName = this->startDate + "_" + this->endDate + ".txt";
-    std::ofstream outputFile(fileName);
-
-    if (!outputFile.is_open())
-    {
-        std::cout << "Error opening file! \n" << std::endl;
-        return;
+    std::ofstream outFile("report.txt");
+    if (outFile.is_open()) {
+        outFile << generateReportDetails();
+        outFile.close();
     }
+}
 
-    outputFile << generateReportDetails() << "\n";
-
-    outputFile << "Expenses: \n";
-    for (int i = 0; i < expenses.size(); i++)
-    {
-        outputFile << i + 1 << ". " << expenses[i].getExpenseDetails() << "\n";
-    }
-
-    map<string, double> categories;
-    for (int i = 0; i < expenses.size(); i++)
-    {
-        categories[(expenses[i].getCategory()->getCategoryName())] += expenses[i].getAmount();
-    }
-
-    for (const auto& pair : categories)
-    {
-        outputFile << "-> Category: " << pair.first << " paid amount: " << pair.second << "\n";
-    }
-
-    outputFile << "Total expense amount: " << totalAmount << "\n";
-
-    outputFile.close();
-
-    cout << "Report successfully generated. " << endl;
+const std::vector<Expense>& Report::getExpenses() const {
+    return expenses;
 }

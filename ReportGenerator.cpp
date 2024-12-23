@@ -1,48 +1,52 @@
 #include "ReportGenerator.h"
 #include "User.h"
+#include "DateUtils.h"
+#include <sstream>
+#include <iomanip>
 
-Report ReportGenerator::generateWeeklyReport(User& user, std::string& startDate) {
-    std::vector<Expense> expenses = getRelatedExpenses(startDate, DateParser::addDate(startDate, "07.00.0000"), user.getCategories());
-    return Report(expenses, startDate, DateParser::addDate(startDate, "07.00.0000"));
+Report ReportGenerator::generateWeeklyReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+    auto endDate = startDate + std::chrono::hours(24 * 7);
+    std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
+    return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateMonthlyReport(User& user, std::string& startDate) {
-    std::vector<Expense> expenses = getRelatedExpenses(startDate, DateParser::addDate(startDate, "00.01.0000"), user.getCategories());
-    return Report(expenses, startDate, DateParser::addDate(startDate, "00.01.0000"));
+Report ReportGenerator::generateMonthlyReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+    auto endDate = startDate + std::chrono::hours(24 * 30);
+    std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
+    return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateAnnualReport(User& user, std::string& startDate) {
-    std::vector<Expense> expenses = getRelatedExpenses(startDate, DateParser::addDate(startDate, "00.00.0001"), user.getCategories());
-    return Report(expenses, startDate, DateParser::addDate(startDate, "00.00.0001"));
+Report ReportGenerator::generateAnnualReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+    auto endDate = startDate + std::chrono::hours(24 * 365);
+    std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
+    return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateReport(User& user, const std::string& startDate, const std::string& endDate) {
+Report ReportGenerator::generateReport(User& user, const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate) {
     std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
     return Report(expenses, startDate, endDate);
 }
 
 Report ReportGenerator::generateCategoryReport(const Category& category) {
-    //return Report(category.getExpenses(), "00.00.0000", "31.12.2222");
     std::vector<Expense> expenses;
     for (const auto& expense : category.getExpenses()) {
         expenses.push_back(*expense);
     }
-    return Report(expenses, "00.00.0000", "31.12.2222");
+    auto start = DateUtils::stringToTimePoint("01.01.0000");
+    auto end = DateUtils::stringToTimePoint("31.12.2222");
+    return Report(expenses, start, end);
 }
 
-Report ReportGenerator::generateCategoryReport(const std::string& startDate, const std::string& endDate, const Category& category) {
-    return Report({}, startDate, endDate);
+Report ReportGenerator::generateCategoryReport(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const Category& category) {
+    std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, category.getExpenses());
+    return Report(expenses, startDate, endDate);
 }
 
-std::vector<Expense> ReportGenerator::getRelatedExpenses(const std::string& startDate, const std::string& endDate, std::vector<Category> categories) {
+std::vector<Expense> ReportGenerator::getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Category>& categories) {
     std::vector<Expense> relatedExpenses;
-    for (const auto& category : categories)
-    {
-        for (const auto& expense : category.getExpenses())
-        {
-            if (reverse(expense->getDate()).compare(reverse(startDate)) >= 0 && 
-                reverse(expense->getDate()).compare(reverse(endDate)) <= 0)
-            {
+    for (const auto& category : categories) {
+        for (const auto& expense : category.getExpenses()) {
+            if (expense->getDate() >= startDate && expense->getDate() <= endDate) {
                 relatedExpenses.push_back(*expense);
             }
         }
@@ -50,13 +54,12 @@ std::vector<Expense> ReportGenerator::getRelatedExpenses(const std::string& star
     return relatedExpenses;
 }
 
-// String format for accurate comparison should be YYYY.MM.DD
-std::string ReportGenerator::reverse(const std::string str)
-{
-    std::string result = str;
-    for (int i = 0; i < str.length() / 2; i++)
-    {
-        std::swap(result[i], result[str.length() - i - 1]);
+std::vector<Expense> ReportGenerator::getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Expense*>& expenses) {
+    std::vector<Expense> relatedExpenses;
+    for (const auto& expense : expenses) {
+        if (expense->getDate() >= startDate && expense->getDate() <= endDate) {
+            relatedExpenses.push_back(*expense);
+        }
     }
-    return result;
+    return relatedExpenses;
 }

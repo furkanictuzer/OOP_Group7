@@ -2,8 +2,11 @@
 #include "User.h"
 #include "Category.h"
 #include "Expense.h"
+#include "DateUtils.h"
 #include <fstream>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
 void FileManager::saveDataToFile(const User* user) {
     json jsonData;
@@ -25,7 +28,7 @@ void FileManager::saveDataToFile(const User* user) {
             json expenseData;
             expenseData["id"] = expense->getId();
             expenseData["amount"] = expense->getAmount();
-            expenseData["date"] = expense->getDate();
+            expenseData["date"] = DateUtils::timePointToString(expense->getDate());
             expenseData["description"] = expense->getDescription();
             categoryData["expense"].push_back(expenseData);
         }
@@ -68,7 +71,7 @@ User FileManager::loadDataFromFile() {
             Expense* expense = new Expense(
                 expenseData["id"].get<int>(),
                 expenseData["amount"].get<double>(),
-                expenseData["date"].get<std::string>(),
+                DateUtils::stringToTimePoint(expenseData["date"].get<std::string>()),
                 expenseData["description"].get<std::string>(),
                 &category
             );

@@ -1,7 +1,10 @@
 #include "Expense.h"
 #include "Category.h"
+#include "DateUtils.h"
+#include <sstream>
+#include <iomanip>
 
-Expense::Expense(int id, double amount, const std::string& date, const std::string& description, Category* category)
+Expense::Expense(int id, double amount, const std::chrono::system_clock::time_point& date, const std::string& description, Category* category)
     : id(id), amount(amount), date(date), description(description), category(category) {}
 
 void Expense::setExpenseDetails(double newAmount, const std::string& newDescription) {
@@ -12,6 +15,7 @@ void Expense::setExpenseDetails(double newAmount, const std::string& newDescript
 std::string Expense::getExpenseDetails() const {
     return "ID: " + std::to_string(id) + ", Amount: " + std::to_string(amount) + ", Description: " + description;
 }
+
 double Expense::getAmount() const {
     return amount;
 }
@@ -20,13 +24,11 @@ int Expense::getId() const {
     return id;
 }
 
-std::string Expense::getDate() const
-{
+std::chrono::system_clock::time_point Expense::getDate() const {
     return date;
 }
 
-Category* Expense::getCategory()
-{
+Category* Expense::getCategory() const {
     return category;
 }
 
@@ -35,6 +37,5 @@ std::string Expense::getDescription() const {
 }
 
 bool Expense::operator==(const Expense& other) const {
-    // Karşılaştırma mantığını belirleyin. Örneğin, ID'ye göre karşılaştırma:
-    return this->id == other.id;
+    return id == other.id;
 }

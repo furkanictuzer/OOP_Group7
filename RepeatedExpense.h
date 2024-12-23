@@ -2,25 +2,16 @@
 #define REPEATEDEXPENSE_H
 
 #include "Expense.h"
+#include <chrono>
 
 class RepeatedExpense : public Expense {
 private:
-    std::string repeatInterval;
     int numberOfRepetition;
+    std::chrono::hours repeatInterval;
 
 public:
-    /**
-     * @brief Constructs a new RepeatedExpense object.
-     * 
-     * @param id The unique identifier for the expense.
-     * @param amount The amount of the expense.
-     * @param date The date of the expense in string format.
-     * @param description A brief description of the expense.
-     * @param category A pointer to the Category object associated with the expense.
-     * @param num The number of times the expense is repeated.
-     */
-    RepeatedExpense(int id, double amount, const std::string& date, const std::string& description, Category* category, int num);
-    std::string calculateNextOccurrence() const;
+    RepeatedExpense(int id, double amount, const std::chrono::system_clock::time_point& date, const std::string& description, Category* category, int num, const std::chrono::hours& interval);
+    std::chrono::system_clock::time_point calculateNextOccurrence() const;
 };
 
 #endif // REPEATEDEXPENSE_H
