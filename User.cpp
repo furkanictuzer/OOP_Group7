@@ -14,6 +14,14 @@ std::string User::userInfo() const {
            ", Balance: " + std::to_string(balance);
 }
 
+std::string User::getUserName() const {
+    return username;
+}
+
+std::string User::getPassword() const {
+    return password;
+}
+
 void User::addCategory(const Category& category) {
     categories.push_back(category);
 }

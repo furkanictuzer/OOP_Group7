@@ -16,6 +16,10 @@ double Expense::getAmount() const {
     return amount;
 }
 
+int Expense::getId() const {
+    return id;
+}
+
 std::string Expense::getDate() const
 {
     return date;
@@ -24,6 +28,10 @@ std::string Expense::getDate() const
 Category* Expense::getCategory()
 {
     return category;
+}
+
+std::string Expense::getDescription() const {
+    return description;
 }
 
 bool Expense::operator==(const Expense& other) const {

@@ -18,7 +18,7 @@ private:
 
 public:
     void saveDataToFile(const User* user);
-    void loadDataFromFile(User& user);
+    User loadDataFromFile();
     bool fileExists();
 };
 

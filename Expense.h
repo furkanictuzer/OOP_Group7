@@ -20,8 +20,10 @@ public:
     void setExpenseDetails(double amount, const std::string& description);
     std::string getExpenseDetails() const;
     double getAmount() const;
+    int getId() const;
     std::string getDate() const;
     Category* getCategory();
+    std::string getDescription() const;
 
     // operator== tanımı
     bool operator==(const Expense& other) const;

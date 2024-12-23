@@ -20,19 +20,14 @@ public:
     User(int id, const std::string& name, const std::string& pass, double bal);
 
     std::string userInfo() const;
-
+    std::string getUserName() const;
+    std::string getPassword() const;
     void addCategory(const Category& category);
-
     void removeCategory(const Category& category);
-
     double getBalance() const;
-
     void updateUserInfo(const std::string& new_username, const std::string& new_password);
-
     bool deleteAccount();
-
     int getUserId() const;
-
     vector<Category> getCategories() const;
 };
 
