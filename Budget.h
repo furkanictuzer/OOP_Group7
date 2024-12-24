@@ -7,7 +7,6 @@ using namespace std;
 class Budget
 {
 private:
-	string name;
 	int id;
 	double amount;
 	double spentAmount;
@@ -15,9 +14,7 @@ private:
 	string source;
 
 public:
-	Budget(string name, double amount, string date, string source);
-	string getName();
-	int getID();
+	Budget(double amount, string date, string source);
 	void setSpentAmount(double newSpentAmount);
 	double getSpentAmount();
 	void setSourceDetails(string newSource);

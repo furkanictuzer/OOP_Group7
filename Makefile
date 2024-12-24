@@ -9,7 +9,8 @@ LDFLAGS =
 TARGET = main.exe
 
 # Source Files
-SRCS = Budget.cpp Category.cpp DateParser.cpp DateUtils.cpp Expense.cpp ExpenseManager.cpp FileManager.cpp MockClock.cpp NotificationManager.cpp RepeatedExpense.cpp Report.cpp ReportGenerator.cpp User.cpp
+SRCS = AuthenticationManager.cpp Budget.cpp Category.cpp DateParser.cpp DateUtils.cpp Expense.cpp ExpenseManager.cpp FileManager.cpp MockClock.cpp NotificationManager.cpp RepeatedExpense.cpp Report.cpp ReportGenerator.cpp UiLoginWindow.cpp
+User.cpp
 
 # Build Rules
 all: $(TARGET)
