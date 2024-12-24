@@ -1,9 +1,9 @@
 #Compiler
-CC=gcc
-CFLAGS = -Wall -Wextra -g -I./src/include
+CXX = g++
+CXXFLAGS = -std=c++11 -I C:\Users\HP\Documents\fltk-1.4.0-1-source\fltk-1.4.0-1 -I C:\fltk_build
 
 # Linker Flags
-LDFLAGS = 
+LDFLAGS = -L C:\fltk_build\lib -lfltk -lcomctl32 -lole32 -luuid -lgdi32 -lws2_32 -lgdiplus -lwinspool -lcomdlg32
 
 # Target
 TARGET = main.exe
