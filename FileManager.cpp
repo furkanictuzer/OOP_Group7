@@ -8,21 +8,25 @@
 #include <iomanip>
 #include <sstream>
 
-void FileManager::saveDataToFile(const User* user) {
-    json jsonData;
+const std::string FileManager::fileName = "user_data.json";
+User FileManager::main_user(0,"", "", 0);
 
-    // Kullanıcı verisini JSON nesnesine yaz
+void FileManager::saveDataToFile(const User* user) {
+    std::ofstream outFile(fileName);
+    if (!outFile.is_open()) {
+        std::cerr << "Failed to open file for writing.\n";
+        return;
+    }
+
+    json jsonData;
     jsonData["user_id"] = user->getUserId();
     jsonData["username"] = user->getUserName();
     jsonData["balance"] = user->getBalance();
-    jsonData["password"] = user->getPassword();    
+    jsonData["password"] = user->getPassword();
 
-    // Kategoriler
-    jsonData["categories"] = json::array();
     for (const auto& category : user->getCategories()) {
         json categoryData;
         categoryData["name"] = category.getCategoryName();
-        categoryData["expense"] = json::array();
 
         for (const auto& expense : category.getExpenses()) {
             json expenseData;
@@ -36,22 +40,15 @@ void FileManager::saveDataToFile(const User* user) {
         jsonData["categories"].push_back(categoryData);
     }
 
-    // Dosyayı aç ve JSON'u yaz
-    std::ofstream outFile(fileName);
-    if (outFile.is_open()) {
-        outFile << jsonData.dump(4); // 4 boşluklu girinti
-        outFile.close();
-        std::cout << "Data saved successfully to user_data.json.\n";
-    } else {
-        std::cerr << "Failed to open file for writing.\n";
-    }
+    outFile << jsonData.dump(4);
+    std::cout << "Data saved successfully to user_data.json.\n";
 }
 
-User FileManager::loadDataFromFile() {
+bool FileManager::loadDataFromFile() {
     std::ifstream inFile(fileName);
     if (!inFile.is_open()) {
         std::cerr << "Failed to open file for reading.\n";
-        return User(1, "", "", 0); // Return an empty User object
+        return false;
     }
 
     json jsonData;
@@ -82,7 +79,9 @@ User FileManager::loadDataFromFile() {
     }
 
     std::cout << "Data loaded successfully from user_data.json.\n";
-    return user;
+
+    setMainUser(user);
+    return true;
 }
 
 bool FileManager::fileExists() {
@@ -101,8 +100,16 @@ bool FileManager::doesUserExist(const std::string& username) {
     inFile >> jsonData;
 
     if (jsonData["username"].get<std::string>() == username) {
-                return true;
+        return true;
     }
 
     return false;
+}
+
+User FileManager::getMainUser() {
+    return main_user;
+}
+
+void FileManager::setMainUser(const User& user) {
+    main_user = user;
 }

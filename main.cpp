@@ -12,9 +12,7 @@
 #include "UiRegisterWindow.h"
 
 int main(int argc, char** argv) {
-
-    FileManager fileManager;
-    AuthenticationManager authenticationManager(fileManager);
+    AuthenticationManager authenticationManager;
     
     UiRegisterWindow* register_window = new UiRegisterWindow(800, 500, &authenticationManager);
     register_window->show(argc, argv);

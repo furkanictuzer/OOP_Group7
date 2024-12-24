@@ -1,26 +1,30 @@
-#ifndef FILEMANAGER_H
-#define FILEMANAGER_H
+#ifndef FILE_MANAGER_H
+#define FILE_MANAGER_H
 
-#include <iostream>
 #include <string>
-#include "User.h"
-
 #include <fstream>
+#include <iostream>
 #include "json.hpp"
+#include "User.h"
+#include "Category.h"
+#include "Expense.h"
+#include "DateUtils.h"
 
 using json = nlohmann::json;
-using namespace std;
 
 class FileManager {
-private:
-    std::string filePath;
-    std::string fileName = "user_data.json";
-
 public:
-    void saveDataToFile(const User* user);
-    User loadDataFromFile();
-    bool fileExists();
-    bool doesUserExist(const std::string& username);
+    static void saveDataToFile(const User* user);
+    static bool loadDataFromFile();
+    static bool fileExists();
+    static bool doesUserExist(const std::string& username);
+    static User getMainUser();
+    static void setMainUser(const User& user);
+
+private:
+    static User main_user;
+    static const std::string fileName;
+
 };
 
-#endif // FILEMANAGER_H
+#endif // FILE_MANAGER_H

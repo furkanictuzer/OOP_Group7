@@ -1,13 +1,12 @@
 #include "AuthenticationManager.h"
 
 
-AuthenticationManager::AuthenticationManager(FileManager fileManager) : fileManager(fileManager) {}
-
 bool AuthenticationManager::tryToLogin(string username, string password)
 {
-    if (fileManager.doesUserExist(username))
+    if (FileManager::doesUserExist(username))
     {
-        User user = fileManager.loadDataFromFile();
+        FileManager::loadDataFromFile();
+        User user = FileManager::getMainUser();
         if (user.getPassword() == password)
         {
             return true;
@@ -22,7 +21,7 @@ bool AuthenticationManager::tryToLogin(string username, string password)
 bool AuthenticationManager::tryToRegister(string username, string password)
 {
     User user(1, username, password, 0);
-    fileManager.saveDataToFile(&user);
+    FileManager::saveDataToFile(&user);
     
     return true;
 }
