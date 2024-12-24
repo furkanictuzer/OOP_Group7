@@ -1,20 +1,17 @@
-#ifndef MOCKCLOCK_H
-#define MOCKCLOCK_H
+#ifndef MOCK_CLOCK_H
+#define MOCK_CLOCK_H
 
 #include <chrono>
-#include <ctime>
 
-static class MockClock
-{
-private:
-    static std::chrono::system_clock::time_point current_time; // Static time point to store current time
-    static int speed_factor;                                   // Static factor to control the time speed
-
+class MockClock {
 public:
     static void initialize(int speed = 1);
+    static void advanceTime(std::chrono::seconds duration);
     static std::chrono::system_clock::time_point getCurrentTime();
-    static void advanceTime(std::chrono::seconds seconds);
-    static void printCurrentTime();
+
+private:
+    static std::chrono::system_clock::time_point _time;
+    static int _speed;
 };
 
-#endif //! MOCKCLOCK_H
+#endif // MOCK_CLOCK_H
