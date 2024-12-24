@@ -20,6 +20,7 @@ public:
     void saveDataToFile(const User* user);
     User loadDataFromFile();
     bool fileExists();
+    bool doesUserExist(const std::string& username);
 };
 
 #endif // FILEMANAGER_H

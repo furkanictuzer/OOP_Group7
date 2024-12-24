@@ -1,42 +1,7 @@
 {
-    "balance": 1500.0,
-    "categories": [
-        {
-            "expense": [
-                {
-                    "amount": 100.0,
-                    "date": "2021.05.01",
-                    "description": "Groceries",
-                    "id": 0
-                },
-                {
-                    "amount": 200.0,
-                    "date": "2021.05.02",
-                    "description": "Eating out",
-                    "id": 1
-                }
-            ],
-            "name": "Food"
-        },
-        {
-            "expense": [
-                {
-                    "amount": 50.0,
-                    "date": "2021.05.02",
-                    "description": "Taxi",
-                    "id": 2
-                },
-                {
-                    "amount": 20.0,
-                    "date": "2021.05.03",
-                    "description": "Bus",
-                    "id": 3
-                }
-            ],
-            "name": "Transport"
-        }
-    ],
-    "password": "12345",
+    "balance": 0.0,
+    "categories": [],
+    "password": "newpassword",
     "user_id": 1,
-    "username": "furkan"
+    "username": "newuser"
 }

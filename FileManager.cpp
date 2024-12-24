@@ -89,3 +89,20 @@ bool FileManager::fileExists() {
     std::ifstream file(fileName);
     return file.good();
 }
+
+bool FileManager::doesUserExist(const std::string& username) {
+    std::ifstream inFile(fileName);
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open file for reading.\n";
+        return false;
+    }
+
+    json jsonData;
+    inFile >> jsonData;
+
+    if (jsonData["username"].get<std::string>() == username) {
+                return true;
+    }
+
+    return false;
+}

@@ -6,6 +6,7 @@
 #include "Expense.h"
 #include "ReportGenerator.h"
 #include "DateUtils.h"
+#include "AuthenticationManager.h"
 
 void testFileManager() {
     FileManager fileManager;
@@ -101,12 +102,56 @@ void testReportGenerator() {
     std::cout << "All ReportGenerator tests passed successfully!\n";
 }
 
-int main() {
-    testFileManager();
-    testReportGenerator();
+void testAuthenticationManager() {
+    FileManager fileManager;
+    AuthenticationManager authManager(fileManager);
+
+    // Test 1: Successful login
+    std::cout << "Test 1: Successful login...\n";
+    assert(authManager.tryToRegister("furkan", "12345") && "Registration should be successful!");
+    
+    while (true) {
+        std::cout << "Press any key to exit...\n";
+        std::cin.get();
+        break;
+    }
+    assert(authManager.tryToLogin("furkan", "12345") && "Login should be successful!");
 
     while (true) {
-        // Kullanıcı uygulamayı elle kapatmalı
+        std::cout << "Press any key to exit...\n";
+        std::cin.get();
+        break;
+    }
+    // Test 2: Failed login due to incorrect password
+    std::cout << "Test 2: Failed login due to incorrect password...\n";
+    assert(!authManager.tryToLogin("furkan", "wrongpassword") && "Login should fail due to incorrect password!");
+
+    while (true) {
+        std::cout << "Press any key to exit...\n";
+        std::cin.get();
+        break;
+    }
+    // Test 3: Failed login due to non-existent user
+    std::cout << "Test 3: Failed login due to non-existent user...\n";
+    assert(!authManager.tryToLogin("nonexistent", "password") && "Login should fail due to non-existent user!");
+
+    // Test 4: Adding a new user and successful login
+    std::cout << "Test 4: Adding a new user and successful login...\n";
+    assert(authManager.tryToRegister("newuser", "newpassword") && "Registration should be successful!");
+    assert(authManager.tryToLogin("newuser", "newpassword") && "Login should be successful for the new user!");
+
+    std::cout << "All AuthenticationManager tests passed successfully!\n";
+}
+
+int main() {
+    //testFileManager();
+    //testReportGenerator();
+    testAuthenticationManager();
+
+    while (true) {
+        std::cout << "Press any key to exit...\n";
+        std::cin.get();
+        break;
     }
 
     return 0;
