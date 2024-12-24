@@ -2,20 +2,28 @@
 #define NOTIFICATIONMANAGER_H
 
 #include <vector>
-#include "Expense.h"
+#include <chrono>
+#include <ctime>
+#include <iostream>
+#include "MockClock.h"
+#include "RepeatedExpense.h"
 #include "Budget.h"
 
 class NotificationManager {
 private:
-    std::vector<Expense> repeatedExpenses;
+    std::vector<RepeatedExpense> repeatedExpenses;
     std::vector<Budget> budgets;
+    MockClock mockClock;
 
 public:
-    std::vector<Expense> getExpensesToNotify();
+    NotificationManager(MockClock mc);
+    std::vector<RepeatedExpense> getExpensesToNotify();
+    void addExpense(RepeatedExpense newExpense);
     std::vector<Budget> getBudgetsToNotify();
+    void addBudget(Budget newBudget);
     void checkBudgets();
     void checkExpenses();
-    void notify();
+    void notify(string message);
 };
 
 #endif // NOTIFICATIONMANAGER_H
