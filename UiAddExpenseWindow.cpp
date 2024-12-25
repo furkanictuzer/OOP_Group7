@@ -8,16 +8,16 @@
 
 UiAddExpenseWindow::UiAddExpenseWindow(int width, int height)
     : Fl_Window(width, height, "Add Expense") {
-    amount_input = new Fl_Input(120, 20, 200, 30, "Amount:");
-    category_choice = new Fl_Choice(120, 60, 200, 30, "Category:");
+    amount_input = new Fl_Input(120, 20, 260, 30, "Amount:");
+    category_choice = new Fl_Choice(120, 60, 260, 30, "Category:");
     day_choice = new Fl_Choice(120, 100, 60, 30, "Day:");
-    month_choice = new Fl_Choice(190, 100, 60, 30, "Month:");
-    year_choice = new Fl_Choice(260, 100, 60, 30, "Year:");
-    description_input = new Fl_Multiline_Input(120, 140, 200, 60, "Description:");
-    repeated_expense_check = new Fl_Check_Button(120, 210, 200, 30, "Is this a repeated expense?");
+    month_choice = new Fl_Choice(220, 100, 60, 30, "Month:");
+    year_choice = new Fl_Choice(320, 100, 60, 30, "Year:");
+    description_input = new Fl_Multiline_Input(120, 140, 260, 60, "Description:");
+    repeated_expense_check = new Fl_Check_Button(120, 210, 260, 30, "Is this a repeated expense?");
     
-    save_button = new Fl_Button(120, 250, 90, 30, "Save");
-    cancel_button = new Fl_Button(230, 250, 90, 30, "Cancel");
+    save_button = new Fl_Button(120, 250, 120, 30, "Save");
+    cancel_button = new Fl_Button(260, 250, 120, 30, "Cancel");
 
     save_button->callback(save_callback, (void*)this);
     cancel_button->callback(cancel_callback, (void*)this);
@@ -101,6 +101,10 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
 
     std::cout << "Expense saved: " << amount << ", " << category << ", " << date << ", " << description << ", Repeated: " << is_repeated << std::endl;
     fl_message("Expense saved successfully.");
+
+    this->hide();
+    UiExpenseWindow* expense_window = new UiExpenseWindow(this->w(), this->y());
+    expense_window->show();
 }
 
 void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) {
