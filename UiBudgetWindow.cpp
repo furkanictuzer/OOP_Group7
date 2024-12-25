@@ -22,9 +22,38 @@ UiBudgetWindow::~UiBudgetWindow()
     delete newBudgetButton;
 }
 
-void UiExpenseWindow::populateExpenses() {
-    //If can be, a set button for at least last budget should be added
-    //and populate function should be written
+void UiBudgetWindow::populateExpenses() {
+    // Browser içeriğini temizle
+    budgetBrowser->clear();
+
+    // Bütçeler üzerinden dolaş
+    for (const auto& budget : ExpenseManager::budgets) {
+        // Bütçe bilgilerini oluştur
+        std::ostringstream budgetInfo;
+        budgetInfo << "Budget: " << budget.getName()
+                   << " | Amount: " << std::fixed << std::setprecision(2) << budget.getBudgetAmount()
+                   << " | Spent: " << budget.getSpentAmount()
+                   << " | Source: " << budget.getSourcetDetails()
+                   << " | Interval: " << budget.getTimeInterval();
+
+        // Browser'a bütçe bilgilerini ekle
+        budgetBrowser->add(budgetInfo.str().c_str());
+
+        // Harcamalar üzerinden dolaş
+        for (const auto& expense : ExpenseManager::expenses) {
+            // Harcama bütçesiyle eşleşiyor mu kontrol et
+            if (expense.getCategory() && expense.getCategory()->getCategoryName() == budget.getName()) {
+                std::ostringstream expenseInfo;
+                expenseInfo << "   - Expense: ID=" << expense.getId()
+                            << " | Amount=" << std::fixed << std::setprecision(2) << expense.getAmount()
+                            << " | Date=" << DateUtils::timePointToString(expense.getDate())
+                            << " | Description=" << expense.getDescription();
+
+                // Browser'a harcama bilgilerini ekle
+                budgetBrowser->add(expenseInfo.str().c_str());
+            }
+        }
+    }
 }
 
 void UiBudgetWindow::close_callback(Fl_Widget* widget, void* data) 
