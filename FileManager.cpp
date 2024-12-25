@@ -92,6 +92,48 @@ bool FileManager::fileExists() {
     return file.good();
 }
 
+void FileManager::deleteAllUser() {
+    std::ofstream outFile(fileName);
+    if (!outFile.is_open()) {
+        std::cerr << "Failed to open file for writing.\n";
+        return;
+    }
+
+    // Write an empty JSON array to the file
+    outFile << "[]";
+    outFile.close();
+    std::cout << "All user data deleted successfully.\n";
+}
+
+void FileManager::deleteUser(const std::string& username) 
+{
+    std::ifstream inFile(fileName);
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open file for reading.\n";
+        return;
+    }
+
+    json jsonData;
+    inFile >> jsonData;
+    inFile.close();
+
+    // Remove the user with the specified username
+    jsonData.erase(std::remove_if(jsonData.begin(), jsonData.end(),
+        [&username](const json& user) {
+            return user["username"].get<std::string>() == username;
+        }), jsonData.end());
+
+    // Write the updated data back to the file
+    std::ofstream outFile(fileName);
+    if (!outFile.is_open()) {
+        std::cerr << "Failed to open file for writing.\n";
+        return;
+    }
+
+    outFile << jsonData.dump(4);
+    outFile.close();
+}
+
 bool FileManager::doesUserExist(const std::string& username) {
     std::ifstream inFile(fileName);
     if (!inFile.is_open()) {

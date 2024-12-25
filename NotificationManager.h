@@ -5,6 +5,10 @@
 #include <chrono>
 #include <ctime>
 #include <iostream>
+
+#include <FL/Fl.H>
+#include <FL/fl_ask.H>
+
 #include "MockClock.h"
 #include "RepeatedExpense.h"
 #include "Budget.h"

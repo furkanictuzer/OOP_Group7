@@ -21,10 +21,14 @@ public:
 
     std::string userInfo() const;
     std::string getUserName() const;
+    void setUsername(const std::string& new_username);
     std::string getPassword() const;
+    void setPassword(const std::string& new_password);
+    
     void addCategory(const Category& category);
     void removeCategory(const Category& category);
     double getBalance() const;
+    void addBudget(const Budget& budget);
     Budget getCurrentBudget();
     void updateUserInfo(const std::string& new_username, const std::string& new_password);
     bool deleteAccount();

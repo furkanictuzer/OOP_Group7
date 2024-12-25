@@ -12,7 +12,7 @@ UiRegisterWindow::UiRegisterWindow(int width, int height,  AuthenticationManager
     register_button = new Fl_Button(100, 150, 150, 30, "Register");
     register_button->callback(register_callback, (void*)this);
 
-    login_button = new Fl_Button(75, 200, 250, 30, "Already have an account?");
+    login_button = new Fl_Button(100, 200, 250, 30, "Already have an account? Login");
     login_button->callback(login_callback, (void*)this);
 
     end();

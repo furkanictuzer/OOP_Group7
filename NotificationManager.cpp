@@ -52,6 +52,6 @@ void NotificationManager::checkExpenses()
 
 void NotificationManager::notify(string message) 
 {
-    Fl::visual(Fl::DOUBLE);
-    fltk_message("Expense Tracker App", message);
+    Fl::visual(FL_DOUBLE);
+    fl_message("%s", message.c_str());
 }

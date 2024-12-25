@@ -1,8 +1,5 @@
 #include "Budget.h"
 
-#include <stdlib.h>
-#include <time.h>
-
 Budget::Budget(string name, double amount, string date, string endDate, string source)
 {
 	// Initializing attirbutes
@@ -16,53 +13,53 @@ Budget::Budget(string name, double amount, string date, string endDate, string s
 	this->spentAmount = 0;
 }
 
-string Budget::getName()
+string Budget::getName() const
 {
-	return this->name;
+	return name;
 }
 
-int Budget::getID()
+int Budget::getID() const
 {
-	return this->id;
+	return id;
 }
 
-string Budget::getTimeInterval()
+string Budget::getTimeInterval() const
 {
-	return this->date + "-" + this->endDate;
+	return date + "-" + this->endDate;
 }
 
 void Budget::setSpentAmount(double newSpentAmount)
 {
 	// Updating total spent amount from budget
-	this->spentAmount += newSpentAmount;
+	spentAmount += newSpentAmount;
 }
 
-double Budget::getSpentAmount()
+double Budget::getSpentAmount() const
 {
 	// Accesing total spent amount
-	return this->spentAmount;
+	return spentAmount;
 }
 
 void Budget::setSourceDetails(string newSource)
 {
 	// Changing source of the budget
-	this->source = newSource;
+	source = newSource;
 }
 
-string Budget::getSourcetDetails()
+string Budget::getSourcetDetails() const
 {
 	// Accesing source of the budget
-	return this->source;
+	return source;
 }
 
 void Budget::setBudgetAmount(double newAmount)
 {
 	// Updating the amount
-	this->amount = newAmount;
+	amount = newAmount;
 }
 
-double Budget::getBudgetAmount()
+double Budget::getBudgetAmount() const
 {
 	// Accessing budget amount
-	return this->amount;
+	return amount;
 }

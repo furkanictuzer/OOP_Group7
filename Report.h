@@ -13,6 +13,7 @@ private:
     std::chrono::system_clock::time_point end;
 
 public:
+    Report() {}
     Report(const std::vector<Expense>& expenses, const std::chrono::system_clock::time_point& start, const std::chrono::system_clock::time_point& end);
 
     std::string generateReportDetails() const;

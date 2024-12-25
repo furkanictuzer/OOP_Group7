@@ -7,6 +7,9 @@
 #include "FileManager.h"
 #include "UiExpenseWindow.h"
 #include "UiCategoryWindow.h"
+#include "UiBudgetWindow.h"
+#include "UiReportsWindow.h"
+#include "UiProfileWindow.h"
 
 class UiMainWindow : public Fl_Window {
 private:
@@ -15,6 +18,7 @@ private:
     Fl_Button* my_categories_button;
     Fl_Button* get_report_button;
     Fl_Button* recent_payments_button;
+    Fl_Button* profile_button;
 
     static void button_callback(Fl_Widget* widget, void* data);
 
@@ -25,6 +29,7 @@ public:
     void navigateToCategories();
     void navigateToReport();
     void navigateToPayments();
+    void navigateToProfile();
 };
 
 #endif // UI_MAIN_WINDOW_H

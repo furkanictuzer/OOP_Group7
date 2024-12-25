@@ -25,8 +25,26 @@ void ExpenseManager::removeExpense(const Expense& expense) {
     expenses.erase(std::remove(expenses.begin(), expenses.end(), expense), expenses.end());
 }
 
-void ExpenseManager::addIncome(double income) {
-    totalIncome += income;
+void ExpenseManager::addBudget(const Budget& budget) {
+    User& user = FileManager::getMainUser();
+
+    user.addBudget(budget);
+
+    budgets.push_back(budget);
+
+    FileManager::saveDataToFile(&user);
+}
+
+void ExpenseManager::removeBudget(const Budget& budget) {
+    budgets.erase(std::remove(budgets.begin(), budgets.end(), budget), budgets.end());
+}
+
+std::vector<Expense> ExpenseManager::getExpenses() {
+    return expenses;
+}
+
+std::vector<Budget> ExpenseManager::getBudgets() {
+    return budgets;
 }
 
 double ExpenseManager::calculateTotalExpenses() {

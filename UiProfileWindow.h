@@ -5,20 +5,33 @@
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Input.H>
 #include <FL/Fl_Button.H>
-
+#include <FL/Fl_Box.H>
 #include <string>
+#include "User.h"
 
-class UiProfileWindow
+class UiProfileWindow : public Fl_Window
 {
 private:
-    Fl_Input incomeAmountField;
-    Fl_Input descriptionField;
-    Fl_Button submitButton;
+    Fl_Box* usernameBox;
+    Fl_Input* newUsernameInput;
+    Fl_Input* passwordInput;
+    Fl_Button* renameButton;
+    Fl_Button* changePasswordButton;
+    Fl_Button* deleteAccountButton;
+    Fl_Button* backButton;
+
+    static void rename_callback(Fl_Widget* widget, void* data);
+    static void change_password_callback(Fl_Widget* widget, void* data);
+    static void delete_account_callback(Fl_Widget* widget, void* data);
+    static void back_callback(Fl_Widget* widget, void* data);
+    
+    void updateUsernameVisual();
+    void navigateToMain();
 
 public:
-    UiProfileWindow(int height, int width, std::string name);
-    void navigateToMain();
-    void navigateToProfile();
+    UiProfileWindow(int width, int height);
+    ~UiProfileWindow();
+
 };
 
-#endif
+#endif // UI_PROFILE_WINDOW_H

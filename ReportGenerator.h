@@ -8,24 +8,23 @@
 #include "Category.h"
 #include "Report.h"
 #include "User.h"
+#include "DateUtils.h"
+#include "FileManager.h"
 
 class ReportGenerator {
-private:
-    std::vector<Report> generatedReports;
-
 public:
-    Report generateWeeklyReport(User& user, const std::chrono::system_clock::time_point& startDate);
-    Report generateMonthlyReport(User& user, const std::chrono::system_clock::time_point& startDate);
-    Report generateAnnualReport(User& user, const std::chrono::system_clock::time_point& startDate);
-    Report generateReport(User& user, const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate);
-    Report generateCategoryReport(const Category& category);
-    Report generateCategoryReport(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const Category& category);
-    std::vector<Expense> getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Category>& categories);
-    std::vector<Expense> getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Expense*>& expenses);
-    std::string reverse(const std::string str);
+    static Report generateWeeklyReport(const std::chrono::system_clock::time_point& startDate);
+    static Report generateMonthlyReport(const std::chrono::system_clock::time_point& startDate);
+    static Report generateAnnualReport(const std::chrono::system_clock::time_point& startDate);
+    static Report generateReport(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate);
+    static Report generateCategoryReport(const Category& category);
+    static Report generateCategoryReport(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const Category& category);
+    static std::vector<Expense> getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Category>& categories);
+    static std::vector<Expense> getRelatedExpenses(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate, const std::vector<Expense*>& expenses);
+    static std::string reverse(const std::string str);
 
 private:
-    std::chrono::system_clock::time_point stringToTimePoint(const std::string& timeStr);
+    static std::chrono::system_clock::time_point stringToTimePoint(const std::string& timeStr);
 };
 
 #endif // REPORTGENERATOR_H

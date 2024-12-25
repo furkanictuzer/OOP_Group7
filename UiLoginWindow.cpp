@@ -8,7 +8,7 @@ UiLoginWindow::UiLoginWindow(int width, int height, AuthenticationManager* authe
     password_input->type(FL_SECRET_INPUT); // Hide password input
 
     login_button = new Fl_Button(100, 150, 150, 30, "Login");
-    register_button = new Fl_Button(25, 200, 250, 30, "Don't have an account? Register");
+    register_button = new Fl_Button(100, 200, 250, 30, "Don't have an account? Register");
 
     login_button->callback(login_callback, (void*)this);
     register_button->callback(register_callback, (void*)this);

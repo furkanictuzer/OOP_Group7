@@ -2,6 +2,9 @@
 #define BUDGET_H
 
 #include <string>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
 class Budget
@@ -17,15 +20,19 @@ private:
 
 public:
 	Budget(string name, double amount, string date, string endDate, string source);
-	string getName();
-	int getID();
-	string getTimeInterval();
+	string getName() const;
+	int getID() const;
+	string getTimeInterval() const;
 	void setSpentAmount(double newSpentAmount);
-	double getSpentAmount();
+	double getSpentAmount() const;
 	void setSourceDetails(string newSource);
-	string getSourcetDetails();
+	string getSourcetDetails() const;
 	void setBudgetAmount(double newAmount);
-	double getBudgetAmount();
+	double getBudgetAmount() const;
+
+	bool operator==(const Budget& other) const {
+        return id == other.id;
+    }
 };
 
 #endif // !BUDGET_H

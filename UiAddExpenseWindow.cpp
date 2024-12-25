@@ -102,8 +102,8 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     std::cout << "Expense saved: " << amount << ", " << category << ", " << date << ", " << description << ", Repeated: " << is_repeated << std::endl;
     fl_message("Expense saved successfully.");
 
-    this->hide();
-    UiExpenseWindow* expense_window = new UiExpenseWindow(this->w(), this->y());
+    window->hide();
+    UiExpenseWindow* expense_window = new UiExpenseWindow(window->w(), window->y());
     expense_window->show();
 }
 

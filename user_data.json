@@ -1,51 +1,6 @@
 {
     "balance": 0.0,
-    "categories": [
-        {
-            "expenses": [
-                {
-                    "amount": 10.0,
-                    "date": "2020.12.31",
-                    "description": "I bought a banana",
-                    "id": 1
-                },
-                {
-                    "amount": 10.0,
-                    "date": "2023.12.31",
-                    "description": "a",
-                    "id": 2
-                },
-                {
-                    "amount": 10.0,
-                    "date": "2021.12.31",
-                    "description": "asd",
-                    "id": 4
-                },
-                {
-                    "amount": 10.0,
-                    "date": "2021.12.31",
-                    "description": "asfasdf",
-                    "id": 5
-                }
-            ],
-            "name": "food"
-        },
-        {
-            "expenses": [
-                {
-                    "amount": 10.0,
-                    "date": "2021.12.31",
-                    "description": "asdasd",
-                    "id": 3
-                }
-            ],
-            "name": "a"
-        },
-        {
-            "name": "ab"
-        }
-    ],
     "password": "1234",
     "user_id": 1,
-    "username": "aybu"
+    "username": "furkan"
 }

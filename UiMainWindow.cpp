@@ -8,17 +8,21 @@ UiMainWindow::UiMainWindow(int width, int height)
     my_categories_button = new Fl_Button(50, 150, 200, 40, "My Categories");
     get_report_button = new Fl_Button(50, 200, 200, 40, "Get Report");
     recent_payments_button = new Fl_Button(50, 250, 200, 40, "Recently Completed Payments");
+    profile_button = new Fl_Button(300, 50, 100, 40, "Profile");
 
     expenses_button->callback(button_callback, (void*)this);
     set_budget_button->callback(button_callback, (void*)this);
     my_categories_button->callback(button_callback, (void*)this);
     get_report_button->callback(button_callback, (void*)this);
     recent_payments_button->callback(button_callback, (void*)this);
+    profile_button->callback(button_callback, (void*)this);
+
     end();
 }
 
 void UiMainWindow::button_callback(Fl_Widget* widget, void* data) {
     UiMainWindow* window = (UiMainWindow*)data;
+    
     if (widget == window->expenses_button) {
         std::cout << "Expenses button clicked" << std::endl;
         window->navigateToExpense();
@@ -34,6 +38,9 @@ void UiMainWindow::button_callback(Fl_Widget* widget, void* data) {
     } else if (widget == window->recent_payments_button) {
         std::cout << "Recently Completed Payments button clicked" << std::endl;
         window->navigateToPayments();
+    }else if (widget == window->profile_button) {
+        std::cout << "Profile button clicked" << std::endl;
+        window->navigateToProfile();
     }
 }
 
@@ -59,9 +66,19 @@ void UiMainWindow::navigateToCategories() {
 }
 
 void UiMainWindow::navigateToReport() {
-    fl_message("Navigating to Get Report...");
+    this->hide();
+
+    UiReportsWindow* reports_window = new UiReportsWindow(this->w(), this->h());
+    reports_window->show();
 }
 
 void UiMainWindow::navigateToPayments() {
     fl_message("Navigating to Recently Completed Payments...");
+}
+
+void UiMainWindow::navigateToProfile() {
+    this->hide();
+
+    UiProfileWindow* profile_window = new UiProfileWindow(this->w(), this->h());
+    profile_window->show();
 }

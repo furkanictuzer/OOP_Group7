@@ -24,7 +24,7 @@ private:
     Fl_Button* closeButton;
 
     static void close_callback(Fl_Widget* widget, void* data);
-    static void add_budget_callback(Fl_Widget* widget, void* data);
+    static void new_budget_callback(Fl_Widget* widget, void* data);
 
     void populateBudgets();
 
@@ -32,6 +32,6 @@ public:
     UiBudgetWindow(int width, int height);
     ~UiBudgetWindow();
 
-}
+};
 
 #endif //!UI_BUDGET_WINDOW_H

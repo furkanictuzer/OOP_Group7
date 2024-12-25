@@ -20,7 +20,10 @@ private:
 public:
     static void addExpense(const Expense& expense);
     static void removeExpense(const Expense& expense);
-    static void addIncome(double income);
+    static void addBudget(const Budget& budget);
+    static void removeBudget(const Budget& budget);
+    static std::vector<Expense> getExpenses();
+    static std::vector<Budget> getBudgets();
     static double calculateTotalExpenses();
     static double calculateTotalIncome();
     static std::vector<Expense> filterExpensesByDateRange(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate);

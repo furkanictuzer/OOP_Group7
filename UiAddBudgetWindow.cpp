@@ -5,12 +5,14 @@ UiAddBudgetWindow::UiAddBudgetWindow(int width, int height)
 {
     nameInput = new Fl_Input(120, 20, 200, 30, "Name: ");
     dayChoiceStart = new Fl_Choice(120, 60, 60, 30, "Starting Day:");
-    dayChoiceEnd = new Fl_Choice(260, 60, 60, 30, "Ending Day: ");
-    monthChoiceStart = new Fl_Choice(120, 100, 60, 30, "Starting Month:");
+    monthChoiceStart = new Fl_Choice(260, 60, 60, 30, "Starting Month:");
+    yearChoiceStart = new Fl_Choice(400, 60, 60, 30, "Starting Year:");
+
+    dayChoiceEnd = new Fl_Choice(120, 100, 60, 30, "Ending Day: ");
     monthChoiceEnd = new Fl_Choice(260, 100, 60, 30, "Ending Month: ");
-    yearChoiceStart = new Fl_Choice(120, 140, 60, 30, "Starting Year:");
-    yearChoiceEnd = new Fl_Choice(260, 140, 60, 30, "Ending Year: ");
-    amountInput = new Fl_Input(120, 180, 200, 30, "Amount: ");
+    yearChoiceEnd = new Fl_Choice(400, 100, 60, 30, "Ending Year: ");
+
+    amountInput = new Fl_Input(120, 140, 200, 30, "Amount: ");
     sourceInput = new Fl_Input(120, 180, 200, 30, "Source: ");
 
     addButton = new Fl_Button(120, 210, 90, 30, "Add");
@@ -66,6 +68,7 @@ void UiAddBudgetWindow::populateDateChoices() {
 
 void UiAddBudgetWindow::add_callback(Fl_Widget* widget, void* data) {
     UiAddBudgetWindow* window = (UiAddBudgetWindow*)data;
+
     string name = window->nameInput->value();
     string startingDay = window->dayChoiceStart->text();
     string endingDay = window->dayChoiceEnd->text();
@@ -73,29 +76,30 @@ void UiAddBudgetWindow::add_callback(Fl_Widget* widget, void* data) {
     string endingMonth = window->monthChoiceEnd->text();
     string startingYear = window->yearChoiceStart->text();
     string endingYear = window->yearChoiceEnd->text();
-    string amount = window->amountInput->value();
+    string amountStr = window->amountInput->value();
     string source = window->sourceInput->value();
 
     if (name.empty() || startingDay.empty() || endingDay.empty() || startingMonth.empty() || endingMonth.empty() ||
-                        startingYear.empty() || endingYear.empty() || amount.empty() || source.empty()) 
+                        startingYear.empty() || endingYear.empty() || amountStr.empty() || source.empty()) 
     {
         fl_alert("All fields must be filled out.");
         return;
     }
 
+    double amount = stod(amountStr);//Convert string to double
     string startDate = startingYear + "-" + startingMonth + "-" + startingDay;
     string endDate = endingYear + "-" + endingMonth + "-" + endingDay;
 
     User& user = FileManager::getMainUser();
 
     Budget budget(name, amount, startDate, endDate, source);
+    
+    ExpenseManager::addBudget(budget);
 
     cout << "Budget added: " << name << ", " << amount << ", " << source << ", " << startDate << " - " << endDate << endl;
     fl_message("Budget saved successfully.");
 
-    this->hide();
-    UiBudgetWindow* budgetWindow = new UiBudgetWindow(this->w(), this->y());
-    budgetWindow->show();
+    window->hide();
 }
 
 void UiAddBudgetWindow::cancel_callback(Fl_Widget* widget, void* data) {

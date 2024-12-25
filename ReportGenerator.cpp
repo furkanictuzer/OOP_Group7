@@ -4,25 +4,37 @@
 #include <sstream>
 #include <iomanip>
 
-Report ReportGenerator::generateWeeklyReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+Report ReportGenerator::generateWeeklyReport(const std::chrono::system_clock::time_point& startDate) 
+{
+    User user = FileManager::getMainUser();
+
     auto endDate = startDate + std::chrono::hours(24 * 7);
     std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
     return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateMonthlyReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+Report ReportGenerator::generateMonthlyReport(const std::chrono::system_clock::time_point& startDate) 
+{
+    User user = FileManager::getMainUser();
+
     auto endDate = startDate + std::chrono::hours(24 * 30);
     std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
     return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateAnnualReport(User& user, const std::chrono::system_clock::time_point& startDate) {
+Report ReportGenerator::generateAnnualReport(const std::chrono::system_clock::time_point& startDate) 
+{
+    User user = FileManager::getMainUser();
+
     auto endDate = startDate + std::chrono::hours(24 * 365);
     std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
     return Report(expenses, startDate, endDate);
 }
 
-Report ReportGenerator::generateReport(User& user, const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate) {
+Report ReportGenerator::generateReport(const std::chrono::system_clock::time_point& startDate, const std::chrono::system_clock::time_point& endDate) 
+{
+    User user = FileManager::getMainUser();
+
     std::vector<Expense> expenses = getRelatedExpenses(startDate, endDate, user.getCategories());
     return Report(expenses, startDate, endDate);
 }

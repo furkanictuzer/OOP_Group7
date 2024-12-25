@@ -19,8 +19,16 @@ std::string User::getUserName() const {
     return username;
 }
 
+void User::setUsername(const std::string& new_username) {
+    username = new_username;
+}
+
 std::string User::getPassword() const {
     return password;
+}
+
+void User::setPassword(const std::string& new_password) {
+    password = new_password;
 }
 
 void User::addCategory(const Category& category) {
@@ -38,6 +46,10 @@ void User::removeCategory(const Category& category) {
 
 double User::getBalance() const {
     return balance;
+}
+
+void User::addBudget(const Budget& budget) {
+    budgets.push_back(budget);
 }
 
 Budget User::getCurrentBudget()

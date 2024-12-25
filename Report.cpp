@@ -21,14 +21,34 @@ void exampleUsage() {
     Report report(expenses, startTime, endTime);
 }
 
-std::string Report::generateReportDetails() const {
+std::string Report::generateReportDetails() const 
+{
+    if (expenses.empty())
+    {
+        return "";
+    }    
+
     std::ostringstream oss;
     std::time_t startTime = std::chrono::system_clock::to_time_t(start);
     std::time_t endTime = std::chrono::system_clock::to_time_t(end);
     oss << "Report from " << std::put_time(std::localtime(&startTime), "%Y-%m-%d")
         << " to " << std::put_time(std::localtime(&endTime), "%Y-%m-%d") << "\n";
+    oss << "------------------------------------------------------------------------------------------------------------------------\n";
+    oss << std::left << std::setw(10) << "ID"
+        << std::setw(15) << "Amount"
+        << std::setw(30) << "Description"
+        << std::setw(20) << "Date"
+        << std::setw(20) << "Category"
+        << "\n";
+    oss << "------------------------------------------------------------------------------------------------------------------------\n";
     for (const auto& expense : expenses) {
-        oss << "ID: " << expense.getId() << ", Amount: " << expense.getAmount() << ", Description: " << expense.getDescription() << "\n";
+        std::time_t expenseTime = std::chrono::system_clock::to_time_t(expense.getDate());
+        oss << std::left << std::setw(10) << expense.getId()
+            << std::setw(15) << std::fixed << std::setprecision(2) << expense.getAmount()
+            << std::setw(30) << expense.getDescription()
+            << std::setw(20) << std::put_time(std::localtime(&expenseTime), "%Y-%m-%d")
+            << std::setw(20) << expense.getCategory()->getCategoryName()
+            << "\n";
     }
     return oss.str();
 }

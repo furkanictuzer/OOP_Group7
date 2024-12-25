@@ -7,10 +7,10 @@ UiBudgetWindow::UiBudgetWindow(int width, int height)
     closeButton = new Fl_Button(width / 2 - 40, height - 50, 80, 30, "Close");
     newBudgetButton = new Fl_Button(width / 2 - 40, height - 90, 80, 30, "New Budget");
 
-    close_button->callback(close_callback, (void*)this);
-    add_expense_button->callback(add_expense_callback, (void*)this);
+    closeButton->callback(close_callback, (void*)this);
+    newBudgetButton->callback(new_budget_callback, (void*)this);
 
-    populateExpenses();
+    populateBudgets();
 
     end();
 }
@@ -22,37 +22,24 @@ UiBudgetWindow::~UiBudgetWindow()
     delete newBudgetButton;
 }
 
-void UiBudgetWindow::populateBudget() {
-    // Browser içeriğini temizle
+void UiBudgetWindow::populateBudgets() 
+{
+    // Clear the browser content
     budgetBrowser->clear();
 
-    // Bütçeler üzerinden dolaş
-    for (const auto& budget : ExpenseManager::budgets) {
-        // Bütçe bilgilerini oluştur
+    // Iterate over budgets
+    for (const auto& budget : ExpenseManager::getBudgets()) 
+    {
+        // Create budget information string
         std::ostringstream budgetInfo;
-        budgetInfo << "Budget: " << budget.getName()
+        budgetInfo << "@b Budget: \n" << budget.getName()
                    << " | Amount: " << std::fixed << std::setprecision(2) << budget.getBudgetAmount()
                    << " | Spent: " << budget.getSpentAmount()
                    << " | Source: " << budget.getSourcetDetails()
                    << " | Interval: " << budget.getTimeInterval();
 
-        // Browser'a bütçe bilgilerini ekle
+        // Add budget information to the browser
         budgetBrowser->add(budgetInfo.str().c_str());
-
-        // Harcamalar üzerinden dolaş
-        for (const auto& expense : ExpenseManager::expenses) {
-            // Harcama bütçesiyle eşleşiyor mu kontrol et
-            if (expense.getCategory() && expense.getCategory()->getCategoryName() == budget.getName()) {
-                std::ostringstream expenseInfo;
-                expenseInfo << "   - Expense: ID=" << expense.getId()
-                            << " | Amount=" << std::fixed << std::setprecision(2) << expense.getAmount()
-                            << " | Date=" << DateUtils::timePointToString(expense.getDate())
-                            << " | Description=" << expense.getDescription();
-
-                // Browser'a harcama bilgilerini ekle
-                budgetBrowser->add(expenseInfo.str().c_str());
-            }
-        }
     }
 }
 
@@ -65,7 +52,7 @@ void UiBudgetWindow::close_callback(Fl_Widget* widget, void* data)
     main_window->show();
 }
 
-void UiBudgetWindow::add_expense_callback(Fl_Widget* widget, void* data) 
+void UiBudgetWindow::new_budget_callback(Fl_Widget* widget, void* data) 
 {
     UiBudgetWindow* window = (UiBudgetWindow*)data;
 

@@ -21,6 +21,8 @@ public:
     static User& getMainUser();
     static string getMainUserPawword();
     static void setMainUser(const User& user);
+    static void deleteUser(const std::string& username);
+    static void deleteAllUser();
 
 private:
     static User main_user;

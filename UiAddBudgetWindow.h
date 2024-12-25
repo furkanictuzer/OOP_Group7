@@ -5,7 +5,11 @@
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Browser.H>
 #include <FL/Fl_Button.H>
+#include <FL/Fl_Input.H>
+#include <FL/Fl_Choice.H>
+#include <FL/fl_ask.H>
 
+#include <iostream>
 #include <vector>
 #include <sstream>
 
@@ -15,6 +19,9 @@
 #include "FileManager.h"
 #include "UiMainWindow.h"
 #include "UiAddExpenseWindow.h"
+#include "UiBudgetWindow.h"
+#include "DateUtils.h"
+
 using namespace std;
 
 class UiAddBudgetWindow : public Fl_Window
@@ -29,7 +36,7 @@ private:
     Fl_Choice* yearChoiceEnd;
     Fl_Input* amountInput;
     Fl_Input* sourceInput;
-    Fl_button* cancelButton;
+    Fl_Button* cancelButton;
     Fl_Button* addButton;
 
     static void add_callback(Fl_Widget* widget, void* data);
@@ -41,6 +48,6 @@ public:
     UiAddBudgetWindow(int width, int height);
     ~UiAddBudgetWindow();
 
-}
+};
 
 #endif //!UI_ADD_BUDGET_WINDOW_H
