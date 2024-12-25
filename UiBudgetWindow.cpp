@@ -22,7 +22,7 @@ UiBudgetWindow::~UiBudgetWindow()
     delete newBudgetButton;
 }
 
-void UiBudgetWindow::populateExpenses() {
+void UiBudgetWindow::populateBudget() {
     // Browser içeriğini temizle
     budgetBrowser->clear();
 
@@ -69,7 +69,6 @@ void UiBudgetWindow::add_expense_callback(Fl_Widget* widget, void* data)
 {
     UiBudgetWindow* window = (UiBudgetWindow*)data;
 
-    //UiAddBudgetWindow class wil be written
     UiAddBudgetWindow* add_budget_window = new UiAddBudgetWindow(window->w(), window->h());
     add_budget_window->show();
 }
