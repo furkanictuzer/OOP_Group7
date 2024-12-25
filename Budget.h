@@ -12,12 +12,14 @@ private:
 	double amount;
 	double spentAmount;
 	string date;
+	string endDate;
 	string source;
 
 public:
-	Budget(string name, double amount, string date, string source);
+	Budget(string name, double amount, string date, string endDate, string source);
 	string getName();
 	int getID();
+	string getTimeInterval();
 	void setSpentAmount(double newSpentAmount);
 	double getSpentAmount();
 	void setSourceDetails(string newSource);

@@ -8,15 +8,18 @@
 #include "Budget.h"
 #include "Category.h"
 #include "FileManager.h"
+#include "User.h"
 
 class ExpenseManager {
 private:
+    static User* user;
     static std::vector<Expense> expenses;
     static std::vector<Budget> budgets;
     static double totalExpenses;
     static double totalIncome;
 
 public:
+    ExpenseManager(User* user);
     static void addExpense(const Expense& expense);
     static void removeExpense(const Expense& expense);
     static void addIncome(double income);

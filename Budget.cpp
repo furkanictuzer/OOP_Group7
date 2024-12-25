@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-Budget::Budget(string name, double amount, string date, string source)
+Budget::Budget(string name, double amount, string date, string endDate, string source)
 {
 	// Initializing attirbutes
 	this->name = name;
@@ -11,6 +11,7 @@ Budget::Budget(string name, double amount, string date, string source)
 	this->id = rand() % 10000; // Budget id is determined randomly
 	this->amount = amount;
 	this->date = date;
+	this->endDate = endDate;
 	this->source = source;
 	this->spentAmount = 0;
 }
@@ -23,6 +24,11 @@ string Budget::getName()
 int Budget::getID()
 {
 	return this->id;
+}
+
+string Budget::getTimeInterval()
+{
+	return this->date + "-" + this->endDate;
 }
 
 void Budget::setSpentAmount(double newSpentAmount)

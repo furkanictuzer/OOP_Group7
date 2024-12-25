@@ -9,6 +9,11 @@ std::vector<Budget> ExpenseManager::budgets;
 double ExpenseManager::totalExpenses = 0;
 double ExpenseManager::totalIncome = 0;
 
+ExpenseManager::ExpenseManager(User* user)
+{
+    this->user = user; //User added for setting budget of the user
+}
+
 void ExpenseManager::addExpense(const Expense& expense) {
     User& user = FileManager::getMainUser();
 
@@ -34,6 +39,7 @@ double ExpenseManager::calculateTotalExpenses() {
     for (const auto& exp : expenses) {
         totalExpenses += exp.getAmount();
     }
+    user->getCurrentBudget().setSpentAmount(totalExpenses);
     return totalExpenses;
 }
 

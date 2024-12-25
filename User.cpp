@@ -40,6 +40,11 @@ double User::getBalance() const {
     return balance;
 }
 
+Budget User::getCurrentBudget()
+{
+    this->budgets.at(budgets.size() - 1);
+}
+
 void User::updateUserInfo(const std::string& new_username, const std::string& new_password) {
     username = new_username;
     password = new_password;

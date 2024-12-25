@@ -25,6 +25,7 @@ public:
     void addCategory(const Category& category);
     void removeCategory(const Category& category);
     double getBalance() const;
+    Budget getCurrentBudget();
     void updateUserInfo(const std::string& new_username, const std::string& new_password);
     bool deleteAccount();
     int getUserId() const;
