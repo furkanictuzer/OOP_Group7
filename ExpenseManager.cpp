@@ -4,8 +4,21 @@
 #include <sstream>
 #include <iomanip>
 
+std::vector<Expense> ExpenseManager::expenses;
+std::vector<Budget> ExpenseManager::budgets;
+double ExpenseManager::totalExpenses = 0;
+double ExpenseManager::totalIncome = 0;
+
 void ExpenseManager::addExpense(const Expense& expense) {
-    expenses.push_back(expense);
+    User& user = FileManager::getMainUser();
+
+    // Create a new Expense object on the heap and pass a pointer to it
+    Expense* newExpense = new Expense(expense);
+    user.getCategoryByName(expense.getCategory()->getCategoryName())->addExpense(newExpense);
+
+    expenses.push_back(*newExpense);
+
+    FileManager::saveDataToFile(&user);
 }
 
 void ExpenseManager::removeExpense(const Expense& expense) {
@@ -59,17 +72,19 @@ double ExpenseManager::getTotalExpenseByMonth(int month, int year) {
         }
     }
 
-    double totalExpense = 0;
+    double total = 0;
     for (const auto& expense : monthExpenses) {
-        totalExpense += expense.getAmount();
+        total += expense.getAmount();
     }
-    return totalExpense;
+    return total;
 }
 
-// Helper function to convert string to time_point
-std::chrono::system_clock::time_point stringToTimePoint(const std::string& timeStr) {
+std::chrono::system_clock::time_point ExpenseManager::stringToTimePoint(const std::string& timeStr) {
+    // Implement the conversion from string to time_point
+    // This is just a placeholder implementation
     std::tm tm = {};
     std::istringstream ss(timeStr);
-    ss >> std::get_time(&tm, "%Y.%m.%d");
-    return std::chrono::system_clock::from_time_t(std::mktime(&tm));
+    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
+    std::time_t time = std::mktime(&tm);
+    return std::chrono::system_clock::from_time_t(time);
 }

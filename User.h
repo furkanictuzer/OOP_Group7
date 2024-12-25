@@ -29,6 +29,8 @@ public:
     bool deleteAccount();
     int getUserId() const;
     vector<Category> getCategories() const;
+    Category* getCategoryByName(const std::string& name);
+    int getExpenseCount() const;
 };
 
 #endif // USER_H

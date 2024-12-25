@@ -23,3 +23,7 @@ void Category::setCategoryName(const std::string& newName) {
 const std::vector<Expense*>& Category::getExpenses() const {
     return expenses;
 }
+
+int Category::getExpenseCount() const {
+    return expenses.size();
+}

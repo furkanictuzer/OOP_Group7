@@ -19,6 +19,7 @@ public:
     std::string getCategoryName() const;
     const std::vector<Expense*>& getExpenses() const;
     void setCategoryName(const std::string& name);
+    int getExpenseCount() const;
 
     // Overload the '<' operator to enable comparison between Category objects
     bool operator<(const Category& other) const {

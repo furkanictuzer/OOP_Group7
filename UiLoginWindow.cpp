@@ -32,7 +32,7 @@ void UiLoginWindow::login_callback(Fl_Widget* widget, void* data) {
         
         window->hide();
 
-        UiMainWindow* main_window = new UiMainWindow(window->w(), window->h(), username);
+        UiMainWindow* main_window = new UiMainWindow(window->w(), window->h());
         main_window->show();
     } else {
         fl_message("Invalid username or password.");
@@ -41,9 +41,8 @@ void UiLoginWindow::login_callback(Fl_Widget* widget, void* data) {
 
 void UiLoginWindow::register_callback(Fl_Widget* widget, void* data) {
     UiLoginWindow* window = (UiLoginWindow*)data;
-    window->hide(); // Hide the login window
+    window->hide();
 
-    // Create and show the registration window
     UiRegisterWindow* register_window = new UiRegisterWindow(window->w(), window->h(), window->authenticationManager);
     register_window->show();
 }

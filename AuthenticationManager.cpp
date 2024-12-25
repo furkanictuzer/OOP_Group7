@@ -6,8 +6,8 @@ bool AuthenticationManager::tryToLogin(string username, string password)
     if (FileManager::doesUserExist(username))
     {
         FileManager::loadDataFromFile();
-        User user = FileManager::getMainUser();
-        if (user.getPassword() == password)
+
+        if (FileManager::getMainUserPawword() == password)
         {
             return true;
         }

@@ -112,3 +112,23 @@ vector<Category> User::getCategories() const
 {
     return categories;
 }
+
+Category* User::getCategoryByName(const std::string& name)
+{
+    for (auto& category : categories) {
+        if (category.getCategoryName() == name) {
+            return &category;
+        }
+    }
+
+    throw std::invalid_argument("Category not found.");
+}
+
+int User::getExpenseCount() const
+{
+    int count = 0;
+    for (const auto& category : categories) {
+        count += category.getExpenseCount();
+    }
+    return count;
+}

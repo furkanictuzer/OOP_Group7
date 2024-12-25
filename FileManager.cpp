@@ -34,7 +34,7 @@ void FileManager::saveDataToFile(const User* user) {
             expenseData["amount"] = expense->getAmount();
             expenseData["date"] = DateUtils::timePointToString(expense->getDate());
             expenseData["description"] = expense->getDescription();
-            categoryData["expense"].push_back(expenseData);
+            categoryData["expenses"].push_back(expenseData);
         }
 
         jsonData["categories"].push_back(categoryData);
@@ -58,21 +58,24 @@ bool FileManager::loadDataFromFile() {
     std::string username = jsonData["username"].get<std::string>();
     double balance = jsonData["balance"].get<double>();
     std::string password = jsonData["password"].get<std::string>();
+    std::cout << "User ID: " << id << ", Username: " << username << ", Balance: " << balance << ", Password: " << password << std::endl;
 
     User user(id, username, password, balance);
 
     for (const auto& categoryData : jsonData["categories"]) {
         Category category(categoryData["name"].get<std::string>());
 
-        for (const auto& expenseData : categoryData["expense"]) {
-            Expense* expense = new Expense(
-                expenseData["id"].get<int>(),
-                expenseData["amount"].get<double>(),
-                DateUtils::stringToTimePoint(expenseData["date"].get<std::string>()),
-                expenseData["description"].get<std::string>(),
-                &category
-            );
-            category.addExpense(expense);
+        if (categoryData.contains("expenses")) {
+            for (const auto& expenseData : categoryData["expenses"]) {
+                Expense* expense = new Expense(
+                    expenseData["id"].get<int>(),
+                    expenseData["amount"].get<double>(),
+                    DateUtils::stringToTimePoint(expenseData["date"].get<std::string>()),
+                    expenseData["description"].get<std::string>(),
+                    &category
+                );
+                category.addExpense(expense);
+            }
         }
 
         user.addCategory(category);
@@ -106,10 +109,24 @@ bool FileManager::doesUserExist(const std::string& username) {
     return false;
 }
 
-User FileManager::getMainUser() {
+User& FileManager::getMainUser() {
     return main_user;
 }
 
 void FileManager::setMainUser(const User& user) {
     main_user = user;
+}
+
+string FileManager::getMainUserPawword()
+{
+    std::ifstream inFile(fileName);
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open file for reading.\n";
+        return "";
+    }
+
+    json jsonData;
+    inFile >> jsonData;
+
+    return jsonData["password"].get<std::string>();
 }

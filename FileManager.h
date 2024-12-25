@@ -18,7 +18,8 @@ public:
     static bool loadDataFromFile();
     static bool fileExists();
     static bool doesUserExist(const std::string& username);
-    static User getMainUser();
+    static User& getMainUser();
+    static string getMainUserPawword();
     static void setMainUser(const User& user);
 
 private:

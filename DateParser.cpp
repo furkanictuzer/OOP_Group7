@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 #include "DateParser.h"
 
@@ -7,7 +7,7 @@ void DateParser::parseDate(const std::string& date, int& day, int& month, int& y
     size_t firstDot = date.find('.');
     size_t secondDot = date.find('.', firstDot + 1);
 
-    // Parçalama iþlemi
+    // Parï¿½alama iï¿½lemi
     day = std::stoi(date.substr(0, firstDot));
     month = std::stoi(date.substr(firstDot + 1, secondDot - firstDot - 1));
     year = std::stoi(date.substr(secondDot + 1));
@@ -15,18 +15,12 @@ void DateParser::parseDate(const std::string& date, int& day, int& month, int& y
 
 std::string DateParser::addDate(const std::string& date1, const std::string& date2)
 {
-    /**
-    *Parsing dates
-    */
     int date1Day, date1Month, date1Year;
     parseDate(date1, date1Day, date1Month, date1Year);
 
     int date2Day, date2Month, date2Year;
     parseDate(date2, date2Day, date2Month, date2Year);
 
-    /**
-    *Assigninging values to the newDate
-    */
     std::string newDate;
     int newDateDay, newDateMonth, newDateYear;
 
@@ -34,9 +28,6 @@ std::string DateParser::addDate(const std::string& date1, const std::string& dat
     newDateMonth = date2Month + date1Month;
     newDateDay = date2Day + date1Day;
 
-    /**
-    *Rearranging the month and day values to be normal
-    */
     switch (newDateMonth % 12)
     {
     case 1:
@@ -73,10 +64,6 @@ std::string DateParser::addDate(const std::string& date1, const std::string& dat
         newDateYear++;
     }
 
-    /**
-    *Constructing and returning the newDate
-    */
-
     std::string newDateDayStr = newDateDay > 9 ? std::to_string(newDateDay) : "0" + std::to_string(newDateDay);
     std::string newDateMonthStr = newDateMonth > 9 ? std::to_string(newDateMonth) : "0" + std::to_string(newDateMonth);
 
@@ -85,3 +72,4 @@ std::string DateParser::addDate(const std::string& date1, const std::string& dat
     return newDate;
 
 }
+*/

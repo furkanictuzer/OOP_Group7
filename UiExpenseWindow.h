@@ -2,25 +2,33 @@
 #define UI_EXPENSE_WINDOW_H
 
 #include <FL/Fl.H>
-#include <FL/Fl_Choice.H>
-#include <FL/Fl_Input.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Browser.H>
 #include <FL/Fl_Button.H>
 
-#include <string>
-#include "User.h"
+#include <vector>
+#include <sstream>
 
-class UiExpenseWindow
-{
+#include "Expense.h"
+#include "Category.h"
+#include "FileManager.h"
+#include "UiMainWindow.h"
+#include "UiAddExpenseWindow.h"
+
+class UiExpenseWindow : public Fl_Window {
 private:
-    Fl_Input* expenseAmount;
-    Fl_Choice* categoryChoice;
-    Fl_Button* submitButton;
+    Fl_Browser* expense_browser;
+    Fl_Button* close_button;
+    Fl_Button* add_expense_button;
+
+    static void close_callback(Fl_Widget* widget, void* data);
+    static void add_expense_callback(Fl_Widget* widget, void* data);
+
+    void populateExpenses();
 
 public:
-    UiExpenseWindow(int height, int width, std::string name);
-    void navigateToMain();
-    void navigateToProfile();
+    UiExpenseWindow(int width, int height);
     ~UiExpenseWindow();
 };
 
-#endif
+#endif // UI_EXPENSE_WINDOW_H
