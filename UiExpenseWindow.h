@@ -7,18 +7,20 @@
 #include <FL/Fl_Button.H>
 
 #include <string>
+#include "User.h"
 
 class UiExpenseWindow
 {
 private:
-    Fl_Input expenseAmount;
-    Fl_Choice categoryChoice;
-    Fl_Button submitButton;
+    Fl_Input* expenseAmount;
+    Fl_Choice* categoryChoice;
+    Fl_Button* submitButton;
 
 public:
     UiExpenseWindow(int height, int width, std::string name);
     void navigateToMain();
     void navigateToProfile();
+    ~UiExpenseWindow();
 };
 
 #endif

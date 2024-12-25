@@ -52,5 +52,6 @@ void NotificationManager::checkExpenses()
 
 void NotificationManager::notify(string message) 
 {
-    cout << "New Notification from Expense Tracker App: \n" << message << endl;
+    Fl::visual(Fl::DOUBLE);
+    fltk_message("Expense Tracker App", message);
 }
