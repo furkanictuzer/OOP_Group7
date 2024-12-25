@@ -45,7 +45,10 @@ void UiMainWindow::navigateToExpense() {
 }
 
 void UiMainWindow::navigateToBudget() {
-    fl_message("Navigating to Set Budget...");
+    this->hide();
+
+    UiBudgetWindow* budget_window = new UiBudgetWindow(this->w(), this->h());
+    budget_window->show();
 }
 
 void UiMainWindow::navigateToCategories() {
