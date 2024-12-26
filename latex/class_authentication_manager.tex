@@ -32,6 +32,8 @@ bool Authentication\+Manager\+::try\+To\+Login (\begin{DoxyParamCaption}\item[{s
 
 Attempts to log in a user with the provided username and password. 
 
+Attempts to log in a user with the given username and password.
+
 This function checks the provided credentials against stored data and returns true if login is successful.
 
 
@@ -42,7 +44,19 @@ This function checks the provided credentials against stored data and returns tr
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the login attempt is successful, false otherwise. 
+true if the login attempt is successful, false otherwise.
+\end{DoxyReturn}
+This function checks if the user exists in the file system and verifies the provided password against the stored password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user trying to log in. \\
+\hline
+{\em password} & The password of the user trying to log in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the login is successful, false otherwise. 
 \end{DoxyReturn}
 \Hypertarget{class_authentication_manager_affc211df78c031f1d96dbb2ba028f341}\index{AuthenticationManager@{AuthenticationManager}!tryToRegister@{tryToRegister}}
 \index{tryToRegister@{tryToRegister}!AuthenticationManager@{AuthenticationManager}}
@@ -54,6 +68,8 @@ bool Authentication\+Manager\+::try\+To\+Register (\begin{DoxyParamCaption}\item
 
 Attempts to register a new user with the provided username and password. 
 
+Attempts to register a new user with the given username and password.
+
 This function checks if the username is available and registers the user if the conditions are met.
 
 
@@ -61,6 +77,18 @@ This function checks if the username is available and registers the user if the 
 {\em username} & The username the user wants to register. \\
 \hline
 {\em password} & The password the user wants to set for their account. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the registration is successful, false otherwise.
+\end{DoxyReturn}
+This function creates a new user and initializes default categories for expense tracking. The user\textquotesingle{}s data is then saved to the file system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username for the new user. \\
+\hline
+{\em password} & The password for the new user. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

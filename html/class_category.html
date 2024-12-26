@@ -142,6 +142,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor that initializes a category with a given name. </p>
+<p>Constructs a <a class="el" href="class_category.html" title="Represents a category that holds a collection of expenses.">Category</a> with a given name.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the category. </td></tr>
@@ -171,7 +172,8 @@ Public Member Functions</h2></td></tr>
 <p>This function adds a given expense to the category's list of expenses.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expense</td><td>The expense to add to the category. </td></tr>
+    <tr><td class="paramname">expense</td><td>The expense to add to the category.</td></tr>
+    <tr><td class="paramname">expense</td><td>A pointer to the <a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a> object to be added. </td></tr>
   </table>
   </dd>
 </dl>
@@ -194,7 +196,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the name of the category. </p>
-<dl class="section return"><dt>Returns</dt><dd>The name of the category. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the category.</dd>
+<dd>
+The name of the category as a string. </dd></dl>
 
 </div>
 </div>
@@ -214,7 +218,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the total number of expenses in this category. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of expenses in the category. </dd></dl>
+<p>Gets the total number of expenses in the category.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of expenses in the category.</dd>
+<dd>
+The number of expenses as an integer. </dd></dl>
 
 </div>
 </div>
@@ -234,7 +241,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the list of expenses in this category. </p>
-<dl class="section return"><dt>Returns</dt><dd>A constant reference to the list of expenses. </dd></dl>
+<p>Gets all the expenses associated with the category.</p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the list of expenses.</dd>
+<dd>
+A constant reference to a vector of <a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a> pointers. </dd></dl>
 
 </div>
 </div>
@@ -292,7 +302,8 @@ Public Member Functions</h2></td></tr>
 <p>This function removes a given expense from the category's list of expenses.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expense</td><td>The expense to remove from the category. </td></tr>
+    <tr><td class="paramname">expense</td><td>The expense to remove from the category.</td></tr>
+    <tr><td class="paramname">expense</td><td>A pointer to the <a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a> object to be removed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,16 +319,18 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Category::setCategoryName </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>newName</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Sets the name of the category. </p>
+<p>Sets a new name for the category.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The new name for the category. </td></tr>
+    <tr><td class="paramname">name</td><td>The new name for the category.</td></tr>
+    <tr><td class="paramname">newName</td><td>The new name of the category. </td></tr>
   </table>
   </dd>
 </dl>

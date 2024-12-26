@@ -2,7 +2,7 @@
 \hypertarget{class_ui_budget_window}{}\label{class_ui_budget_window}\index{UiBudgetWindow@{UiBudgetWindow}}
 
 
-A window for managing budgets within the application.  
+A window for managing and displaying budgets.  
 
 
 
@@ -18,13 +18,16 @@ Inherits Fl\+\_\+\+Window.
 \item 
 \mbox{\hyperlink{class_ui_budget_window_a55abbdb367293a97da043275a9690f9c}{Ui\+Budget\+Window}} (int width, int height)
 \begin{DoxyCompactList}\small\item\em Constructs the window for managing budgets. \end{DoxyCompactList}\item 
-\Hypertarget{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb}\label{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ui\+Budget\+Window} ()
+\mbox{\hyperlink{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb}{\texorpdfstring{$\sim$}{\string~}\+Ui\+Budget\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A window for managing budgets within the application. 
+A window for managing and displaying budgets. 
+
+A window for managing budgets within the application.
+
+This class provides functionality to display the list of budgets and allows users to manage them.
 
 This class is responsible for providing a graphical user interface (GUI) for viewing, adding, and managing budgets. The user can view the list of existing budgets, add new ones, and close the window. It uses the FLTK library to create the window and its widgets. 
 
@@ -48,7 +51,19 @@ Initializes the window with appropriate sizes and sets up the widgets including 
 {\em height} & The height of the window. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb}\index{UiBudgetWindow@{UiBudgetWindow}!````~UiBudgetWindow@{\texorpdfstring{$\sim$}{\string~}UiBudgetWindow}}
+\index{````~UiBudgetWindow@{\texorpdfstring{$\sim$}{\string~}UiBudgetWindow}!UiBudgetWindow@{UiBudgetWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UiBudgetWindow()}{\string~UiBudgetWindow()}}
+{\footnotesize\ttfamily \label{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb} 
+Ui\+Budget\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Ui\+Budget\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Destructor for cleaning up resources. 
+
+Destructor for \doxylink{class_ui_budget_window}{Ui\+Budget\+Window}.
+
+Cleans up the resources allocated for the budget window. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

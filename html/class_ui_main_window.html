@@ -91,7 +91,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents the main window of the application.  
+<p>The main window for the application after login.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_ui_main_window_8h_source.html">UiMainWindow.h</a>&gt;</code></p>
@@ -123,7 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:add86721a9129809e44818284350dca8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents the main window of the application. </p>
+<div class="textblock"><p>The main window for the application after login. </p>
+<p>Represents the main window of the application.</p>
+<p>This class represents the main window that allows the user to navigate between different sections of the application such as expenses, budget, categories, reports, and profile.</p>
 <p>This class is responsible for displaying the main window of the application. It includes various buttons to navigate to different sections such as Expenses, <a class="el" href="class_budget.html" title="This class represents a budget, including its attributes and methods to manage the budget and its spe...">Budget</a>, Categories, Reports, and Profile. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab05c27330c58cabaf80a760a4ff68262" name="ab05c27330c58cabaf80a760a4ff68262"></a>
@@ -173,7 +175,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor to clean up resources. </p>
-<p>This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. </p>
+<p>Destructor for <a class="el" href="class_ui_main_window.html" title="The main window for the application after login.">UiMainWindow</a>.</p>
+<p>This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed.</p>
+<p>This destructor cleans up the resources allocated for the main window. </p>
 
 </div>
 </div>
@@ -194,7 +198,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Navigates to the <a class="el" href="class_budget.html" title="This class represents a budget, including its attributes and methods to manage the budget and its spe...">Budget</a> window. </p>
-<p>This function opens the <a class="el" href="class_budget.html" title="This class represents a budget, including its attributes and methods to manage the budget and its spe...">Budget</a> window when the corresponding button is clicked. </p>
+<p>Navigate to the budget window.</p>
+<p>This function opens the <a class="el" href="class_budget.html" title="This class represents a budget, including its attributes and methods to manage the budget and its spe...">Budget</a> window when the corresponding button is clicked.</p>
+<p>This function hides the main window and creates and shows the <a class="el" href="class_ui_budget_window.html" title="A window for managing and displaying budgets.">UiBudgetWindow</a>. </p>
 
 </div>
 </div>
@@ -214,7 +220,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Navigates to the Categories window. </p>
-<p>This function opens the Categories window when the corresponding button is clicked. </p>
+<p>Navigate to the categories window.</p>
+<p>This function opens the Categories window when the corresponding button is clicked.</p>
+<p>This function hides the main window and creates and shows the <a class="el" href="class_ui_category_window.html" title="A window for adding and managing categories.">UiCategoryWindow</a>. </p>
 
 </div>
 </div>
@@ -234,7 +242,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Navigates to the Expenses window. </p>
-<p>This function opens the <a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a> window when the corresponding button is clicked. </p>
+<p>Navigate to the expense window.</p>
+<p>This function opens the <a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a> window when the corresponding button is clicked.</p>
+<p>This function hides the main window and creates and shows the <a class="el" href="class_ui_expense_window.html" title="A window for displaying and managing expenses.">UiExpenseWindow</a>. </p>
 
 </div>
 </div>
@@ -254,7 +264,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Navigates to the Profile window. </p>
-<p>This function opens the Profile window when the corresponding button is clicked. </p>
+<p>Navigate to the profile window.</p>
+<p>This function opens the Profile window when the corresponding button is clicked.</p>
+<p>This function hides the main window and creates and shows the <a class="el" href="class_ui_profile_window.html" title="This class represents the user profile window, where the user can update their username,...">UiProfileWindow</a>. </p>
 
 </div>
 </div>
@@ -274,7 +286,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Navigates to the Reports window. </p>
-<p>This function opens the Reports window when the corresponding button is clicked. </p>
+<p>Navigate to the reports window.</p>
+<p>This function opens the Reports window when the corresponding button is clicked.</p>
+<p>This function hides the main window and creates and shows the <a class="el" href="class_ui_reports_window.html" title="A window for generating and displaying reports.">UiReportsWindow</a>. </p>
 
 </div>
 </div>

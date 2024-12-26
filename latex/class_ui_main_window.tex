@@ -2,7 +2,7 @@
 \hypertarget{class_ui_main_window}{}\label{class_ui_main_window}\index{UiMainWindow@{UiMainWindow}}
 
 
-Represents the main window of the application.  
+The main window for the application after login.  
 
 
 
@@ -33,7 +33,11 @@ void \mbox{\hyperlink{class_ui_main_window_add86721a9129809e44818284350dca8a}{na
 
 
 \doxysubsection{Detailed Description}
-Represents the main window of the application. 
+The main window for the application after login. 
+
+Represents the main window of the application.
+
+This class represents the main window that allows the user to navigate between different sections of the application such as expenses, budget, categories, reports, and profile.
 
 This class is responsible for displaying the main window of the application. It includes various buttons to navigate to different sections such as Expenses, \doxylink{class_budget}{Budget}, Categories, Reports, and Profile. 
 
@@ -67,7 +71,11 @@ Ui\+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Ui\+Main\+Window (\begin{
 
 Destructor to clean up resources. 
 
-This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. 
+Destructor for \doxylink{class_ui_main_window}{Ui\+Main\+Window}.
+
+This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed.
+
+This destructor cleans up the resources allocated for the main window. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f}\index{UiMainWindow@{UiMainWindow}!navigateToBudget@{navigateToBudget}}
@@ -80,7 +88,11 @@ void Ui\+Main\+Window\+::navigate\+To\+Budget (\begin{DoxyParamCaption}{}{}\end{
 
 Navigates to the \doxylink{class_budget}{Budget} window. 
 
-This function opens the \doxylink{class_budget}{Budget} window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}\index{UiMainWindow@{UiMainWindow}!navigateToCategories@{navigateToCategories}}
+Navigate to the budget window.
+
+This function opens the \doxylink{class_budget}{Budget} window when the corresponding button is clicked.
+
+This function hides the main window and creates and shows the \doxylink{class_ui_budget_window}{Ui\+Budget\+Window}. \Hypertarget{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}\index{UiMainWindow@{UiMainWindow}!navigateToCategories@{navigateToCategories}}
 \index{navigateToCategories@{navigateToCategories}!UiMainWindow@{UiMainWindow}}
 \doxysubsubsection{\texorpdfstring{navigateToCategories()}{navigateToCategories()}}
 {\footnotesize\ttfamily \label{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714} 
@@ -90,7 +102,11 @@ void Ui\+Main\+Window\+::navigate\+To\+Categories (\begin{DoxyParamCaption}{}{}\
 
 Navigates to the Categories window. 
 
-This function opens the Categories window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}\index{UiMainWindow@{UiMainWindow}!navigateToExpense@{navigateToExpense}}
+Navigate to the categories window.
+
+This function opens the Categories window when the corresponding button is clicked.
+
+This function hides the main window and creates and shows the \doxylink{class_ui_category_window}{Ui\+Category\+Window}. \Hypertarget{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}\index{UiMainWindow@{UiMainWindow}!navigateToExpense@{navigateToExpense}}
 \index{navigateToExpense@{navigateToExpense}!UiMainWindow@{UiMainWindow}}
 \doxysubsubsection{\texorpdfstring{navigateToExpense()}{navigateToExpense()}}
 {\footnotesize\ttfamily \label{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3} 
@@ -100,7 +116,11 @@ void Ui\+Main\+Window\+::navigate\+To\+Expense (\begin{DoxyParamCaption}{}{}\end
 
 Navigates to the Expenses window. 
 
-This function opens the \doxylink{class_expense}{Expense} window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_add86721a9129809e44818284350dca8a}\index{UiMainWindow@{UiMainWindow}!navigateToProfile@{navigateToProfile}}
+Navigate to the expense window.
+
+This function opens the \doxylink{class_expense}{Expense} window when the corresponding button is clicked.
+
+This function hides the main window and creates and shows the \doxylink{class_ui_expense_window}{Ui\+Expense\+Window}. \Hypertarget{class_ui_main_window_add86721a9129809e44818284350dca8a}\index{UiMainWindow@{UiMainWindow}!navigateToProfile@{navigateToProfile}}
 \index{navigateToProfile@{navigateToProfile}!UiMainWindow@{UiMainWindow}}
 \doxysubsubsection{\texorpdfstring{navigateToProfile()}{navigateToProfile()}}
 {\footnotesize\ttfamily \label{class_ui_main_window_add86721a9129809e44818284350dca8a} 
@@ -110,7 +130,11 @@ void Ui\+Main\+Window\+::navigate\+To\+Profile (\begin{DoxyParamCaption}{}{}\end
 
 Navigates to the Profile window. 
 
-This function opens the Profile window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}\index{UiMainWindow@{UiMainWindow}!navigateToReport@{navigateToReport}}
+Navigate to the profile window.
+
+This function opens the Profile window when the corresponding button is clicked.
+
+This function hides the main window and creates and shows the \doxylink{class_ui_profile_window}{Ui\+Profile\+Window}. \Hypertarget{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}\index{UiMainWindow@{UiMainWindow}!navigateToReport@{navigateToReport}}
 \index{navigateToReport@{navigateToReport}!UiMainWindow@{UiMainWindow}}
 \doxysubsubsection{\texorpdfstring{navigateToReport()}{navigateToReport()}}
 {\footnotesize\ttfamily \label{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a} 
@@ -120,7 +144,11 @@ void Ui\+Main\+Window\+::navigate\+To\+Report (\begin{DoxyParamCaption}{}{}\end{
 
 Navigates to the Reports window. 
 
-This function opens the Reports window when the corresponding button is clicked. 
+Navigate to the reports window.
+
+This function opens the Reports window when the corresponding button is clicked.
+
+This function hides the main window and creates and shows the \doxylink{class_ui_reports_window}{Ui\+Reports\+Window}. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

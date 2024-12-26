@@ -128,6 +128,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to log in a user with the provided username and password. </p>
+<p>Attempts to log in a user with the given username and password.</p>
 <p>This function checks the provided credentials against stored data and returns true if login is successful.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -136,7 +137,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the login attempt is successful, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the login attempt is successful, false otherwise.</dd></dl>
+<p>This function checks if the user exists in the file system and verifies the provided password against the stored password.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>The username of the user trying to log in. </td></tr>
+    <tr><td class="paramname">password</td><td>The password of the user trying to log in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the login is successful, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -160,11 +170,21 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to register a new user with the provided username and password. </p>
+<p>Attempts to register a new user with the given username and password.</p>
 <p>This function checks if the username is available and registers the user if the conditions are met.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">username</td><td>The username the user wants to register. </td></tr>
     <tr><td class="paramname">password</td><td>The password the user wants to set for their account. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the registration is successful, false otherwise.</dd></dl>
+<p>This function creates a new user and initializes default categories for expense tracking. The user's data is then saved to the file system.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>The username for the new user. </td></tr>
+    <tr><td class="paramname">password</td><td>The password for the new user. </td></tr>
   </table>
   </dd>
 </dl>

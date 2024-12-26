@@ -136,10 +136,18 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Advances the current time by a specified duration. </p>
+<p>Advances the time by a specified duration, factoring in the speed.</p>
 <p>This function increases the mock clock's time by the given duration, adjusted for the clock's speed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">duration</td><td>The amount of time to advance, represented in seconds. </td></tr>
+    <tr><td class="paramname">duration</td><td>The amount of time to advance, represented in seconds.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function increments the time by the specified duration, multiplying it by the speed factor to simulate the passage of time. For example, a speed of 2 would advance time twice as fast.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration</td><td>The amount of time to advance, specified as <code>std::chrono::seconds</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,8 +178,11 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the current time of the mock clock. </p>
+<p>Gets the current time according to the mock clock.</p>
 <p>This function returns the current time of the mock clock as a <code>std::chrono::system_clock::time_point</code>.</p>
-<dl class="section return"><dt>Returns</dt><dd>The current time as a <code>std::chrono::system_clock::time_point</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The current time as a <code>std::chrono::system_clock::time_point</code>.</dd></dl>
+<p>This function returns the current time as a <code>std::chrono::system_clock::time_point</code>. The time is simulated and can be advanced using the <code>advanceTime</code> function.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current time represented as a <code>std::chrono::system_clock::time_point</code>. </dd></dl>
 
 </div>
 </div>
@@ -199,10 +210,18 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the mock clock with a specific speed. </p>
+<p>Initializes the mock clock with a given speed factor.</p>
 <p>The speed factor controls how fast time advances when using <code>advanceTime</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">speed</td><td>A factor by which time advances. Default value is 1. </td></tr>
+    <tr><td class="paramname">speed</td><td>A factor by which time advances. Default value is 1.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function sets the initial time to the current system time and defines the speed at which the time will advance. The speed factor is used to determine how much faster time should advance when the <code>advanceTime</code> function is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>The factor by which time should be accelerated. Default is 1 (real-time). </td></tr>
   </table>
   </dd>
 </dl>

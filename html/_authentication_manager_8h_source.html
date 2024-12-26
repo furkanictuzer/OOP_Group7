@@ -91,24 +91,25 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define AUTHENTICATIONMANAGER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;FileManager.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_authentication_manager.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_authentication_manager.html">AuthenticationManager</a></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authentication_manager.html#a13bdbdbf21f1ed0b1e0232876b55260d">tryToLogin</a>(<span class="keywordtype">string</span> username, <span class="keywordtype">string</span> password);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authentication_manager.html#affc211df78c031f1d96dbb2ba028f341">tryToRegister</a>(<span class="keywordtype">string</span> username, <span class="keywordtype">string</span> password);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Category.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_authentication_manager.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_authentication_manager.html">AuthenticationManager</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authentication_manager.html#a13bdbdbf21f1ed0b1e0232876b55260d">tryToLogin</a>(<span class="keywordtype">string</span> username, <span class="keywordtype">string</span> password);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authentication_manager.html#affc211df78c031f1d96dbb2ba028f341">tryToRegister</a>(<span class="keywordtype">string</span> username, <span class="keywordtype">string</span> password);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// AUTHENTICATIONMANAGER_H</span></div>
-<div class="ttc" id="aclass_authentication_manager_html"><div class="ttname"><a href="class_authentication_manager.html">AuthenticationManager</a></div><div class="ttdoc">This class is responsible for managing user authentication processes such as login and registration.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.h:14</div></div>
-<div class="ttc" id="aclass_authentication_manager_html_a13bdbdbf21f1ed0b1e0232876b55260d"><div class="ttname"><a href="class_authentication_manager.html#a13bdbdbf21f1ed0b1e0232876b55260d">AuthenticationManager::tryToLogin</a></div><div class="ttdeci">bool tryToLogin(string username, string password)</div><div class="ttdoc">Attempts to log in a user with the provided username and password.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.cpp:4</div></div>
-<div class="ttc" id="aclass_authentication_manager_html_affc211df78c031f1d96dbb2ba028f341"><div class="ttname"><a href="class_authentication_manager.html#affc211df78c031f1d96dbb2ba028f341">AuthenticationManager::tryToRegister</a></div><div class="ttdeci">bool tryToRegister(string username, string password)</div><div class="ttdoc">Attempts to register a new user with the provided username and password.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.cpp:21</div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// AUTHENTICATIONMANAGER_H</span></div>
+<div class="ttc" id="aclass_authentication_manager_html"><div class="ttname"><a href="class_authentication_manager.html">AuthenticationManager</a></div><div class="ttdoc">This class is responsible for managing user authentication processes such as login and registration.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.h:15</div></div>
+<div class="ttc" id="aclass_authentication_manager_html_a13bdbdbf21f1ed0b1e0232876b55260d"><div class="ttname"><a href="class_authentication_manager.html#a13bdbdbf21f1ed0b1e0232876b55260d">AuthenticationManager::tryToLogin</a></div><div class="ttdeci">bool tryToLogin(string username, string password)</div><div class="ttdoc">Attempts to log in a user with the provided username and password.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.cpp:13</div></div>
+<div class="ttc" id="aclass_authentication_manager_html_affc211df78c031f1d96dbb2ba028f341"><div class="ttname"><a href="class_authentication_manager.html#affc211df78c031f1d96dbb2ba028f341">AuthenticationManager::tryToRegister</a></div><div class="ttdeci">bool tryToRegister(string username, string password)</div><div class="ttdoc">Attempts to register a new user with the provided username and password.</div><div class="ttdef"><b>Definition</b> AuthenticationManager.cpp:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,60 +1,56 @@
-#include "UiRegisterWindow.h"
+/**
+ * @file UiRegisterWindow.h
+ * @brief Contains the implementation of the UiRegisterWindow class.
+ */
+
+#include "AuthenticationManager.h"
 #include <iostream>
 
-UiRegisterWindow::UiRegisterWindow(int width, int height,  AuthenticationManager* authenticationManager)
-    : Fl_Window(width, height, "Register Window"), authenticationManager(authenticationManager) 
-    {
-    username_input = new Fl_Input(100, 50, 150, 30, "Username:");
-    password_input = new Fl_Input(100, 100, 150, 30, "Password:");
-    password_input->type(FL_SECRET_INPUT); // Hide password input
-    
+/**
+ * @class UiRegisterWindow
+ * @brief A class representing the registration window where users can create an account.
+ * 
+ * This class manages the user interface for registering a new user, including fields for 
+ * entering a username and password, as well as buttons to register or navigate to the login page.
+ */
+class UiRegisterWindow : public Fl_Window {
+private:
+    Fl_Input* username_input; ///< Input field for the username.
+    Fl_Input* password_input; ///< Input field for the password.
+    Fl_Button* register_button; ///< Button for submitting the registration.
+    Fl_Button* login_button; ///< Button for navigating to the login window.
+    AuthenticationManager* authenticationManager; ///< Authentication manager used to handle registration.
 
-    register_button = new Fl_Button(100, 150, 150, 30, "Register");
-    register_button->callback(register_callback, (void*)this);
+public:
+    /**
+     * @brief Constructor that initializes the UiRegisterWindow and its UI components.
+     * 
+     * @param width The width of the window.
+     * @param height The height of the window.
+     * @param authenticationManager The authentication manager instance.
+     */
+    UiRegisterWindow(int width, int height, AuthenticationManager* authenticationManager);
 
-    login_button = new Fl_Button(100, 200, 250, 30, "Already have an account? Login");
-    login_button->callback(login_callback, (void*)this);
+    /**
+     * @brief Destructor that cleans up UI components.
+     */
+    ~UiRegisterWindow();
 
-    end();
-}
+    /**
+     * @brief Callback function for the register button. 
+     * Validates input and attempts to register a new user.
+     * If registration succeeds, the login window is shown.
+     * 
+     * @param widget The widget that triggered the callback.
+     * @param data The user data passed to the callback (in this case, the current window).
+     */
+    static void register_callback(Fl_Widget* widget, void* data);
 
-UiRegisterWindow::~UiRegisterWindow() {
-    delete username_input;
-    delete password_input;
-    delete register_button;
-    delete login_button;
-}
-
-void UiRegisterWindow::register_callback(Fl_Widget* widget, void* data) {
-    UiRegisterWindow* window = (UiRegisterWindow*)data;
-
-    std::string username = window->username_input->value();
-    std::string password = window->password_input->value();
-
-    if (!username.empty() && !password.empty()) {
-        if (window->authenticationManager->tryToRegister(username, password))
-        {
-            window->hide();
-
-            // Create and show the login window
-            UiLoginWindow* login_window = new UiLoginWindow(window->w(), window->h(), window->authenticationManager);
-            login_window->show();
-        }
-        else
-        {
-            fl_message("Registration failed!");
-        }
-        
-    } else {
-        fl_message("Please enter a username and password.");
-    }
-}
-
-void UiRegisterWindow::login_callback(Fl_Widget* widget, void* data) {
-    UiRegisterWindow* window = (UiRegisterWindow*)data;
-    window->hide(); // Hide the registration window
-
-    // Create and show the login window
-    UiLoginWindow* login_window = new UiLoginWindow(window->w(), window->h(), window->authenticationManager);
-    login_window->show();
-}
+    /**
+     * @brief Callback function for the login button. Navigates to the login window.
+     * 
+     * @param widget The widget that triggered the callback.
+     * @param data The user data passed to the callback (in this case, the current window).
+     */
+    static void login_callback(Fl_Widget* widget, void* data);
+};

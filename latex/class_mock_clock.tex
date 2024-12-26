@@ -36,11 +36,20 @@ void Mock\+Clock\+::advance\+Time (\begin{DoxyParamCaption}\item[{std\+::chrono\
 
 Advances the current time by a specified duration. 
 
+Advances the time by a specified duration, factoring in the speed.
+
 This function increases the mock clock\textquotesingle{}s time by the given duration, adjusted for the clock\textquotesingle{}s speed.
 
 
 \begin{DoxyParams}{Parameters}
-{\em duration} & The amount of time to advance, represented in seconds. \\
+{\em duration} & The amount of time to advance, represented in seconds.\\
+\hline
+\end{DoxyParams}
+This function increments the time by the specified duration, multiplying it by the speed factor to simulate the passage of time. For example, a speed of 2 would advance time twice as fast.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The amount of time to advance, specified as {\ttfamily std\+::chrono\+::seconds}. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_mock_clock_a4f77ff75a1632b758b616bd86755af7f}\index{MockClock@{MockClock}!getCurrentTime@{getCurrentTime}}
@@ -53,10 +62,17 @@ std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Mock\+Clock\+::get\+Curren
 
 Retrieves the current time of the mock clock. 
 
+Gets the current time according to the mock clock.
+
 This function returns the current time of the mock clock as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}.
 
 \begin{DoxyReturn}{Returns}
-The current time as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}. 
+The current time as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}.
+\end{DoxyReturn}
+This function returns the current time as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}. The time is simulated and can be advanced using the {\ttfamily advance\+Time} function.
+
+\begin{DoxyReturn}{Returns}
+The current time represented as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}. 
 \end{DoxyReturn}
 \Hypertarget{class_mock_clock_a1606898c501ea877b3b67f1264714e1e}\index{MockClock@{MockClock}!initialize@{initialize}}
 \index{initialize@{initialize}!MockClock@{MockClock}}
@@ -68,11 +84,20 @@ void Mock\+Clock\+::initialize (\begin{DoxyParamCaption}\item[{int}]{speed}{ = {
 
 Initializes the mock clock with a specific speed. 
 
+Initializes the mock clock with a given speed factor.
+
 The speed factor controls how fast time advances when using {\ttfamily advance\+Time}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em speed} & A factor by which time advances. Default value is 1. \\
+{\em speed} & A factor by which time advances. Default value is 1.\\
+\hline
+\end{DoxyParams}
+This function sets the initial time to the current system time and defines the speed at which the time will advance. The speed factor is used to determine how much faster time should advance when the {\ttfamily advance\+Time} function is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The factor by which time should be accelerated. Default is 1 (real-\/time). \\
 \hline
 \end{DoxyParams}
 

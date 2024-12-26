@@ -160,6 +160,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a new budget to the budget list. </p>
+<p>Adds a budget to the user's list of budgets.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">budget</td><td>The budget to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function adds the provided budget to the user's budget list and saves the updated data to the file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">budget</td><td>The budget to be added. </td></tr>
@@ -193,6 +201,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a new expense to the expense list. </p>
+<p>Adds an expense to the user's expenses and updates the budget.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expense</td><td>The expense to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function creates a new expense and adds it to the user's selected category. If a budget is available, it updates the spent amount of the budget. After that, the new expense is saved to the file system.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expense</td><td>The expense to be added. </td></tr>
@@ -226,7 +242,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Analyzes the expense distribution by category. </p>
-<dl class="section return"><dt>Returns</dt><dd>A map of categories and their corresponding total expense amounts. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A map of categories and their corresponding total expense amounts.</dd></dl>
+<p>This function calculates the total expenses for each category and returns a map containing the category and the corresponding total amount spent.</p>
+<dl class="section return"><dt>Returns</dt><dd>A map where keys are categories and values are the total amounts spent. </dd></dl>
 
 </div>
 </div>
@@ -254,7 +272,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates the total expenses. </p>
-<dl class="section return"><dt>Returns</dt><dd>The sum of all expenses. </dd></dl>
+<p>Calculates the total amount of expenses.</p>
+<dl class="section return"><dt>Returns</dt><dd>The sum of all expenses.</dd></dl>
+<p>This function sums up all the expenses and updates the spent amount of the current budget based on the total expenses.</p>
+<dl class="section return"><dt>Returns</dt><dd>The total amount of expenses. </dd></dl>
 
 </div>
 </div>
@@ -282,7 +303,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates the total income. </p>
-<dl class="section return"><dt>Returns</dt><dd>The sum of all income. </dd></dl>
+<p>Retrieves the total income.</p>
+<dl class="section return"><dt>Returns</dt><dd>The sum of all income.</dd></dl>
+<p>This function returns the total income, though it is currently set to return a static value.</p>
+<dl class="section return"><dt>Returns</dt><dd>The total income. </dd></dl>
 
 </div>
 </div>
@@ -314,6 +338,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Filters expenses by a specified date range. </p>
+<p>Filters expenses within a specified date range.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">startDate</td><td>The start date of the range. </td></tr>
@@ -321,7 +346,16 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the expenses within the date range. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the expenses within the date range.</dd></dl>
+<p>This function filters the expenses that fall within the given date range.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startDate</td><td>The start date of the range. </td></tr>
+    <tr><td class="paramname">endDate</td><td>The end date of the range.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the filtered expenses. </dd></dl>
 
 </div>
 </div>
@@ -349,6 +383,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves all budgets. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all budgets.</dd></dl>
+<p>This function returns the list of all budgets managed by the <code><a class="el" href="class_expense_manager.html" title="Manages expenses, budgets, and their related operations.">ExpenseManager</a></code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all budgets. </dd></dl>
 
 </div>
@@ -377,6 +413,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves all expenses. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all expenses.</dd></dl>
+<p>This function returns the list of all expenses managed by the <code><a class="el" href="class_expense_manager.html" title="Manages expenses, budgets, and their related operations.">ExpenseManager</a></code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all expenses. </dd></dl>
 
 </div>
@@ -409,6 +447,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the total expense for a specific month and year. </p>
+<p>Retrieves the total expenses for a specific month and year.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">month</td><td>The month to calculate total expenses for. </td></tr>
@@ -416,7 +455,16 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The total expense for the given month and year. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The total expense for the given month and year.</dd></dl>
+<p>This function calculates the total expenses for the given month and year.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The month for which the total expenses are to be calculated. </td></tr>
+    <tr><td class="paramname">year</td><td>The year for which the total expenses are to be calculated.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total amount spent during the specified month and year. </dd></dl>
 
 </div>
 </div>
@@ -444,6 +492,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes a budget from the budget list. </p>
+<p>Removes a budget from the list of budgets.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">budget</td><td>The budget to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function removes the specified budget from the budgets list using the <code>std::remove</code> function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">budget</td><td>The budget to be removed. </td></tr>
@@ -477,6 +533,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes an expense from the expense list. </p>
+<p>Removes an expense from the list of expenses.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expense</td><td>The expense to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function removes the specified expense from the expenses list using the <code>std::remove</code> function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expense</td><td>The expense to be removed. </td></tr>

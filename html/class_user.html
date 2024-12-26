@@ -91,7 +91,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a user of the application with associated data like username, password, categories, and budgets.  
+<p>Represents a user in the system with their account details, budget, and categories.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_user_8h_source.html">User.h</a>&gt;</code></p>
@@ -99,7 +99,64 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9c2212480bb8813a9f2d26480509a42" id="r_aa9c2212480bb8813a9f2d26480509a42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c2212480bb8813a9f2d26480509a42">User</a> (int id, const std::string &amp;name, const std::string &amp;pass, double bal)</td></tr>
-<tr class="memdesc:aa9c2212480bb8813a9f2d26480509a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object with the given parameters.  <br /></td></tr>
+<tr class="memdesc:aa9c2212480bb8813a9f2d26480509a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to initialize a <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object.  <br /></td></tr>
+<tr class="separator:aa9c2212480bb8813a9f2d26480509a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32cbeea96f119361cc7d3165ba3164d" id="r_aa32cbeea96f119361cc7d3165ba3164d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32cbeea96f119361cc7d3165ba3164d">userInfo</a> () const</td></tr>
+<tr class="memdesc:aa32cbeea96f119361cc7d3165ba3164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the user information as a string.  <br /></td></tr>
+<tr class="separator:aa32cbeea96f119361cc7d3165ba3164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eff012d6182f6829329620d8e21b124" id="r_a7eff012d6182f6829329620d8e21b124"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eff012d6182f6829329620d8e21b124">getUserName</a> () const</td></tr>
+<tr class="memdesc:a7eff012d6182f6829329620d8e21b124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the username of the user.  <br /></td></tr>
+<tr class="separator:a7eff012d6182f6829329620d8e21b124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef164db6d604f8f6880e0b4849a3db40" id="r_aef164db6d604f8f6880e0b4849a3db40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef164db6d604f8f6880e0b4849a3db40">setUsername</a> (const std::string &amp;new_username)</td></tr>
+<tr class="memdesc:aef164db6d604f8f6880e0b4849a3db40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new username for the user.  <br /></td></tr>
+<tr class="separator:aef164db6d604f8f6880e0b4849a3db40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180e5acdc4b150463652d90d54caa8fc" id="r_a180e5acdc4b150463652d90d54caa8fc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a180e5acdc4b150463652d90d54caa8fc">getPassword</a> () const</td></tr>
+<tr class="memdesc:a180e5acdc4b150463652d90d54caa8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the password of the user.  <br /></td></tr>
+<tr class="separator:a180e5acdc4b150463652d90d54caa8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4b2829988017a04d985b9534f373fc" id="r_a8e4b2829988017a04d985b9534f373fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4b2829988017a04d985b9534f373fc">setPassword</a> (const std::string &amp;new_password)</td></tr>
+<tr class="memdesc:a8e4b2829988017a04d985b9534f373fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new password for the user.  <br /></td></tr>
+<tr class="separator:a8e4b2829988017a04d985b9534f373fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d070012e614ea61a6bcb764d27bf837" id="r_a1d070012e614ea61a6bcb764d27bf837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d070012e614ea61a6bcb764d27bf837">addCategory</a> (const <a class="el" href="class_category.html">Category</a> &amp;category)</td></tr>
+<tr class="memdesc:a1d070012e614ea61a6bcb764d27bf837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new category to the user's categories.  <br /></td></tr>
+<tr class="separator:a1d070012e614ea61a6bcb764d27bf837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af630c42e2765f6dbfa78cc2074bb932b" id="r_af630c42e2765f6dbfa78cc2074bb932b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af630c42e2765f6dbfa78cc2074bb932b">removeCategory</a> (const <a class="el" href="class_category.html">Category</a> &amp;category)</td></tr>
+<tr class="memdesc:af630c42e2765f6dbfa78cc2074bb932b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a category from the user's categories.  <br /></td></tr>
+<tr class="separator:af630c42e2765f6dbfa78cc2074bb932b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6d6b84e71c2ed877ca8aa4c2435ae2" id="r_afc6d6b84e71c2ed877ca8aa4c2435ae2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc6d6b84e71c2ed877ca8aa4c2435ae2">getBalance</a> () const</td></tr>
+<tr class="memdesc:afc6d6b84e71c2ed877ca8aa4c2435ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current balance of the user.  <br /></td></tr>
+<tr class="separator:afc6d6b84e71c2ed877ca8aa4c2435ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44af1b7b8663734215e91351956cf1fa" id="r_a44af1b7b8663734215e91351956cf1fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44af1b7b8663734215e91351956cf1fa">addBudget</a> (const <a class="el" href="class_budget.html">Budget</a> &amp;budget)</td></tr>
+<tr class="memdesc:a44af1b7b8663734215e91351956cf1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new budget to the user's budgets.  <br /></td></tr>
+<tr class="separator:a44af1b7b8663734215e91351956cf1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab565f8d210f2d9559ad348ed10684c0f" id="r_ab565f8d210f2d9559ad348ed10684c0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_budget.html">Budget</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab565f8d210f2d9559ad348ed10684c0f">getCurrentBudget</a> ()</td></tr>
+<tr class="memdesc:ab565f8d210f2d9559ad348ed10684c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the most recent budget associated with the user.  <br /></td></tr>
+<tr class="separator:ab565f8d210f2d9559ad348ed10684c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a570d8c74029f14570b65471cd8d72c" id="r_a4a570d8c74029f14570b65471cd8d72c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a570d8c74029f14570b65471cd8d72c">getBudgets</a> () const</td></tr>
+<tr class="memdesc:a4a570d8c74029f14570b65471cd8d72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the budgets associated with the user.  <br /></td></tr>
+<tr class="separator:a4a570d8c74029f14570b65471cd8d72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29814365d876b0280a552becbd3edcb0" id="r_a29814365d876b0280a552becbd3edcb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29814365d876b0280a552becbd3edcb0">updateUserInfo</a> (const std::string &amp;new_username, const std::string &amp;new_password)</td></tr>
+<tr class="memdesc:a29814365d876b0280a552becbd3edcb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the user's username and password.  <br /></td></tr>
+<tr class="separator:a29814365d876b0280a552becbd3edcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5a13642ead5085710f83c0e0d053e8" id="r_a7d5a13642ead5085710f83c0e0d053e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d5a13642ead5085710f83c0e0d053e8">deleteAccount</a> ()</td></tr>
+<tr class="memdesc:a7d5a13642ead5085710f83c0e0d053e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the user's account and removes their data from the system.  <br /></td></tr>
+<tr class="separator:a7d5a13642ead5085710f83c0e0d053e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a839e8c9b3bb68858d8c206a32885d" id="r_ac5a839e8c9b3bb68858d8c206a32885d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5a839e8c9b3bb68858d8c206a32885d">getUserId</a> () const</td></tr>
+<tr class="memdesc:ac5a839e8c9b3bb68858d8c206a32885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the user ID.  <br /></td></tr>
+<tr class="separator:ac5a839e8c9b3bb68858d8c206a32885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1861223717c9bdb25a9d70519e3ec844" id="r_a1861223717c9bdb25a9d70519e3ec844"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_category.html">Category</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1861223717c9bdb25a9d70519e3ec844">getCategories</a> () const</td></tr>
+<tr class="memdesc:a1861223717c9bdb25a9d70519e3ec844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all categories associated with the user.  <br /></td></tr>
+<tr class="separator:a1861223717c9bdb25a9d70519e3ec844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffc410e3697accfbf8f561dd960283b" id="r_a8ffc410e3697accfbf8f561dd960283b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_category.html">Category</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ffc410e3697accfbf8f561dd960283b">getCategoryByName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a8ffc410e3697accfbf8f561dd960283b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a category by its name.  <br /></td></tr>
+<tr class="separator:a8ffc410e3697accfbf8f561dd960283b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f5293f357cba65ec3b852ef3e6d17c" id="r_a82f5293f357cba65ec3b852ef3e6d17c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82f5293f357cba65ec3b852ef3e6d17c">getExpenseCount</a> () const</td></tr>
+<tr class="memdesc:a82f5293f357cba65ec3b852ef3e6d17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of expenses across all categories.  <br /></td></tr>
+<tr class="separator:a82f5293f357cba65ec3b852ef3e6d17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526072163cf8458bda6c75afaa014f16" id="r_a526072163cf8458bda6c75afaa014f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a526072163cf8458bda6c75afaa014f16">getBudgetCount</a> () const</td></tr>
+<tr class="memdesc:a526072163cf8458bda6c75afaa014f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of budgets associated with the user.  <br /></td></tr>
+<tr class="separator:a526072163cf8458bda6c75afaa014f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c2212480bb8813a9f2d26480509a42" id="r_aa9c2212480bb8813a9f2d26480509a42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c2212480bb8813a9f2d26480509a42">User</a> (int id, const std::string &amp;name, const std::string &amp;pass, double bal)</td></tr>
+<tr class="memdesc:aa9c2212480bb8813a9f2d26480509a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object with the given parameters.  <br /></td></tr>
 <tr class="separator:aa9c2212480bb8813a9f2d26480509a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa32cbeea96f119361cc7d3165ba3164d" id="r_aa32cbeea96f119361cc7d3165ba3164d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32cbeea96f119361cc7d3165ba3164d">userInfo</a> () const</td></tr>
 <tr class="memdesc:aa32cbeea96f119361cc7d3165ba3164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the user information as a string.  <br /></td></tr>
@@ -128,34 +185,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a44af1b7b8663734215e91351956cf1fa" id="r_a44af1b7b8663734215e91351956cf1fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44af1b7b8663734215e91351956cf1fa">addBudget</a> (const <a class="el" href="class_budget.html">Budget</a> &amp;budget)</td></tr>
 <tr class="memdesc:a44af1b7b8663734215e91351956cf1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a budget to the user's list of budgets.  <br /></td></tr>
 <tr class="separator:a44af1b7b8663734215e91351956cf1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab565f8d210f2d9559ad348ed10684c0f" id="r_ab565f8d210f2d9559ad348ed10684c0f"><td class="memItemLeft" align="right" valign="top"><a id="ab565f8d210f2d9559ad348ed10684c0f" name="ab565f8d210f2d9559ad348ed10684c0f"></a>
-<a class="el" href="class_budget.html">Budget</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentBudget</b> ()</td></tr>
+<tr class="memitem:ab565f8d210f2d9559ad348ed10684c0f" id="r_ab565f8d210f2d9559ad348ed10684c0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_budget.html">Budget</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab565f8d210f2d9559ad348ed10684c0f">getCurrentBudget</a> ()</td></tr>
+<tr class="memdesc:ab565f8d210f2d9559ad348ed10684c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current budget of the user.  <br /></td></tr>
 <tr class="separator:ab565f8d210f2d9559ad348ed10684c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29814365d876b0280a552becbd3edcb0" id="r_a29814365d876b0280a552becbd3edcb0"><td class="memItemLeft" align="right" valign="top"><a id="a29814365d876b0280a552becbd3edcb0" name="a29814365d876b0280a552becbd3edcb0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (const std::string &amp;new_username, const std::string &amp;new_password)</td></tr>
+<tr class="memitem:a29814365d876b0280a552becbd3edcb0" id="r_a29814365d876b0280a552becbd3edcb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29814365d876b0280a552becbd3edcb0">updateUserInfo</a> (const std::string &amp;new_username, const std::string &amp;new_password)</td></tr>
+<tr class="memdesc:a29814365d876b0280a552becbd3edcb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the user's information with new username and password.  <br /></td></tr>
 <tr class="separator:a29814365d876b0280a552becbd3edcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c6eb49271a0e0583e3468901e4cdec" id="r_af5c6eb49271a0e0583e3468901e4cdec"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5c6eb49271a0e0583e3468901e4cdec">getBudgets</a> () const</td></tr>
+<tr class="memdesc:af5c6eb49271a0e0583e3468901e4cdec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of budgets associated with the user.  <br /></td></tr>
+<tr class="separator:af5c6eb49271a0e0583e3468901e4cdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5a13642ead5085710f83c0e0d053e8" id="r_a7d5a13642ead5085710f83c0e0d053e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d5a13642ead5085710f83c0e0d053e8">deleteAccount</a> ()</td></tr>
 <tr class="memdesc:a7d5a13642ead5085710f83c0e0d053e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the user's account.  <br /></td></tr>
 <tr class="separator:a7d5a13642ead5085710f83c0e0d053e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5a839e8c9b3bb68858d8c206a32885d" id="r_ac5a839e8c9b3bb68858d8c206a32885d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5a839e8c9b3bb68858d8c206a32885d">getUserId</a> () const</td></tr>
 <tr class="memdesc:ac5a839e8c9b3bb68858d8c206a32885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the unique ID of the user.  <br /></td></tr>
 <tr class="separator:ac5a839e8c9b3bb68858d8c206a32885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcca1475ba385fbbbac9c791b04ee27" id="r_a4dcca1475ba385fbbbac9c791b04ee27"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_category.html">Category</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dcca1475ba385fbbbac9c791b04ee27">getCategories</a> () const</td></tr>
-<tr class="memdesc:a4dcca1475ba385fbbbac9c791b04ee27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of categories associated with the user.  <br /></td></tr>
-<tr class="separator:a4dcca1475ba385fbbbac9c791b04ee27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1861223717c9bdb25a9d70519e3ec844" id="r_a1861223717c9bdb25a9d70519e3ec844"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_category.html">Category</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1861223717c9bdb25a9d70519e3ec844">getCategories</a> () const</td></tr>
+<tr class="memdesc:a1861223717c9bdb25a9d70519e3ec844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of categories associated with the user.  <br /></td></tr>
+<tr class="separator:a1861223717c9bdb25a9d70519e3ec844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ffc410e3697accfbf8f561dd960283b" id="r_a8ffc410e3697accfbf8f561dd960283b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_category.html">Category</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ffc410e3697accfbf8f561dd960283b">getCategoryByName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a8ffc410e3697accfbf8f561dd960283b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a category by its name.  <br /></td></tr>
 <tr class="separator:a8ffc410e3697accfbf8f561dd960283b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f5293f357cba65ec3b852ef3e6d17c" id="r_a82f5293f357cba65ec3b852ef3e6d17c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82f5293f357cba65ec3b852ef3e6d17c">getExpenseCount</a> () const</td></tr>
 <tr class="memdesc:a82f5293f357cba65ec3b852ef3e6d17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of expenses in the user's categories.  <br /></td></tr>
 <tr class="separator:a82f5293f357cba65ec3b852ef3e6d17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526072163cf8458bda6c75afaa014f16" id="r_a526072163cf8458bda6c75afaa014f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a526072163cf8458bda6c75afaa014f16">getBudgetCount</a> () const</td></tr>
+<tr class="memdesc:a526072163cf8458bda6c75afaa014f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of budgets associated with the user.  <br /></td></tr>
+<tr class="separator:a526072163cf8458bda6c75afaa014f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a user of the application with associated data like username, password, categories, and budgets. </p>
-<p>The <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> class is responsible for storing and managing user information, including their username, password, categories, budgets, and balance. It also provides functions to update user information, add or remove categories, and handle the user's finances. </p>
+<div class="textblock"><p>Represents a user in the system with their account details, budget, and categories. </p>
+<p>Represents a user of the application with associated data like username, password, categories, and budgets.</p>
+<p>The <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> class is responsible for storing and managing user information, including their username, password, categories, budgets, and balance. It also provides functions to update user information, add or remove categories, and handle the user's finances. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9c2212480bb8813a9f2d26480509a42" name="aa9c2212480bb8813a9f2d26480509a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9c2212480bb8813a9f2d26480509a42">&#9670;&#160;</a></span>User()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c2212480bb8813a9f2d26480509a42">&#9670;&#160;</a></span>User() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +247,49 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object with the given parameters. </p>
+<p>Constructor to initialize a <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The unique user ID. </td></tr>
+    <tr><td class="paramname">name</td><td>The username of the user. </td></tr>
+    <tr><td class="paramname">pass</td><td>The password of the user. </td></tr>
+    <tr><td class="paramname">bal</td><td>The initial balance of the user. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9c2212480bb8813a9f2d26480509a42" name="aa9c2212480bb8813a9f2d26480509a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c2212480bb8813a9f2d26480509a42">&#9670;&#160;</a></span>User() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">User::User </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>bal</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object with the given parameters. </p>
 <p>Initializes the user with a unique ID, username, password, and balance.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -199,7 +305,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a44af1b7b8663734215e91351956cf1fa" name="a44af1b7b8663734215e91351956cf1fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44af1b7b8663734215e91351956cf1fa">&#9670;&#160;</a></span>addBudget()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a44af1b7b8663734215e91351956cf1fa">&#9670;&#160;</a></span>addBudget() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::addBudget </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_budget.html">Budget</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>budget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a new budget to the user's budgets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">budget</td><td>The budget to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a44af1b7b8663734215e91351956cf1fa" name="a44af1b7b8663734215e91351956cf1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44af1b7b8663734215e91351956cf1fa">&#9670;&#160;</a></span>addBudget() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +356,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a1d070012e614ea61a6bcb764d27bf837" name="a1d070012e614ea61a6bcb764d27bf837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d070012e614ea61a6bcb764d27bf837">&#9670;&#160;</a></span>addCategory()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d070012e614ea61a6bcb764d27bf837">&#9670;&#160;</a></span>addCategory() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::addCategory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_category.html">Category</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a new category to the user's categories. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>The category to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d070012e614ea61a6bcb764d27bf837" name="a1d070012e614ea61a6bcb764d27bf837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d070012e614ea61a6bcb764d27bf837">&#9670;&#160;</a></span>addCategory() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +407,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a7d5a13642ead5085710f83c0e0d053e8" name="a7d5a13642ead5085710f83c0e0d053e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d5a13642ead5085710f83c0e0d053e8">&#9670;&#160;</a></span>deleteAccount()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5a13642ead5085710f83c0e0d053e8">&#9670;&#160;</a></span>deleteAccount() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool User::deleteAccount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deletes the user's account and removes their data from the system. </p>
+<p>This function clears the user's categories and budgets and deletes their data from the user data file.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the account was successfully deleted, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a7d5a13642ead5085710f83c0e0d053e8" name="a7d5a13642ead5085710f83c0e0d053e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5a13642ead5085710f83c0e0d053e8">&#9670;&#160;</a></span>deleteAccount() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +449,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="afc6d6b84e71c2ed877ca8aa4c2435ae2" name="afc6d6b84e71c2ed877ca8aa4c2435ae2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc6d6b84e71c2ed877ca8aa4c2435ae2">&#9670;&#160;</a></span>getBalance()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6d6b84e71c2ed877ca8aa4c2435ae2">&#9670;&#160;</a></span>getBalance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double User::getBalance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current balance of the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The balance of the user. </dd></dl>
+
+</div>
+</div>
+<a id="afc6d6b84e71c2ed877ca8aa4c2435ae2" name="afc6d6b84e71c2ed877ca8aa4c2435ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6d6b84e71c2ed877ca8aa4c2435ae2">&#9670;&#160;</a></span>getBalance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,14 +488,115 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 
 </div>
 </div>
-<a id="a4dcca1475ba385fbbbac9c791b04ee27" name="a4dcca1475ba385fbbbac9c791b04ee27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dcca1475ba385fbbbac9c791b04ee27">&#9670;&#160;</a></span>getCategories()</h2>
+<a id="a526072163cf8458bda6c75afaa014f16" name="a526072163cf8458bda6c75afaa014f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526072163cf8458bda6c75afaa014f16">&#9670;&#160;</a></span>getBudgetCount() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="class_category.html">Category</a> &gt; User::getCategories </td>
+          <td class="memname">int User::getBudgetCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the total number of budgets associated with the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total number of budgets. </dd></dl>
+
+</div>
+</div>
+<a id="a526072163cf8458bda6c75afaa014f16" name="a526072163cf8458bda6c75afaa014f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526072163cf8458bda6c75afaa014f16">&#9670;&#160;</a></span>getBudgetCount() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int User::getBudgetCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the number of budgets associated with the user. </p>
+<p>This function returns the total number of budgets set by the user.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of budgets for the user. </dd></dl>
+
+</div>
+</div>
+<a id="a4a570d8c74029f14570b65471cd8d72c" name="a4a570d8c74029f14570b65471cd8d72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a570d8c74029f14570b65471cd8d72c">&#9670;&#160;</a></span>getBudgets() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt; User::getBudgets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all the budgets associated with the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all budgets associated with the user. </dd></dl>
+
+</div>
+</div>
+<a id="af5c6eb49271a0e0583e3468901e4cdec" name="af5c6eb49271a0e0583e3468901e4cdec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c6eb49271a0e0583e3468901e4cdec">&#9670;&#160;</a></span>getBudgets() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt; User::getBudgets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the list of budgets associated with the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of budgets associated with the user. </dd></dl>
+
+</div>
+</div>
+<a id="a1861223717c9bdb25a9d70519e3ec844" name="a1861223717c9bdb25a9d70519e3ec844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1861223717c9bdb25a9d70519e3ec844">&#9670;&#160;</a></span>getCategories() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_category.html">Category</a> &gt; User::getCategories </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all categories associated with the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing all categories associated with the user. </dd></dl>
+
+</div>
+</div>
+<a id="a1861223717c9bdb25a9d70519e3ec844" name="a1861223717c9bdb25a9d70519e3ec844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1861223717c9bdb25a9d70519e3ec844">&#9670;&#160;</a></span>getCategories() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_category.html">Category</a> &gt; User::getCategories </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -312,7 +610,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a8ffc410e3697accfbf8f561dd960283b" name="a8ffc410e3697accfbf8f561dd960283b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ffc410e3697accfbf8f561dd960283b">&#9670;&#160;</a></span>getCategoryByName()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffc410e3697accfbf8f561dd960283b">&#9670;&#160;</a></span>getCategoryByName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_category.html">Category</a> * User::getCategoryByName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a category by its name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the category. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the category if found. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the category is not found. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ffc410e3697accfbf8f561dd960283b" name="a8ffc410e3697accfbf8f561dd960283b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffc410e3697accfbf8f561dd960283b">&#9670;&#160;</a></span>getCategoryByName() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,8 +668,69 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 
 </div>
 </div>
+<a id="ab565f8d210f2d9559ad348ed10684c0f" name="ab565f8d210f2d9559ad348ed10684c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab565f8d210f2d9559ad348ed10684c0f">&#9670;&#160;</a></span>getCurrentBudget() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_budget.html">Budget</a> &amp; User::getCurrentBudget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the most recent budget associated with the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The most recent budget. </dd></dl>
+
+</div>
+</div>
+<a id="ab565f8d210f2d9559ad348ed10684c0f" name="ab565f8d210f2d9559ad348ed10684c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab565f8d210f2d9559ad348ed10684c0f">&#9670;&#160;</a></span>getCurrentBudget() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_budget.html">Budget</a> &amp; User::getCurrentBudget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the current budget of the user. </p>
+<p>This function returns the most recent budget added by the user.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current budget of the user. </dd></dl>
+
+</div>
+</div>
 <a id="a82f5293f357cba65ec3b852ef3e6d17c" name="a82f5293f357cba65ec3b852ef3e6d17c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82f5293f357cba65ec3b852ef3e6d17c">&#9670;&#160;</a></span>getExpenseCount()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f5293f357cba65ec3b852ef3e6d17c">&#9670;&#160;</a></span>getExpenseCount() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int User::getExpenseCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the total number of expenses across all categories. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total number of expenses. </dd></dl>
+
+</div>
+</div>
+<a id="a82f5293f357cba65ec3b852ef3e6d17c" name="a82f5293f357cba65ec3b852ef3e6d17c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f5293f357cba65ec3b852ef3e6d17c">&#9670;&#160;</a></span>getExpenseCount() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +751,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a180e5acdc4b150463652d90d54caa8fc" name="a180e5acdc4b150463652d90d54caa8fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a180e5acdc4b150463652d90d54caa8fc">&#9670;&#160;</a></span>getPassword()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a180e5acdc4b150463652d90d54caa8fc">&#9670;&#160;</a></span>getPassword() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string User::getPassword </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the password of the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The password of the user. </dd></dl>
+
+</div>
+</div>
+<a id="a180e5acdc4b150463652d90d54caa8fc" name="a180e5acdc4b150463652d90d54caa8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180e5acdc4b150463652d90d54caa8fc">&#9670;&#160;</a></span>getPassword() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +791,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="ac5a839e8c9b3bb68858d8c206a32885d" name="ac5a839e8c9b3bb68858d8c206a32885d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a839e8c9b3bb68858d8c206a32885d">&#9670;&#160;</a></span>getUserId()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a839e8c9b3bb68858d8c206a32885d">&#9670;&#160;</a></span>getUserId() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int User::getUserId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the user ID. </p>
+<dl class="section return"><dt>Returns</dt><dd>The user ID. </dd></dl>
+
+</div>
+</div>
+<a id="ac5a839e8c9b3bb68858d8c206a32885d" name="ac5a839e8c9b3bb68858d8c206a32885d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a839e8c9b3bb68858d8c206a32885d">&#9670;&#160;</a></span>getUserId() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,7 +831,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a7eff012d6182f6829329620d8e21b124" name="a7eff012d6182f6829329620d8e21b124"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7eff012d6182f6829329620d8e21b124">&#9670;&#160;</a></span>getUserName()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eff012d6182f6829329620d8e21b124">&#9670;&#160;</a></span>getUserName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string User::getUserName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the username of the user. </p>
+<dl class="section return"><dt>Returns</dt><dd>The username of the user. </dd></dl>
+
+</div>
+</div>
+<a id="a7eff012d6182f6829329620d8e21b124" name="a7eff012d6182f6829329620d8e21b124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eff012d6182f6829329620d8e21b124">&#9670;&#160;</a></span>getUserName() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +871,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="af630c42e2765f6dbfa78cc2074bb932b" name="af630c42e2765f6dbfa78cc2074bb932b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af630c42e2765f6dbfa78cc2074bb932b">&#9670;&#160;</a></span>removeCategory()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af630c42e2765f6dbfa78cc2074bb932b">&#9670;&#160;</a></span>removeCategory() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::removeCategory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_category.html">Category</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a category from the user's categories. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>The category to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af630c42e2765f6dbfa78cc2074bb932b" name="af630c42e2765f6dbfa78cc2074bb932b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af630c42e2765f6dbfa78cc2074bb932b">&#9670;&#160;</a></span>removeCategory() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +922,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="a8e4b2829988017a04d985b9534f373fc" name="a8e4b2829988017a04d985b9534f373fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e4b2829988017a04d985b9534f373fc">&#9670;&#160;</a></span>setPassword()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4b2829988017a04d985b9534f373fc">&#9670;&#160;</a></span>setPassword() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::setPassword </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_password</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a new password for the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_password</td><td>The new password to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e4b2829988017a04d985b9534f373fc" name="a8e4b2829988017a04d985b9534f373fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4b2829988017a04d985b9534f373fc">&#9670;&#160;</a></span>setPassword() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +973,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <a id="aef164db6d604f8f6880e0b4849a3db40" name="aef164db6d604f8f6880e0b4849a3db40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef164db6d604f8f6880e0b4849a3db40">&#9670;&#160;</a></span>setUsername()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aef164db6d604f8f6880e0b4849a3db40">&#9670;&#160;</a></span>setUsername() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::setUsername </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a new username for the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_username</td><td>The new username to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef164db6d604f8f6880e0b4849a3db40" name="aef164db6d604f8f6880e0b4849a3db40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef164db6d604f8f6880e0b4849a3db40">&#9670;&#160;</a></span>setUsername() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -497,8 +1023,89 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 
 </div>
 </div>
+<a id="a29814365d876b0280a552becbd3edcb0" name="a29814365d876b0280a552becbd3edcb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29814365d876b0280a552becbd3edcb0">&#9670;&#160;</a></span>updateUserInfo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::updateUserInfo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the user's username and password. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_username</td><td>The new username to set. </td></tr>
+    <tr><td class="paramname">new_password</td><td>The new password to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29814365d876b0280a552becbd3edcb0" name="a29814365d876b0280a552becbd3edcb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29814365d876b0280a552becbd3edcb0">&#9670;&#160;</a></span>updateUserInfo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::updateUserInfo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>new_password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the user's information with new username and password. </p>
+<p>This function updates the user's username and password with the provided new values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_username</td><td>The new username to be set for the user. </td></tr>
+    <tr><td class="paramname">new_password</td><td>The new password to be set for the user. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa32cbeea96f119361cc7d3165ba3164d" name="aa32cbeea96f119361cc7d3165ba3164d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa32cbeea96f119361cc7d3165ba3164d">&#9670;&#160;</a></span>userInfo()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32cbeea96f119361cc7d3165ba3164d">&#9670;&#160;</a></span>userInfo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string User::userInfo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the user information as a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the user ID, username, and balance. </dd></dl>
+
+</div>
+</div>
+<a id="aa32cbeea96f119361cc7d3165ba3164d" name="aa32cbeea96f119361cc7d3165ba3164d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32cbeea96f119361cc7d3165ba3164d">&#9670;&#160;</a></span>userInfo() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,8 +1126,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserInfo</b> (c
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_user_8h_source.html">User.h</a></li>
 <li><b>User.cpp</b></li>
+<li><a class="el" href="_user_8h_source.html">User.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

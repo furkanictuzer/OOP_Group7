@@ -22,7 +22,7 @@ static bool \mbox{\hyperlink{class_file_manager_a505f231f0afc87aca966f3d5a412a57
 \begin{DoxyCompactList}\small\item\em Checks if a user exists by username. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_user}{User}} \& \mbox{\hyperlink{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}{get\+Main\+User}} ()
 \begin{DoxyCompactList}\small\item\em Retrieves the main user. \end{DoxyCompactList}\item 
-static string \mbox{\hyperlink{class_file_manager_aef716e735f4409600e25ba8ee3358047}{get\+Main\+User\+Pawword}} ()
+static string \mbox{\hyperlink{class_file_manager_a87c7fa4bee479acba09eb16c00d059c8}{get\+Main\+User\+Pawword}} ()
 \begin{DoxyCompactList}\small\item\em Retrieves the main user\textquotesingle{}s password. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_file_manager_a5dfe235276f68baff708222aac4766c4}{set\+Main\+User}} (const \mbox{\hyperlink{class_user}{User}} \&user)
 \begin{DoxyCompactList}\small\item\em Sets the main user. \end{DoxyCompactList}\item 
@@ -46,7 +46,11 @@ void File\+Manager\+::delete\+All\+User (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 Deletes all users. 
 
-This function deletes all user data from the file. \Hypertarget{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}\index{FileManager@{FileManager}!deleteUser@{deleteUser}}
+Deletes all user data from the file.
+
+This function deletes all user data from the file.
+
+This function clears the contents of the {\ttfamily user\+\_\+data.\+json} file by writing an empty JSON array. \Hypertarget{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}\index{FileManager@{FileManager}!deleteUser@{deleteUser}}
 \index{deleteUser@{deleteUser}!FileManager@{FileManager}}
 \doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
 {\footnotesize\ttfamily \label{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4} 
@@ -56,11 +60,20 @@ void File\+Manager\+::delete\+User (\begin{DoxyParamCaption}\item[{const std\+::
 
 Deletes a user by username. 
 
+Deletes a specific user from the file.
+
 This function deletes the user with the specified username from the data file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & The username of the user to delete. \\
+{\em username} & The username of the user to delete.\\
+\hline
+\end{DoxyParams}
+This function removes the user with the specified username from the {\ttfamily user\+\_\+data.\+json} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to be deleted. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_file_manager_a505f231f0afc87aca966f3d5a412a573}\index{FileManager@{FileManager}!doesUserExist@{doesUserExist}}
@@ -73,6 +86,8 @@ bool File\+Manager\+::does\+User\+Exist (\begin{DoxyParamCaption}\item[{const st
 
 Checks if a user exists by username. 
 
+Checks if a user exists in the file.
+
 This function checks if a user with the given username already exists in the file.
 
 
@@ -81,7 +96,19 @@ This function checks if a user with the given username already exists in the fil
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the user exists, false otherwise. 
+true if the user exists, false otherwise.
+\end{DoxyReturn}
+This function checks if the user with the specified username exists in the {\ttfamily user\+\_\+data.\+json} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the user exists. 
+
+false If the user does not exist. 
 \end{DoxyReturn}
 \Hypertarget{class_file_manager_a479d19a6a2b719af31a91f72c6f14830}\index{FileManager@{FileManager}!fileExists@{fileExists}}
 \index{fileExists@{fileExists}!FileManager@{FileManager}}
@@ -93,8 +120,17 @@ bool File\+Manager\+::file\+Exists (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 
 Checks if the data file exists. 
 
+Checks if the file containing user data exists.
+
 \begin{DoxyReturn}{Returns}
-true if the file exists, false otherwise. 
+true if the file exists, false otherwise.
+\end{DoxyReturn}
+This function checks whether the {\ttfamily user\+\_\+data.\+json} file exists.
+
+\begin{DoxyReturn}{Returns}
+true If the file exists. 
+
+false If the file does not exist. 
 \end{DoxyReturn}
 \Hypertarget{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}\index{FileManager@{FileManager}!getMainUser@{getMainUser}}
 \index{getMainUser@{getMainUser}!FileManager@{FileManager}}
@@ -106,21 +142,35 @@ true if the file exists, false otherwise.
 
 Retrieves the main user. 
 
+Retrieves the main user object.
+
 \begin{DoxyReturn}{Returns}
-A reference to the main \doxylink{class_user}{User} object. 
+A reference to the main \doxylink{class_user}{User} object.
 \end{DoxyReturn}
-\Hypertarget{class_file_manager_aef716e735f4409600e25ba8ee3358047}\index{FileManager@{FileManager}!getMainUserPawword@{getMainUserPawword}}
+This function returns the main user object.
+
+\begin{DoxyReturn}{Returns}
+The main \doxylink{class_user}{User} object. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_a87c7fa4bee479acba09eb16c00d059c8}\index{FileManager@{FileManager}!getMainUserPawword@{getMainUserPawword}}
 \index{getMainUserPawword@{getMainUserPawword}!FileManager@{FileManager}}
 \doxysubsubsection{\texorpdfstring{getMainUserPawword()}{getMainUserPawword()}}
-{\footnotesize\ttfamily \label{class_file_manager_aef716e735f4409600e25ba8ee3358047} 
-string File\+Manager\+::get\+Main\+User\+Pawword (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_file_manager_a87c7fa4bee479acba09eb16c00d059c8} 
+std\+::string File\+Manager\+::get\+Main\+User\+Pawword (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Retrieves the main user\textquotesingle{}s password. 
 
+Retrieves the password of the main user.
+
 \begin{DoxyReturn}{Returns}
-The main user\textquotesingle{}s password as a string. 
+The main user\textquotesingle{}s password as a string.
+\end{DoxyReturn}
+This function retrieves the password of the main user from the data file.
+
+\begin{DoxyReturn}{Returns}
+The password of the main user. 
 \end{DoxyReturn}
 \Hypertarget{class_file_manager_ae1d2246fa9f0b887690412ef0701d875}\index{FileManager@{FileManager}!loadDataFromFile@{loadDataFromFile}}
 \index{loadDataFromFile@{loadDataFromFile}!FileManager@{FileManager}}
@@ -132,10 +182,19 @@ bool File\+Manager\+::load\+Data\+From\+File (\begin{DoxyParamCaption}{}{}\end{D
 
 Loads user data from a file. 
 
+Loads the user data from a file.
+
 This function deserializes data from the file and loads it into memory.
 
 \begin{DoxyReturn}{Returns}
-true if the data was successfully loaded, false otherwise. 
+true if the data was successfully loaded, false otherwise.
+\end{DoxyReturn}
+This function reads the user data, including categories, expenses, and budgets, from a JSON file and loads it into the main user object.
+
+\begin{DoxyReturn}{Returns}
+true If data is successfully loaded from the file. 
+
+false If there is an error loading the data. 
 \end{DoxyReturn}
 \Hypertarget{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6}\index{FileManager@{FileManager}!saveDataToFile@{saveDataToFile}}
 \index{saveDataToFile@{saveDataToFile}!FileManager@{FileManager}}
@@ -151,10 +210,17 @@ This function serializes the user object and saves it to a file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em user} & A pointer to the \doxylink{class_user}{User} object whose data needs to be saved. \\
+{\em user} & A pointer to the \doxylink{class_user}{User} object whose data needs to be saved.\\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_file_manager_a5dfe235276f68baff708222aac4766c4}\index{FileManager@{FileManager}!setMainUser@{setMainUser}}
+This function writes the user information, including categories, expenses, and budgets, to a JSON file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & A pointer to the \doxylink{class_user}{User} object whose data will be saved. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Write the formatted JSON data to the file\Hypertarget{class_file_manager_a5dfe235276f68baff708222aac4766c4}\index{FileManager@{FileManager}!setMainUser@{setMainUser}}
 \index{setMainUser@{setMainUser}!FileManager@{FileManager}}
 \doxysubsubsection{\texorpdfstring{setMainUser()}{setMainUser()}}
 {\footnotesize\ttfamily \label{class_file_manager_a5dfe235276f68baff708222aac4766c4} 
@@ -164,11 +230,20 @@ void File\+Manager\+::set\+Main\+User (\begin{DoxyParamCaption}\item[{const \mbo
 
 Sets the main user. 
 
+Sets the main user object.
+
 This function sets the provided \doxylink{class_user}{User} object as the main user.
 
 
 \begin{DoxyParams}{Parameters}
-{\em user} & The \doxylink{class_user}{User} object to set as the main user. \\
+{\em user} & The \doxylink{class_user}{User} object to set as the main user.\\
+\hline
+\end{DoxyParams}
+This function sets the main user object to the specified user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The \doxylink{class_user}{User} object to be set as the main user. \\
 \hline
 \end{DoxyParams}
 

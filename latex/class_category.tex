@@ -44,6 +44,8 @@ Category\+::\+Category (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{
 
 Constructor that initializes a category with a given name. 
 
+Constructs a \doxylink{class_category}{Category} with a given name.
+
 
 \begin{DoxyParams}{Parameters}
 {\em name} & The name of the category. \\
@@ -66,7 +68,9 @@ This function adds a given expense to the category\textquotesingle{}s list of ex
 
 
 \begin{DoxyParams}{Parameters}
-{\em expense} & The expense to add to the category. \\
+{\em expense} & The expense to add to the category.\\
+\hline
+{\em expense} & A pointer to the \doxylink{class_expense}{Expense} object to be added. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_category_a030119bee9d9906b4c33fc06238752fc}\index{Category@{Category}!getCategoryName@{getCategoryName}}
@@ -80,7 +84,9 @@ std\+::string Category\+::get\+Category\+Name (\begin{DoxyParamCaption}{}{}\end{
 Gets the name of the category. 
 
 \begin{DoxyReturn}{Returns}
-The name of the category. 
+The name of the category.
+
+The name of the category as a string. 
 \end{DoxyReturn}
 \Hypertarget{class_category_a15eed586ecd8d329015031603fc969b7}\index{Category@{Category}!getExpenseCount@{getExpenseCount}}
 \index{getExpenseCount@{getExpenseCount}!Category@{Category}}
@@ -92,8 +98,12 @@ int Category\+::get\+Expense\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamC
 
 Gets the total number of expenses in this category. 
 
+Gets the total number of expenses in the category.
+
 \begin{DoxyReturn}{Returns}
-The number of expenses in the category. 
+The number of expenses in the category.
+
+The number of expenses as an integer. 
 \end{DoxyReturn}
 \Hypertarget{class_category_ab539b7bc7b7ff931b67385516e3bbfe0}\index{Category@{Category}!getExpenses@{getExpenses}}
 \index{getExpenses@{getExpenses}!Category@{Category}}
@@ -105,8 +115,12 @@ const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring
 
 Gets the list of expenses in this category. 
 
+Gets all the expenses associated with the category.
+
 \begin{DoxyReturn}{Returns}
-A constant reference to the list of expenses. 
+A constant reference to the list of expenses.
+
+A constant reference to a vector of \doxylink{class_expense}{Expense} pointers. 
 \end{DoxyReturn}
 \Hypertarget{class_category_a75700d56785f3193d38b7d9fd3a834bf}\index{Category@{Category}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Category@{Category}}
@@ -142,22 +156,28 @@ This function removes a given expense from the category\textquotesingle{}s list 
 
 
 \begin{DoxyParams}{Parameters}
-{\em expense} & The expense to remove from the category. \\
+{\em expense} & The expense to remove from the category.\\
+\hline
+{\em expense} & A pointer to the \doxylink{class_expense}{Expense} object to be removed. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_category_a0f9698ed547b2698d1106a677df3930a}\index{Category@{Category}!setCategoryName@{setCategoryName}}
 \index{setCategoryName@{setCategoryName}!Category@{Category}}
 \doxysubsubsection{\texorpdfstring{setCategoryName()}{setCategoryName()}}
 {\footnotesize\ttfamily \label{class_category_a0f9698ed547b2698d1106a677df3930a} 
-void Category\+::set\+Category\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+void Category\+::set\+Category\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Name}{}\end{DoxyParamCaption})}
 
 
 
 Sets the name of the category. 
 
+Sets a new name for the category.
+
 
 \begin{DoxyParams}{Parameters}
-{\em name} & The new name for the category. \\
+{\em name} & The new name for the category.\\
+\hline
+{\em new\+Name} & The new name of the category. \\
 \hline
 \end{DoxyParams}
 

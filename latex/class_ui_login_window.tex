@@ -2,7 +2,7 @@
 \hypertarget{class_ui_login_window}{}\label{class_ui_login_window}\index{UiLoginWindow@{UiLoginWindow}}
 
 
-A window for user login functionality.  
+A window for logging in users.  
 
 
 
@@ -18,13 +18,16 @@ Inherits Fl\+\_\+\+Window.
 \item 
 \mbox{\hyperlink{class_ui_login_window_a09e176d3f48213c22c22f0260127fe10}{Ui\+Login\+Window}} (int width, int height, \mbox{\hyperlink{class_authentication_manager}{Authentication\+Manager}} \texorpdfstring{$\ast$}{*}authentication\+Manager)
 \begin{DoxyCompactList}\small\item\em Constructs the login window. \end{DoxyCompactList}\item 
-\Hypertarget{class_ui_login_window_a3996b10ab799d9cab66dda6170b3fcc6}\label{class_ui_login_window_a3996b10ab799d9cab66dda6170b3fcc6} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ui\+Login\+Window} ()
+\mbox{\hyperlink{class_ui_login_window_a3996b10ab799d9cab66dda6170b3fcc6}{\texorpdfstring{$\sim$}{\string~}\+Ui\+Login\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A window for user login functionality. 
+A window for logging in users. 
+
+A window for user login functionality.
+
+This class provides the login functionality for the application. Users can input their username and password to authenticate themselves using the provided \doxylink{class_authentication_manager}{Authentication\+Manager}.
 
 This class provides the user interface for logging in. It includes text input fields for the username and password, as well as buttons for submitting the login information and navigating to the registration window. The class interacts with the \doxylink{class_authentication_manager}{Authentication\+Manager} to validate the login credentials. 
 
@@ -50,7 +53,19 @@ Initializes the login window with appropriate size and sets up the widgets for e
 {\em authentication\+Manager} & The manager responsible for authentication. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_ui_login_window_a3996b10ab799d9cab66dda6170b3fcc6}\index{UiLoginWindow@{UiLoginWindow}!````~UiLoginWindow@{\texorpdfstring{$\sim$}{\string~}UiLoginWindow}}
+\index{````~UiLoginWindow@{\texorpdfstring{$\sim$}{\string~}UiLoginWindow}!UiLoginWindow@{UiLoginWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UiLoginWindow()}{\string~UiLoginWindow()}}
+{\footnotesize\ttfamily \label{class_ui_login_window_a3996b10ab799d9cab66dda6170b3fcc6} 
+Ui\+Login\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Ui\+Login\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Destructor for cleaning up resources. 
+
+Destructor for \doxylink{class_ui_login_window}{Ui\+Login\+Window}.
+
+This destructor cleans up the allocated resources for the login window. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

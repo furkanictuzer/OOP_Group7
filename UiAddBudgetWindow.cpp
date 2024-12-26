@@ -1,3 +1,7 @@
+/**
+ * @brief Implementation of the UI for adding a budget.
+ */
+
 #include "UiAddBudgetWindow.h"
 #include "DateUtils.h"
 #include "FileManager.h"
@@ -5,6 +9,15 @@
 #include <iomanip>
 #include <iostream>
 
+/**
+ * @brief Constructor for the UiAddBudgetWindow class.
+ * 
+ * Initializes the UI elements and sets up the layout.
+ * Also populates date selection choices.
+ * 
+ * @param width Width of the window.
+ * @param height Height of the window.
+ */
 UiAddBudgetWindow::UiAddBudgetWindow(int width, int height)
     : Fl_Window(width, height, "Add Budget Window") 
 {
@@ -31,6 +44,11 @@ UiAddBudgetWindow::UiAddBudgetWindow(int width, int height)
     end();
 }
 
+/**
+ * @brief Destructor for the UiAddBudgetWindow class.
+ * 
+ * Cleans up the allocated resources for all UI elements.
+ */
 UiAddBudgetWindow::~UiAddBudgetWindow()
 {
     delete nameInput;
@@ -44,6 +62,9 @@ UiAddBudgetWindow::~UiAddBudgetWindow()
     delete cancelButton;
 }
 
+/**
+ * @brief Populates the date choice dropdowns with day, month, and year values.
+ */
 void UiAddBudgetWindow::populateDateChoices() {
     for (int i = 1; i <= 31; ++i) {
         dayChoiceStart->add(std::to_string(i).c_str());
@@ -71,6 +92,15 @@ void UiAddBudgetWindow::populateDateChoices() {
     }
 }
 
+/**
+ * @brief Callback function to handle the "Add" button click event.
+ * 
+ * Validates the input fields, converts the data to appropriate types,
+ * and adds the budget to the system. If successful, a success message is shown.
+ * 
+ * @param widget The FLTK widget triggering the callback.
+ * @param data The data passed with the callback, in this case, the current window.
+ */
 void UiAddBudgetWindow::add_callback(Fl_Widget* widget, void* data) {
     UiAddBudgetWindow* window = (UiAddBudgetWindow*)data;
 
@@ -130,6 +160,14 @@ void UiAddBudgetWindow::add_callback(Fl_Widget* widget, void* data) {
     budget_window->show();
 }
 
+/**
+ * @brief Callback function to handle the "Cancel" button click event.
+ * 
+ * Hides the current window and opens the main budget window.
+ * 
+ * @param widget The FLTK widget triggering the callback.
+ * @param data The data passed with the callback, in this case, the current window.
+ */
 void UiAddBudgetWindow::cancel_callback(Fl_Widget* widget, void* data) {
     UiAddBudgetWindow* window = (UiAddBudgetWindow*)data;
     window->hide();

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialize_0',['initialize',['../class_mock_clock.html#a1606898c501ea877b3b67f1264714e1e',1,'MockClock']]]
+  ['hasnotificationfordate_0',['hasNotificationForDate',['../class_notification_manager.html#a7e8820540004ec7182682cc160dca0f4',1,'NotificationManager']]]
 ];

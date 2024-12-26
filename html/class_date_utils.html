@@ -132,6 +132,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Converts a string representation of a time to a time_point. </p>
+<p>Converts a date string to a std::chrono::system_clock::time_point.</p>
 <p>This function parses a time string (in a specific format) and converts it to a <code>std::chrono::system_clock::time_point</code> object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -139,7 +140,21 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code>std::chrono::system_clock::time_point</code> object representing the parsed time. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code>std::chrono::system_clock::time_point</code> object representing the parsed time.</dd></dl>
+<p>The input string must follow the format "YYYY-MM-DD". If the conversion fails, an exception is thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeStr</td><td>The date string in "YYYY-MM-DD" format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::chrono::system_clock::time_point representing the date. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if parsing or conversion fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -167,6 +182,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Converts a time_point to a string representation. </p>
+<p>Converts a std::chrono::system_clock::time_point to a string.</p>
 <p>This function converts a <code>std::chrono::system_clock::time_point</code> to a string in a readable format.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -174,7 +190,15 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A string representation of the given time point. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representation of the given time point.</dd></dl>
+<p>The output string follows the format "YYYY-MM-DD".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timePoint</td><td>The time point to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representation of the time point in "YYYY-MM-DD" format. </dd></dl>
 
 </div>
 </div>

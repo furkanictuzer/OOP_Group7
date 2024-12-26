@@ -12,7 +12,7 @@ This class represents a budget, including its attributes and methods to manage t
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_budget_a2e4d66cfdbf19a8b98ab322426109744}{Budget}} (string name, double amount, string date, string end\+Date, string source)
+\mbox{\hyperlink{class_budget_a9f09bbce30869059ae800ccdd2787d4f}{Budget}} (int id, string name, double amount, double spent\+Amount, std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point date, std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point end\+Date, string source)
 \begin{DoxyCompactList}\small\item\em Constructor that initializes a new budget with given details. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_budget_af66529bdeff75da4d0b8ed6a2924a6f2}{get\+Name}} () const
 \begin{DoxyCompactList}\small\item\em Gets the name of the budget. \end{DoxyCompactList}\item 
@@ -26,8 +26,12 @@ double \mbox{\hyperlink{class_budget_aa16ed5aff7c16fdb53443e9c8c377423}{get\+Spe
 \begin{DoxyCompactList}\small\item\em Gets the total amount spent from the budget. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_budget_ad3b30193fd4d9bdf61275a02ba31d5ca}{set\+Source\+Details}} (string new\+Source)
 \begin{DoxyCompactList}\small\item\em Sets the source details for the budget. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_budget_af868601326fe0df1a0b5645d6ec0235c}{get\+Sourcet\+Details}} () const
+string \mbox{\hyperlink{class_budget_a45ad50cfabc5fc3b61ef9b8f2b9e43d6}{get\+Source\+Details}} () const
 \begin{DoxyCompactList}\small\item\em Gets the source details of the budget. \end{DoxyCompactList}\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_budget_a8298631733d6dcecd9ff068d66f5962e}{get\+Start\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Sets a new start date for the budget. \end{DoxyCompactList}\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_budget_ae8b1791984c2effce6e929f27a374d68}{get\+End\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Sets a new start date for the budget. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_budget_a9a8ec82b32c3b9821ac9912231d008fb}{set\+Budget\+Amount}} (double new\+Amount)
 \begin{DoxyCompactList}\small\item\em Sets a new budget amount. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_budget_a63d80f76e16a2de360ae376408c689e2}{get\+Budget\+Amount}} () const
@@ -40,15 +44,17 @@ bool \mbox{\hyperlink{class_budget_aff0aefc2572600975912f6c8b768d78c}{operator==
 This class represents a budget, including its attributes and methods to manage the budget and its spending. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_budget_a2e4d66cfdbf19a8b98ab322426109744}\index{Budget@{Budget}!Budget@{Budget}}
+\Hypertarget{class_budget_a9f09bbce30869059ae800ccdd2787d4f}\index{Budget@{Budget}!Budget@{Budget}}
 \index{Budget@{Budget}!Budget@{Budget}}
 \doxysubsubsection{\texorpdfstring{Budget()}{Budget()}}
-{\footnotesize\ttfamily \label{class_budget_a2e4d66cfdbf19a8b98ab322426109744} 
-Budget\+::\+Budget (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{double}]{amount}{, }\item[{string}]{date}{, }\item[{string}]{end\+Date}{, }\item[{string}]{source}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_budget_a9f09bbce30869059ae800ccdd2787d4f} 
+Budget\+::\+Budget (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{string}]{name}{, }\item[{double}]{amount}{, }\item[{double}]{spent\+Amount}{, }\item[{std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}]{date}{, }\item[{std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}]{end\+Date}{, }\item[{string}]{source}{}\end{DoxyParamCaption})}
 
 
 
 Constructor that initializes a new budget with given details. 
+
+Constructs a \doxylink{class_budget}{Budget} object with the specified parameters.
 
 
 \begin{DoxyParams}{Parameters}
@@ -60,7 +66,21 @@ Constructor that initializes a new budget with given details.
 \hline
 {\em end\+Date} & The end date of the budget. \\
 \hline
-{\em source} & The source of the budget. \\
+{\em source} & The source of the budget.\\
+\hline
+{\em id} & Unique identifier for the budget. \\
+\hline
+{\em name} & Name of the budget. \\
+\hline
+{\em amount} & Total allocated amount for the budget. \\
+\hline
+{\em spent\+Amount} & Amount already spent from the budget. \\
+\hline
+{\em date} & Start date of the budget. \\
+\hline
+{\em end\+Date} & End date of the budget. \\
+\hline
+{\em source} & Source of the budget, such as income type or funding origin. \\
 \hline
 \end{DoxyParams}
 
@@ -76,8 +96,32 @@ double Budget\+::get\+Budget\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 Gets the total amount allocated for the budget. 
 
+Gets the allocated amount for the budget.
+
 \begin{DoxyReturn}{Returns}
-The budget amount. 
+The budget amount.
+
+The allocated amount as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_budget_ae8b1791984c2effce6e929f27a374d68}\index{Budget@{Budget}!getEndDate@{getEndDate}}
+\index{getEndDate@{getEndDate}!Budget@{Budget}}
+\doxysubsubsection{\texorpdfstring{getEndDate()}{getEndDate()}}
+{\footnotesize\ttfamily \label{class_budget_ae8b1791984c2effce6e929f27a374d68} 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Budget\+::get\+End\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a new start date for the budget. 
+
+Gets the end date of the budget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Date} & The new start date for the budget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The end date as a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point. 
 \end{DoxyReturn}
 \Hypertarget{class_budget_a21d1966ed9426ae3945a8c868e5f667b}\index{Budget@{Budget}!getID@{getID}}
 \index{getID@{getID}!Budget@{Budget}}
@@ -90,7 +134,9 @@ int Budget\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const
 Gets the unique identifier of the budget. 
 
 \begin{DoxyReturn}{Returns}
-The ID of the budget. 
+The ID of the budget.
+
+The unique identifier as an integer. 
 \end{DoxyReturn}
 \Hypertarget{class_budget_af66529bdeff75da4d0b8ed6a2924a6f2}\index{Budget@{Budget}!getName@{getName}}
 \index{getName@{getName}!Budget@{Budget}}
@@ -103,20 +149,24 @@ string Budget\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) 
 Gets the name of the budget. 
 
 \begin{DoxyReturn}{Returns}
-The name of the budget. 
+The name of the budget.
+
+The name of the budget as a string. 
 \end{DoxyReturn}
-\Hypertarget{class_budget_af868601326fe0df1a0b5645d6ec0235c}\index{Budget@{Budget}!getSourcetDetails@{getSourcetDetails}}
-\index{getSourcetDetails@{getSourcetDetails}!Budget@{Budget}}
-\doxysubsubsection{\texorpdfstring{getSourcetDetails()}{getSourcetDetails()}}
-{\footnotesize\ttfamily \label{class_budget_af868601326fe0df1a0b5645d6ec0235c} 
-string Budget\+::get\+Sourcet\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+\Hypertarget{class_budget_a45ad50cfabc5fc3b61ef9b8f2b9e43d6}\index{Budget@{Budget}!getSourceDetails@{getSourceDetails}}
+\index{getSourceDetails@{getSourceDetails}!Budget@{Budget}}
+\doxysubsubsection{\texorpdfstring{getSourceDetails()}{getSourceDetails()}}
+{\footnotesize\ttfamily \label{class_budget_a45ad50cfabc5fc3b61ef9b8f2b9e43d6} 
+string Budget\+::get\+Source\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
 Gets the source details of the budget. 
 
 \begin{DoxyReturn}{Returns}
-The source of the budget. 
+The source of the budget.
+
+The source details as a string. 
 \end{DoxyReturn}
 \Hypertarget{class_budget_aa16ed5aff7c16fdb53443e9c8c377423}\index{Budget@{Budget}!getSpentAmount@{getSpentAmount}}
 \index{getSpentAmount@{getSpentAmount}!Budget@{Budget}}
@@ -129,7 +179,29 @@ double Budget\+::get\+Spent\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamC
 Gets the total amount spent from the budget. 
 
 \begin{DoxyReturn}{Returns}
-The amount spent from the budget. 
+The amount spent from the budget.
+
+The total spent amount as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_budget_a8298631733d6dcecd9ff068d66f5962e}\index{Budget@{Budget}!getStartDate@{getStartDate}}
+\index{getStartDate@{getStartDate}!Budget@{Budget}}
+\doxysubsubsection{\texorpdfstring{getStartDate()}{getStartDate()}}
+{\footnotesize\ttfamily \label{class_budget_a8298631733d6dcecd9ff068d66f5962e} 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Budget\+::get\+Start\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a new start date for the budget. 
+
+Gets the start date of the budget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Date} & The new start date for the budget.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The start date as a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point. 
 \end{DoxyReturn}
 \Hypertarget{class_budget_a9229fe490ba6b590685935e026b32a2f}\index{Budget@{Budget}!getTimeInterval@{getTimeInterval}}
 \index{getTimeInterval@{getTimeInterval}!Budget@{Budget}}
@@ -141,8 +213,15 @@ string Budget\+::get\+Time\+Interval (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 Gets the time interval of the budget (start and end date). 
 
+Gets the time interval of the budget in string format.
+
 \begin{DoxyReturn}{Returns}
-A string representing the time interval. 
+A string representing the time interval.
+\end{DoxyReturn}
+Combines the start and end dates into a single string.
+
+\begin{DoxyReturn}{Returns}
+The time interval in the format "{}start\+Date-\/end\+Date"{}. 
 \end{DoxyReturn}
 \Hypertarget{class_budget_aff0aefc2572600975912f6c8b768d78c}\index{Budget@{Budget}!operator==@{operator==}}
 \index{operator==@{operator==}!Budget@{Budget}}
@@ -174,9 +253,18 @@ void Budget\+::set\+Budget\+Amount (\begin{DoxyParamCaption}\item[{double}]{new\
 
 Sets a new budget amount. 
 
+Updates the allocated amount for the budget.
+
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Amount} & The new total amount for the budget. \\
+{\em new\+Amount} & The new total amount for the budget.\\
+\hline
+\end{DoxyParams}
+Sets a new total budget amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Amount} & The new budget amount. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_budget_ad3b30193fd4d9bdf61275a02ba31d5ca}\index{Budget@{Budget}!setSourceDetails@{setSourceDetails}}
@@ -189,9 +277,18 @@ void Budget\+::set\+Source\+Details (\begin{DoxyParamCaption}\item[{string}]{new
 
 Sets the source details for the budget. 
 
+Sets the source details of the budget.
+
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Source} & The new source for the budget. \\
+{\em new\+Source} & The new source for the budget.\\
+\hline
+\end{DoxyParams}
+Updates the source information, such as where the budget originates from.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Source} & The new source details as a string. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_budget_a300e5632777a57b91761bef3a1d51f88}\index{Budget@{Budget}!setSpentAmount@{setSpentAmount}}
@@ -204,9 +301,18 @@ void Budget\+::set\+Spent\+Amount (\begin{DoxyParamCaption}\item[{double}]{new\+
 
 Sets the amount spent from the budget. 
 
+Updates the spent amount of the budget.
+
 
 \begin{DoxyParams}{Parameters}
-{\em new\+Spent\+Amount} & The new amount spent from the budget. \\
+{\em new\+Spent\+Amount} & The new amount spent from the budget.\\
+\hline
+\end{DoxyParams}
+Adds the specified value to the total spent amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Spent\+Amount} & The amount to add to the total spent amount. \\
 \hline
 \end{DoxyParams}
 

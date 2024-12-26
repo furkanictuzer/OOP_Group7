@@ -46,7 +46,18 @@ Ui\+Reports\+Window\+::\+Ui\+Reports\+Window (\begin{DoxyParamCaption}\item[{int
 
 Constructs the reports window. 
 
+Constructor for the \doxylink{class_ui_reports_window}{Ui\+Reports\+Window} class.
+
 Initializes the reports window with options for selecting report parameters (date range, report type, category) and buttons for generating the report or returning to the main window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window.\\
+\hline
+\end{DoxyParams}
+This constructor sets up the user interface elements such as choice widgets for selecting report type, start and end dates, categories, and buttons for generating reports and navigating back to the main window.
 
 
 \begin{DoxyParams}{Parameters}
@@ -68,13 +79,19 @@ void Ui\+Reports\+Window\+::back\+\_\+to\+\_\+main\+\_\+callback (\begin{DoxyPar
 
 Callback function for navigating back to the main window. 
 
+Callback function for the \textquotesingle{}Back\textquotesingle{} button. Hides the current window and shows the main window.
+
 This function is triggered when the "{}\+Back"{} button is clicked, allowing the user to navigate back to the main window.
 
 
 \begin{DoxyParams}{Parameters}
 {\em widget} & The widget that triggered the callback. \\
 \hline
-{\em data} & Additional data passed to the callback. \\
+{\em data} & Additional data passed to the callback.\\
+\hline
+{\em widget} & The Fl\+\_\+\+Widget object that triggered the callback. \\
+\hline
+{\em data} & \doxylink{class_user}{User} data (pointer to the \doxylink{class_ui_reports_window}{Ui\+Reports\+Window} instance). \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_ui_reports_window_a48cc5b9d21664867cf33563bf2df161b}\index{UiReportsWindow@{UiReportsWindow}!generate\_callback@{generate\_callback}}
@@ -87,13 +104,19 @@ void Ui\+Reports\+Window\+::generate\+\_\+callback (\begin{DoxyParamCaption}\ite
 
 Callback function for generating a report. 
 
+Callback function for the \textquotesingle{}Generate\textquotesingle{} button. Generates a report based on user input and displays it.
+
 This function is triggered when the "{}\+Generate"{} button is clicked. It handles the generation of the report based on the selected parameters and displays it in the report display area.
 
 
 \begin{DoxyParams}{Parameters}
 {\em widget} & The widget that triggered the callback. \\
 \hline
-{\em data} & Additional data passed to the callback. \\
+{\em data} & Additional data passed to the callback.\\
+\hline
+{\em widget} & The Fl\+\_\+\+Widget object that triggered the callback. \\
+\hline
+{\em data} & \doxylink{class_user}{User} data (pointer to the \doxylink{class_ui_reports_window}{Ui\+Reports\+Window} instance). \\
 \hline
 \end{DoxyParams}
 
@@ -101,4 +124,4 @@ This function is triggered when the "{}\+Generate"{} button is clicked. It handl
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 Ui\+Reports\+Window.\+h\item 
-Ui\+Reports\+Window.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_ui_reports_window_8cpp}{Ui\+Reports\+Window.\+cpp}}\end{DoxyCompactItemize}

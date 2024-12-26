@@ -4,19 +4,19 @@
 <area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="52,218,62,179,79,132,103,84,138,42,155,30,158,35,141,46,108,87,83,134,67,180,57,219"/>
 <area shape="rect" id="Node000002" href="$class_ui_add_expense_window.html" title="A window to add a new expense in the application." alt="" coords="140,56,295,83"/>
 <area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="57,218,87,155,110,122,138,93,157,81,160,86,141,97,114,125,91,158,62,220"/>
-<area shape="rect" id="Node000003" href="$class_ui_budget_window.html" title="A window for managing budgets within the application." alt="" coords="156,107,278,133"/>
+<area shape="rect" id="Node000003" href="$class_ui_budget_window.html" title="A window for managing and displaying budgets." alt="" coords="156,107,278,133"/>
 <area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="65,219,96,180,138,143,161,131,163,136,141,148,100,184,69,222"/>
-<area shape="rect" id="Node000004" href="$class_ui_category_window.html" title="A window for managing categories within the application." alt="" coords="150,157,284,184"/>
+<area shape="rect" id="Node000004" href="$class_ui_category_window.html" title="A window for adding and managing categories." alt="" coords="150,157,284,184"/>
 <area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="83,223,139,194,168,182,170,187,141,198,86,227"/>
 <area shape="rect" id="Node000005" href="$class_ui_expense_window.html" title="A window for displaying and managing expenses." alt="" coords="151,208,284,235"/>
 <area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="107,235,151,229,151,234,107,241"/>
-<area shape="rect" id="Node000006" href="$class_ui_login_window.html" title="A window for user login functionality." alt="" coords="161,259,274,285"/>
+<area shape="rect" id="Node000006" href="$class_ui_login_window.html" title="A window for logging in users." alt="" coords="161,259,274,285"/>
 <area shape="poly" id="edge7_Node000000_Node000006" title=" " alt="" coords="107,253,161,261,160,266,107,258"/>
-<area shape="rect" id="Node000007" href="$class_ui_main_window.html" title="Represents the main window of the application." alt="" coords="163,309,272,336"/>
+<area shape="rect" id="Node000007" href="$class_ui_main_window.html" title="The main window for the application after login." alt="" coords="163,309,272,336"/>
 <area shape="poly" id="edge8_Node000000_Node000007" title=" " alt="" coords="86,266,141,295,170,306,168,311,139,300,83,271"/>
-<area shape="rect" id="Node000008" href="$class_ui_profile_window.html" title="A window for managing user profile." alt="" coords="158,360,276,387"/>
+<area shape="rect" id="Node000008" href="$class_ui_profile_window.html" title="This class represents the user profile window, where the user can update their username,..." alt="" coords="158,360,276,387"/>
 <area shape="poly" id="edge9_Node000000_Node000008" title=" " alt="" coords="69,271,100,310,141,346,163,357,161,362,138,350,96,313,65,274"/>
-<area shape="rect" id="Node000009" href="$class_ui_register_window.html" title="A window for user registration." alt="" coords="152,411,282,437"/>
+<area shape="rect" id="Node000009" href="$class_ui_register_window.html" title="A class representing the registration window where users can create an account." alt="" coords="152,411,282,437"/>
 <area shape="poly" id="edge10_Node000000_Node000009" title=" " alt="" coords="62,273,91,336,114,368,141,397,160,408,157,412,138,401,110,372,87,338,57,276"/>
 <area shape="rect" id="Node000010" href="$class_ui_reports_window.html" title="A window for generating and displaying reports." alt="" coords="154,461,281,488"/>
 <area shape="poly" id="edge11_Node000000_Node000010" title=" " alt="" coords="57,274,67,313,83,360,108,407,141,447,158,459,155,463,138,451,103,410,79,362,62,314,52,275"/>

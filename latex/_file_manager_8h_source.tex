@@ -12,34 +12,37 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}DateUtils.h"{}}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_manager}{FileManager}}\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6}{saveDataToFile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user}{User}}*\ user);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_ae1d2246fa9f0b887690412ef0701d875}{loadDataFromFile}}();}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_a479d19a6a2b719af31a91f72c6f14830}{fileExists}}();}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_a505f231f0afc87aca966f3d5a412a573}{doesUserExist}}(\textcolor{keyword}{const}\ std::string\&\ username);}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_user}{User}}\&\ \mbox{\hyperlink{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}{getMainUser}}();}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_file_manager_aef716e735f4409600e25ba8ee3358047}{getMainUserPawword}}();}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a5dfe235276f68baff708222aac4766c4}{setMainUser}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user}{User}}\&\ user);}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}{deleteUser}}(\textcolor{keyword}{const}\ std::string\&\ username);}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a6b83b556f2957402a5f9681f88bf6c3f}{deleteAllUser}}();}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_user}{User}}\ main\_user;\ }
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ fileName;\ }
-\DoxyCodeLine{00098\ \};}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILE\_MANAGER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}ExpenseManager.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_manager}{FileManager}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6}{saveDataToFile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user}{User}}*\ user);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_ae1d2246fa9f0b887690412ef0701d875}{loadDataFromFile}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_a479d19a6a2b719af31a91f72c6f14830}{fileExists}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_file_manager_a505f231f0afc87aca966f3d5a412a573}{doesUserExist}}(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_user}{User}}\&\ \mbox{\hyperlink{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}{getMainUser}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_file_manager_a87c7fa4bee479acba09eb16c00d059c8}{getMainUserPawword}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a5dfe235276f68baff708222aac4766c4}{setMainUser}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user}{User}}\&\ user);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}{deleteUser}}(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_manager_a6b83b556f2957402a5f9681f88bf6c3f}{deleteAllUser}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_user}{User}}\ main\_user;\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ fileName;\ }
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILE\_MANAGER\_H}}
 
 \end{DoxyCode}

@@ -16,15 +16,15 @@ Inherited by \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}}.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}\label{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529} 
-{\bfseries Expense} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
-\item 
-\Hypertarget{class_expense_a24cc45ee132c0b59bf38135e1592e047}\label{class_expense_a24cc45ee132c0b59bf38135e1592e047} 
-void {\bfseries set\+Expense\+Details} (double amount, const std\+::string \&description)
-\item 
-\Hypertarget{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}\label{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d} 
-std\+::string {\bfseries get\+Expense\+Details} () const
-\item 
+\mbox{\hyperlink{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}{Expense}} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_expense}{Expense} object with the given details. \end{DoxyCompactList}\item 
+\Hypertarget{class_expense_a4e3f41bff0a53cb755308c3f8d5da29d}\label{class_expense_a4e3f41bff0a53cb755308c3f8d5da29d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Expense} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_expense}{Expense} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_expense_a24cc45ee132c0b59bf38135e1592e047}{set\+Expense\+Details}} (double amount, const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Updates the details of the expense. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}{get\+Expense\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the details of the expense as a formatted string. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_expense_ab83eaf6ccd16eccb0895145da2152f96}{get\+Amount}} () const
 \begin{DoxyCompactList}\small\item\em Gets the amount of the expense. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_expense_a24773d6376de1ac351c18f78a69e559d}{get\+Id}} () const
@@ -42,6 +42,32 @@ bool \mbox{\hyperlink{class_expense_a7c3d1745d9411ba1c091911ebc875034}{operator=
 \doxysubsection{Detailed Description}
 Represents an expense with details such as amount, date, description, and category. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}\index{Expense@{Expense}!Expense@{Expense}}
+\index{Expense@{Expense}!Expense@{Expense}}
+\doxysubsubsection{\texorpdfstring{Expense()}{Expense()}}
+{\footnotesize\ttfamily \label{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529} 
+Expense\+::\+Expense (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{double}]{amount}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{date}{, }\item[{const std\+::string \&}]{description}{, }\item[{\mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}}]{category}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_expense}{Expense} object with the given details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the expense. \\
+\hline
+{\em amount} & The monetary amount of the expense. \\
+\hline
+{\em date} & The date of the expense. \\
+\hline
+{\em description} & A description of the expense. \\
+\hline
+{\em category} & The category to which the expense belongs. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_expense_ab83eaf6ccd16eccb0895145da2152f96}\index{Expense@{Expense}!getAmount@{getAmount}}
 \index{getAmount@{getAmount}!Expense@{Expense}}
@@ -53,8 +79,12 @@ double Expense\+::get\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 Gets the amount of the expense. 
 
+Gets the monetary amount of the expense.
+
 \begin{DoxyReturn}{Returns}
-The amount of the expense. 
+The amount of the expense.
+
+The monetary amount. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_a3a1be33dd3f814853baf619ce8079e5e}\index{Expense@{Expense}!getCategory@{getCategory}}
 \index{getCategory@{getCategory}!Expense@{Expense}}
@@ -66,8 +96,12 @@ The amount of the expense.
 
 Gets the category to which the expense belongs. 
 
+Gets the category associated with the expense.
+
 \begin{DoxyReturn}{Returns}
-A pointer to the \doxylink{class_category}{Category} associated with the expense. 
+A pointer to the \doxylink{class_category}{Category} associated with the expense.
+
+A pointer to the \doxylink{class_category}{Category} object. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_af14d231fcc73ad3e6c596ea6b30960d0}\index{Expense@{Expense}!getDate@{getDate}}
 \index{getDate@{getDate}!Expense@{Expense}}
@@ -79,8 +113,12 @@ std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Expense\+::get\+Date (\beg
 
 Gets the date when the expense was made. 
 
+Gets the date of the expense.
+
 \begin{DoxyReturn}{Returns}
-The date of the expense as a time\+\_\+point. 
+The date of the expense as a time\+\_\+point.
+
+The date as a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_a1824965ee510f575c8f2124b503866e3}\index{Expense@{Expense}!getDescription@{getDescription}}
 \index{getDescription@{getDescription}!Expense@{Expense}}
@@ -93,7 +131,22 @@ std\+::string Expense\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{Doxy
 Gets the description of the expense. 
 
 \begin{DoxyReturn}{Returns}
-The description of the expense. 
+The description of the expense.
+
+The description as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}\index{Expense@{Expense}!getExpenseDetails@{getExpenseDetails}}
+\index{getExpenseDetails@{getExpenseDetails}!Expense@{Expense}}
+\doxysubsubsection{\texorpdfstring{getExpenseDetails()}{getExpenseDetails()}}
+{\footnotesize\ttfamily \label{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d} 
+std\+::string Expense\+::get\+Expense\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the details of the expense as a formatted string. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the expense ID, amount, and description. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_a24773d6376de1ac351c18f78a69e559d}\index{Expense@{Expense}!getId@{getId}}
 \index{getId@{getId}!Expense@{Expense}}
@@ -106,7 +159,9 @@ int Expense\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) cons
 Gets the unique identifier of the expense. 
 
 \begin{DoxyReturn}{Returns}
-The ID of the expense. 
+The ID of the expense.
+
+The expense ID. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_a7c3d1745d9411ba1c091911ebc875034}\index{Expense@{Expense}!operator==@{operator==}}
 \index{operator==@{operator==}!Expense@{Expense}}
@@ -118,14 +173,41 @@ bool Expense\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlin
 
 Compares two expenses for equality based on their ID. 
 
+Compares two \doxylink{class_expense}{Expense} objects for equality based on their IDs.
+
 
 \begin{DoxyParams}{Parameters}
 {\em other} & The other expense to compare with. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the expenses are equal, false otherwise. 
+true if the expenses are equal, false otherwise.
 \end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_expense}{Expense} object to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the IDs are the same, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_a24cc45ee132c0b59bf38135e1592e047}\index{Expense@{Expense}!setExpenseDetails@{setExpenseDetails}}
+\index{setExpenseDetails@{setExpenseDetails}!Expense@{Expense}}
+\doxysubsubsection{\texorpdfstring{setExpenseDetails()}{setExpenseDetails()}}
+{\footnotesize\ttfamily \label{class_expense_a24cc45ee132c0b59bf38135e1592e047} 
+void Expense\+::set\+Expense\+Details (\begin{DoxyParamCaption}\item[{double}]{new\+Amount}{, }\item[{const std\+::string \&}]{new\+Description}{}\end{DoxyParamCaption})}
+
+
+
+Updates the details of the expense. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Amount} & The new monetary amount for the expense. \\
+\hline
+{\em new\+Description} & The new description for the expense. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

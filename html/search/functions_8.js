@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loaddatafromfile_0',['loadDataFromFile',['../class_file_manager.html#ae1d2246fa9f0b887690412ef0701d875',1,'FileManager']]]
+  ['initialize_0',['initialize',['../class_mock_clock.html#a1606898c501ea877b3b67f1264714e1e',1,'MockClock']]]
 ];

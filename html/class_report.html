@@ -171,9 +171,19 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="class_report.html" title="Represents a report that aggregates expenses within a specific time period.">Report</a> with the specified expenses and time range. </p>
+<p>Constructor for <a class="el" href="class_report.html" title="Represents a report that aggregates expenses within a specific time period.">Report</a> class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expenses</td><td>The list of expenses included in the report. </td></tr>
+    <tr><td class="paramname">start</td><td>The start time for the report period. </td></tr>
+    <tr><td class="paramname">end</td><td>The end time for the report period.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This constructor initializes the report with the list of expenses and the start and end times for the report period.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expenses</td><td>A vector of <code><a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a></code> objects that will be included in the report. </td></tr>
     <tr><td class="paramname">start</td><td>The start time for the report period. </td></tr>
     <tr><td class="paramname">end</td><td>The end time for the report period. </td></tr>
   </table>
@@ -199,7 +209,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generates and saves the report to a file. </p>
-<p>This method creates a file containing the details of the report, which can be saved for future reference. </p>
+<p>Generates a report file.</p>
+<p>This method creates a file containing the details of the report, which can be saved for future reference.</p>
+<p>This function generates a file that contains the detailed report. The file is named based on the start and end times of the report period. </p>
 
 </div>
 </div>
@@ -219,8 +231,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generates a detailed string of the report. </p>
+<p>Generates a detailed string representation of the report.</p>
 <p>This method generates a summary report of all expenses within the specified time period.</p>
-<dl class="section return"><dt>Returns</dt><dd>A string containing the details of the report. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the details of the report.</dd></dl>
+<p>This function generates a detailed string for the report that includes the expenses and their attributes such as ID, amount, description, date, and category, within the specified report period.</p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the report details. </dd></dl>
 
 </div>
 </div>
@@ -240,8 +255,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the expenses included in the report. </p>
+<p>Retrieves the list of expenses in the report.</p>
 <p>This method returns the list of expenses associated with the report.</p>
-<dl class="section return"><dt>Returns</dt><dd>A constant reference to the vector of expenses. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the vector of expenses.</dd></dl>
+<p>This function returns the list of expenses that are part of the report.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the vector of <code><a class="el" href="class_expense.html" title="Represents an expense with details such as amount, date, description, and category.">Expense</a></code> objects included in the report. </dd></dl>
 
 </div>
 </div>

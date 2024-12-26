@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['navigatetobudget_0',['navigateToBudget',['../class_ui_main_window.html#ad87bb02bd1e07452f242adbbc5bcbf5f',1,'UiMainWindow']]],
-  ['navigatetocategories_1',['navigateToCategories',['../class_ui_main_window.html#ad9c92072d65e319cf6fb23ce8058f714',1,'UiMainWindow']]],
-  ['navigatetoexpense_2',['navigateToExpense',['../class_ui_main_window.html#aa0b9fcb759bd14103e77836d5f05f1b3',1,'UiMainWindow']]],
-  ['navigatetoprofile_3',['navigateToProfile',['../class_ui_main_window.html#add86721a9129809e44818284350dca8a',1,'UiMainWindow']]],
-  ['navigatetoreport_4',['navigateToReport',['../class_ui_main_window.html#a73e32438866aa55f666a21a592bbb97a',1,'UiMainWindow']]],
-  ['notify_5',['notify',['../class_notification_manager.html#ace9fc68a39e6169dd914029a34a379e5',1,'NotificationManager']]]
+  ['loaddatafromfile_0',['loadDataFromFile',['../class_file_manager.html#ae1d2246fa9f0b887690412ef0701d875',1,'FileManager']]],
+  ['login_5fcallback_1',['login_callback',['../class_ui_register_window.html#a2cc03e4b108262a49c6c2f791ccdf2e3',1,'UiRegisterWindow']]]
 ];

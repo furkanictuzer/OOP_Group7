@@ -52,6 +52,15 @@ void Expense\+Manager\+::add\+Budget (\begin{DoxyParamCaption}\item[{const \mbox
 
 Adds a new budget to the budget list. 
 
+Adds a budget to the user\textquotesingle{}s list of budgets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget to be added.\\
+\hline
+\end{DoxyParams}
+This function adds the provided budget to the user\textquotesingle{}s budget list and saves the updated data to the file.
+
 
 \begin{DoxyParams}{Parameters}
 {\em budget} & The budget to be added. \\
@@ -66,6 +75,15 @@ void Expense\+Manager\+::add\+Expense (\begin{DoxyParamCaption}\item[{const \mbo
 
 
 Adds a new expense to the expense list. 
+
+Adds an expense to the user\textquotesingle{}s expenses and updates the budget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to be added.\\
+\hline
+\end{DoxyParams}
+This function creates a new expense and adds it to the user\textquotesingle{}s selected category. If a budget is available, it updates the spent amount of the budget. After that, the new expense is saved to the file system.
 
 
 \begin{DoxyParams}{Parameters}
@@ -83,7 +101,12 @@ std\+::map$<$ \mbox{\hyperlink{class_category}{Category}}, double $>$ Expense\+M
 Analyzes the expense distribution by category. 
 
 \begin{DoxyReturn}{Returns}
-A map of categories and their corresponding total expense amounts. 
+A map of categories and their corresponding total expense amounts.
+\end{DoxyReturn}
+This function calculates the total expenses for each category and returns a map containing the category and the corresponding total amount spent.
+
+\begin{DoxyReturn}{Returns}
+A map where keys are categories and values are the total amounts spent. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7}\index{ExpenseManager@{ExpenseManager}!calculateTotalExpenses@{calculateTotalExpenses}}
 \index{calculateTotalExpenses@{calculateTotalExpenses}!ExpenseManager@{ExpenseManager}}
@@ -95,8 +118,15 @@ double Expense\+Manager\+::calculate\+Total\+Expenses (\begin{DoxyParamCaption}{
 
 Calculates the total expenses. 
 
+Calculates the total amount of expenses.
+
 \begin{DoxyReturn}{Returns}
-The sum of all expenses. 
+The sum of all expenses.
+\end{DoxyReturn}
+This function sums up all the expenses and updates the spent amount of the current budget based on the total expenses.
+
+\begin{DoxyReturn}{Returns}
+The total amount of expenses. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056}\index{ExpenseManager@{ExpenseManager}!calculateTotalIncome@{calculateTotalIncome}}
 \index{calculateTotalIncome@{calculateTotalIncome}!ExpenseManager@{ExpenseManager}}
@@ -108,8 +138,15 @@ double Expense\+Manager\+::calculate\+Total\+Income (\begin{DoxyParamCaption}{}{
 
 Calculates the total income. 
 
+Retrieves the total income.
+
 \begin{DoxyReturn}{Returns}
-The sum of all income. 
+The sum of all income.
+\end{DoxyReturn}
+This function returns the total income, though it is currently set to return a static value.
+
+\begin{DoxyReturn}{Returns}
+The total income. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519}\index{ExpenseManager@{ExpenseManager}!filterExpensesByDateRange@{filterExpensesByDateRange}}
 \index{filterExpensesByDateRange@{filterExpensesByDateRange}!ExpenseManager@{ExpenseManager}}
@@ -121,6 +158,8 @@ std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Expense\+Manager\
 
 Filters expenses by a specified date range. 
 
+Filters expenses within a specified date range.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date of the range. \\
@@ -129,7 +168,19 @@ Filters expenses by a specified date range.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A vector containing the expenses within the date range. 
+A vector containing the expenses within the date range.
+\end{DoxyReturn}
+This function filters the expenses that fall within the given date range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date of the range. \\
+\hline
+{\em end\+Date} & The end date of the range.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the filtered expenses. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54}\index{ExpenseManager@{ExpenseManager}!getBudgets@{getBudgets}}
 \index{getBudgets@{getBudgets}!ExpenseManager@{ExpenseManager}}
@@ -140,6 +191,11 @@ std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ Expense\+Manager\+:
 
 
 Retrieves all budgets. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing all budgets.
+\end{DoxyReturn}
+This function returns the list of all budgets managed by the {\ttfamily \doxylink{class_expense_manager}{Expense\+Manager}}.
 
 \begin{DoxyReturn}{Returns}
 A vector containing all budgets. 
@@ -155,6 +211,11 @@ std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Expense\+Manager\
 Retrieves all expenses. 
 
 \begin{DoxyReturn}{Returns}
+A vector containing all expenses.
+\end{DoxyReturn}
+This function returns the list of all expenses managed by the {\ttfamily \doxylink{class_expense_manager}{Expense\+Manager}}.
+
+\begin{DoxyReturn}{Returns}
 A vector containing all expenses. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_adaf64226be5f465bf64295218fc6e999}\index{ExpenseManager@{ExpenseManager}!getTotalExpenseByMonth@{getTotalExpenseByMonth}}
@@ -167,6 +228,8 @@ double Expense\+Manager\+::get\+Total\+Expense\+By\+Month (\begin{DoxyParamCapti
 
 Retrieves the total expense for a specific month and year. 
 
+Retrieves the total expenses for a specific month and year.
+
 
 \begin{DoxyParams}{Parameters}
 {\em month} & The month to calculate total expenses for. \\
@@ -175,7 +238,19 @@ Retrieves the total expense for a specific month and year.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The total expense for the given month and year. 
+The total expense for the given month and year.
+\end{DoxyReturn}
+This function calculates the total expenses for the given month and year.
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & The month for which the total expenses are to be calculated. \\
+\hline
+{\em year} & The year for which the total expenses are to be calculated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total amount spent during the specified month and year. 
 \end{DoxyReturn}
 \Hypertarget{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df}\index{ExpenseManager@{ExpenseManager}!removeBudget@{removeBudget}}
 \index{removeBudget@{removeBudget}!ExpenseManager@{ExpenseManager}}
@@ -186,6 +261,15 @@ void Expense\+Manager\+::remove\+Budget (\begin{DoxyParamCaption}\item[{const \m
 
 
 Removes a budget from the budget list. 
+
+Removes a budget from the list of budgets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget to be removed.\\
+\hline
+\end{DoxyParams}
+This function removes the specified budget from the budgets list using the {\ttfamily std\+::remove} function.
 
 
 \begin{DoxyParams}{Parameters}
@@ -201,6 +285,15 @@ void Expense\+Manager\+::remove\+Expense (\begin{DoxyParamCaption}\item[{const \
 
 
 Removes an expense from the expense list. 
+
+Removes an expense from the list of expenses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to be removed.\\
+\hline
+\end{DoxyParams}
+This function removes the specified expense from the expenses list using the {\ttfamily std\+::remove} function.
 
 
 \begin{DoxyParams}{Parameters}

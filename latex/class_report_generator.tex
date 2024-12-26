@@ -48,13 +48,25 @@ This class includes methods to generate reports for different time periods (week
 
 Generates an annual report starting from the given start date. 
 
+Generates an annual report based on the provided start date.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the report. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing annual expense data. 
+A \doxylink{class_report}{Report} object containing annual expense data.
+\end{DoxyReturn}
+This function generates a report for the year starting from the specified start date. It retrieves all related expenses within the year and returns a {\ttfamily \doxylink{class_report}{Report}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the annual report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses within the year. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584}\index{ReportGenerator@{ReportGenerator}!generateCategoryReport@{generateCategoryReport}}
 \index{generateCategoryReport@{generateCategoryReport}!ReportGenerator@{ReportGenerator}}
@@ -72,7 +84,17 @@ Generates a report for a specific category.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing expenses for the specified category. 
+A \doxylink{class_report}{Report} object containing expenses for the specified category.
+\end{DoxyReturn}
+This function generates a report for all expenses related to a specific category, including all time periods. The start and end times are set to an infinite range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category for which the report is generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses for the specified category. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a3a78422334a928e4a781f1541569fbeb}\index{ReportGenerator@{ReportGenerator}!generateCategoryReport@{generateCategoryReport}}
 \index{generateCategoryReport@{generateCategoryReport}!ReportGenerator@{ReportGenerator}}
@@ -84,6 +106,8 @@ A \doxylink{class_report}{Report} object containing expenses for the specified c
 
 Generates a report for a specific category within a time range. 
 
+Generates a report for a specific category within a custom date range.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the report. \\
@@ -94,7 +118,21 @@ Generates a report for a specific category within a time range.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing expenses for the specified category within the time range. 
+A \doxylink{class_report}{Report} object containing expenses for the specified category within the time range.
+\end{DoxyReturn}
+This function generates a report for all expenses related to a specific category within the provided date range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+{\em end\+Date} & The end date for the report. \\
+\hline
+{\em category} & The category for which the report is generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses for the specified category and date range. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_abe6fe23046eccc46a8ea3797a0feb8e5}\index{ReportGenerator@{ReportGenerator}!generateMonthlyReport@{generateMonthlyReport}}
 \index{generateMonthlyReport@{generateMonthlyReport}!ReportGenerator@{ReportGenerator}}
@@ -106,13 +144,25 @@ A \doxylink{class_report}{Report} object containing expenses for the specified c
 
 Generates a monthly report starting from the given start date. 
 
+Generates a monthly report based on the provided start date.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the report. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing monthly expense data. 
+A \doxylink{class_report}{Report} object containing monthly expense data.
+\end{DoxyReturn}
+This function generates a report for the month starting from the specified start date. It retrieves all related expenses within the month and returns a {\ttfamily \doxylink{class_report}{Report}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the monthly report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses within the month. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a0c8a04a91682f2b09b0e7a124c5d3132}\index{ReportGenerator@{ReportGenerator}!generateReport@{generateReport}}
 \index{generateReport@{generateReport}!ReportGenerator@{ReportGenerator}}
@@ -124,6 +174,8 @@ A \doxylink{class_report}{Report} object containing monthly expense data.
 
 Generates a report for a specific time range. 
 
+Generates a report for a custom date range.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the report. \\
@@ -132,7 +184,19 @@ Generates a report for a specific time range.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing expense data for the specified time range. 
+A \doxylink{class_report}{Report} object containing expense data for the specified time range.
+\end{DoxyReturn}
+This function generates a report for the specified date range. It retrieves all related expenses within the given start and end dates and returns a {\ttfamily \doxylink{class_report}{Report}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+{\em end\+Date} & The end date for the report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses within the custom date range. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a3e355d87565270afed7a7bb7ceaf0d59}\index{ReportGenerator@{ReportGenerator}!generateWeeklyReport@{generateWeeklyReport}}
 \index{generateWeeklyReport@{generateWeeklyReport}!ReportGenerator@{ReportGenerator}}
@@ -144,13 +208,25 @@ A \doxylink{class_report}{Report} object containing expense data for the specifi
 
 Generates a weekly report starting from the given start date. 
 
+Generates a weekly report based on the provided start date.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the report. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{class_report}{Report} object containing weekly expense data. 
+A \doxylink{class_report}{Report} object containing weekly expense data.
+\end{DoxyReturn}
+This function generates a report for the week starting from the specified start date. It retrieves all related expenses within the week and returns a {\ttfamily \doxylink{class_report}{Report}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the weekly report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{class_report}{Report}} object containing the related expenses within the week. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d}\index{ReportGenerator@{ReportGenerator}!getRelatedExpenses@{getRelatedExpenses}}
 \index{getRelatedExpenses@{getRelatedExpenses}!ReportGenerator@{ReportGenerator}}
@@ -162,6 +238,8 @@ std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Report\+Generator
 
 Retrieves the expenses related to a given time range and categories. 
 
+Retrieves expenses related to a specific date range and categories.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the expenses to be retrieved. \\
@@ -172,7 +250,21 @@ Retrieves the expenses related to a given time range and categories.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A vector of expenses that are related to the time range and categories. 
+A vector of expenses that are related to the time range and categories.
+\end{DoxyReturn}
+This function retrieves the expenses that fall within the specified date range and belong to the given categories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the date range. \\
+\hline
+{\em end\+Date} & The end date for the date range. \\
+\hline
+{\em categories} & The list of categories to filter expenses by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily \doxylink{class_expense}{Expense}} objects related to the date range and categories. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a7b71830fdb6e25e58f53a8371508885a}\index{ReportGenerator@{ReportGenerator}!getRelatedExpenses@{getRelatedExpenses}}
 \index{getRelatedExpenses@{getRelatedExpenses}!ReportGenerator@{ReportGenerator}}
@@ -184,6 +276,8 @@ std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Report\+Generator
 
 Retrieves the expenses related to a given time range and expense list. 
 
+Retrieves expenses related to a specific date range and a list of expenses.
+
 
 \begin{DoxyParams}{Parameters}
 {\em start\+Date} & The start date for the expenses to be retrieved. \\
@@ -194,7 +288,21 @@ Retrieves the expenses related to a given time range and expense list.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A vector of expenses that are related to the time range and provided expenses. 
+A vector of expenses that are related to the time range and provided expenses.
+\end{DoxyReturn}
+This function retrieves the expenses that fall within the specified date range from a list of expenses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the date range. \\
+\hline
+{\em end\+Date} & The end date for the date range. \\
+\hline
+{\em expenses} & The list of expenses to filter by date range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily \doxylink{class_expense}{Expense}} objects related to the date range. 
 \end{DoxyReturn}
 \Hypertarget{class_report_generator_a1d94df811cb0791b9db077d22033f242}\index{ReportGenerator@{ReportGenerator}!reverse@{reverse}}
 \index{reverse@{reverse}!ReportGenerator@{ReportGenerator}}

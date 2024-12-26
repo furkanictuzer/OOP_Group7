@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['rbegin_0',['rbegin',['../classbasic__json.html#a11da8db436685032e97563cbb7490ff5',1,'basic_json::rbegin() noexcept'],['../classbasic__json.html#a4ef4aee2259af5183267f6e8f774d0eb',1,'basic_json::rbegin() const noexcept']]],
-  ['removecategory_1',['removeCategory',['../class_user.html#af630c42e2765f6dbfa78cc2074bb932b',1,'User']]],
-  ['removeexpense_2',['removeExpense',['../class_category.html#afe3726c4e965a713e22c56fed95d2ee8',1,'Category']]],
-  ['rend_3',['rend',['../classbasic__json.html#a8d8855a8c04ee7986ae8bab283c4f0de',1,'basic_json::rend() noexcept'],['../classbasic__json.html#ae81c3b38089a63d988a1efefe3ebc4bf',1,'basic_json::rend() const noexcept']]],
-  ['repeatedexpense_4',['RepeatedExpense',['../class_repeated_expense.html#a8e77e8a7994047d6c14dc153efcbb97c',1,'RepeatedExpense']]],
-  ['replace_5fsubstring_5',['replace_substring',['../namespacedetail.html#a6fd295e53b1dd4f46e235e6afee26d5e',1,'detail']]],
-  ['report_6',['Report',['../class_report.html#ae3150817fcf4ebf814358baf5bd72e8f',1,'Report::Report()'],['../class_report.html#ad7291b90cc1df665813138f136a6d5db',1,'Report::Report(const std::vector&lt; Expense &gt; &amp;expenses, const std::chrono::system_clock::time_point &amp;start, const std::chrono::system_clock::time_point &amp;end)']]],
-  ['reverse_7',['reverse',['../class_report_generator.html#a1d94df811cb0791b9db077d22033f242',1,'ReportGenerator']]]
+  ['_7eexpense_0',['~Expense',['../class_expense.html#a4e3f41bff0a53cb755308c3f8d5da29d',1,'Expense']]],
+  ['_7euiaddbudgetwindow_1',['~UiAddBudgetWindow',['../class_ui_add_budget_window.html#a36b2125491ec1ec3f141c568bf778931',1,'UiAddBudgetWindow']]],
+  ['_7euiaddexpensewindow_2',['~UiAddExpenseWindow',['../class_ui_add_expense_window.html#a8723f6877156f2540b63d6c40a554249',1,'UiAddExpenseWindow']]],
+  ['_7euibudgetwindow_3',['~UiBudgetWindow',['../class_ui_budget_window.html#a2720d4ea6ef7e38a036c95db3ab0a0eb',1,'UiBudgetWindow']]],
+  ['_7euicategorywindow_4',['~UiCategoryWindow',['../class_ui_category_window.html#a5f59a0293ec8ec9d87e2e75e4d4bbd57',1,'UiCategoryWindow']]],
+  ['_7euiexpensewindow_5',['~UiExpenseWindow',['../class_ui_expense_window.html#a7ee13e36af70f0f3372c969295020714',1,'UiExpenseWindow']]],
+  ['_7euiloginwindow_6',['~UiLoginWindow',['../class_ui_login_window.html#a3996b10ab799d9cab66dda6170b3fcc6',1,'UiLoginWindow']]],
+  ['_7euimainwindow_7',['~UiMainWindow',['../class_ui_main_window.html#a95b08df7d09ff67c2ebb43ef46b31ac0',1,'UiMainWindow']]],
+  ['_7euiprofilewindow_8',['~UiProfileWindow',['../class_ui_profile_window.html#a4671d0e218405a03b8f1da8ecfe3b6b5',1,'UiProfileWindow']]],
+  ['_7euiregisterwindow_9',['~UiRegisterWindow',['../class_ui_register_window.html#a57c0b3fef9def247ffcb51832b6d9084',1,'UiRegisterWindow::~UiRegisterWindow()'],['../class_ui_register_window.html#a57c0b3fef9def247ffcb51832b6d9084',1,'UiRegisterWindow::~UiRegisterWindow()']]],
+  ['_7euireportswindow_10',['~UiReportsWindow',['../class_ui_reports_window.html#a879075ac8b6d0d86d27b0da66a8646e9',1,'UiReportsWindow']]]
 ];

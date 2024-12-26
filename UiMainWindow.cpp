@@ -9,66 +9,69 @@
 #include <ctime>
 #include <iostream>
 
+/**
+ * @class UiMainWindow
+ * @brief The main window for the application after login.
+ * 
+ * This class represents the main window that allows the user to navigate between different sections 
+ * of the application such as expenses, budget, categories, reports, and profile.
+ */
 UiMainWindow::UiMainWindow(int width, int height)
     : Fl_Window(width, height, ("Main Window - " + FileManager::getMainUser().getUserName()).c_str()) {
+    
+    // Create buttons for different sections
     expenses_button = new Fl_Button(50, 50, 200, 40, "Expenses");
     set_budget_button = new Fl_Button(50, 100, 200, 40, "Set Budget");
     my_categories_button = new Fl_Button(50, 150, 200, 40, "My Categories");
     get_report_button = new Fl_Button(50, 200, 200, 40, "Get Report");
     profile_button = new Fl_Button(300, 50, 100, 40, "Profile");
 
+    // Set callback functions for buttons
     expenses_button->callback(button_callback, (void*)this);
     set_budget_button->callback(button_callback, (void*)this);
     my_categories_button->callback(button_callback, (void*)this);
     get_report_button->callback(button_callback, (void*)this);
     profile_button->callback(button_callback, (void*)this);
 
-    // Tarih göstermek için kutu
+    // Display the current date
     date_display = new Fl_Box(50, 300, 300, 40, "Date: --");
     date_display->box(FL_UP_BOX);
     date_display->labelsize(14);
     date_display->labelfont(FL_BOLD + FL_ITALIC);
     date_display->labeltype(FL_SHADOW_LABEL);
     
-    /*std::thread([date_display]() {
-        while (true) {
-            // 5 saniyede bir bir gün ilerlet
-            MockClock::advanceTime(std::chrono::hours(24));
 
-            // Tarihi al
-            auto current_time = MockClock::getCurrentTime();
-            std::time_t current_time_t = std::chrono::system_clock::to_time_t(current_time);
-            std::ostringstream oss;
-            oss << std::put_time(std::localtime(&current_time_t), "%Y-%m-%d %H:%M:%S");
-            std::string date_string = oss.str();
-
-            // GUI'yi güncelle
-            Fl::lock();
-            date_display->label(("Date: " + date_string).c_str());
-            Fl::unlock();
-            Fl::awake();
-
-            std::this_thread::sleep_for(std::chrono::seconds(5)); // 5 saniyede bir çalıştır
-        }
-    }).detach();*/
-
+    // Finalize window setup
     end();
 }
 
-UiMainWindow::~UiMainWindow() 
-{
+/**
+ * @brief Destructor for UiMainWindow.
+ * 
+ * This destructor cleans up the resources allocated for the main window.
+ */
+UiMainWindow::~UiMainWindow() {
     delete expenses_button;
     delete set_budget_button;
     delete my_categories_button;
     delete get_report_button;
     delete profile_button;
-
     delete date_display;
 }
 
+/**
+ * @brief Callback function for all buttons in the main window.
+ * 
+ * This function handles the button clicks for navigation. Depending on which button is clicked, 
+ * it will navigate to the corresponding window (e.g., Expense, Budget, etc.).
+ * 
+ * @param widget The widget that triggered the callback.
+ * @param data The window data.
+ */
 void UiMainWindow::button_callback(Fl_Widget* widget, void* data) {
     UiMainWindow* window = (UiMainWindow*)data;
     
+    // Check which button was clicked and navigate accordingly
     if (widget == window->expenses_button) {
         std::cout << "Expenses button clicked" << std::endl;
         window->navigateToExpense();
@@ -87,37 +90,57 @@ void UiMainWindow::button_callback(Fl_Widget* widget, void* data) {
     }
 }
 
+/**
+ * @brief Navigate to the expense window.
+ * 
+ * This function hides the main window and creates and shows the UiExpenseWindow.
+ */
 void UiMainWindow::navigateToExpense() {
     this->hide();
-
     UiExpenseWindow* expense_window = new UiExpenseWindow(this->w(), this->h());
     expense_window->show();
 }
 
+/**
+ * @brief Navigate to the budget window.
+ * 
+ * This function hides the main window and creates and shows the UiBudgetWindow.
+ */
 void UiMainWindow::navigateToBudget() {
     this->hide();
-
     UiBudgetWindow* budget_window = new UiBudgetWindow(this->w(), this->h());
     budget_window->show();
 }
 
+/**
+ * @brief Navigate to the categories window.
+ * 
+ * This function hides the main window and creates and shows the UiCategoryWindow.
+ */
 void UiMainWindow::navigateToCategories() {
     this->hide();
-
     UiCategoryWindow* category_window = new UiCategoryWindow(this->w(), this->h());
     category_window->show();
 }
 
+/**
+ * @brief Navigate to the reports window.
+ * 
+ * This function hides the main window and creates and shows the UiReportsWindow.
+ */
 void UiMainWindow::navigateToReport() {
     this->hide();
-
     UiReportsWindow* reports_window = new UiReportsWindow(this->w(), this->h());
     reports_window->show();
 }
 
+/**
+ * @brief Navigate to the profile window.
+ * 
+ * This function hides the main window and creates and shows the UiProfileWindow.
+ */
 void UiMainWindow::navigateToProfile() {
     this->hide();
-
     UiProfileWindow* profile_window = new UiProfileWindow(this->w(), this->h());
     profile_window->show();
 }

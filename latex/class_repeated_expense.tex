@@ -20,18 +20,19 @@ Inherits \mbox{\hyperlink{class_expense}{Expense}}.
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_repeated_expense}{Repeated\+Expense} object. \end{DoxyCompactList}\item 
 std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_repeated_expense_abb0c9adc21866dcc612399beb753c702}{calculate\+Next\+Occurrence}} () const
 \begin{DoxyCompactList}\small\item\em Calculates the next occurrence of the repeated expense. \end{DoxyCompactList}\item 
-\Hypertarget{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb}\label{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb} 
-int {\bfseries get\+Repeat\+Count} () const
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb}{get\+Repeat\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the number of times the expense is repeated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_expense}{Expense}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Expense} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
-\item 
-void {\bfseries set\+Expense\+Details} (double amount, const std\+::string \&description)
-\item 
-std\+::string {\bfseries get\+Expense\+Details} () const
-\item 
+\mbox{\hyperlink{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}{Expense}} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_expense}{Expense} object with the given details. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Expense} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_expense}{Expense} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_expense_a24cc45ee132c0b59bf38135e1592e047}{set\+Expense\+Details}} (double amount, const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Updates the details of the expense. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}{get\+Expense\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the details of the expense as a formatted string. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_expense_ab83eaf6ccd16eccb0895145da2152f96}{get\+Amount}} () const
 \begin{DoxyCompactList}\small\item\em Gets the amount of the expense. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_expense_a24773d6376de1ac351c18f78a69e559d}{get\+Id}} () const
@@ -62,6 +63,8 @@ Repeated\+Expense\+::\+Repeated\+Expense (\begin{DoxyParamCaption}\item[{int}]{i
 
 Constructs a \doxylink{class_repeated_expense}{Repeated\+Expense} object. 
 
+Constructor for \doxylink{class_repeated_expense}{Repeated\+Expense} class.
+
 Initializes a repeated expense with the given details, including the number of repetitions and the interval between repetitions.
 
 
@@ -78,7 +81,26 @@ Initializes a repeated expense with the given details, including the number of r
 \hline
 {\em num} & The number of times the expense should repeat. \\
 \hline
-{\em interval} & The interval between each repetition of the expense. \\
+{\em interval} & The interval between each repetition of the expense.\\
+\hline
+\end{DoxyParams}
+This constructor initializes a repeated expense with the specified parameters. It extends from the {\ttfamily \doxylink{class_expense}{Expense}} class and adds the functionality of repetition and interval.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for the expense. \\
+\hline
+{\em amount} & The amount of the expense. \\
+\hline
+{\em date} & The date of the expense occurrence. \\
+\hline
+{\em description} & A description of the expense. \\
+\hline
+{\em category} & The category associated with the expense. \\
+\hline
+{\em num} & The number of repetitions for this expense. \\
+\hline
+{\em interval} & The time interval between each occurrence of the expense. \\
 \hline
 \end{DoxyParams}
 
@@ -97,7 +119,27 @@ Calculates the next occurrence of the repeated expense.
 This function calculates when the next occurrence of the repeated expense will be, based on the current date and the repeat interval.
 
 \begin{DoxyReturn}{Returns}
-The {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} representing the next occurrence of the expense. 
+The {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} representing the next occurrence of the expense.
+\end{DoxyReturn}
+This function calculates the next occurrence of the repeated expense based on the given time interval. The next occurrence is calculated by adding the {\ttfamily repeat\+Interval} to the original expense date.
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily time\+\_\+point} representing the next occurrence of the expense. 
+\end{DoxyReturn}
+\Hypertarget{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb}\index{RepeatedExpense@{RepeatedExpense}!getRepeatCount@{getRepeatCount}}
+\index{getRepeatCount@{getRepeatCount}!RepeatedExpense@{RepeatedExpense}}
+\doxysubsubsection{\texorpdfstring{getRepeatCount()}{getRepeatCount()}}
+{\footnotesize\ttfamily \label{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb} 
+int Repeated\+Expense\+::get\+Repeat\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the number of times the expense is repeated. 
+
+This function returns the number of repetitions for the repeated expense, i.\+e., how many times the expense should be repeated.
+
+\begin{DoxyReturn}{Returns}
+The number of repetitions for this expense. 
 \end{DoxyReturn}
 
 

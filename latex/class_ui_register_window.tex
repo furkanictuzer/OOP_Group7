@@ -2,7 +2,7 @@
 \hypertarget{class_ui_register_window}{}\label{class_ui_register_window}\index{UiRegisterWindow@{UiRegisterWindow}}
 
 
-A window for user registration.  
+A class representing the registration window where users can create an account.  
 
 
 
@@ -11,27 +11,62 @@ A window for user registration.
 
 
 
-Inherits Fl\+\_\+\+Window.
+Inherits Fl\+\_\+\+Window, and Fl\+\_\+\+Window.
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903}{Ui\+Register\+Window}} (int width, int height, \mbox{\hyperlink{class_authentication_manager}{Authentication\+Manager}} \texorpdfstring{$\ast$}{*}authentication\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_ui_register_window}{Ui\+Register\+Window} and its UI components. \end{DoxyCompactList}\item 
+\Hypertarget{class_ui_register_window_a57c0b3fef9def247ffcb51832b6d9084}\label{class_ui_register_window_a57c0b3fef9def247ffcb51832b6d9084} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ui\+Register\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor that cleans up UI components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903}{Ui\+Register\+Window}} (int width, int height, \mbox{\hyperlink{class_authentication_manager}{Authentication\+Manager}} \texorpdfstring{$\ast$}{*}authentication\+Manager)
 \begin{DoxyCompactList}\small\item\em Constructs the registration window. \end{DoxyCompactList}\item 
 \Hypertarget{class_ui_register_window_a57c0b3fef9def247ffcb51832b6d9084}\label{class_ui_register_window_a57c0b3fef9def247ffcb51832b6d9084} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ui\+Register\+Window} ()
 \begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_ui_register_window_ac5778089b4a6c0ee2b63413824fe6e2a}{register\+\_\+callback}} (Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}widget, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Callback function for the register button. Validates input and attempts to register a new user. If registration succeeds, the login window is shown. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_ui_register_window_a2cc03e4b108262a49c6c2f791ccdf2e3}{login\+\_\+callback}} (Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}widget, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Callback function for the login button. Navigates to the login window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A window for user registration. 
+A class representing the registration window where users can create an account. 
+
+A window for user registration.
+
+This class manages the user interface for registering a new user, including fields for entering a username and password, as well as buttons to register or navigate to the login page.
 
 This class represents the window where users can register by entering their username and password. It provides options for both registration and navigating to the login window. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903}\index{UiRegisterWindow@{UiRegisterWindow}!UiRegisterWindow@{UiRegisterWindow}}
 \index{UiRegisterWindow@{UiRegisterWindow}!UiRegisterWindow@{UiRegisterWindow}}
-\doxysubsubsection{\texorpdfstring{UiRegisterWindow()}{UiRegisterWindow()}}
+\doxysubsubsection{\texorpdfstring{UiRegisterWindow()}{UiRegisterWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903} 
+Ui\+Register\+Window\+::\+Ui\+Register\+Window (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{\mbox{\hyperlink{class_authentication_manager}{Authentication\+Manager}} \texorpdfstring{$\ast$}{*}}]{authentication\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the \doxylink{class_ui_register_window}{Ui\+Register\+Window} and its UI components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window. \\
+\hline
+{\em authentication\+Manager} & The authentication manager instance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903}\index{UiRegisterWindow@{UiRegisterWindow}!UiRegisterWindow@{UiRegisterWindow}}
+\index{UiRegisterWindow@{UiRegisterWindow}!UiRegisterWindow@{UiRegisterWindow}}
+\doxysubsubsection{\texorpdfstring{UiRegisterWindow()}{UiRegisterWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_ui_register_window_a9af3941e7fa955253bf47e64afaa3903} 
 Ui\+Register\+Window\+::\+Ui\+Register\+Window (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{\mbox{\hyperlink{class_authentication_manager}{Authentication\+Manager}} \texorpdfstring{$\ast$}{*}}]{authentication\+Manager}{}\end{DoxyParamCaption})}
 
@@ -52,7 +87,44 @@ Initializes the registration window with input fields for the username and passw
 \end{DoxyParams}
 
 
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ui_register_window_a2cc03e4b108262a49c6c2f791ccdf2e3}\index{UiRegisterWindow@{UiRegisterWindow}!login\_callback@{login\_callback}}
+\index{login\_callback@{login\_callback}!UiRegisterWindow@{UiRegisterWindow}}
+\doxysubsubsection{\texorpdfstring{login\_callback()}{login\_callback()}}
+{\footnotesize\ttfamily \label{class_ui_register_window_a2cc03e4b108262a49c6c2f791ccdf2e3} 
+static void Ui\+Register\+Window\+::login\+\_\+callback (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}}]{widget}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for the login button. Navigates to the login window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that triggered the callback. \\
+\hline
+{\em data} & The user data passed to the callback (in this case, the current window). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ui_register_window_ac5778089b4a6c0ee2b63413824fe6e2a}\index{UiRegisterWindow@{UiRegisterWindow}!register\_callback@{register\_callback}}
+\index{register\_callback@{register\_callback}!UiRegisterWindow@{UiRegisterWindow}}
+\doxysubsubsection{\texorpdfstring{register\_callback()}{register\_callback()}}
+{\footnotesize\ttfamily \label{class_ui_register_window_ac5778089b4a6c0ee2b63413824fe6e2a} 
+static void Ui\+Register\+Window\+::register\+\_\+callback (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}}]{widget}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for the register button. Validates input and attempts to register a new user. If registration succeeds, the login window is shown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that triggered the callback. \\
+\hline
+{\em data} & The user data passed to the callback (in this case, the current window). \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Ui\+Register\+Window.\+h\item 
-Ui\+Register\+Window.\+cpp\end{DoxyCompactItemize}
+Ui\+Register\+Window.\+cpp\item 
+\mbox{\hyperlink{_ui_register_window_8h}{Ui\+Register\+Window.\+h}}\end{DoxyCompactItemize}

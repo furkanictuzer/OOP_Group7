@@ -38,7 +38,29 @@ Ui\+Add\+Expense\+Window\+::\+Ui\+Add\+Expense\+Window (\begin{DoxyParamCaption}
 
 Constructor to create the add expense window. 
 
+Defines the UI for adding a new expense in the application.
+
 This constructor initializes the UI elements of the window (input fields, buttons, etc.) and sets up the window layout.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window.\\
+\hline
+\end{DoxyParams}
+This file contains the implementation of the {\ttfamily \doxylink{class_ui_add_expense_window}{Ui\+Add\+Expense\+Window}} class, which provides a window for users to input and save new expenses. It supports both single and repeated expenses, allowing users to specify details like amount, category, date, and description. The class interacts with other components such as {\ttfamily \doxylink{class_expense_manager}{Expense\+Manager}}, {\ttfamily \doxylink{class_category}{Category}}, {\ttfamily \doxylink{class_user}{User}}, and {\ttfamily \doxylink{class_file_manager}{File\+Manager}}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_ui_add_expense_window_8h_source}{Ui\+Add\+Expense\+Window.\+h} 
+
+\doxylink{class_expense_manager}{Expense\+Manager} 
+
+\doxylink{class_file_manager}{File\+Manager}
+\end{DoxySeeAlso}
+Constructs a new \doxylink{class_ui_add_expense_window}{Ui\+Add\+Expense\+Window} object.
+
+Initializes the UI components, including the input fields for amount, category, date, description, and the checkbox for repeated expenses. It also populates the categories and date choices.
 
 
 \begin{DoxyParams}{Parameters}
@@ -57,7 +79,11 @@ Ui\+Add\+Expense\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Ui\+Add\+Expense\
 
 Destructor to clean up the resources. 
 
-This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. 
+Destroys the \doxylink{class_ui_add_expense_window}{Ui\+Add\+Expense\+Window} object.
+
+This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed.
+
+Frees all dynamically allocated resources for the UI components. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

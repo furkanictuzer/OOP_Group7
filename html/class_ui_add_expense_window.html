@@ -131,7 +131,23 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor to create the add expense window. </p>
+<p>Defines the UI for adding a new expense in the application.</p>
 <p>This constructor initializes the UI elements of the window (input fields, buttons, etc.) and sets up the window layout.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This file contains the implementation of the <code><a class="el" href="class_ui_add_expense_window.html" title="A window to add a new expense in the application.">UiAddExpenseWindow</a></code> class, which provides a window for users to input and save new expenses. It supports both single and repeated expenses, allowing users to specify details like amount, category, date, and description. The class interacts with other components such as <code><a class="el" href="class_expense_manager.html" title="Manages expenses, budgets, and their related operations.">ExpenseManager</a></code>, <code><a class="el" href="class_category.html" title="Represents a category that holds a collection of expenses.">Category</a></code>, <code><a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a></code>, and <code><a class="el" href="class_file_manager.html" title="Provides functionality to save, load, and manage user data in a file.">FileManager</a></code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_ui_add_expense_window_8h_source.html">UiAddExpenseWindow.h</a> </dd>
+<dd>
+<a class="el" href="class_expense_manager.html" title="Manages expenses, budgets, and their related operations.">ExpenseManager</a> </dd>
+<dd>
+<a class="el" href="class_file_manager.html" title="Provides functionality to save, load, and manage user data in a file.">FileManager</a></dd></dl>
+<p>Constructs a new <a class="el" href="class_ui_add_expense_window.html" title="A window to add a new expense in the application.">UiAddExpenseWindow</a> object.</p>
+<p>Initializes the UI components, including the input fields for amount, category, date, description, and the checkbox for repeated expenses. It also populates the categories and date choices.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">width</td><td>The width of the window. </td></tr>
@@ -158,7 +174,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor to clean up the resources. </p>
-<p>This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. </p>
+<p>Destroys the <a class="el" href="class_ui_add_expense_window.html" title="A window to add a new expense in the application.">UiAddExpenseWindow</a> object.</p>
+<p>This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed.</p>
+<p>Frees all dynamically allocated resources for the UI components. </p>
 
 </div>
 </div>

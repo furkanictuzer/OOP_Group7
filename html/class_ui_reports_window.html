@@ -142,7 +142,16 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs the reports window. </p>
+<p>Constructor for the <a class="el" href="class_ui_reports_window.html" title="A window for generating and displaying reports.">UiReportsWindow</a> class.</p>
 <p>Initializes the reports window with options for selecting report parameters (date range, report type, category) and buttons for generating the report or returning to the main window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This constructor sets up the user interface elements such as choice widgets for selecting report type, start and end dates, categories, and buttons for generating reports and navigating back to the main window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">width</td><td>The width of the window. </td></tr>
@@ -182,11 +191,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback function for navigating back to the main window. </p>
+<p>Callback function for the 'Back' button. Hides the current window and shows the main window.</p>
 <p>This function is triggered when the "Back" button is clicked, allowing the user to navigate back to the main window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">widget</td><td>The widget that triggered the callback. </td></tr>
-    <tr><td class="paramname">data</td><td>Additional data passed to the callback. </td></tr>
+    <tr><td class="paramname">data</td><td>Additional data passed to the callback.</td></tr>
+    <tr><td class="paramname">widget</td><td>The Fl_Widget object that triggered the callback. </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> data (pointer to the <a class="el" href="class_ui_reports_window.html" title="A window for generating and displaying reports.">UiReportsWindow</a> instance). </td></tr>
   </table>
   </dd>
 </dl>
@@ -221,11 +233,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback function for generating a report. </p>
+<p>Callback function for the 'Generate' button. Generates a report based on user input and displays it.</p>
 <p>This function is triggered when the "Generate" button is clicked. It handles the generation of the report based on the selected parameters and displays it in the report display area.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">widget</td><td>The widget that triggered the callback. </td></tr>
-    <tr><td class="paramname">data</td><td>Additional data passed to the callback. </td></tr>
+    <tr><td class="paramname">data</td><td>Additional data passed to the callback.</td></tr>
+    <tr><td class="paramname">widget</td><td>The Fl_Widget object that triggered the callback. </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> data (pointer to the <a class="el" href="class_ui_reports_window.html" title="A window for generating and displaying reports.">UiReportsWindow</a> instance). </td></tr>
   </table>
   </dd>
 </dl>
@@ -234,7 +249,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_ui_reports_window_8h_source.html">UiReportsWindow.h</a></li>
-<li><b>UiReportsWindow.cpp</b></li>
+<li><a class="el" href="_ui_reports_window_8cpp.html">UiReportsWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

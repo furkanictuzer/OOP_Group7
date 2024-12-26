@@ -50,9 +50,22 @@ Report\+::\+Report (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{
 
 Constructs a \doxylink{class_report}{Report} with the specified expenses and time range. 
 
+Constructor for \doxylink{class_report}{Report} class.
+
 
 \begin{DoxyParams}{Parameters}
 {\em expenses} & The list of expenses included in the report. \\
+\hline
+{\em start} & The start time for the report period. \\
+\hline
+{\em end} & The end time for the report period.\\
+\hline
+\end{DoxyParams}
+This constructor initializes the report with the list of expenses and the start and end times for the report period.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expenses} & A vector of {\ttfamily \doxylink{class_expense}{Expense}} objects that will be included in the report. \\
 \hline
 {\em start} & The start time for the report period. \\
 \hline
@@ -72,7 +85,11 @@ void Report\+::generate\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 Generates and saves the report to a file. 
 
-This method creates a file containing the details of the report, which can be saved for future reference. \Hypertarget{class_report_a7b7bec148be4b79e95bcc22337ec5b9e}\index{Report@{Report}!generateReportDetails@{generateReportDetails}}
+Generates a report file.
+
+This method creates a file containing the details of the report, which can be saved for future reference.
+
+This function generates a file that contains the detailed report. The file is named based on the start and end times of the report period. \Hypertarget{class_report_a7b7bec148be4b79e95bcc22337ec5b9e}\index{Report@{Report}!generateReportDetails@{generateReportDetails}}
 \index{generateReportDetails@{generateReportDetails}!Report@{Report}}
 \doxysubsubsection{\texorpdfstring{generateReportDetails()}{generateReportDetails()}}
 {\footnotesize\ttfamily \label{class_report_a7b7bec148be4b79e95bcc22337ec5b9e} 
@@ -82,10 +99,17 @@ std\+::string Report\+::generate\+Report\+Details (\begin{DoxyParamCaption}{}{}\
 
 Generates a detailed string of the report. 
 
+Generates a detailed string representation of the report.
+
 This method generates a summary report of all expenses within the specified time period.
 
 \begin{DoxyReturn}{Returns}
-A string containing the details of the report. 
+A string containing the details of the report.
+\end{DoxyReturn}
+This function generates a detailed string for the report that includes the expenses and their attributes such as ID, amount, description, date, and category, within the specified report period.
+
+\begin{DoxyReturn}{Returns}
+A string containing the report details. 
 \end{DoxyReturn}
 \Hypertarget{class_report_aebe569de8a49a0d68901479e5944f21b}\index{Report@{Report}!getExpenses@{getExpenses}}
 \index{getExpenses@{getExpenses}!Report@{Report}}
@@ -97,10 +121,17 @@ const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \& Report\+
 
 Retrieves the expenses included in the report. 
 
+Retrieves the list of expenses in the report.
+
 This method returns the list of expenses associated with the report.
 
 \begin{DoxyReturn}{Returns}
-A constant reference to the vector of expenses. 
+A constant reference to the vector of expenses.
+\end{DoxyReturn}
+This function returns the list of expenses that are part of the report.
+
+\begin{DoxyReturn}{Returns}
+A reference to the vector of {\ttfamily \doxylink{class_expense}{Expense}} objects included in the report. 
 \end{DoxyReturn}
 
 

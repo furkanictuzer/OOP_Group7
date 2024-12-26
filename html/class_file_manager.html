@@ -113,9 +113,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a65dc5887a2e4dbd42ffd373d1140c0cc" id="r_a65dc5887a2e4dbd42ffd373d1140c0cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_user.html">User</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65dc5887a2e4dbd42ffd373d1140c0cc">getMainUser</a> ()</td></tr>
 <tr class="memdesc:a65dc5887a2e4dbd42ffd373d1140c0cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the main user.  <br /></td></tr>
 <tr class="separator:a65dc5887a2e4dbd42ffd373d1140c0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef716e735f4409600e25ba8ee3358047" id="r_aef716e735f4409600e25ba8ee3358047"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef716e735f4409600e25ba8ee3358047">getMainUserPawword</a> ()</td></tr>
-<tr class="memdesc:aef716e735f4409600e25ba8ee3358047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the main user's password.  <br /></td></tr>
-<tr class="separator:aef716e735f4409600e25ba8ee3358047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c7fa4bee479acba09eb16c00d059c8" id="r_a87c7fa4bee479acba09eb16c00d059c8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87c7fa4bee479acba09eb16c00d059c8">getMainUserPawword</a> ()</td></tr>
+<tr class="memdesc:a87c7fa4bee479acba09eb16c00d059c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the main user's password.  <br /></td></tr>
+<tr class="separator:a87c7fa4bee479acba09eb16c00d059c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dfe235276f68baff708222aac4766c4" id="r_a5dfe235276f68baff708222aac4766c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dfe235276f68baff708222aac4766c4">setMainUser</a> (const <a class="el" href="class_user.html">User</a> &amp;user)</td></tr>
 <tr class="memdesc:a5dfe235276f68baff708222aac4766c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the main user.  <br /></td></tr>
 <tr class="separator:a5dfe235276f68baff708222aac4766c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +153,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes all users. </p>
-<p>This function deletes all user data from the file. </p>
+<p>Deletes all user data from the file.</p>
+<p>This function deletes all user data from the file.</p>
+<p>This function clears the contents of the <code>user_data.json</code> file by writing an empty JSON array. </p>
 
 </div>
 </div>
@@ -181,10 +183,18 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes a user by username. </p>
+<p>Deletes a specific user from the file.</p>
 <p>This function deletes the user with the specified username from the data file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>The username of the user to delete. </td></tr>
+    <tr><td class="paramname">username</td><td>The username of the user to delete.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function removes the user with the specified username from the <code>user_data.json</code> file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>The username of the user to be deleted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -215,6 +225,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if a user exists by username. </p>
+<p>Checks if a user exists in the file.</p>
 <p>This function checks if a user with the given username already exists in the file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -222,7 +233,17 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the user exists, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the user exists, false otherwise.</dd></dl>
+<p>This function checks if the user with the specified username exists in the <code>user_data.json</code> file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>The username to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the user exists. </dd>
+<dd>
+false If the user does not exist. </dd></dl>
 
 </div>
 </div>
@@ -250,7 +271,12 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the data file exists. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the file exists, false otherwise. </dd></dl>
+<p>Checks if the file containing user data exists.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the file exists, false otherwise.</dd></dl>
+<p>This function checks whether the <code>user_data.json</code> file exists.</p>
+<dl class="section return"><dt>Returns</dt><dd>true If the file exists. </dd>
+<dd>
+false If the file does not exist. </dd></dl>
 
 </div>
 </div>
@@ -278,12 +304,15 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the main user. </p>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the main <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object. </dd></dl>
+<p>Retrieves the main user object.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the main <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object.</dd></dl>
+<p>This function returns the main user object.</p>
+<dl class="section return"><dt>Returns</dt><dd>The main <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object. </dd></dl>
 
 </div>
 </div>
-<a id="aef716e735f4409600e25ba8ee3358047" name="aef716e735f4409600e25ba8ee3358047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef716e735f4409600e25ba8ee3358047">&#9670;&#160;</a></span>getMainUserPawword()</h2>
+<a id="a87c7fa4bee479acba09eb16c00d059c8" name="a87c7fa4bee479acba09eb16c00d059c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c7fa4bee479acba09eb16c00d059c8">&#9670;&#160;</a></span>getMainUserPawword()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string FileManager::getMainUserPawword </td>
+          <td class="memname">std::string FileManager::getMainUserPawword </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -306,7 +335,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the main user's password. </p>
-<dl class="section return"><dt>Returns</dt><dd>The main user's password as a string. </dd></dl>
+<p>Retrieves the password of the main user.</p>
+<dl class="section return"><dt>Returns</dt><dd>The main user's password as a string.</dd></dl>
+<p>This function retrieves the password of the main user from the data file.</p>
+<dl class="section return"><dt>Returns</dt><dd>The password of the main user. </dd></dl>
 
 </div>
 </div>
@@ -334,8 +366,13 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Loads user data from a file. </p>
+<p>Loads the user data from a file.</p>
 <p>This function deserializes data from the file and loads it into memory.</p>
-<dl class="section return"><dt>Returns</dt><dd>true if the data was successfully loaded, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the data was successfully loaded, false otherwise.</dd></dl>
+<p>This function reads the user data, including categories, expenses, and budgets, from a JSON file and loads it into the main user object.</p>
+<dl class="section return"><dt>Returns</dt><dd>true If data is successfully loaded from the file. </dd>
+<dd>
+false If there is an error loading the data. </dd></dl>
 
 </div>
 </div>
@@ -366,10 +403,18 @@ Static Public Member Functions</h2></td></tr>
 <p>This function serializes the user object and saves it to a file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>A pointer to the <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object whose data needs to be saved. </td></tr>
+    <tr><td class="paramname">user</td><td>A pointer to the <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object whose data needs to be saved.</td></tr>
   </table>
   </dd>
 </dl>
+<p>This function writes the user information, including categories, expenses, and budgets, to a JSON file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>A pointer to the <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object whose data will be saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Write the formatted JSON data to the file</p>
 
 </div>
 </div>
@@ -397,10 +442,18 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the main user. </p>
-<p>This function sets the provided <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object as the main user.</p>
+<p>Sets the main user object.</p>
+<p>This function sets the provided <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object as the main user.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>The <a class="el" href="class_user.html" title="Represents a user of the application with associated data like username, password,...">User</a> object to set as the main user. </td></tr>
+    <tr><td class="paramname">user</td><td>The <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object to set as the main user.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function sets the main user object to the specified user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>The <a class="el" href="class_user.html" title="Represents a user in the system with their account details, budget, and categories.">User</a> object to be set as the main user. </td></tr>
   </table>
   </dd>
 </dl>

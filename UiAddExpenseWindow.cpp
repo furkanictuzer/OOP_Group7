@@ -1,3 +1,17 @@
+/**
+ * @brief Defines the UI for adding a new expense in the application.
+ * 
+ * This file contains the implementation of the `UiAddExpenseWindow` class,
+ * which provides a window for users to input and save new expenses. It supports
+ * both single and repeated expenses, allowing users to specify details like
+ * amount, category, date, and description. The class interacts with other
+ * components such as `ExpenseManager`, `Category`, `User`, and `FileManager`.
+ * 
+ * @see UiAddExpenseWindow.h
+ * @see ExpenseManager
+ * @see FileManager
+ */
+
 #include "UiAddExpenseWindow.h"
 #include "RepeatedExpense.h"
 #include <FL/fl_ask.H>
@@ -7,6 +21,16 @@
 #include "FileManager.h"
 #include <iomanip> // Include for std::setw and std::setfill
 
+/**
+ * @brief Constructs a new UiAddExpenseWindow object.
+ * 
+ * Initializes the UI components, including the input fields for amount, 
+ * category, date, description, and the checkbox for repeated expenses. It also
+ * populates the categories and date choices.
+ * 
+ * @param width The width of the window.
+ * @param height The height of the window.
+ */
 UiAddExpenseWindow::UiAddExpenseWindow(int width, int height)
     : Fl_Window(width, height, "Add Expense") {
     amount_input = new Fl_Input(120, 20, 260, 30, "Amount:");
@@ -38,6 +62,11 @@ UiAddExpenseWindow::UiAddExpenseWindow(int width, int height)
     end();
 }
 
+/**
+ * @brief Destroys the UiAddExpenseWindow object.
+ * 
+ * Frees all dynamically allocated resources for the UI components.
+ */
 UiAddExpenseWindow::~UiAddExpenseWindow() {
     delete amount_input;
     delete category_choice;
@@ -51,6 +80,12 @@ UiAddExpenseWindow::~UiAddExpenseWindow() {
     delete cancel_button;
 }
 
+/**
+ * @brief Populates the day, month, and year choices with values.
+ * 
+ * This method populates the `day_choice`, `month_choice`, and `year_choice`
+ * dropdown menus with available options.
+ */
 void UiAddExpenseWindow::populateDateChoices() {
     for (int i = 1; i <= 31; ++i) {
         day_choice->add(std::to_string(i).c_str());
@@ -69,6 +104,15 @@ void UiAddExpenseWindow::populateDateChoices() {
     }
 }
 
+/**
+ * @brief Callback for the repeated expense checkbox.
+ * 
+ * This method is triggered when the user checks or unchecks the "Is this a repeated expense?" checkbox.
+ * If the checkbox is checked, the "Repeat Count" input field becomes visible; otherwise, it is hidden.
+ * 
+ * @param widget The widget that triggered the callback.
+ * @param data User data passed to the callback function.
+ */
 void UiAddExpenseWindow::repeated_expense_check_callback(Fl_Widget* widget, void* data) {
     UiAddExpenseWindow* window = (UiAddExpenseWindow*)data;
     if (window->repeated_expense_check->value()) {
@@ -79,6 +123,15 @@ void UiAddExpenseWindow::repeated_expense_check_callback(Fl_Widget* widget, void
     window->redraw();
 }
 
+/**
+ * @brief Callback for saving the expense.
+ * 
+ * This method is triggered when the user clicks the "Save" button. It validates the input fields,
+ * creates an expense object, and adds it to the `ExpenseManager`. It also handles repeated expenses.
+ * 
+ * @param widget The widget that triggered the callback.
+ * @param data User data passed to the callback function.
+ */
 void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     UiAddExpenseWindow* window = (UiAddExpenseWindow*)data;
     std::string amount = window->amount_input->value();
@@ -98,6 +151,7 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     std::cout << "Description: " << description << std::endl;
     std::cout << "Is Repeated: " << is_repeated << std::endl;
 
+    // Input validation
     if (amount.empty()) {
         fl_alert("Amount must be filled out.");
         return;
@@ -150,13 +204,10 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     try {
         if (is_repeated) {
             int repeat_count_int = std::stoi(repeat_count);
-            cout<< "Repeat count converted to int: " << repeat_count_int << endl;
             std::chrono::hours repeat_interval(30 * 24); // Example interval in hours (30 days)
             RepeatedExpense expense(user.getExpenseCount() + 1, std::stod(amount), DateUtils::stringToTimePoint(date), description, category_ptr, repeat_count_int, repeat_interval);
             
-            cout<< "Expense created" << endl;
             ExpenseManager::addExpense(expense);
-            cout<< "Expense added" << endl;
             NotificationManager::addExpense(expense);
             std::cout << "Repeated expense added." << std::endl;
         } else {
@@ -170,7 +221,6 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
         return;
     }
 
-    std::cout << "Expense saved: " << amount << ", " << category << ", " << date << ", " << description << ", Repeated: " << is_repeated << std::endl;
     fl_message("Expense saved successfully.");
 
     window->hide();
@@ -179,8 +229,16 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     expense_window->show();
 }
 
-void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) 
-{
+/**
+ * @brief Callback for canceling the action.
+ * 
+ * This method is triggered when the user clicks the "Cancel" button. It closes the
+ * current window and opens the expense window.
+ * 
+ * @param widget The widget that triggered the callback.
+ * @param data User data passed to the callback function.
+ */
+void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) {
     UiAddExpenseWindow* window = (UiAddExpenseWindow*)data;
     window->hide();
 

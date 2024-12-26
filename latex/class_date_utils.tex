@@ -32,6 +32,8 @@ std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Date\+Utils\+::string\+To\
 
 Converts a string representation of a time to a time\+\_\+point. 
 
+Converts a date string to a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point.
+
 This function parses a time string (in a specific format) and converts it to a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} object.
 
 
@@ -40,8 +42,23 @@ This function parses a time string (in a specific format) and converts it to a {
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} object representing the parsed time. 
+A {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} object representing the parsed time.
 \end{DoxyReturn}
+The input string must follow the format "{}\+YYYY-\/\+MM-\/\+DD"{}. If the conversion fails, an exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Str} & The date string in "{}\+YYYY-\/\+MM-\/\+DD"{} format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point representing the date. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if parsing or conversion fails. \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{class_date_utils_ac2dbb796889de328332b99f2dbcc4c13}\index{DateUtils@{DateUtils}!timePointToString@{timePointToString}}
 \index{timePointToString@{timePointToString}!DateUtils@{DateUtils}}
 \doxysubsubsection{\texorpdfstring{timePointToString()}{timePointToString()}}
@@ -52,6 +69,8 @@ std\+::string Date\+Utils\+::time\+Point\+To\+String (\begin{DoxyParamCaption}\i
 
 Converts a time\+\_\+point to a string representation. 
 
+Converts a std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point to a string.
+
 This function converts a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} to a string in a readable format.
 
 
@@ -60,7 +79,17 @@ This function converts a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A string representation of the given time point. 
+A string representation of the given time point.
+\end{DoxyReturn}
+The output string follows the format "{}\+YYYY-\/\+MM-\/\+DD"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Point} & The time point to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the time point in "{}\+YYYY-\/\+MM-\/\+DD"{} format. 
 \end{DoxyReturn}
 
 
