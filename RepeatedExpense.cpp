@@ -8,3 +8,7 @@ RepeatedExpense::RepeatedExpense(int id, double amount, const std::chrono::syste
 std::chrono::system_clock::time_point RepeatedExpense::calculateNextOccurrence() const {
     return getDate() + repeatInterval;
 }
+
+int RepeatedExpense::getRepeatCount() const {
+    return numberOfRepetition;
+}

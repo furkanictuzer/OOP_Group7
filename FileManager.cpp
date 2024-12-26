@@ -2,6 +2,7 @@
 #include "User.h"
 #include "Category.h"
 #include "Expense.h"
+#include "RepeatedExpense.h"
 #include "DateUtils.h"
 #include <fstream>
 #include <iostream>
@@ -34,6 +35,13 @@ void FileManager::saveDataToFile(const User* user) {
             expenseData["amount"] = expense->getAmount();
             expenseData["date"] = DateUtils::timePointToString(expense->getDate());
             expenseData["description"] = expense->getDescription();
+
+            // Check if the expense is a RepeatedExpense
+            const RepeatedExpense* repeatedExpense = dynamic_cast<const RepeatedExpense*>(expense);
+            if (repeatedExpense) {
+                expenseData["repeat_count"] = repeatedExpense->getRepeatCount();
+            }
+
             categoryData["expenses"].push_back(expenseData);
         }
 
@@ -65,15 +73,19 @@ bool FileManager::loadDataFromFile() {
     for (const auto& categoryData : jsonData["categories"]) {
         Category category(categoryData["name"].get<std::string>());
 
-        if (categoryData.contains("expenses")) {
-            for (const auto& expenseData : categoryData["expenses"]) {
-                Expense* expense = new Expense(
-                    expenseData["id"].get<int>(),
-                    expenseData["amount"].get<double>(),
-                    DateUtils::stringToTimePoint(expenseData["date"].get<std::string>()),
-                    expenseData["description"].get<std::string>(),
-                    &category
-                );
+        for (const auto& expenseData : categoryData["expenses"]) {
+            int expenseId = expenseData["id"].get<int>();
+            double amount = expenseData["amount"].get<double>();
+            auto date = DateUtils::stringToTimePoint(expenseData["date"].get<std::string>());
+            std::string description = expenseData["description"].get<std::string>();
+
+            // Check if the expense has a repeat_count field
+            if (expenseData.contains("repeat_count")) {
+                int repeatCount = expenseData["repeat_count"].get<int>();
+                RepeatedExpense* repeatedExpense = new RepeatedExpense(expenseId, amount, date, description, &category, repeatCount, std::chrono::hours(30 * 24));
+                category.addExpense(repeatedExpense);
+            } else {
+                Expense* expense = new Expense(expenseId, amount, date, description, &category);
                 category.addExpense(expense);
             }
         }
@@ -81,9 +93,8 @@ bool FileManager::loadDataFromFile() {
         user.addCategory(category);
     }
 
+    main_user = user;
     std::cout << "Data loaded successfully from user_data.json.\n";
-
-    setMainUser(user);
     return true;
 }
 

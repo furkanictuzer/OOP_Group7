@@ -7,6 +7,8 @@
 Expense::Expense(int id, double amount, const std::chrono::system_clock::time_point& date, const std::string& description, Category* category)
     : id(id), amount(amount), date(date), description(description), category(category) {}
 
+Expense::~Expense() {}
+
 void Expense::setExpenseDetails(double newAmount, const std::string& newDescription) {
     amount = newAmount;
     description = newDescription;
