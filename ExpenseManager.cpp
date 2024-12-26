@@ -15,6 +15,7 @@ void ExpenseManager::addExpense(const Expense& expense) {
     // Create a new Expense object on the heap and pass a pointer to it
     Expense* newExpense = new Expense(expense);
     user.getCategoryByName(expense.getCategory()->getCategoryName())->addExpense(newExpense);
+    user.getCurrentBudget().setSpentAmount(expense.getAmount()); //Spent amount will be decremented from budget
 
     expenses.push_back(*newExpense);
 
