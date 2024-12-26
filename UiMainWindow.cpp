@@ -6,7 +6,6 @@
 #include <chrono>               
 #include <ctime>
 
-// Yeni eklenen alanlar
 Fl_Box* date_display = nullptr;
 MockClock clock;
 
@@ -24,12 +23,11 @@ UiMainWindow::UiMainWindow(int width, int height)
     get_report_button->callback(button_callback, (void*)this);
     profile_button->callback(button_callback, (void*)this);
 
-    // Tarih göstermek için kutu ekleniyor
+    // Tarih göstermek için kutu
     date_display = new Fl_Box(50, 300, 300, 40, "Date: --");
     date_display->box(FL_UP_BOX);
     date_display->labelsize(14);
 
-    // MockClock başlatılıyor
     clock.initialize(1); // Speed factor: 1 (normal hızda başlat)
 
     // Tarihi güncellemek için bir thread başlat
