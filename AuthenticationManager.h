@@ -2,6 +2,7 @@
 #define AUTHENTICATIONMANAGER_H
 
 #include "FileManager.h"
+#include "Category.h"
 #include <iostream>
 
 using namespace std;
