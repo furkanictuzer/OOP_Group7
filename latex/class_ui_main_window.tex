@@ -2,30 +2,125 @@
 \hypertarget{class_ui_main_window}{}\label{class_ui_main_window}\index{UiMainWindow@{UiMainWindow}}
 
 
+Represents the main window of the application.  
+
+
+
+
+{\ttfamily \#include $<$Ui\+Main\+Window.\+h$>$}
+
+
+
 Inherits Fl\+\_\+\+Window.
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262}\label{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262} 
-{\bfseries Ui\+Main\+Window} (int width, int height)
-\item 
-\Hypertarget{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}\label{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3} 
-void {\bfseries navigate\+To\+Expense} ()
-\item 
-\Hypertarget{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f}\label{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f} 
-void {\bfseries navigate\+To\+Budget} ()
-\item 
-\Hypertarget{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}\label{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714} 
-void {\bfseries navigate\+To\+Categories} ()
-\item 
-\Hypertarget{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}\label{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a} 
-void {\bfseries navigate\+To\+Report} ()
-\item 
-\Hypertarget{class_ui_main_window_add86721a9129809e44818284350dca8a}\label{class_ui_main_window_add86721a9129809e44818284350dca8a} 
-void {\bfseries navigate\+To\+Profile} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262}{Ui\+Main\+Window}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructor to create the main window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ui_main_window_a95b08df7d09ff67c2ebb43ef46b31ac0}{\texorpdfstring{$\sim$}{\string~}\+Ui\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to clean up resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}{navigate\+To\+Expense}} ()
+\begin{DoxyCompactList}\small\item\em Navigates to the Expenses window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f}{navigate\+To\+Budget}} ()
+\begin{DoxyCompactList}\small\item\em Navigates to the \doxylink{class_budget}{Budget} window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}{navigate\+To\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Navigates to the Categories window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}{navigate\+To\+Report}} ()
+\begin{DoxyCompactList}\small\item\em Navigates to the Reports window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_main_window_add86721a9129809e44818284350dca8a}{navigate\+To\+Profile}} ()
+\begin{DoxyCompactList}\small\item\em Navigates to the Profile window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents the main window of the application. 
+
+This class is responsible for displaying the main window of the application. It includes various buttons to navigate to different sections such as Expenses, \doxylink{class_budget}{Budget}, Categories, Reports, and Profile. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262}\index{UiMainWindow@{UiMainWindow}!UiMainWindow@{UiMainWindow}}
+\index{UiMainWindow@{UiMainWindow}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{UiMainWindow()}{UiMainWindow()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262} 
+Ui\+Main\+Window\+::\+Ui\+Main\+Window (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Constructor to create the main window. 
+
+This constructor initializes the UI elements of the main window, including buttons and the date display. It sets up the layout and makes the window ready for interaction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ui_main_window_a95b08df7d09ff67c2ebb43ef46b31ac0}\index{UiMainWindow@{UiMainWindow}!````~UiMainWindow@{\texorpdfstring{$\sim$}{\string~}UiMainWindow}}
+\index{````~UiMainWindow@{\texorpdfstring{$\sim$}{\string~}UiMainWindow}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UiMainWindow()}{\string~UiMainWindow()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_a95b08df7d09ff67c2ebb43ef46b31ac0} 
+Ui\+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Ui\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor to clean up resources. 
+
+This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f}\index{UiMainWindow@{UiMainWindow}!navigateToBudget@{navigateToBudget}}
+\index{navigateToBudget@{navigateToBudget}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{navigateToBudget()}{navigateToBudget()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f} 
+void Ui\+Main\+Window\+::navigate\+To\+Budget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Navigates to the \doxylink{class_budget}{Budget} window. 
+
+This function opens the \doxylink{class_budget}{Budget} window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}\index{UiMainWindow@{UiMainWindow}!navigateToCategories@{navigateToCategories}}
+\index{navigateToCategories@{navigateToCategories}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{navigateToCategories()}{navigateToCategories()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714} 
+void Ui\+Main\+Window\+::navigate\+To\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Navigates to the Categories window. 
+
+This function opens the Categories window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}\index{UiMainWindow@{UiMainWindow}!navigateToExpense@{navigateToExpense}}
+\index{navigateToExpense@{navigateToExpense}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{navigateToExpense()}{navigateToExpense()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3} 
+void Ui\+Main\+Window\+::navigate\+To\+Expense (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Navigates to the Expenses window. 
+
+This function opens the \doxylink{class_expense}{Expense} window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_add86721a9129809e44818284350dca8a}\index{UiMainWindow@{UiMainWindow}!navigateToProfile@{navigateToProfile}}
+\index{navigateToProfile@{navigateToProfile}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{navigateToProfile()}{navigateToProfile()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_add86721a9129809e44818284350dca8a} 
+void Ui\+Main\+Window\+::navigate\+To\+Profile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Navigates to the Profile window. 
+
+This function opens the Profile window when the corresponding button is clicked. \Hypertarget{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}\index{UiMainWindow@{UiMainWindow}!navigateToReport@{navigateToReport}}
+\index{navigateToReport@{navigateToReport}!UiMainWindow@{UiMainWindow}}
+\doxysubsubsection{\texorpdfstring{navigateToReport()}{navigateToReport()}}
+{\footnotesize\ttfamily \label{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a} 
+void Ui\+Main\+Window\+::navigate\+To\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Navigates to the Reports window. 
+
+This function opens the Reports window when the corresponding button is clicked. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

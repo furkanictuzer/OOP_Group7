@@ -91,14 +91,77 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>A window to add a new expense in the application.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ui_add_expense_window_8h_source.html">UiAddExpenseWindow.h</a>&gt;</code></p>
+
 <p>Inherits Fl_Window.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af10dfa51a3b13e79fc873ff3269384fd" id="r_af10dfa51a3b13e79fc873ff3269384fd"><td class="memItemLeft" align="right" valign="top"><a id="af10dfa51a3b13e79fc873ff3269384fd" name="af10dfa51a3b13e79fc873ff3269384fd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>UiAddExpenseWindow</b> (int width, int height)</td></tr>
+<tr class="memitem:af10dfa51a3b13e79fc873ff3269384fd" id="r_af10dfa51a3b13e79fc873ff3269384fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af10dfa51a3b13e79fc873ff3269384fd">UiAddExpenseWindow</a> (int width, int height)</td></tr>
+<tr class="memdesc:af10dfa51a3b13e79fc873ff3269384fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to create the add expense window.  <br /></td></tr>
 <tr class="separator:af10dfa51a3b13e79fc873ff3269384fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8723f6877156f2540b63d6c40a554249" id="r_a8723f6877156f2540b63d6c40a554249"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8723f6877156f2540b63d6c40a554249">~UiAddExpenseWindow</a> ()</td></tr>
+<tr class="memdesc:a8723f6877156f2540b63d6c40a554249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor to clean up the resources.  <br /></td></tr>
+<tr class="separator:a8723f6877156f2540b63d6c40a554249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A window to add a new expense in the application. </p>
+<p>This class represents the UI window that allows the user to input details about a new expense, such as the amount, category, date, description, and whether the expense is a repeated one. It also provides options to save or cancel the entry. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af10dfa51a3b13e79fc873ff3269384fd" name="af10dfa51a3b13e79fc873ff3269384fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10dfa51a3b13e79fc873ff3269384fd">&#9670;&#160;</a></span>UiAddExpenseWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UiAddExpenseWindow::UiAddExpenseWindow </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor to create the add expense window. </p>
+<p>This constructor initializes the UI elements of the window (input fields, buttons, etc.) and sets up the window layout.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8723f6877156f2540b63d6c40a554249" name="a8723f6877156f2540b63d6c40a554249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8723f6877156f2540b63d6c40a554249">&#9670;&#160;</a></span>~UiAddExpenseWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UiAddExpenseWindow::~UiAddExpenseWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor to clean up the resources. </p>
+<p>This destructor ensures proper cleanup of any dynamically allocated resources when the window is closed. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_ui_add_expense_window_8h_source.html">UiAddExpenseWindow.h</a></li>
 <li><b>UiAddExpenseWindow.cpp</b></li>

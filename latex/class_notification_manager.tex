@@ -1,32 +1,181 @@
 \doxysection{Notification\+Manager Class Reference}
 \hypertarget{class_notification_manager}{}\label{class_notification_manager}\index{NotificationManager@{NotificationManager}}
-\doxysubsubsection*{Public Member Functions}
+
+
+A class to manage and trigger notifications for expenses and budgets.  
+
+
+
+
+{\ttfamily \#include $<$Notification\+Manager.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_notification_manager_af3ecb037c5fc996e7fa9ec5e7cafdfb8}\label{class_notification_manager_af3ecb037c5fc996e7fa9ec5e7cafdfb8} 
-{\bfseries Notification\+Manager} (\mbox{\hyperlink{class_mock_clock}{Mock\+Clock}} mc)
-\item 
-\Hypertarget{class_notification_manager_a6c4480da23824068215abf928719fb83}\label{class_notification_manager_a6c4480da23824068215abf928719fb83} 
-std\+::vector$<$ \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} $>$ {\bfseries get\+Expenses\+To\+Notify} ()
-\item 
-\Hypertarget{class_notification_manager_af4c3342ce990051d6c73a0f9b78dfdfe}\label{class_notification_manager_af4c3342ce990051d6c73a0f9b78dfdfe} 
-void {\bfseries add\+Expense} (\mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} new\+Expense)
-\item 
-\Hypertarget{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f}\label{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f} 
-std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ {\bfseries get\+Budgets\+To\+Notify} ()
-\item 
-\Hypertarget{class_notification_manager_a9208a3aa74b8ad743298490269b96fd2}\label{class_notification_manager_a9208a3aa74b8ad743298490269b96fd2} 
-void {\bfseries add\+Budget} (\mbox{\hyperlink{class_budget}{Budget}} new\+Budget)
-\item 
-\Hypertarget{class_notification_manager_a13c919f7de02fb94119845c520b5851d}\label{class_notification_manager_a13c919f7de02fb94119845c520b5851d} 
-void {\bfseries check\+Budgets} ()
-\item 
-\Hypertarget{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026}\label{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026} 
-void {\bfseries check\+Expenses} ()
-\item 
-\Hypertarget{class_notification_manager_af06dd4cddf0ebd5bb5f2d9a9bc2db530}\label{class_notification_manager_af06dd4cddf0ebd5bb5f2d9a9bc2db530} 
-void {\bfseries notify} (string message)
-\end{DoxyCompactItemize}
+static std\+::vector$<$ \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} $>$ \mbox{\hyperlink{class_notification_manager_a6c4480da23824068215abf928719fb83}{get\+Expenses\+To\+Notify}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of expenses that require notifications. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_aef0846085faa81304572f1a7efe775cb}{add\+Expense}} (const \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} \&new\+Expense)
+\begin{DoxyCompactList}\small\item\em Add a new repeated expense to the notification manager. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ \mbox{\hyperlink{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f}{get\+Budgets\+To\+Notify}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of budgets that require notifications. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_a95c17cdad760759bc00db18ed328f94b}{add\+Budget}} (const \mbox{\hyperlink{class_budget}{Budget}} \&new\+Budget)
+\begin{DoxyCompactList}\small\item\em Add a new budget to the notification manager. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_a13c919f7de02fb94119845c520b5851d}{check\+Budgets}} ()
+\begin{DoxyCompactList}\small\item\em Check all budgets for notification conditions. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026}{check\+Expenses}} ()
+\begin{DoxyCompactList}\small\item\em Check all expenses for notification conditions. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_ace9fc68a39e6169dd914029a34a379e5}{notify}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Trigger a notification with a custom message. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_notification_manager_a7e8820540004ec7182682cc160dca0f4}{has\+Notification\+For\+Date}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date)
+\begin{DoxyCompactList}\small\item\em Check if there is a notification for a specific date. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_notification_manager_ada52bea559722bc7f141c6bd6ebcec9f}{trigger\+Notification}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date)
+\begin{DoxyCompactList}\small\item\em Trigger a notification based on a specific date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage and trigger notifications for expenses and budgets. 
+
+This class handles storing and checking repeated expenses and budgets, and triggers notifications when a condition is met (e.\+g., when a budget limit is reached or an expense needs to be repeated). It provides methods to add expenses and budgets to track, as well as to check and trigger notifications. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_notification_manager_a95c17cdad760759bc00db18ed328f94b}\index{NotificationManager@{NotificationManager}!addBudget@{addBudget}}
+\index{addBudget@{addBudget}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{addBudget()}{addBudget()}}
+{\footnotesize\ttfamily \label{class_notification_manager_a95c17cdad760759bc00db18ed328f94b} 
+void Notification\+Manager\+::add\+Budget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_budget}{Budget}} \&}]{new\+Budget}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a new budget to the notification manager. 
+
+This function adds a new budget to the list of budgets being tracked for notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Budget} & The budget to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_notification_manager_aef0846085faa81304572f1a7efe775cb}\index{NotificationManager@{NotificationManager}!addExpense@{addExpense}}
+\index{addExpense@{addExpense}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{addExpense()}{addExpense()}}
+{\footnotesize\ttfamily \label{class_notification_manager_aef0846085faa81304572f1a7efe775cb} 
+void Notification\+Manager\+::add\+Expense (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} \&}]{new\+Expense}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a new repeated expense to the notification manager. 
+
+This function adds a new repeated expense to the list of expenses being tracked for notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Expense} & The repeated expense to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_notification_manager_a13c919f7de02fb94119845c520b5851d}\index{NotificationManager@{NotificationManager}!checkBudgets@{checkBudgets}}
+\index{checkBudgets@{checkBudgets}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{checkBudgets()}{checkBudgets()}}
+{\footnotesize\ttfamily \label{class_notification_manager_a13c919f7de02fb94119845c520b5851d} 
+void Notification\+Manager\+::check\+Budgets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check all budgets for notification conditions. 
+
+This function checks all budgets to determine if any conditions are met for sending notifications, such as exceeding a predefined spending limit. \Hypertarget{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026}\index{NotificationManager@{NotificationManager}!checkExpenses@{checkExpenses}}
+\index{checkExpenses@{checkExpenses}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{checkExpenses()}{checkExpenses()}}
+{\footnotesize\ttfamily \label{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026} 
+void Notification\+Manager\+::check\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check all expenses for notification conditions. 
+
+This function checks all repeated expenses to determine if any conditions are met for sending notifications, such as due dates or repeat frequencies. \Hypertarget{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f}\index{NotificationManager@{NotificationManager}!getBudgetsToNotify@{getBudgetsToNotify}}
+\index{getBudgetsToNotify@{getBudgetsToNotify}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{getBudgetsToNotify()}{getBudgetsToNotify()}}
+{\footnotesize\ttfamily \label{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f} 
+std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ Notification\+Manager\+::get\+Budgets\+To\+Notify (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the list of budgets that require notifications. 
+
+This function returns a list of budgets that need notifications (e.\+g., when nearing the limit).
+
+\begin{DoxyReturn}{Returns}
+A vector containing budgets that need notifications. 
+\end{DoxyReturn}
+\Hypertarget{class_notification_manager_a6c4480da23824068215abf928719fb83}\index{NotificationManager@{NotificationManager}!getExpensesToNotify@{getExpensesToNotify}}
+\index{getExpensesToNotify@{getExpensesToNotify}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{getExpensesToNotify()}{getExpensesToNotify()}}
+{\footnotesize\ttfamily \label{class_notification_manager_a6c4480da23824068215abf928719fb83} 
+std\+::vector$<$ \mbox{\hyperlink{class_repeated_expense}{Repeated\+Expense}} $>$ Notification\+Manager\+::get\+Expenses\+To\+Notify (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the list of expenses that require notifications. 
+
+This function returns a list of repeated expenses that have conditions met for sending notifications.
+
+\begin{DoxyReturn}{Returns}
+A vector containing repeated expenses that need notifications. 
+\end{DoxyReturn}
+\Hypertarget{class_notification_manager_a7e8820540004ec7182682cc160dca0f4}\index{NotificationManager@{NotificationManager}!hasNotificationForDate@{hasNotificationForDate}}
+\index{hasNotificationForDate@{hasNotificationForDate}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{hasNotificationForDate()}{hasNotificationForDate()}}
+{\footnotesize\ttfamily \label{class_notification_manager_a7e8820540004ec7182682cc160dca0f4} 
+bool Notification\+Manager\+::has\+Notification\+For\+Date (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if there is a notification for a specific date. 
+
+This function checks if a notification should be triggered for a given date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The date to check for a notification. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is a notification for the specified date, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_notification_manager_ace9fc68a39e6169dd914029a34a379e5}\index{NotificationManager@{NotificationManager}!notify@{notify}}
+\index{notify@{notify}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{class_notification_manager_ace9fc68a39e6169dd914029a34a379e5} 
+void Notification\+Manager\+::notify (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Trigger a notification with a custom message. 
+
+This function shows a notification message to the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be displayed in the notification. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_notification_manager_ada52bea559722bc7f141c6bd6ebcec9f}\index{NotificationManager@{NotificationManager}!triggerNotification@{triggerNotification}}
+\index{triggerNotification@{triggerNotification}!NotificationManager@{NotificationManager}}
+\doxysubsubsection{\texorpdfstring{triggerNotification()}{triggerNotification()}}
+{\footnotesize\ttfamily \label{class_notification_manager_ada52bea559722bc7f141c6bd6ebcec9f} 
+void Notification\+Manager\+::trigger\+Notification (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Trigger a notification based on a specific date. 
+
+This function triggers a notification if there are any conditions for the specified date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The date to trigger a notification for. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

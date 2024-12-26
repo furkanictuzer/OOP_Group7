@@ -27,28 +27,40 @@
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}ExpenseManager.h"{}}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_add_expense_window}{UiAddExpenseWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
-\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00029\ \ \ \ \ Fl\_Input*\ amount\_input;}
-\DoxyCodeLine{00030\ \ \ \ \ Fl\_Choice*\ category\_choice;}
-\DoxyCodeLine{00031\ \ \ \ \ Fl\_Choice*\ day\_choice;}
-\DoxyCodeLine{00032\ \ \ \ \ Fl\_Choice*\ month\_choice;}
-\DoxyCodeLine{00033\ \ \ \ \ Fl\_Choice*\ year\_choice;}
-\DoxyCodeLine{00034\ \ \ \ \ Fl\_Multiline\_Input*\ description\_input;}
-\DoxyCodeLine{00035\ \ \ \ \ Fl\_Check\_Button*\ repeated\_expense\_check;}
-\DoxyCodeLine{00036\ \ \ \ \ Fl\_Button*\ save\_button;}
-\DoxyCodeLine{00037\ \ \ \ \ Fl\_Button*\ cancel\_button;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_add_expense_window}{UiAddExpenseWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ Fl\_Input*\ amount\_input;}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ save\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ cancel\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00040\ \ \ \ \ Fl\_Choice*\ category\_choice;}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ populateDateChoices();}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_ui_add_expense_window}{UiAddExpenseWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_ui_add_expense_window}{\string~UiAddExpenseWindow}}();}
-\DoxyCodeLine{00047\ \};}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_EXPENSE\_WINDOW\_H}}
+\DoxyCodeLine{00043\ \ \ \ \ Fl\_Choice*\ day\_choice;}
+\DoxyCodeLine{00044\ \ \ \ \ Fl\_Choice*\ month\_choice;}
+\DoxyCodeLine{00045\ \ \ \ \ Fl\_Choice*\ year\_choice;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ Fl\_Multiline\_Input*\ description\_input;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ Fl\_Check\_Button*\ repeated\_expense\_check;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ Fl\_Input*\ repeat\_count\_input;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ Fl\_Button*\ save\_button;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ Fl\_Button*\ cancel\_button;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ save\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ cancel\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ repeated\_expense\_check\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ populateDateChoices();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_ui_add_expense_window_af10dfa51a3b13e79fc873ff3269384fd}{UiAddExpenseWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_ui_add_expense_window_a8723f6877156f2540b63d6c40a554249}{\string~UiAddExpenseWindow}}();}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_EXPENSE\_WINDOW\_H}}
 
 \end{DoxyCode}

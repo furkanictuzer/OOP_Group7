@@ -16,10 +16,28 @@
 #include "MockClock.h"
 #include "NotificationManager.h"
 
-int main(int argc, char** argv) {
+/**
+ * @brief Main function that initializes the application.
+ *
+ * This function launches the user registration window, starts the time simulation,
+ * and runs the FLTK event loop to process the GUI events.
+ *
+ * @param argc The number of command line arguments.
+ * @param argv The command line arguments.
+ * @return int The return value of the FLTK event loop.
+ */
+
+int main(int argc, char **argv)
+{
     AuthenticationManager authenticationManager;
-    
-    UiRegisterWindow* register_window = new UiRegisterWindow(800, 500, &authenticationManager);
+
+    /**
+     * @brief Initializes the register window for user registration.
+     *
+     * This window allows the user to register by entering a username and password.
+     */
+
+    UiRegisterWindow *register_window = new UiRegisterWindow(800, 500, &authenticationManager);
     register_window->show(argc, argv);
 
     MockClock::initialize();

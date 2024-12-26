@@ -85,39 +85,336 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_notification_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">NotificationManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class to manage and trigger notifications for expenses and budgets.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_notification_manager_8h_source.html">NotificationManager.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:af3ecb037c5fc996e7fa9ec5e7cafdfb8" id="r_af3ecb037c5fc996e7fa9ec5e7cafdfb8"><td class="memItemLeft" align="right" valign="top"><a id="af3ecb037c5fc996e7fa9ec5e7cafdfb8" name="af3ecb037c5fc996e7fa9ec5e7cafdfb8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NotificationManager</b> (<a class="el" href="class_mock_clock.html">MockClock</a> mc)</td></tr>
-<tr class="separator:af3ecb037c5fc996e7fa9ec5e7cafdfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c4480da23824068215abf928719fb83" id="r_a6c4480da23824068215abf928719fb83"><td class="memItemLeft" align="right" valign="top"><a id="a6c4480da23824068215abf928719fb83" name="a6c4480da23824068215abf928719fb83"></a>
-std::vector&lt; <a class="el" href="class_repeated_expense.html">RepeatedExpense</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getExpensesToNotify</b> ()</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6c4480da23824068215abf928719fb83" id="r_a6c4480da23824068215abf928719fb83"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_repeated_expense.html">RepeatedExpense</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c4480da23824068215abf928719fb83">getExpensesToNotify</a> ()</td></tr>
+<tr class="memdesc:a6c4480da23824068215abf928719fb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of expenses that require notifications.  <br /></td></tr>
 <tr class="separator:a6c4480da23824068215abf928719fb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c3342ce990051d6c73a0f9b78dfdfe" id="r_af4c3342ce990051d6c73a0f9b78dfdfe"><td class="memItemLeft" align="right" valign="top"><a id="af4c3342ce990051d6c73a0f9b78dfdfe" name="af4c3342ce990051d6c73a0f9b78dfdfe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addExpense</b> (<a class="el" href="class_repeated_expense.html">RepeatedExpense</a> newExpense)</td></tr>
-<tr class="separator:af4c3342ce990051d6c73a0f9b78dfdfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcaaa67b30414381f52ca54beef48c9f" id="r_adcaaa67b30414381f52ca54beef48c9f"><td class="memItemLeft" align="right" valign="top"><a id="adcaaa67b30414381f52ca54beef48c9f" name="adcaaa67b30414381f52ca54beef48c9f"></a>
-std::vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getBudgetsToNotify</b> ()</td></tr>
+<tr class="memitem:aef0846085faa81304572f1a7efe775cb" id="r_aef0846085faa81304572f1a7efe775cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef0846085faa81304572f1a7efe775cb">addExpense</a> (const <a class="el" href="class_repeated_expense.html">RepeatedExpense</a> &amp;newExpense)</td></tr>
+<tr class="memdesc:aef0846085faa81304572f1a7efe775cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new repeated expense to the notification manager.  <br /></td></tr>
+<tr class="separator:aef0846085faa81304572f1a7efe775cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcaaa67b30414381f52ca54beef48c9f" id="r_adcaaa67b30414381f52ca54beef48c9f"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcaaa67b30414381f52ca54beef48c9f">getBudgetsToNotify</a> ()</td></tr>
+<tr class="memdesc:adcaaa67b30414381f52ca54beef48c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of budgets that require notifications.  <br /></td></tr>
 <tr class="separator:adcaaa67b30414381f52ca54beef48c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9208a3aa74b8ad743298490269b96fd2" id="r_a9208a3aa74b8ad743298490269b96fd2"><td class="memItemLeft" align="right" valign="top"><a id="a9208a3aa74b8ad743298490269b96fd2" name="a9208a3aa74b8ad743298490269b96fd2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addBudget</b> (<a class="el" href="class_budget.html">Budget</a> newBudget)</td></tr>
-<tr class="separator:a9208a3aa74b8ad743298490269b96fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13c919f7de02fb94119845c520b5851d" id="r_a13c919f7de02fb94119845c520b5851d"><td class="memItemLeft" align="right" valign="top"><a id="a13c919f7de02fb94119845c520b5851d" name="a13c919f7de02fb94119845c520b5851d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkBudgets</b> ()</td></tr>
+<tr class="memitem:a95c17cdad760759bc00db18ed328f94b" id="r_a95c17cdad760759bc00db18ed328f94b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95c17cdad760759bc00db18ed328f94b">addBudget</a> (const <a class="el" href="class_budget.html">Budget</a> &amp;newBudget)</td></tr>
+<tr class="memdesc:a95c17cdad760759bc00db18ed328f94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new budget to the notification manager.  <br /></td></tr>
+<tr class="separator:a95c17cdad760759bc00db18ed328f94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c919f7de02fb94119845c520b5851d" id="r_a13c919f7de02fb94119845c520b5851d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c919f7de02fb94119845c520b5851d">checkBudgets</a> ()</td></tr>
+<tr class="memdesc:a13c919f7de02fb94119845c520b5851d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check all budgets for notification conditions.  <br /></td></tr>
 <tr class="separator:a13c919f7de02fb94119845c520b5851d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a220c70786abd834fd9d4b8f352ff2026" id="r_a220c70786abd834fd9d4b8f352ff2026"><td class="memItemLeft" align="right" valign="top"><a id="a220c70786abd834fd9d4b8f352ff2026" name="a220c70786abd834fd9d4b8f352ff2026"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkExpenses</b> ()</td></tr>
+<tr class="memitem:a220c70786abd834fd9d4b8f352ff2026" id="r_a220c70786abd834fd9d4b8f352ff2026"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a220c70786abd834fd9d4b8f352ff2026">checkExpenses</a> ()</td></tr>
+<tr class="memdesc:a220c70786abd834fd9d4b8f352ff2026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check all expenses for notification conditions.  <br /></td></tr>
 <tr class="separator:a220c70786abd834fd9d4b8f352ff2026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06dd4cddf0ebd5bb5f2d9a9bc2db530" id="r_af06dd4cddf0ebd5bb5f2d9a9bc2db530"><td class="memItemLeft" align="right" valign="top"><a id="af06dd4cddf0ebd5bb5f2d9a9bc2db530" name="af06dd4cddf0ebd5bb5f2d9a9bc2db530"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (string message)</td></tr>
-<tr class="separator:af06dd4cddf0ebd5bb5f2d9a9bc2db530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9fc68a39e6169dd914029a34a379e5" id="r_ace9fc68a39e6169dd914029a34a379e5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace9fc68a39e6169dd914029a34a379e5">notify</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:ace9fc68a39e6169dd914029a34a379e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger a notification with a custom message.  <br /></td></tr>
+<tr class="separator:ace9fc68a39e6169dd914029a34a379e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8820540004ec7182682cc160dca0f4" id="r_a7e8820540004ec7182682cc160dca0f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e8820540004ec7182682cc160dca0f4">hasNotificationForDate</a> (const std::chrono::system_clock::time_point &amp;date)</td></tr>
+<tr class="memdesc:a7e8820540004ec7182682cc160dca0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a notification for a specific date.  <br /></td></tr>
+<tr class="separator:a7e8820540004ec7182682cc160dca0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada52bea559722bc7f141c6bd6ebcec9f" id="r_ada52bea559722bc7f141c6bd6ebcec9f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada52bea559722bc7f141c6bd6ebcec9f">triggerNotification</a> (const std::chrono::system_clock::time_point &amp;date)</td></tr>
+<tr class="memdesc:ada52bea559722bc7f141c6bd6ebcec9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger a notification based on a specific date.  <br /></td></tr>
+<tr class="separator:ada52bea559722bc7f141c6bd6ebcec9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class to manage and trigger notifications for expenses and budgets. </p>
+<p>This class handles storing and checking repeated expenses and budgets, and triggers notifications when a condition is met (e.g., when a budget limit is reached or an expense needs to be repeated). It provides methods to add expenses and budgets to track, as well as to check and trigger notifications. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a95c17cdad760759bc00db18ed328f94b" name="a95c17cdad760759bc00db18ed328f94b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c17cdad760759bc00db18ed328f94b">&#9670;&#160;</a></span>addBudget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::addBudget </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_budget.html">Budget</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>newBudget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a new budget to the notification manager. </p>
+<p>This function adds a new budget to the list of budgets being tracked for notifications.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newBudget</td><td>The budget to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef0846085faa81304572f1a7efe775cb" name="aef0846085faa81304572f1a7efe775cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0846085faa81304572f1a7efe775cb">&#9670;&#160;</a></span>addExpense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::addExpense </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_repeated_expense.html">RepeatedExpense</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>newExpense</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a new repeated expense to the notification manager. </p>
+<p>This function adds a new repeated expense to the list of expenses being tracked for notifications.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newExpense</td><td>The repeated expense to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a13c919f7de02fb94119845c520b5851d" name="a13c919f7de02fb94119845c520b5851d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c919f7de02fb94119845c520b5851d">&#9670;&#160;</a></span>checkBudgets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::checkBudgets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check all budgets for notification conditions. </p>
+<p>This function checks all budgets to determine if any conditions are met for sending notifications, such as exceeding a predefined spending limit. </p>
+
+</div>
+</div>
+<a id="a220c70786abd834fd9d4b8f352ff2026" name="a220c70786abd834fd9d4b8f352ff2026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220c70786abd834fd9d4b8f352ff2026">&#9670;&#160;</a></span>checkExpenses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::checkExpenses </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check all expenses for notification conditions. </p>
+<p>This function checks all repeated expenses to determine if any conditions are met for sending notifications, such as due dates or repeat frequencies. </p>
+
+</div>
+</div>
+<a id="adcaaa67b30414381f52ca54beef48c9f" name="adcaaa67b30414381f52ca54beef48c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcaaa67b30414381f52ca54beef48c9f">&#9670;&#160;</a></span>getBudgetsToNotify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_budget.html">Budget</a> &gt; NotificationManager::getBudgetsToNotify </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the list of budgets that require notifications. </p>
+<p>This function returns a list of budgets that need notifications (e.g., when nearing the limit).</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing budgets that need notifications. </dd></dl>
+
+</div>
+</div>
+<a id="a6c4480da23824068215abf928719fb83" name="a6c4480da23824068215abf928719fb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c4480da23824068215abf928719fb83">&#9670;&#160;</a></span>getExpensesToNotify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_repeated_expense.html">RepeatedExpense</a> &gt; NotificationManager::getExpensesToNotify </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the list of expenses that require notifications. </p>
+<p>This function returns a list of repeated expenses that have conditions met for sending notifications.</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing repeated expenses that need notifications. </dd></dl>
+
+</div>
+</div>
+<a id="a7e8820540004ec7182682cc160dca0f4" name="a7e8820540004ec7182682cc160dca0f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8820540004ec7182682cc160dca0f4">&#9670;&#160;</a></span>hasNotificationForDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NotificationManager::hasNotificationForDate </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::system_clock::time_point &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if there is a notification for a specific date. </p>
+<p>This function checks if a notification should be triggered for a given date.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The date to check for a notification. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is a notification for the specified date, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ace9fc68a39e6169dd914029a34a379e5" name="ace9fc68a39e6169dd914029a34a379e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace9fc68a39e6169dd914029a34a379e5">&#9670;&#160;</a></span>notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::notify </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trigger a notification with a custom message. </p>
+<p>This function shows a notification message to the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message to be displayed in the notification. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ada52bea559722bc7f141c6bd6ebcec9f" name="ada52bea559722bc7f141c6bd6ebcec9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada52bea559722bc7f141c6bd6ebcec9f">&#9670;&#160;</a></span>triggerNotification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotificationManager::triggerNotification </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::system_clock::time_point &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trigger a notification based on a specific date. </p>
+<p>This function triggers a notification if there are any conditions for the specified date.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The date to trigger a notification for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_notification_manager_8h_source.html">NotificationManager.h</a></li>
 <li><b>NotificationManager.cpp</b></li>

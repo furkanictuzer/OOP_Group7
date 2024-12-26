@@ -9,7 +9,7 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node1 [id="edge2_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 [id="Node000001",label="UiAddBudgetWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_add_budget_window.html",tooltip="A window to add a new budget in the application."];
   Node0 -> Node2 [id="edge3_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="UiAddExpenseWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_add_expense_window.html",tooltip=" "];
+  Node2 [id="Node000002",label="UiAddExpenseWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_add_expense_window.html",tooltip="A window to add a new expense in the application."];
   Node0 -> Node3 [id="edge4_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="UiBudgetWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_budget_window.html",tooltip="A window for managing budgets within the application."];
   Node0 -> Node4 [id="edge5_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -19,7 +19,7 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node6 [id="edge7_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="UiLoginWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_login_window.html",tooltip="A window for user login functionality."];
   Node0 -> Node7 [id="edge8_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="UiMainWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_main_window.html",tooltip=" "];
+  Node7 [id="Node000007",label="UiMainWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_main_window.html",tooltip="Represents the main window of the application."];
   Node0 -> Node8 [id="edge9_Node000000_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="UiProfileWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_profile_window.html",tooltip="A window for managing user profile."];
   Node0 -> Node9 [id="edge10_Node000000_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];

@@ -1,41 +1,212 @@
 \doxysection{Expense\+Manager Class Reference}
 \hypertarget{class_expense_manager}{}\label{class_expense_manager}\index{ExpenseManager@{ExpenseManager}}
+
+
+Manages expenses, budgets, and their related operations.  
+
+
+
+
+{\ttfamily \#include $<$Expense\+Manager.\+h$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b}\label{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b} 
-static void {\bfseries add\+Expense} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
-\item 
-\Hypertarget{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e}\label{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e} 
-static void {\bfseries remove\+Expense} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
-\item 
-\Hypertarget{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6}\label{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6} 
-static void {\bfseries add\+Budget} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
-\item 
-\Hypertarget{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df}\label{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df} 
-static void {\bfseries remove\+Budget} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
-\item 
-\Hypertarget{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e}\label{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e} 
-static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ {\bfseries get\+Expenses} ()
-\item 
-\Hypertarget{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54}\label{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54} 
-static std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ {\bfseries get\+Budgets} ()
-\item 
-\Hypertarget{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7}\label{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7} 
-static double {\bfseries calculate\+Total\+Expenses} ()
-\item 
-\Hypertarget{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056}\label{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056} 
-static double {\bfseries calculate\+Total\+Income} ()
-\item 
-\Hypertarget{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519}\label{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519} 
-static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ {\bfseries filter\+Expenses\+By\+Date\+Range} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date)
-\item 
-\Hypertarget{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260}\label{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260} 
-static std\+::map$<$ \mbox{\hyperlink{class_category}{Category}}, double $>$ {\bfseries analyze\+Expense\+Distribution\+By\+Category} ()
-\item 
-\Hypertarget{class_expense_manager_adaf64226be5f465bf64295218fc6e999}\label{class_expense_manager_adaf64226be5f465bf64295218fc6e999} 
-static double {\bfseries get\+Total\+Expense\+By\+Month} (int month, int year)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b}{add\+Expense}} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
+\begin{DoxyCompactList}\small\item\em Adds a new expense to the expense list. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e}{remove\+Expense}} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
+\begin{DoxyCompactList}\small\item\em Removes an expense from the expense list. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6}{add\+Budget}} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
+\begin{DoxyCompactList}\small\item\em Adds a new budget to the budget list. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df}{remove\+Budget}} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
+\begin{DoxyCompactList}\small\item\em Removes a budget from the budget list. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \mbox{\hyperlink{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e}{get\+Expenses}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all expenses. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ \mbox{\hyperlink{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54}{get\+Budgets}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all budgets. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7}{calculate\+Total\+Expenses}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total expenses. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056}{calculate\+Total\+Income}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total income. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \mbox{\hyperlink{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519}{filter\+Expenses\+By\+Date\+Range}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date)
+\begin{DoxyCompactList}\small\item\em Filters expenses by a specified date range. \end{DoxyCompactList}\item 
+static std\+::map$<$ \mbox{\hyperlink{class_category}{Category}}, double $>$ \mbox{\hyperlink{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260}{analyze\+Expense\+Distribution\+By\+Category}} ()
+\begin{DoxyCompactList}\small\item\em Analyzes the expense distribution by category. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_expense_manager_adaf64226be5f465bf64295218fc6e999}{get\+Total\+Expense\+By\+Month}} (int month, int year)
+\begin{DoxyCompactList}\small\item\em Retrieves the total expense for a specific month and year. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages expenses, budgets, and their related operations. 
+
+This class provides functionality to add, remove, and retrieve expenses and budgets. It also supports calculating total expenses, analyzing expenses by category, and filtering expenses by a specific date range. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6}\index{ExpenseManager@{ExpenseManager}!addBudget@{addBudget}}
+\index{addBudget@{addBudget}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{addBudget()}{addBudget()}}
+{\footnotesize\ttfamily \label{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6} 
+void Expense\+Manager\+::add\+Budget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_budget}{Budget}} \&}]{budget}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds a new budget to the budget list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b}\index{ExpenseManager@{ExpenseManager}!addExpense@{addExpense}}
+\index{addExpense@{addExpense}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{addExpense()}{addExpense()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b} 
+void Expense\+Manager\+::add\+Expense (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expense}{Expense}} \&}]{expense}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds a new expense to the expense list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260}\index{ExpenseManager@{ExpenseManager}!analyzeExpenseDistributionByCategory@{analyzeExpenseDistributionByCategory}}
+\index{analyzeExpenseDistributionByCategory@{analyzeExpenseDistributionByCategory}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{analyzeExpenseDistributionByCategory()}{analyzeExpenseDistributionByCategory()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260} 
+std\+::map$<$ \mbox{\hyperlink{class_category}{Category}}, double $>$ Expense\+Manager\+::analyze\+Expense\+Distribution\+By\+Category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Analyzes the expense distribution by category. 
+
+\begin{DoxyReturn}{Returns}
+A map of categories and their corresponding total expense amounts. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7}\index{ExpenseManager@{ExpenseManager}!calculateTotalExpenses@{calculateTotalExpenses}}
+\index{calculateTotalExpenses@{calculateTotalExpenses}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{calculateTotalExpenses()}{calculateTotalExpenses()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7} 
+double Expense\+Manager\+::calculate\+Total\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the total expenses. 
+
+\begin{DoxyReturn}{Returns}
+The sum of all expenses. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056}\index{ExpenseManager@{ExpenseManager}!calculateTotalIncome@{calculateTotalIncome}}
+\index{calculateTotalIncome@{calculateTotalIncome}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{calculateTotalIncome()}{calculateTotalIncome()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056} 
+double Expense\+Manager\+::calculate\+Total\+Income (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the total income. 
+
+\begin{DoxyReturn}{Returns}
+The sum of all income. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519}\index{ExpenseManager@{ExpenseManager}!filterExpensesByDateRange@{filterExpensesByDateRange}}
+\index{filterExpensesByDateRange@{filterExpensesByDateRange}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{filterExpensesByDateRange()}{filterExpensesByDateRange()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519} 
+std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Expense\+Manager\+::filter\+Expenses\+By\+Date\+Range (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filters expenses by a specified date range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date of the range. \\
+\hline
+{\em end\+Date} & The end date of the range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the expenses within the date range. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54}\index{ExpenseManager@{ExpenseManager}!getBudgets@{getBudgets}}
+\index{getBudgets@{getBudgets}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{getBudgets()}{getBudgets()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54} 
+std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ Expense\+Manager\+::get\+Budgets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves all budgets. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing all budgets. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e}\index{ExpenseManager@{ExpenseManager}!getExpenses@{getExpenses}}
+\index{getExpenses@{getExpenses}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{getExpenses()}{getExpenses()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e} 
+std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Expense\+Manager\+::get\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves all expenses. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing all expenses. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_adaf64226be5f465bf64295218fc6e999}\index{ExpenseManager@{ExpenseManager}!getTotalExpenseByMonth@{getTotalExpenseByMonth}}
+\index{getTotalExpenseByMonth@{getTotalExpenseByMonth}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{getTotalExpenseByMonth()}{getTotalExpenseByMonth()}}
+{\footnotesize\ttfamily \label{class_expense_manager_adaf64226be5f465bf64295218fc6e999} 
+double Expense\+Manager\+::get\+Total\+Expense\+By\+Month (\begin{DoxyParamCaption}\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the total expense for a specific month and year. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & The month to calculate total expenses for. \\
+\hline
+{\em year} & The year to calculate total expenses for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total expense for the given month and year. 
+\end{DoxyReturn}
+\Hypertarget{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df}\index{ExpenseManager@{ExpenseManager}!removeBudget@{removeBudget}}
+\index{removeBudget@{removeBudget}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{removeBudget()}{removeBudget()}}
+{\footnotesize\ttfamily \label{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df} 
+void Expense\+Manager\+::remove\+Budget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_budget}{Budget}} \&}]{budget}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a budget from the budget list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e}\index{ExpenseManager@{ExpenseManager}!removeExpense@{removeExpense}}
+\index{removeExpense@{removeExpense}!ExpenseManager@{ExpenseManager}}
+\doxysubsubsection{\texorpdfstring{removeExpense()}{removeExpense()}}
+{\footnotesize\ttfamily \label{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e} 
+void Expense\+Manager\+::remove\+Expense (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expense}{Expense}} \&}]{expense}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes an expense from the expense list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to be removed. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

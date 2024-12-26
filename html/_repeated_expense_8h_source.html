@@ -103,10 +103,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_repeated_expense.html#a8e77e8a7994047d6c14dc153efcbb97c">RepeatedExpense</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">double</span> amount, <span class="keyword">const</span> std::chrono::system_clock::time_point&amp; date, <span class="keyword">const</span> std::string&amp; description, <a class="code hl_class" href="class_category.html">Category</a>* category, <span class="keywordtype">int</span> num, <span class="keyword">const</span> std::chrono::hours&amp; interval);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::chrono::system_clock::time_point <a class="code hl_function" href="class_repeated_expense.html#abb0c9adc21866dcc612399beb753c702">calculateNextOccurrence</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> getRepeatCount() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">// REPEATEDEXPENSE_H</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// REPEATEDEXPENSE_H</span></div>
 <div class="ttc" id="aclass_category_html"><div class="ttname"><a href="class_category.html">Category</a></div><div class="ttdoc">Represents a category that holds a collection of expenses.</div><div class="ttdef"><b>Definition</b> Category.h:14</div></div>
 <div class="ttc" id="aclass_expense_html"><div class="ttname"><a href="class_expense.html">Expense</a></div><div class="ttdoc">Represents an expense with details such as amount, date, description, and category.</div><div class="ttdef"><b>Definition</b> Expense.h:16</div></div>
 <div class="ttc" id="aclass_repeated_expense_html"><div class="ttname"><a href="class_repeated_expense.html">RepeatedExpense</a></div><div class="ttdoc">Represents an expense that repeats over a specified interval.</div><div class="ttdef"><b>Definition</b> RepeatedExpense.h:14</div></div>

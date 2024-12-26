@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notificationmanager_0',['NotificationManager',['../class_notification_manager.html',1,'']]]
+  ['mockclock_0',['MockClock',['../class_mock_clock.html',1,'']]]
 ];

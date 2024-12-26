@@ -16,23 +16,32 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}RepeatedExpense.h"{}}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notification_manager}{NotificationManager}}\ \{}
-\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00018\ \ \ \ \ std::vector<RepeatedExpense>\ repeatedExpenses;}
-\DoxyCodeLine{00019\ \ \ \ \ std::vector<Budget>\ budgets;}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_mock_clock}{MockClock}}\ mockClock;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_notification_manager}{NotificationManager}}(\mbox{\hyperlink{class_mock_clock}{MockClock}}\ mc);}
-\DoxyCodeLine{00024\ \ \ \ \ std::vector<RepeatedExpense>\ getExpensesToNotify();}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ addExpense(\mbox{\hyperlink{class_repeated_expense}{RepeatedExpense}}\ newExpense);}
-\DoxyCodeLine{00026\ \ \ \ \ std::vector<Budget>\ getBudgetsToNotify();}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ addBudget(\mbox{\hyperlink{class_budget}{Budget}}\ newBudget);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ checkBudgets();}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ checkExpenses();}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ notify(\textcolor{keywordtype}{string}\ message);}
-\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notification_manager}{NotificationManager}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<RepeatedExpense>\ repeatedExpenses;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Budget>\ budgets;}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATIONMANAGER\_H}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<RepeatedExpense>\ \mbox{\hyperlink{class_notification_manager_a6c4480da23824068215abf928719fb83}{getExpensesToNotify}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_aef0846085faa81304572f1a7efe775cb}{addExpense}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_repeated_expense}{RepeatedExpense}}\&\ newExpense);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Budget>\ \mbox{\hyperlink{class_notification_manager_adcaaa67b30414381f52ca54beef48c9f}{getBudgetsToNotify}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_a95c17cdad760759bc00db18ed328f94b}{addBudget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_budget}{Budget}}\&\ newBudget);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_a13c919f7de02fb94119845c520b5851d}{checkBudgets}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_a220c70786abd834fd9d4b8f352ff2026}{checkExpenses}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_ace9fc68a39e6169dd914029a34a379e5}{notify}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_notification_manager_a7e8820540004ec7182682cc160dca0f4}{hasNotificationForDate}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ date);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_manager_ada52bea559722bc7f141c6bd6ebcec9f}{triggerNotification}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ date);}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATIONMANAGER\_H}}
 
 \end{DoxyCode}

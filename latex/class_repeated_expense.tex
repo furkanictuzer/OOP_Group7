@@ -19,16 +19,19 @@ Inherits \mbox{\hyperlink{class_expense}{Expense}}.
 \mbox{\hyperlink{class_repeated_expense_a8e77e8a7994047d6c14dc153efcbb97c}{Repeated\+Expense}} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category, int num, const std\+::chrono\+::hours \&interval)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_repeated_expense}{Repeated\+Expense} object. \end{DoxyCompactList}\item 
 std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_repeated_expense_abb0c9adc21866dcc612399beb753c702}{calculate\+Next\+Occurrence}} () const
-\begin{DoxyCompactList}\small\item\em Calculates the next occurrence of the repeated expense. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the next occurrence of the repeated expense. \end{DoxyCompactList}\item 
+\Hypertarget{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb}\label{class_repeated_expense_a7a50d5b09091da67cafc8a4cac105eeb} 
+int {\bfseries get\+Repeat\+Count} () const
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_expense}{Expense}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}{Expense}} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
-\begin{DoxyCompactList}\small\item\em Constructor that initializes an expense with details. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_expense_a24cc45ee132c0b59bf38135e1592e047}{set\+Expense\+Details}} (double amount, const std\+::string \&description)
-\begin{DoxyCompactList}\small\item\em Sets the details of the expense. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}{get\+Expense\+Details}} () const
-\begin{DoxyCompactList}\small\item\em Gets a string representation of the expense details. \end{DoxyCompactList}\item 
+{\bfseries Expense} (int id, double amount, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&date, const std\+::string \&description, \mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*}category)
+\item 
+void {\bfseries set\+Expense\+Details} (double amount, const std\+::string \&description)
+\item 
+std\+::string {\bfseries get\+Expense\+Details} () const
+\item 
 double \mbox{\hyperlink{class_expense_ab83eaf6ccd16eccb0895145da2152f96}{get\+Amount}} () const
 \begin{DoxyCompactList}\small\item\em Gets the amount of the expense. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_expense_a24773d6376de1ac351c18f78a69e559d}{get\+Id}} () const

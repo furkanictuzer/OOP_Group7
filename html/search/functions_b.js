@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['savedatatofile_0',['saveDataToFile',['../class_file_manager.html#a322e7aaa6768d27fc433657633ea9cb6',1,'FileManager']]],
-  ['setbudgetamount_1',['setBudgetAmount',['../class_budget.html#a9a8ec82b32c3b9821ac9912231d008fb',1,'Budget']]],
-  ['setcategoryname_2',['setCategoryName',['../class_category.html#a0f9698ed547b2698d1106a677df3930a',1,'Category']]],
-  ['setexpensedetails_3',['setExpenseDetails',['../class_expense.html#a24cc45ee132c0b59bf38135e1592e047',1,'Expense']]],
-  ['setmainuser_4',['setMainUser',['../class_file_manager.html#a5dfe235276f68baff708222aac4766c4',1,'FileManager']]],
-  ['setpassword_5',['setPassword',['../class_user.html#a8e4b2829988017a04d985b9534f373fc',1,'User']]],
-  ['setsourcedetails_6',['setSourceDetails',['../class_budget.html#ad3b30193fd4d9bdf61275a02ba31d5ca',1,'Budget']]],
-  ['setspentamount_7',['setSpentAmount',['../class_budget.html#a300e5632777a57b91761bef3a1d51f88',1,'Budget']]],
-  ['setusername_8',['setUsername',['../class_user.html#aef164db6d604f8f6880e0b4849a3db40',1,'User']]],
-  ['stringtotimepoint_9',['stringToTimePoint',['../class_date_utils.html#a0dda05c74b5a2bc32a44bdf3ac224c60',1,'DateUtils']]]
+  ['removebudget_0',['removeBudget',['../class_expense_manager.html#a60efbc2115880765a6bae0c5d6d983df',1,'ExpenseManager']]],
+  ['removecategory_1',['removeCategory',['../class_user.html#af630c42e2765f6dbfa78cc2074bb932b',1,'User']]],
+  ['removeexpense_2',['removeExpense',['../class_category.html#afe3726c4e965a713e22c56fed95d2ee8',1,'Category::removeExpense()'],['../class_expense_manager.html#ac650f6275a629c4802dd6d72f0b14f8e',1,'ExpenseManager::removeExpense()']]],
+  ['repeatedexpense_3',['RepeatedExpense',['../class_repeated_expense.html#a8e77e8a7994047d6c14dc153efcbb97c',1,'RepeatedExpense']]],
+  ['report_4',['Report',['../class_report.html#ae3150817fcf4ebf814358baf5bd72e8f',1,'Report::Report()'],['../class_report.html#ad7291b90cc1df665813138f136a6d5db',1,'Report::Report(const std::vector&lt; Expense &gt; &amp;expenses, const std::chrono::system_clock::time_point &amp;start, const std::chrono::system_clock::time_point &amp;end)']]],
+  ['reverse_5',['reverse',['../class_report_generator.html#a1d94df811cb0791b9db077d22033f242',1,'ReportGenerator']]]
 ];

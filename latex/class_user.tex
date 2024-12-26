@@ -32,10 +32,12 @@ double \mbox{\hyperlink{class_user_afc6d6b84e71c2ed877ca8aa4c2435ae2}{get\+Balan
 \begin{DoxyCompactList}\small\item\em Retrieves the current balance of the user. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_user_a44af1b7b8663734215e91351956cf1fa}{add\+Budget}} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
 \begin{DoxyCompactList}\small\item\em Adds a budget to the user\textquotesingle{}s list of budgets. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_budget}{Budget}} \mbox{\hyperlink{class_user_a12fcf19f3915bac5cf7e0b797379bcf6}{get\+Current\+Budget}} ()
-\begin{DoxyCompactList}\small\item\em Retrieves the current budget of the user. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_user_a29814365d876b0280a552becbd3edcb0}{update\+User\+Info}} (const std\+::string \&new\+\_\+username, const std\+::string \&new\+\_\+password)
-\begin{DoxyCompactList}\small\item\em Updates the user\textquotesingle{}s information (username and password). \end{DoxyCompactList}\item 
+\Hypertarget{class_user_ab565f8d210f2d9559ad348ed10684c0f}\label{class_user_ab565f8d210f2d9559ad348ed10684c0f} 
+\mbox{\hyperlink{class_budget}{Budget}} {\bfseries get\+Current\+Budget} ()
+\item 
+\Hypertarget{class_user_a29814365d876b0280a552becbd3edcb0}\label{class_user_a29814365d876b0280a552becbd3edcb0} 
+void {\bfseries update\+User\+Info} (const std\+::string \&new\+\_\+username, const std\+::string \&new\+\_\+password)
+\item 
 bool \mbox{\hyperlink{class_user_a7d5a13642ead5085710f83c0e0d053e8}{delete\+Account}} ()
 \begin{DoxyCompactList}\small\item\em Deletes the user\textquotesingle{}s account. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_user_ac5a839e8c9b3bb68858d8c206a32885d}{get\+User\+Id}} () const
@@ -175,21 +177,6 @@ This function searches for a category by its name and returns a pointer to the c
 \begin{DoxyReturn}{Returns}
 A pointer to the category if found, otherwise nullptr. 
 \end{DoxyReturn}
-\Hypertarget{class_user_a12fcf19f3915bac5cf7e0b797379bcf6}\index{User@{User}!getCurrentBudget@{getCurrentBudget}}
-\index{getCurrentBudget@{getCurrentBudget}!User@{User}}
-\doxysubsubsection{\texorpdfstring{getCurrentBudget()}{getCurrentBudget()}}
-{\footnotesize\ttfamily \label{class_user_a12fcf19f3915bac5cf7e0b797379bcf6} 
-\mbox{\hyperlink{class_budget}{Budget}} User\+::get\+Current\+Budget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Retrieves the current budget of the user. 
-
-This function returns the user\textquotesingle{}s current budget. If no budget is set, it should return an empty budget.
-
-\begin{DoxyReturn}{Returns}
-The current budget of the user. 
-\end{DoxyReturn}
 \Hypertarget{class_user_a82f5293f357cba65ec3b852ef3e6d17c}\index{User@{User}!getExpenseCount@{getExpenseCount}}
 \index{getExpenseCount@{getExpenseCount}!User@{User}}
 \doxysubsubsection{\texorpdfstring{getExpenseCount()}{getExpenseCount()}}
@@ -293,25 +280,6 @@ This function updates the user\textquotesingle{}s username with the provided new
 
 \begin{DoxyParams}{Parameters}
 {\em new\+\_\+username} & The new username to be set for the user. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{class_user_a29814365d876b0280a552becbd3edcb0}\index{User@{User}!updateUserInfo@{updateUserInfo}}
-\index{updateUserInfo@{updateUserInfo}!User@{User}}
-\doxysubsubsection{\texorpdfstring{updateUserInfo()}{updateUserInfo()}}
-{\footnotesize\ttfamily \label{class_user_a29814365d876b0280a552becbd3edcb0} 
-void User\+::update\+User\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+username}{, }\item[{const std\+::string \&}]{new\+\_\+password}{}\end{DoxyParamCaption})}
-
-
-
-Updates the user\textquotesingle{}s information (username and password). 
-
-This function allows the user to update their username and password.
-
-
-\begin{DoxyParams}{Parameters}
-{\em new\+\_\+username} & The new username to be set. \\
-\hline
-{\em new\+\_\+password} & The new password to be set. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_user_aa32cbeea96f119361cc7d3165ba3164d}\index{User@{User}!userInfo@{userInfo}}

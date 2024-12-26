@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['parent_5fpointer_0',['parent_pointer',['../classjson__pointer.html#aa03c0c1206e171342d27a4583258858b',1,'json_pointer']]],
-  ['parse_1',['parse',['../classdetail_1_1parser.html#a59f4b745d4aa146bf7a60a30060f592f',1,'detail::parser']]],
-  ['parse_5ferror_2',['parse_error',['../structjson__sax.html#af165920966b60b78e57a2e4d92a63897',1,'json_sax']]],
-  ['parser_3',['parser',['../classdetail_1_1parser.html#a4bb9ea1b0fddb8f46ff987bbf9e54045',1,'detail::parser']]],
-  ['patch_4',['patch',['../classbasic__json.html#a145a004c0a2fa5be84b260ecc98ab5d9',1,'basic_json']]],
-  ['patch_5finplace_5',['patch_inplace',['../classbasic__json.html#a693812b31e106dec9166e93d8f6dd7d7',1,'basic_json']]],
-  ['pop_5fback_6',['pop_back',['../classjson__pointer.html#a662118b470c87a1b564946c2602c49ce',1,'json_pointer']]],
-  ['push_5fback_7',['push_back',['../classjson__pointer.html#adbe97f9c00a221fb7be88d940b39a24f',1,'json_pointer::push_back(const string_t &amp;token)'],['../classjson__pointer.html#a6fa4848eafc232ae1af91c3d2696897e',1,'json_pointer::push_back(string_t &amp;&amp;token)'],['../classbasic__json.html#a3d13acce4e49e0d5ee768643a7b89010',1,'basic_json::push_back(basic_json &amp;&amp;val)'],['../classbasic__json.html#aca01ca3a9bc310e5c5d067a39dca6933',1,'basic_json::push_back(const basic_json &amp;val)'],['../classbasic__json.html#af17fe93acad9b0b991600225dabd42be',1,'basic_json::push_back(const typename object_t::value_type &amp;val)'],['../classbasic__json.html#a4fcacc90f17b156f0b6c8e0430624853',1,'basic_json::push_back(initializer_list_t init)']]]
+  ['_7euiaddbudgetwindow_0',['~UiAddBudgetWindow',['../class_ui_add_budget_window.html#a36b2125491ec1ec3f141c568bf778931',1,'UiAddBudgetWindow']]],
+  ['_7euiaddexpensewindow_1',['~UiAddExpenseWindow',['../class_ui_add_expense_window.html#a8723f6877156f2540b63d6c40a554249',1,'UiAddExpenseWindow']]],
+  ['_7euibudgetwindow_2',['~UiBudgetWindow',['../class_ui_budget_window.html#a2720d4ea6ef7e38a036c95db3ab0a0eb',1,'UiBudgetWindow']]],
+  ['_7euicategorywindow_3',['~UiCategoryWindow',['../class_ui_category_window.html#a5f59a0293ec8ec9d87e2e75e4d4bbd57',1,'UiCategoryWindow']]],
+  ['_7euiexpensewindow_4',['~UiExpenseWindow',['../class_ui_expense_window.html#a7ee13e36af70f0f3372c969295020714',1,'UiExpenseWindow']]],
+  ['_7euiloginwindow_5',['~UiLoginWindow',['../class_ui_login_window.html#a3996b10ab799d9cab66dda6170b3fcc6',1,'UiLoginWindow']]],
+  ['_7euimainwindow_6',['~UiMainWindow',['../class_ui_main_window.html#a95b08df7d09ff67c2ebb43ef46b31ac0',1,'UiMainWindow']]],
+  ['_7euiprofilewindow_7',['~UiProfileWindow',['../class_ui_profile_window.html#a4671d0e218405a03b8f1da8ecfe3b6b5',1,'UiProfileWindow']]],
+  ['_7euiregisterwindow_8',['~UiRegisterWindow',['../class_ui_register_window.html#a57c0b3fef9def247ffcb51832b6d9084',1,'UiRegisterWindow']]],
+  ['_7euireportswindow_9',['~UiReportsWindow',['../class_ui_reports_window.html#a879075ac8b6d0d86d27b0da66a8646e9',1,'UiReportsWindow']]]
 ];

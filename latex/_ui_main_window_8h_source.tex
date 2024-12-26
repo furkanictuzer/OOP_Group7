@@ -17,25 +17,38 @@
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}NotificationManager.h"{}}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}MockClock.h"{}}\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_main_window}{UiMainWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00019\ \ \ \ \ Fl\_Button*\ expenses\_button;}
-\DoxyCodeLine{00020\ \ \ \ \ Fl\_Button*\ set\_budget\_button;}
-\DoxyCodeLine{00021\ \ \ \ \ Fl\_Button*\ my\_categories\_button;}
-\DoxyCodeLine{00022\ \ \ \ \ Fl\_Button*\ get\_report\_button;}
-\DoxyCodeLine{00023\ \ \ \ \ Fl\_Button*\ profile\_button;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ button\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_ui_main_window}{UiMainWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToExpense();}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToBudget();}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToCategories();}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToReport();}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToProfile();}
-\DoxyCodeLine{00034\ \};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAIN\_WINDOW\_H}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_main_window}{UiMainWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ Fl\_Box*\ date\_display;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ Fl\_Button*\ expenses\_button;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ Fl\_Button*\ set\_budget\_button;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ Fl\_Button*\ my\_categories\_button;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ Fl\_Button*\ get\_report\_button;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ Fl\_Button*\ profile\_button;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ button\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_ui_main_window_ab05c27330c58cabaf80a760a4ff68262}{UiMainWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_ui_main_window_a95b08df7d09ff67c2ebb43ef46b31ac0}{\string~UiMainWindow}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_main_window_aa0b9fcb759bd14103e77836d5f05f1b3}{navigateToExpense}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_main_window_ad87bb02bd1e07452f242adbbc5bcbf5f}{navigateToBudget}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_main_window_ad9c92072d65e319cf6fb23ce8058f714}{navigateToCategories}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_main_window_a73e32438866aa55f666a21a592bbb97a}{navigateToReport}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_main_window_add86721a9129809e44818284350dca8a}{navigateToProfile}}();}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAIN\_WINDOW\_H}}
 
 \end{DoxyCode}

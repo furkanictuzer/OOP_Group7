@@ -87,10 +87,11 @@ $(function(){ initResizable(false); });
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>addBudget()&#160;:&#160;<a class="el" href="class_user.html#a44af1b7b8663734215e91351956cf1fa">User</a></li>
+<li>addBudget()&#160;:&#160;<a class="el" href="class_expense_manager.html#ad4fe72aecae12a3be43950e2f4682fa6">ExpenseManager</a>, <a class="el" href="class_notification_manager.html#a95c17cdad760759bc00db18ed328f94b">NotificationManager</a>, <a class="el" href="class_user.html#a44af1b7b8663734215e91351956cf1fa">User</a></li>
 <li>addCategory()&#160;:&#160;<a class="el" href="class_user.html#a1d070012e614ea61a6bcb764d27bf837">User</a></li>
-<li>addExpense()&#160;:&#160;<a class="el" href="class_category.html#ae22d90b0f1b7535c392f0ac4f9474eb0">Category</a></li>
+<li>addExpense()&#160;:&#160;<a class="el" href="class_category.html#ae22d90b0f1b7535c392f0ac4f9474eb0">Category</a>, <a class="el" href="class_expense_manager.html#a06d6e6ecab026787ac96ccc43890d07b">ExpenseManager</a>, <a class="el" href="class_notification_manager.html#aef0846085faa81304572f1a7efe775cb">NotificationManager</a></li>
 <li>advanceTime()&#160;:&#160;<a class="el" href="class_mock_clock.html#ab7f7e5b1d5a6d46d22c6791823b1f3db">MockClock</a></li>
+<li>analyzeExpenseDistributionByCategory()&#160;:&#160;<a class="el" href="class_expense_manager.html#a54ba2ae63ed57170b80632d6877d3260">ExpenseManager</a></li>
 </ul>
 
 
@@ -102,7 +103,11 @@ $(function(){ initResizable(false); });
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>calculateNextOccurrence()&#160;:&#160;<a class="el" href="class_repeated_expense.html#abb0c9adc21866dcc612399beb753c702">RepeatedExpense</a></li>
+<li>calculateTotalExpenses()&#160;:&#160;<a class="el" href="class_expense_manager.html#a4edaa5be157ea3e9a6080bfb5492e0b7">ExpenseManager</a></li>
+<li>calculateTotalIncome()&#160;:&#160;<a class="el" href="class_expense_manager.html#a101681b01b1f9c3bb9fe1222805e8056">ExpenseManager</a></li>
 <li>Category()&#160;:&#160;<a class="el" href="class_category.html#aa1a5b92576038bf60abb5900baa1048d">Category</a></li>
+<li>checkBudgets()&#160;:&#160;<a class="el" href="class_notification_manager.html#a13c919f7de02fb94119845c520b5851d">NotificationManager</a></li>
+<li>checkExpenses()&#160;:&#160;<a class="el" href="class_notification_manager.html#a220c70786abd834fd9d4b8f352ff2026">NotificationManager</a></li>
 </ul>
 
 
@@ -114,13 +119,9 @@ $(function(){ initResizable(false); });
 </ul>
 
 
-<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>Expense()&#160;:&#160;<a class="el" href="class_expense.html#a3103ca0f802c6cf11e42d3fc41c5f529">Expense</a></li>
-</ul>
-
-
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
 <li>fileExists()&#160;:&#160;<a class="el" href="class_file_manager.html#a479d19a6a2b719af31a91f72c6f14830">FileManager</a></li>
+<li>filterExpensesByDateRange()&#160;:&#160;<a class="el" href="class_expense_manager.html#a47c2bd0512b887a3ce519df2ef829519">ExpenseManager</a></li>
 </ul>
 
 
@@ -136,17 +137,18 @@ $(function(){ initResizable(false); });
 <li>getAmount()&#160;:&#160;<a class="el" href="class_expense.html#ab83eaf6ccd16eccb0895145da2152f96">Expense</a></li>
 <li>getBalance()&#160;:&#160;<a class="el" href="class_user.html#afc6d6b84e71c2ed877ca8aa4c2435ae2">User</a></li>
 <li>getBudgetAmount()&#160;:&#160;<a class="el" href="class_budget.html#a63d80f76e16a2de360ae376408c689e2">Budget</a></li>
+<li>getBudgets()&#160;:&#160;<a class="el" href="class_expense_manager.html#a49daf8d5dbe45d5fabc042579f26da54">ExpenseManager</a></li>
+<li>getBudgetsToNotify()&#160;:&#160;<a class="el" href="class_notification_manager.html#adcaaa67b30414381f52ca54beef48c9f">NotificationManager</a></li>
 <li>getCategories()&#160;:&#160;<a class="el" href="class_user.html#a4dcca1475ba385fbbbac9c791b04ee27">User</a></li>
 <li>getCategory()&#160;:&#160;<a class="el" href="class_expense.html#a3a1be33dd3f814853baf619ce8079e5e">Expense</a></li>
 <li>getCategoryByName()&#160;:&#160;<a class="el" href="class_user.html#a8ffc410e3697accfbf8f561dd960283b">User</a></li>
 <li>getCategoryName()&#160;:&#160;<a class="el" href="class_category.html#a030119bee9d9906b4c33fc06238752fc">Category</a></li>
-<li>getCurrentBudget()&#160;:&#160;<a class="el" href="class_user.html#a12fcf19f3915bac5cf7e0b797379bcf6">User</a></li>
 <li>getCurrentTime()&#160;:&#160;<a class="el" href="class_mock_clock.html#a4f77ff75a1632b758b616bd86755af7f">MockClock</a></li>
 <li>getDate()&#160;:&#160;<a class="el" href="class_expense.html#af14d231fcc73ad3e6c596ea6b30960d0">Expense</a></li>
 <li>getDescription()&#160;:&#160;<a class="el" href="class_expense.html#a1824965ee510f575c8f2124b503866e3">Expense</a></li>
 <li>getExpenseCount()&#160;:&#160;<a class="el" href="class_category.html#a15eed586ecd8d329015031603fc969b7">Category</a>, <a class="el" href="class_user.html#a82f5293f357cba65ec3b852ef3e6d17c">User</a></li>
-<li>getExpenseDetails()&#160;:&#160;<a class="el" href="class_expense.html#a57e38f5ee636c9a64c6ec5b046b22e6d">Expense</a></li>
-<li>getExpenses()&#160;:&#160;<a class="el" href="class_category.html#ab539b7bc7b7ff931b67385516e3bbfe0">Category</a>, <a class="el" href="class_report.html#aebe569de8a49a0d68901479e5944f21b">Report</a></li>
+<li>getExpenses()&#160;:&#160;<a class="el" href="class_category.html#ab539b7bc7b7ff931b67385516e3bbfe0">Category</a>, <a class="el" href="class_expense_manager.html#a7b5094b9fbdcc0912a6808ce9b942c8e">ExpenseManager</a>, <a class="el" href="class_report.html#aebe569de8a49a0d68901479e5944f21b">Report</a></li>
+<li>getExpensesToNotify()&#160;:&#160;<a class="el" href="class_notification_manager.html#a6c4480da23824068215abf928719fb83">NotificationManager</a></li>
 <li>getID()&#160;:&#160;<a class="el" href="class_budget.html#a21d1966ed9426ae3945a8c868e5f667b">Budget</a></li>
 <li>getId()&#160;:&#160;<a class="el" href="class_expense.html#a24773d6376de1ac351c18f78a69e559d">Expense</a></li>
 <li>getMainUser()&#160;:&#160;<a class="el" href="class_file_manager.html#a65dc5887a2e4dbd42ffd373d1140c0cc">FileManager</a></li>
@@ -157,8 +159,14 @@ $(function(){ initResizable(false); });
 <li>getSourcetDetails()&#160;:&#160;<a class="el" href="class_budget.html#af868601326fe0df1a0b5645d6ec0235c">Budget</a></li>
 <li>getSpentAmount()&#160;:&#160;<a class="el" href="class_budget.html#aa16ed5aff7c16fdb53443e9c8c377423">Budget</a></li>
 <li>getTimeInterval()&#160;:&#160;<a class="el" href="class_budget.html#a9229fe490ba6b590685935e026b32a2f">Budget</a></li>
+<li>getTotalExpenseByMonth()&#160;:&#160;<a class="el" href="class_expense_manager.html#adaf64226be5f465bf64295218fc6e999">ExpenseManager</a></li>
 <li>getUserId()&#160;:&#160;<a class="el" href="class_user.html#ac5a839e8c9b3bb68858d8c206a32885d">User</a></li>
 <li>getUserName()&#160;:&#160;<a class="el" href="class_user.html#a7eff012d6182f6829329620d8e21b124">User</a></li>
+</ul>
+
+
+<h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>hasNotificationForDate()&#160;:&#160;<a class="el" href="class_notification_manager.html#a7e8820540004ec7182682cc160dca0f4">NotificationManager</a></li>
 </ul>
 
 
@@ -172,6 +180,16 @@ $(function(){ initResizable(false); });
 </ul>
 
 
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>navigateToBudget()&#160;:&#160;<a class="el" href="class_ui_main_window.html#ad87bb02bd1e07452f242adbbc5bcbf5f">UiMainWindow</a></li>
+<li>navigateToCategories()&#160;:&#160;<a class="el" href="class_ui_main_window.html#ad9c92072d65e319cf6fb23ce8058f714">UiMainWindow</a></li>
+<li>navigateToExpense()&#160;:&#160;<a class="el" href="class_ui_main_window.html#aa0b9fcb759bd14103e77836d5f05f1b3">UiMainWindow</a></li>
+<li>navigateToProfile()&#160;:&#160;<a class="el" href="class_ui_main_window.html#add86721a9129809e44818284350dca8a">UiMainWindow</a></li>
+<li>navigateToReport()&#160;:&#160;<a class="el" href="class_ui_main_window.html#a73e32438866aa55f666a21a592bbb97a">UiMainWindow</a></li>
+<li>notify()&#160;:&#160;<a class="el" href="class_notification_manager.html#ace9fc68a39e6169dd914029a34a379e5">NotificationManager</a></li>
+</ul>
+
+
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
 <li>operator&lt;()&#160;:&#160;<a class="el" href="class_category.html#a75700d56785f3193d38b7d9fd3a834bf">Category</a></li>
 <li>operator==()&#160;:&#160;<a class="el" href="class_budget.html#aff0aefc2572600975912f6c8b768d78c">Budget</a>, <a class="el" href="class_expense.html#a7c3d1745d9411ba1c091911ebc875034">Expense</a></li>
@@ -179,8 +197,9 @@ $(function(){ initResizable(false); });
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>removeBudget()&#160;:&#160;<a class="el" href="class_expense_manager.html#a60efbc2115880765a6bae0c5d6d983df">ExpenseManager</a></li>
 <li>removeCategory()&#160;:&#160;<a class="el" href="class_user.html#af630c42e2765f6dbfa78cc2074bb932b">User</a></li>
-<li>removeExpense()&#160;:&#160;<a class="el" href="class_category.html#afe3726c4e965a713e22c56fed95d2ee8">Category</a></li>
+<li>removeExpense()&#160;:&#160;<a class="el" href="class_category.html#afe3726c4e965a713e22c56fed95d2ee8">Category</a>, <a class="el" href="class_expense_manager.html#ac650f6275a629c4802dd6d72f0b14f8e">ExpenseManager</a></li>
 <li>RepeatedExpense()&#160;:&#160;<a class="el" href="class_repeated_expense.html#a8e77e8a7994047d6c14dc153efcbb97c">RepeatedExpense</a></li>
 <li>Report()&#160;:&#160;<a class="el" href="class_report.html#ae3150817fcf4ebf814358baf5bd72e8f">Report</a></li>
 <li>reverse()&#160;:&#160;<a class="el" href="class_report_generator.html#a1d94df811cb0791b9db077d22033f242">ReportGenerator</a></li>
@@ -191,7 +210,6 @@ $(function(){ initResizable(false); });
 <li>saveDataToFile()&#160;:&#160;<a class="el" href="class_file_manager.html#a322e7aaa6768d27fc433657633ea9cb6">FileManager</a></li>
 <li>setBudgetAmount()&#160;:&#160;<a class="el" href="class_budget.html#a9a8ec82b32c3b9821ac9912231d008fb">Budget</a></li>
 <li>setCategoryName()&#160;:&#160;<a class="el" href="class_category.html#a0f9698ed547b2698d1106a677df3930a">Category</a></li>
-<li>setExpenseDetails()&#160;:&#160;<a class="el" href="class_expense.html#a24cc45ee132c0b59bf38135e1592e047">Expense</a></li>
 <li>setMainUser()&#160;:&#160;<a class="el" href="class_file_manager.html#a5dfe235276f68baff708222aac4766c4">FileManager</a></li>
 <li>setPassword()&#160;:&#160;<a class="el" href="class_user.html#a8e4b2829988017a04d985b9534f373fc">User</a></li>
 <li>setSourceDetails()&#160;:&#160;<a class="el" href="class_budget.html#ad3b30193fd4d9bdf61275a02ba31d5ca">Budget</a></li>
@@ -203,6 +221,7 @@ $(function(){ initResizable(false); });
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
 <li>timePointToString()&#160;:&#160;<a class="el" href="class_date_utils.html#ac2dbb796889de328332b99f2dbcc4c13">DateUtils</a></li>
+<li>triggerNotification()&#160;:&#160;<a class="el" href="class_notification_manager.html#ada52bea559722bc7f141c6bd6ebcec9f">NotificationManager</a></li>
 <li>tryToLogin()&#160;:&#160;<a class="el" href="class_authentication_manager.html#a13bdbdbf21f1ed0b1e0232876b55260d">AuthenticationManager</a></li>
 <li>tryToRegister()&#160;:&#160;<a class="el" href="class_authentication_manager.html#affc211df78c031f1d96dbb2ba028f341">AuthenticationManager</a></li>
 </ul>
@@ -210,14 +229,15 @@ $(function(){ initResizable(false); });
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>UiAddBudgetWindow()&#160;:&#160;<a class="el" href="class_ui_add_budget_window.html#aff59cb3135dbaac71a0c8ff628254770">UiAddBudgetWindow</a></li>
+<li>UiAddExpenseWindow()&#160;:&#160;<a class="el" href="class_ui_add_expense_window.html#af10dfa51a3b13e79fc873ff3269384fd">UiAddExpenseWindow</a></li>
 <li>UiBudgetWindow()&#160;:&#160;<a class="el" href="class_ui_budget_window.html#a55abbdb367293a97da043275a9690f9c">UiBudgetWindow</a></li>
 <li>UiCategoryWindow()&#160;:&#160;<a class="el" href="class_ui_category_window.html#a2977070480d3e0930850fe33ab8a7bc4">UiCategoryWindow</a></li>
 <li>UiExpenseWindow()&#160;:&#160;<a class="el" href="class_ui_expense_window.html#ae9c22625e6d0a5d768296b090e6e7d9d">UiExpenseWindow</a></li>
 <li>UiLoginWindow()&#160;:&#160;<a class="el" href="class_ui_login_window.html#a09e176d3f48213c22c22f0260127fe10">UiLoginWindow</a></li>
+<li>UiMainWindow()&#160;:&#160;<a class="el" href="class_ui_main_window.html#ab05c27330c58cabaf80a760a4ff68262">UiMainWindow</a></li>
 <li>UiProfileWindow()&#160;:&#160;<a class="el" href="class_ui_profile_window.html#a14fdb18f56bc7ff8f6a7aa2e3402c9ba">UiProfileWindow</a></li>
 <li>UiRegisterWindow()&#160;:&#160;<a class="el" href="class_ui_register_window.html#a9af3941e7fa955253bf47e64afaa3903">UiRegisterWindow</a></li>
 <li>UiReportsWindow()&#160;:&#160;<a class="el" href="class_ui_reports_window.html#ab9286443fa537aed8866266efe7dfd52">UiReportsWindow</a></li>
-<li>updateUserInfo()&#160;:&#160;<a class="el" href="class_user.html#a29814365d876b0280a552becbd3edcb0">User</a></li>
 <li>User()&#160;:&#160;<a class="el" href="class_user.html#aa9c2212480bb8813a9f2d26480509a42">User</a></li>
 <li>userInfo()&#160;:&#160;<a class="el" href="class_user.html#aa32cbeea96f119361cc7d3165ba3164d">User</a></li>
 </ul>
@@ -225,10 +245,12 @@ $(function(){ initResizable(false); });
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
 <li>~UiAddBudgetWindow()&#160;:&#160;<a class="el" href="class_ui_add_budget_window.html#a36b2125491ec1ec3f141c568bf778931">UiAddBudgetWindow</a></li>
+<li>~UiAddExpenseWindow()&#160;:&#160;<a class="el" href="class_ui_add_expense_window.html#a8723f6877156f2540b63d6c40a554249">UiAddExpenseWindow</a></li>
 <li>~UiBudgetWindow()&#160;:&#160;<a class="el" href="class_ui_budget_window.html#a2720d4ea6ef7e38a036c95db3ab0a0eb">UiBudgetWindow</a></li>
 <li>~UiCategoryWindow()&#160;:&#160;<a class="el" href="class_ui_category_window.html#a5f59a0293ec8ec9d87e2e75e4d4bbd57">UiCategoryWindow</a></li>
 <li>~UiExpenseWindow()&#160;:&#160;<a class="el" href="class_ui_expense_window.html#a7ee13e36af70f0f3372c969295020714">UiExpenseWindow</a></li>
 <li>~UiLoginWindow()&#160;:&#160;<a class="el" href="class_ui_login_window.html#a3996b10ab799d9cab66dda6170b3fcc6">UiLoginWindow</a></li>
+<li>~UiMainWindow()&#160;:&#160;<a class="el" href="class_ui_main_window.html#a95b08df7d09ff67c2ebb43ef46b31ac0">UiMainWindow</a></li>
 <li>~UiProfileWindow()&#160;:&#160;<a class="el" href="class_ui_profile_window.html#a4671d0e218405a03b8f1da8ecfe3b6b5">UiProfileWindow</a></li>
 <li>~UiRegisterWindow()&#160;:&#160;<a class="el" href="class_ui_register_window.html#a57c0b3fef9def247ffcb51832b6d9084">UiRegisterWindow</a></li>
 <li>~UiReportsWindow()&#160;:&#160;<a class="el" href="class_ui_reports_window.html#a879075ac8b6d0d86d27b0da66a8646e9">UiReportsWindow</a></li>
