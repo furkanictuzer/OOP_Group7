@@ -29,7 +29,7 @@ public:
     void removeCategory(const Category& category);
     double getBalance() const;
     void addBudget(const Budget& budget);
-    Budget getCurrentBudget();
+    Budget& getCurrentBudget();
     void updateUserInfo(const std::string& new_username, const std::string& new_password);
     bool deleteAccount();
     int getUserId() const;

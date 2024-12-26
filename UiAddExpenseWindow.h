@@ -33,11 +33,13 @@ private:
     Fl_Choice* year_choice;
     Fl_Multiline_Input* description_input;
     Fl_Check_Button* repeated_expense_check;
+    Fl_Input* repeat_count_input;
     Fl_Button* save_button;
     Fl_Button* cancel_button;
 
     static void save_callback(Fl_Widget* widget, void* data);
     static void cancel_callback(Fl_Widget* widget, void* data);
+    static void repeated_expense_check_callback(Fl_Widget* widget, void* data);
 
     void populateDateChoices();
 

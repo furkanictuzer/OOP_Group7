@@ -4,21 +4,21 @@
         {
             "expenses": [
                 {
-                    "amount": 10.0,
-                    "date": "2022-04-03",
-                    "description": "asdas",
+                    "amount": 12.0,
+                    "date": "2024-03-04",
+                    "description": "asd",
                     "id": 1
                 },
                 {
-                    "amount": 1.0,
-                    "date": "2025-05-01",
-                    "description": "asdaf",
+                    "amount": 122.0,
+                    "date": "2023-05-04",
+                    "description": "1234",
                     "id": 2
                 },
                 {
-                    "amount": 5.0,
-                    "date": "2022-03-03",
-                    "description": "asdasd",
+                    "amount": 12.0,
+                    "date": "2027-06-06",
+                    "description": "adasd",
                     "id": 3
                 }
             ],
@@ -27,5 +27,5 @@
     ],
     "password": "1234",
     "user_id": 1,
-    "username": "furkan"
+    "username": "aybu"
 }

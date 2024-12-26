@@ -52,7 +52,7 @@ void User::addBudget(const Budget& budget) {
     budgets.push_back(budget);
 }
 
-Budget User::getCurrentBudget()
+Budget& User::getCurrentBudget()
 {
     this->budgets.at(budgets.size() - 1);
 }

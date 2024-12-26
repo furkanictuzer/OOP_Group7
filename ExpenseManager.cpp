@@ -1,8 +1,10 @@
 #include "ExpenseManager.h"
 #include "DateParser.h"
+#include "FileManager.h"
 #include <algorithm>
 #include <sstream>
 #include <iomanip>
+#include <iostream>
 
 std::vector<Expense> ExpenseManager::expenses;
 std::vector<Budget> ExpenseManager::budgets;
@@ -12,14 +14,36 @@ double ExpenseManager::totalIncome = 0;
 void ExpenseManager::addExpense(const Expense& expense) {
     User& user = FileManager::getMainUser();
 
+    std::cout << "Adding expense: " << expense.getDescription() << std::endl;
+
     // Create a new Expense object on the heap and pass a pointer to it
     Expense* newExpense = new Expense(expense);
-    user.getCategoryByName(expense.getCategory()->getCategoryName())->addExpense(newExpense);
-    user.getCurrentBudget().setSpentAmount(expense.getAmount()); //Spent amount will be decremented from budget
+    std::cout << "New expense created." << std::endl;
+
+    Category* category = user.getCategoryByName(expense.getCategory()->getCategoryName());
+    if (!category) {
+        std::cerr << "Error: Category not found." << std::endl;
+        delete newExpense;
+        return;
+    }
+    std::cout << "Category found: " << category->getCategoryName() << std::endl;
+
+    category->addExpense(newExpense);
+    std::cout << "Expense added to category." << std::endl;
+
+    try {
+        Budget& budget = user.getCurrentBudget();
+        budget.setSpentAmount(budget.getSpentAmount() + expense.getAmount()); // Update spent amount in the budget
+        std::cout << "Budget updated. Spent amount: " << budget.getSpentAmount() << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << "No current budget found. Skipping budget update. Error: " << e.what() << std::endl;
+    }
 
     expenses.push_back(*newExpense);
+    std::cout << "Expense added to ExpenseManager." << std::endl;
 
     FileManager::saveDataToFile(&user);
+    std::cout << "Data saved to file." << std::endl;
 }
 
 void ExpenseManager::removeExpense(const Expense& expense) {
