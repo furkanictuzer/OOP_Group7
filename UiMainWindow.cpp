@@ -1,5 +1,14 @@
 #include "UiMainWindow.h"
+#include "MockClock.h"
 #include <iostream>
+#include <iostream>             
+#include <thread>               
+#include <chrono>               
+#include <ctime>
+
+// Yeni eklenen alanlar
+Fl_Box* date_display = nullptr;
+MockClock clock;
 
 UiMainWindow::UiMainWindow(int width, int height)
     : Fl_Window(width, height, ("Main Window - " + FileManager::getMainUser().getUserName()).c_str()) {
@@ -14,6 +23,41 @@ UiMainWindow::UiMainWindow(int width, int height)
     my_categories_button->callback(button_callback, (void*)this);
     get_report_button->callback(button_callback, (void*)this);
     profile_button->callback(button_callback, (void*)this);
+
+    // Tarih göstermek için kutu ekleniyor
+    date_display = new Fl_Box(50, 300, 300, 40, "Date: --");
+    date_display->box(FL_UP_BOX);
+    date_display->labelsize(14);
+
+    // MockClock başlatılıyor
+    clock.initialize(1); // Speed factor: 1 (normal hızda başlat)
+
+    // Tarihi güncellemek için bir thread başlat
+    std::thread([this]() {
+        while (true) {
+            // 5 saniyede bir bir gün ilerlet
+            clock.advanceTime(std::chrono::hours(24));
+
+            // Tarihi al
+            auto current_time = clock.getCurrentTime();
+            std::time_t current_time_t = std::chrono::system_clock::to_time_t(current_time);
+            std::string date_string = std::ctime(&current_time_t);
+            date_string.pop_back(); // Sondaki yeni satır karakterini kaldır
+
+            // GUI'yi güncelle
+            Fl::lock();
+            date_display->label(("Date: " + date_string).c_str());
+            Fl::unlock();
+            Fl::awake();
+
+            // Bildirim kontrolü
+            if (NotificationManager::hasNotificationForDate(date_string)) {
+                NotificationManager::triggerNotification(date_string);
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(5)); // 5 saniyede bir çalıştır
+        }
+    }).detach();
 
     end();
 }
