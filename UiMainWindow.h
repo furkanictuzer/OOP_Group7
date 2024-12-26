@@ -16,6 +16,8 @@
 
 class UiMainWindow : public Fl_Window {
 private:
+
+    Fl_Box* date_display;
     Fl_Button* expenses_button;
     Fl_Button* set_budget_button;
     Fl_Button* my_categories_button;
@@ -26,6 +28,7 @@ private:
 
 public:
     UiMainWindow(int width, int height);
+    ~UiMainWindow();
     void navigateToExpense();
     void navigateToBudget();
     void navigateToCategories();

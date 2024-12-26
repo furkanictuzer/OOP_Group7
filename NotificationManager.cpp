@@ -1,26 +1,22 @@
 #include "NotificationManager.h"
 
-NotificationManager::NotificationManager(MockClock mc)
-{
-    this->mockClock = mc;
-}
+std::vector<RepeatedExpense> NotificationManager::repeatedExpenses;
+std::vector<Budget> NotificationManager::budgets;
 
 std::vector<RepeatedExpense> NotificationManager::getExpensesToNotify() {
     return repeatedExpenses;
 }
 
-void NotificationManager::addExpense(RepeatedExpense newExpense)
-{
-    this->repeatedExpenses.push_back(newExpense);
+void NotificationManager::addExpense(const RepeatedExpense& newExpense) {
+    repeatedExpenses.push_back(newExpense);
 }
 
 std::vector<Budget> NotificationManager::getBudgetsToNotify() {
     return budgets;
 }
 
-void NotificationManager::addBudget(Budget newBudget)
-{
-    this->budgets.push_back(newBudget);
+void NotificationManager::addBudget(const Budget& newBudget) {
+    budgets.push_back(newBudget);
 }
 
 void NotificationManager::checkBudgets() 
@@ -42,7 +38,7 @@ void NotificationManager::checkExpenses()
 {
     for(RepeatedExpense expense: repeatedExpenses)
     {
-        if(expense.calculateNextOccurrence() <= mockClock.getCurrentTime() + std::chrono::hours(24))
+        if(expense.calculateNextOccurrence() <= MockClock::getCurrentTime() + std::chrono::hours(24))
         {
             string message = "The last pay date of " + expense.getExpenseDetails() + " is tomorrow. Do not forget to pay!\n";
             notify(message);
@@ -50,8 +46,14 @@ void NotificationManager::checkExpenses()
     }
 }
 
-void NotificationManager::notify(string message) 
-{
-    Fl::visual(FL_DOUBLE);
-    fl_message("%s", message.c_str());
+void NotificationManager::notify(const std::string& message) {
+    fl_alert(message.c_str());
+}
+
+bool NotificationManager::hasNotificationForDate(const std::chrono::system_clock::time_point& date) {
+    // Implementation for checking if there is a notification for the given date
+}
+
+void NotificationManager::triggerNotification(const std::chrono::system_clock::time_point& date) {
+    // Implementation for triggering a notification for the given date
 }

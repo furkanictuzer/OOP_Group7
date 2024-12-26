@@ -15,19 +15,19 @@
 
 class NotificationManager {
 private:
-    std::vector<RepeatedExpense> repeatedExpenses;
-    std::vector<Budget> budgets;
-    MockClock mockClock;
+    static std::vector<RepeatedExpense> repeatedExpenses;
+    static std::vector<Budget> budgets;
 
 public:
-    NotificationManager(MockClock mc);
-    std::vector<RepeatedExpense> getExpensesToNotify();
-    void addExpense(RepeatedExpense newExpense);
-    std::vector<Budget> getBudgetsToNotify();
-    void addBudget(Budget newBudget);
-    void checkBudgets();
-    void checkExpenses();
-    void notify(string message);
+    static std::vector<RepeatedExpense> getExpensesToNotify();
+    static void addExpense(const RepeatedExpense& newExpense);
+    static std::vector<Budget> getBudgetsToNotify();
+    static void addBudget(const Budget& newBudget);
+    static void checkBudgets();
+    static void checkExpenses();
+    static void notify(const std::string& message);
+    static bool hasNotificationForDate(const std::chrono::system_clock::time_point& date);
+    static void triggerNotification(const std::chrono::system_clock::time_point& date);
 };
 
 #endif // NOTIFICATIONMANAGER_H

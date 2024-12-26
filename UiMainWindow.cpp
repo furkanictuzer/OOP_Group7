@@ -1,13 +1,13 @@
 #include "UiMainWindow.h"
+#include "NotificationManager.h"
 #include "MockClock.h"
-#include <iostream>
-#include <iostream>             
-#include <thread>               
-#include <chrono>               
+#include <FL/Fl.H>
+#include <FL/Fl_Box.H>
+#include <FL/Fl_Button.H>
+#include <thread>
+#include <chrono>
 #include <ctime>
-
-Fl_Box* date_display = nullptr;
-MockClock clock;
+#include <iostream>
 
 UiMainWindow::UiMainWindow(int width, int height)
     : Fl_Window(width, height, ("Main Window - " + FileManager::getMainUser().getUserName()).c_str()) {
@@ -27,20 +27,20 @@ UiMainWindow::UiMainWindow(int width, int height)
     date_display = new Fl_Box(50, 300, 300, 40, "Date: --");
     date_display->box(FL_UP_BOX);
     date_display->labelsize(14);
-
-    clock.initialize(1); // Speed factor: 1 (normal hızda başlat)
-
-    // Tarihi güncellemek için bir thread başlat
-    std::thread([this]() {
+    date_display->labelfont(FL_BOLD + FL_ITALIC);
+    date_display->labeltype(FL_SHADOW_LABEL);
+    
+    /*std::thread([date_display]() {
         while (true) {
             // 5 saniyede bir bir gün ilerlet
-            clock.advanceTime(std::chrono::hours(24));
+            MockClock::advanceTime(std::chrono::hours(24));
 
             // Tarihi al
-            auto current_time = clock.getCurrentTime();
+            auto current_time = MockClock::getCurrentTime();
             std::time_t current_time_t = std::chrono::system_clock::to_time_t(current_time);
-            std::string date_string = std::ctime(&current_time_t);
-            date_string.pop_back(); // Sondaki yeni satır karakterini kaldır
+            std::ostringstream oss;
+            oss << std::put_time(std::localtime(&current_time_t), "%Y-%m-%d %H:%M:%S");
+            std::string date_string = oss.str();
 
             // GUI'yi güncelle
             Fl::lock();
@@ -48,16 +48,22 @@ UiMainWindow::UiMainWindow(int width, int height)
             Fl::unlock();
             Fl::awake();
 
-            // Bildirim kontrolü
-            if (NotificationManager::hasNotificationForDate(date_string)) {
-                NotificationManager::triggerNotification(date_string);
-            }
-
             std::this_thread::sleep_for(std::chrono::seconds(5)); // 5 saniyede bir çalıştır
         }
-    }).detach();
+    }).detach();*/
 
     end();
+}
+
+UiMainWindow::~UiMainWindow() 
+{
+    delete expenses_button;
+    delete set_budget_button;
+    delete my_categories_button;
+    delete get_report_button;
+    delete profile_button;
+
+    delete date_display;
 }
 
 void UiMainWindow::button_callback(Fl_Widget* widget, void* data) {

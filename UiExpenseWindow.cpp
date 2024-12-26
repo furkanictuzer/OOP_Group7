@@ -51,6 +51,7 @@ void UiExpenseWindow::close_callback(Fl_Widget* widget, void* data) {
 void UiExpenseWindow::add_expense_callback(Fl_Widget* widget, void* data) 
 {
     UiExpenseWindow* window = (UiExpenseWindow*)data;
+    window->hide();
     
     UiAddExpenseWindow* add_expense_window = new UiAddExpenseWindow(window->w(), window->h());
     add_expense_window->show();

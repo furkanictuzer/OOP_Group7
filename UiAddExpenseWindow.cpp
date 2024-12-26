@@ -101,6 +101,7 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
         std::chrono::hours repeat_interval(30 * 24); // Example interval in hours (30 days)
         RepeatedExpense expense(user.getExpenseCount() + 1, std::stod(amount), DateUtils::stringToTimePoint(date), description, category_ptr, repeat_count, repeat_interval);
         ExpenseManager::addExpense(expense);
+        NotificationManager::addExpense(expense);
     } else {
         try
         {
@@ -119,10 +120,16 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
     fl_message("Expense saved successfully.");
 
     window->hide();
+
+    UiExpenseWindow* expense_window = new UiExpenseWindow(window->w(), window->h());
+    expense_window->show();
 }
 
 void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) 
 {
     UiAddExpenseWindow* window = (UiAddExpenseWindow*)data;
     window->hide();
+
+    UiExpenseWindow* expense_window = new UiExpenseWindow(window->w(), window->h());
+    expense_window->show();
 }
