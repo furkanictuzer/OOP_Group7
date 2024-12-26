@@ -1,0 +1,44 @@
+\doxysection{Expense\+Manager Class Reference}
+\hypertarget{class_expense_manager}{}\label{class_expense_manager}\index{ExpenseManager@{ExpenseManager}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b}\label{class_expense_manager_a06d6e6ecab026787ac96ccc43890d07b} 
+static void {\bfseries add\+Expense} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
+\item 
+\Hypertarget{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e}\label{class_expense_manager_ac650f6275a629c4802dd6d72f0b14f8e} 
+static void {\bfseries remove\+Expense} (const \mbox{\hyperlink{class_expense}{Expense}} \&expense)
+\item 
+\Hypertarget{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6}\label{class_expense_manager_ad4fe72aecae12a3be43950e2f4682fa6} 
+static void {\bfseries add\+Budget} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
+\item 
+\Hypertarget{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df}\label{class_expense_manager_a60efbc2115880765a6bae0c5d6d983df} 
+static void {\bfseries remove\+Budget} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
+\item 
+\Hypertarget{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e}\label{class_expense_manager_a7b5094b9fbdcc0912a6808ce9b942c8e} 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ {\bfseries get\+Expenses} ()
+\item 
+\Hypertarget{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54}\label{class_expense_manager_a49daf8d5dbe45d5fabc042579f26da54} 
+static std\+::vector$<$ \mbox{\hyperlink{class_budget}{Budget}} $>$ {\bfseries get\+Budgets} ()
+\item 
+\Hypertarget{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7}\label{class_expense_manager_a4edaa5be157ea3e9a6080bfb5492e0b7} 
+static double {\bfseries calculate\+Total\+Expenses} ()
+\item 
+\Hypertarget{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056}\label{class_expense_manager_a101681b01b1f9c3bb9fe1222805e8056} 
+static double {\bfseries calculate\+Total\+Income} ()
+\item 
+\Hypertarget{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519}\label{class_expense_manager_a47c2bd0512b887a3ce519df2ef829519} 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ {\bfseries filter\+Expenses\+By\+Date\+Range} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date)
+\item 
+\Hypertarget{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260}\label{class_expense_manager_a54ba2ae63ed57170b80632d6877d3260} 
+static std\+::map$<$ \mbox{\hyperlink{class_category}{Category}}, double $>$ {\bfseries analyze\+Expense\+Distribution\+By\+Category} ()
+\item 
+\Hypertarget{class_expense_manager_adaf64226be5f465bf64295218fc6e999}\label{class_expense_manager_adaf64226be5f465bf64295218fc6e999} 
+static double {\bfseries get\+Total\+Expense\+By\+Month} (int month, int year)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Expense\+Manager.\+h\item 
+Expense\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,179 @@
+\doxysection{File\+Manager Class Reference}
+\hypertarget{class_file_manager}{}\label{class_file_manager}\index{FileManager@{FileManager}}
+
+
+Provides functionality to save, load, and manage user data in a file.  
+
+
+
+
+{\ttfamily \#include $<$File\+Manager.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6}{save\+Data\+To\+File}} (const \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}user)
+\begin{DoxyCompactList}\small\item\em Saves the user data to a file. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_file_manager_ae1d2246fa9f0b887690412ef0701d875}{load\+Data\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Loads user data from a file. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_file_manager_a479d19a6a2b719af31a91f72c6f14830}{file\+Exists}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the data file exists. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_file_manager_a505f231f0afc87aca966f3d5a412a573}{does\+User\+Exist}} (const std\+::string \&username)
+\begin{DoxyCompactList}\small\item\em Checks if a user exists by username. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_user}{User}} \& \mbox{\hyperlink{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}{get\+Main\+User}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the main user. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_file_manager_aef716e735f4409600e25ba8ee3358047}{get\+Main\+User\+Pawword}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the main user\textquotesingle{}s password. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_file_manager_a5dfe235276f68baff708222aac4766c4}{set\+Main\+User}} (const \mbox{\hyperlink{class_user}{User}} \&user)
+\begin{DoxyCompactList}\small\item\em Sets the main user. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}{delete\+User}} (const std\+::string \&username)
+\begin{DoxyCompactList}\small\item\em Deletes a user by username. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_file_manager_a6b83b556f2957402a5f9681f88bf6c3f}{delete\+All\+User}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all users. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality to save, load, and manage user data in a file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_file_manager_a6b83b556f2957402a5f9681f88bf6c3f}\index{FileManager@{FileManager}!deleteAllUser@{deleteAllUser}}
+\index{deleteAllUser@{deleteAllUser}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{deleteAllUser()}{deleteAllUser()}}
+{\footnotesize\ttfamily \label{class_file_manager_a6b83b556f2957402a5f9681f88bf6c3f} 
+void File\+Manager\+::delete\+All\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deletes all users. 
+
+This function deletes all user data from the file. \Hypertarget{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4}\index{FileManager@{FileManager}!deleteUser@{deleteUser}}
+\index{deleteUser@{deleteUser}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
+{\footnotesize\ttfamily \label{class_file_manager_a2a62212a0b7bda1d661483e0835e05c4} 
+void File\+Manager\+::delete\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deletes a user by username. 
+
+This function deletes the user with the specified username from the data file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to delete. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_file_manager_a505f231f0afc87aca966f3d5a412a573}\index{FileManager@{FileManager}!doesUserExist@{doesUserExist}}
+\index{doesUserExist@{doesUserExist}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{doesUserExist()}{doesUserExist()}}
+{\footnotesize\ttfamily \label{class_file_manager_a505f231f0afc87aca966f3d5a412a573} 
+bool File\+Manager\+::does\+User\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a user exists by username. 
+
+This function checks if a user with the given username already exists in the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username to check for existence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the user exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_a479d19a6a2b719af31a91f72c6f14830}\index{FileManager@{FileManager}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{fileExists()}{fileExists()}}
+{\footnotesize\ttfamily \label{class_file_manager_a479d19a6a2b719af31a91f72c6f14830} 
+bool File\+Manager\+::file\+Exists (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the data file exists. 
+
+\begin{DoxyReturn}{Returns}
+true if the file exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc}\index{FileManager@{FileManager}!getMainUser@{getMainUser}}
+\index{getMainUser@{getMainUser}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{getMainUser()}{getMainUser()}}
+{\footnotesize\ttfamily \label{class_file_manager_a65dc5887a2e4dbd42ffd373d1140c0cc} 
+\mbox{\hyperlink{class_user}{User}} \& File\+Manager\+::get\+Main\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the main user. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the main \doxylink{class_user}{User} object. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_aef716e735f4409600e25ba8ee3358047}\index{FileManager@{FileManager}!getMainUserPawword@{getMainUserPawword}}
+\index{getMainUserPawword@{getMainUserPawword}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{getMainUserPawword()}{getMainUserPawword()}}
+{\footnotesize\ttfamily \label{class_file_manager_aef716e735f4409600e25ba8ee3358047} 
+string File\+Manager\+::get\+Main\+User\+Pawword (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the main user\textquotesingle{}s password. 
+
+\begin{DoxyReturn}{Returns}
+The main user\textquotesingle{}s password as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_ae1d2246fa9f0b887690412ef0701d875}\index{FileManager@{FileManager}!loadDataFromFile@{loadDataFromFile}}
+\index{loadDataFromFile@{loadDataFromFile}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{loadDataFromFile()}{loadDataFromFile()}}
+{\footnotesize\ttfamily \label{class_file_manager_ae1d2246fa9f0b887690412ef0701d875} 
+bool File\+Manager\+::load\+Data\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads user data from a file. 
+
+This function deserializes data from the file and loads it into memory.
+
+\begin{DoxyReturn}{Returns}
+true if the data was successfully loaded, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6}\index{FileManager@{FileManager}!saveDataToFile@{saveDataToFile}}
+\index{saveDataToFile@{saveDataToFile}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{saveDataToFile()}{saveDataToFile()}}
+{\footnotesize\ttfamily \label{class_file_manager_a322e7aaa6768d27fc433657633ea9cb6} 
+void File\+Manager\+::save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Saves the user data to a file. 
+
+This function serializes the user object and saves it to a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & A pointer to the \doxylink{class_user}{User} object whose data needs to be saved. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_file_manager_a5dfe235276f68baff708222aac4766c4}\index{FileManager@{FileManager}!setMainUser@{setMainUser}}
+\index{setMainUser@{setMainUser}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{setMainUser()}{setMainUser()}}
+{\footnotesize\ttfamily \label{class_file_manager_a5dfe235276f68baff708222aac4766c4} 
+void File\+Manager\+::set\+Main\+User (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the main user. 
+
+This function sets the provided \doxylink{class_user}{User} object as the main user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The \doxylink{class_user}{User} object to set as the main user. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+File\+Manager.\+h\item 
+File\+Manager.\+cpp\end{DoxyCompactItemize}

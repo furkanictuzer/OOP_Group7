@@ -1,0 +1,43 @@
+\doxysection{Report\+Generator.\+h}
+\hypertarget{_report_generator_8h_source}{}\label{_report_generator_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REPORTGENERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REPORTGENERATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Report.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}DateUtils.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_report_generator}{ReportGenerator}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_a3e355d87565270afed7a7bb7ceaf0d59}{generateWeeklyReport}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_abe6fe23046eccc46a8ea3797a0feb8e5}{generateMonthlyReport}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_af202afd8716f29159281089236bf3be5}{generateAnnualReport}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_a0c8a04a91682f2b09b0e7a124c5d3132}{generateReport}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ endDate);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584}{generateCategoryReport}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_category}{Category}}\&\ category);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_report}{Report}}\ \mbox{\hyperlink{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584}{generateCategoryReport}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ endDate,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_category}{Category}}\&\ category);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Expense>\ \mbox{\hyperlink{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d}{getRelatedExpenses}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ endDate,\ \textcolor{keyword}{const}\ std::vector<Category>\&\ categories);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Expense>\ \mbox{\hyperlink{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d}{getRelatedExpenses}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ endDate,\ \textcolor{keyword}{const}\ std::vector<Expense*>\&\ expenses);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_report_generator_a1d94df811cb0791b9db077d22033f242}{reverse}}(\textcolor{keyword}{const}\ std::string\ str);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ std::chrono::system\_clock::time\_point\ stringToTimePoint(\textcolor{keyword}{const}\ std::string\&\ timeStr);}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REPORTGENERATOR\_H}}
+
+\end{DoxyCode}

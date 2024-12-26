@@ -1,0 +1,83 @@
+\doxysection{Mock\+Clock Class Reference}
+\hypertarget{class_mock_clock}{}\label{class_mock_clock}\index{MockClock@{MockClock}}
+
+
+Provides a mocked clock that allows controlling time for testing purposes.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+Clock.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_mock_clock_a1606898c501ea877b3b67f1264714e1e}{initialize}} (int speed=1)
+\begin{DoxyCompactList}\small\item\em Initializes the mock clock with a specific speed. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mock_clock_ab7f7e5b1d5a6d46d22c6791823b1f3db}{advance\+Time}} (std\+::chrono\+::seconds duration)
+\begin{DoxyCompactList}\small\item\em Advances the current time by a specified duration. \end{DoxyCompactList}\item 
+static std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_mock_clock_a4f77ff75a1632b758b616bd86755af7f}{get\+Current\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current time of the mock clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a mocked clock that allows controlling time for testing purposes. 
+
+This class simulates the passage of time, allowing you to initialize the time, advance it, and retrieve the current time based on a speed factor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mock_clock_ab7f7e5b1d5a6d46d22c6791823b1f3db}\index{MockClock@{MockClock}!advanceTime@{advanceTime}}
+\index{advanceTime@{advanceTime}!MockClock@{MockClock}}
+\doxysubsubsection{\texorpdfstring{advanceTime()}{advanceTime()}}
+{\footnotesize\ttfamily \label{class_mock_clock_ab7f7e5b1d5a6d46d22c6791823b1f3db} 
+void Mock\+Clock\+::advance\+Time (\begin{DoxyParamCaption}\item[{std\+::chrono\+::seconds}]{duration}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Advances the current time by a specified duration. 
+
+This function increases the mock clock\textquotesingle{}s time by the given duration, adjusted for the clock\textquotesingle{}s speed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The amount of time to advance, represented in seconds. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mock_clock_a4f77ff75a1632b758b616bd86755af7f}\index{MockClock@{MockClock}!getCurrentTime@{getCurrentTime}}
+\index{getCurrentTime@{getCurrentTime}!MockClock@{MockClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
+{\footnotesize\ttfamily \label{class_mock_clock_a4f77ff75a1632b758b616bd86755af7f} 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Mock\+Clock\+::get\+Current\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the current time of the mock clock. 
+
+This function returns the current time of the mock clock as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}.
+
+\begin{DoxyReturn}{Returns}
+The current time as a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point}. 
+\end{DoxyReturn}
+\Hypertarget{class_mock_clock_a1606898c501ea877b3b67f1264714e1e}\index{MockClock@{MockClock}!initialize@{initialize}}
+\index{initialize@{initialize}!MockClock@{MockClock}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{class_mock_clock_a1606898c501ea877b3b67f1264714e1e} 
+void Mock\+Clock\+::initialize (\begin{DoxyParamCaption}\item[{int}]{speed}{ = {\ttfamily 1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the mock clock with a specific speed. 
+
+The speed factor controls how fast time advances when using {\ttfamily advance\+Time}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & A factor by which time advances. Default value is 1. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Mock\+Clock.\+h\item 
+Mock\+Clock.\+cpp\end{DoxyCompactItemize}

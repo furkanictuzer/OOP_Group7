@@ -1,0 +1,168 @@
+\doxysection{Category Class Reference}
+\hypertarget{class_category}{}\label{class_category}\index{Category@{Category}}
+
+
+Represents a category that holds a collection of expenses.  
+
+
+
+
+{\ttfamily \#include $<$Category.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_category_aa1a5b92576038bf60abb5900baa1048d}{Category}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes a category with a given name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_category_ae22d90b0f1b7535c392f0ac4f9474eb0}{add\+Expense}} (\mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*}expense)
+\begin{DoxyCompactList}\small\item\em Adds an expense to the category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_category_afe3726c4e965a713e22c56fed95d2ee8}{remove\+Expense}} (\mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*}expense)
+\begin{DoxyCompactList}\small\item\em Removes an expense from the category. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_category_a030119bee9d9906b4c33fc06238752fc}{get\+Category\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the category. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_category_ab539b7bc7b7ff931b67385516e3bbfe0}{get\+Expenses}} () const
+\begin{DoxyCompactList}\small\item\em Gets the list of expenses in this category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_category_a0f9698ed547b2698d1106a677df3930a}{set\+Category\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the category. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_category_a15eed586ecd8d329015031603fc969b7}{get\+Expense\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of expenses in this category. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_category_a75700d56785f3193d38b7d9fd3a834bf}{operator$<$}} (const \mbox{\hyperlink{class_category}{Category}} \&other) const
+\begin{DoxyCompactList}\small\item\em Overloads the \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} operator to enable comparison between \doxylink{class_category}{Category} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a category that holds a collection of expenses. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_category_aa1a5b92576038bf60abb5900baa1048d}\index{Category@{Category}!Category@{Category}}
+\index{Category@{Category}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{Category()}{Category()}}
+{\footnotesize\ttfamily \label{class_category_aa1a5b92576038bf60abb5900baa1048d} 
+Category\+::\+Category (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes a category with a given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the category. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_category_ae22d90b0f1b7535c392f0ac4f9474eb0}\index{Category@{Category}!addExpense@{addExpense}}
+\index{addExpense@{addExpense}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{addExpense()}{addExpense()}}
+{\footnotesize\ttfamily \label{class_category_ae22d90b0f1b7535c392f0ac4f9474eb0} 
+void Category\+::add\+Expense (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*}}]{expense}{}\end{DoxyParamCaption})}
+
+
+
+Adds an expense to the category. 
+
+This function adds a given expense to the category\textquotesingle{}s list of expenses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to add to the category. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_category_a030119bee9d9906b4c33fc06238752fc}\index{Category@{Category}!getCategoryName@{getCategoryName}}
+\index{getCategoryName@{getCategoryName}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{getCategoryName()}{getCategoryName()}}
+{\footnotesize\ttfamily \label{class_category_a030119bee9d9906b4c33fc06238752fc} 
+std\+::string Category\+::get\+Category\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the category. 
+
+\begin{DoxyReturn}{Returns}
+The name of the category. 
+\end{DoxyReturn}
+\Hypertarget{class_category_a15eed586ecd8d329015031603fc969b7}\index{Category@{Category}!getExpenseCount@{getExpenseCount}}
+\index{getExpenseCount@{getExpenseCount}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{getExpenseCount()}{getExpenseCount()}}
+{\footnotesize\ttfamily \label{class_category_a15eed586ecd8d329015031603fc969b7} 
+int Category\+::get\+Expense\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the total number of expenses in this category. 
+
+\begin{DoxyReturn}{Returns}
+The number of expenses in the category. 
+\end{DoxyReturn}
+\Hypertarget{class_category_ab539b7bc7b7ff931b67385516e3bbfe0}\index{Category@{Category}!getExpenses@{getExpenses}}
+\index{getExpenses@{getExpenses}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{getExpenses()}{getExpenses()}}
+{\footnotesize\ttfamily \label{class_category_ab539b7bc7b7ff931b67385516e3bbfe0} 
+const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*} $>$ \& Category\+::get\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the list of expenses in this category. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the list of expenses. 
+\end{DoxyReturn}
+\Hypertarget{class_category_a75700d56785f3193d38b7d9fd3a834bf}\index{Category@{Category}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{class_category_a75700d56785f3193d38b7d9fd3a834bf} 
+bool Category\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_category}{Category}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} operator to enable comparison between \doxylink{class_category}{Category} objects. 
+
+This function compares two categories based on their names.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other category to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this category\textquotesingle{}s name is lexicographically smaller than the other category\textquotesingle{}s name, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_category_afe3726c4e965a713e22c56fed95d2ee8}\index{Category@{Category}!removeExpense@{removeExpense}}
+\index{removeExpense@{removeExpense}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{removeExpense()}{removeExpense()}}
+{\footnotesize\ttfamily \label{class_category_afe3726c4e965a713e22c56fed95d2ee8} 
+void Category\+::remove\+Expense (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*}}]{expense}{}\end{DoxyParamCaption})}
+
+
+
+Removes an expense from the category. 
+
+This function removes a given expense from the category\textquotesingle{}s list of expenses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expense} & The expense to remove from the category. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_category_a0f9698ed547b2698d1106a677df3930a}\index{Category@{Category}!setCategoryName@{setCategoryName}}
+\index{setCategoryName@{setCategoryName}!Category@{Category}}
+\doxysubsubsection{\texorpdfstring{setCategoryName()}{setCategoryName()}}
+{\footnotesize\ttfamily \label{class_category_a0f9698ed547b2698d1106a677df3930a} 
+void Category\+::set\+Category\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the name of the category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The new name for the category. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Category.\+h\item 
+Category.\+cpp\end{DoxyCompactItemize}

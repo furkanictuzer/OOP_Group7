@@ -1,0 +1,32 @@
+\doxysection{Report.\+h}
+\hypertarget{_report_8h_source}{}\label{_report_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REPORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REPORT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_report}{Report}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<Expense>\ expenses;\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::chrono::system\_clock::time\_point\ start;\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::chrono::system\_clock::time\_point\ end;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_report_ae3150817fcf4ebf814358baf5bd72e8f}{Report}}()\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_report_ae3150817fcf4ebf814358baf5bd72e8f}{Report}}(\textcolor{keyword}{const}\ std::vector<Expense>\&\ expenses,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ start,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ end);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{class_report_a7b7bec148be4b79e95bcc22337ec5b9e}{generateReportDetails}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_report_a75f388469b1d224aeecdbaeb664ca1c4}{generateFile}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Expense>\&\ \mbox{\hyperlink{class_report_aebe569de8a49a0d68901479e5944f21b}{getExpenses}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REPORT\_H}}
+
+\end{DoxyCode}

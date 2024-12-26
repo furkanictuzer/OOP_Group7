@@ -1,0 +1,45 @@
+\doxysection{Ui\+Profile\+Window.\+h}
+\hypertarget{_ui_profile_window_8h_source}{}\label{_ui_profile_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_PROFILE\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_PROFILE\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Input.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Box.H>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_profile_window}{UiProfileWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ Fl\_Box*\ usernameBox;\ }
+\DoxyCodeLine{00024\ \ \ \ \ Fl\_Input*\ newUsernameInput;\ }
+\DoxyCodeLine{00025\ \ \ \ \ Fl\_Input*\ passwordInput;\ }
+\DoxyCodeLine{00026\ \ \ \ \ Fl\_Button*\ renameButton;\ }
+\DoxyCodeLine{00027\ \ \ \ \ Fl\_Button*\ changePasswordButton;\ }
+\DoxyCodeLine{00028\ \ \ \ \ Fl\_Button*\ deleteAccountButton;\ }
+\DoxyCodeLine{00029\ \ \ \ \ Fl\_Button*\ backButton;\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ rename\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ change\_password\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ delete\_account\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ back\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ updateUsernameVisual();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToMain();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_ui_profile_window_a14fdb18f56bc7ff8f6a7aa2e3402c9ba}{UiProfileWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_ui_profile_window_a4671d0e218405a03b8f1da8ecfe3b6b5}{\string~UiProfileWindow}}();}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_PROFILE\_WINDOW\_H}}
+
+\end{DoxyCode}

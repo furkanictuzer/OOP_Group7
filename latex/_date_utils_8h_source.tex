@@ -1,0 +1,19 @@
+\doxysection{Date\+Utils.\+h}
+\hypertarget{_date_utils_8h_source}{}\label{_date_utils_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATEUTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATEUTILS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_date_utils}{DateUtils}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ std::chrono::system\_clock::time\_point\ \mbox{\hyperlink{class_date_utils_a0dda05c74b5a2bc32a44bdf3ac224c60}{stringToTimePoint}}(\textcolor{keyword}{const}\ std::string\&\ timeStr);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_date_utils_ac2dbb796889de328332b99f2dbcc4c13}{timePointToString}}(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ timePoint);}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATEUTILS\_H}}
+
+\end{DoxyCode}

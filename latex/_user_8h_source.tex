@@ -1,0 +1,60 @@
+\doxysection{User.\+h}
+\hypertarget{_user_8h_source}{}\label{_user_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user}{User}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ user\_id;\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ username;\ }
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ password;\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Category>\ categories;\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<Budget>\ budgets;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ balance;\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_user_aa9c2212480bb8813a9f2d26480509a42}{User}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ pass,\ \textcolor{keywordtype}{double}\ bal);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{class_user_aa32cbeea96f119361cc7d3165ba3164d}{userInfo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ \mbox{\hyperlink{class_user_a7eff012d6182f6829329620d8e21b124}{getUserName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_aef164db6d604f8f6880e0b4849a3db40}{setUsername}}(\textcolor{keyword}{const}\ std::string\&\ new\_username);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ \mbox{\hyperlink{class_user_a180e5acdc4b150463652d90d54caa8fc}{getPassword}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a8e4b2829988017a04d985b9534f373fc}{setPassword}}(\textcolor{keyword}{const}\ std::string\&\ new\_password);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a1d070012e614ea61a6bcb764d27bf837}{addCategory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_category}{Category}}\&\ category);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_af630c42e2765f6dbfa78cc2074bb932b}{removeCategory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_category}{Category}}\&\ category);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_user_afc6d6b84e71c2ed877ca8aa4c2435ae2}{getBalance}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a44af1b7b8663734215e91351956cf1fa}{addBudget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_budget}{Budget}}\&\ budget);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_budget}{Budget}}\ \mbox{\hyperlink{class_user_a12fcf19f3915bac5cf7e0b797379bcf6}{getCurrentBudget}}();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a29814365d876b0280a552becbd3edcb0}{updateUserInfo}}(\textcolor{keyword}{const}\ std::string\&\ new\_username,\ \textcolor{keyword}{const}\ std::string\&\ new\_password);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_user_a7d5a13642ead5085710f83c0e0d053e8}{deleteAccount}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_user_ac5a839e8c9b3bb68858d8c206a32885d}{getUserId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00155\ \ \ \ \ std::vector<Category>\ \mbox{\hyperlink{class_user_a4dcca1475ba385fbbbac9c791b04ee27}{getCategories}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_category}{Category}}*\ \mbox{\hyperlink{class_user_a8ffc410e3697accfbf8f561dd960283b}{getCategoryByName}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_user_a82f5293f357cba65ec3b852ef3e6d17c}{getExpenseCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_H}}
+
+\end{DoxyCode}

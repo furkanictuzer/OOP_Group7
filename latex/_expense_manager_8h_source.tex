@@ -1,0 +1,42 @@
+\doxysection{Expense\+Manager.\+h}
+\hypertarget{_expense_manager_8h_source}{}\label{_expense_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EXPENSEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EXPENSEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expense_manager}{ExpenseManager}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Expense>\ expenses;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Budget>\ budgets;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ totalExpenses;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ totalIncome;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ addExpense(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expense}{Expense}}\&\ expense);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ removeExpense(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expense}{Expense}}\&\ expense);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ addBudget(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_budget}{Budget}}\&\ budget);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ removeBudget(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_budget}{Budget}}\&\ budget);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Expense>\ getExpenses();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Budget>\ getBudgets();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ calculateTotalExpenses();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ calculateTotalIncome();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Expense>\ filterExpensesByDateRange(\textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ startDate,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\&\ endDate);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::map<Category,\ double>\ analyzeExpenseDistributionByCategory();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ getTotalExpenseByMonth(\textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ std::chrono::system\_clock::time\_point\ stringToTimePoint(\textcolor{keyword}{const}\ std::string\&\ timeStr);}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EXPENSEMANAGER\_H}}
+
+\end{DoxyCode}

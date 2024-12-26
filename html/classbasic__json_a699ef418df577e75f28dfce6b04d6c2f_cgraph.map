@@ -1,0 +1,27 @@
+<map id="basic_json::diff" name="basic_json::diff">
+<area shape="rect" id="Node000001" title="creates a diff as a JSON patch" alt="" coords="5,233,114,260"/>
+<area shape="rect" id="Node000002" href="$classbasic__json.html#a5251a08382864af52c854fca1bdba61c" title="returns an iterator to the first element" alt="" coords="178,5,300,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,232,71,195,90,144,119,90,138,64,160,42,165,38,168,42,163,46,142,68,124,92,95,146,77,197,66,234"/>
+<area shape="rect" id="Node000003" href="$classbasic__json.html#a9ab2ece6530b3b2be5b876f80c68dc78" title="returns a const iterator to the first element" alt="" coords="174,56,304,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="64,231,98,165,125,126,160,93,167,88,170,92,163,97,130,130,102,168,69,234"/>
+<area shape="rect" id="Node000004" href="$classbasic__json.html#a57c63700f006c54624eb2433ec6526b0" title="returns an iterator to one past the last element" alt="" coords="179,107,298,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="69,231,106,188,132,164,160,143,170,138,172,142,163,148,135,168,110,192,73,235"/>
+<area shape="rect" id="Node000005" href="$classbasic__json.html#a4dbc83213b31a171aa8ba65ff00fa954" title="returns an iterator to one past the last element" alt="" coords="183,157,295,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="85,230,161,194,177,187,179,192,163,198,87,235"/>
+<area shape="rect" id="Node000006" href="$namespacedetail.html#af2a9ce4740e0b45d33129e2c8e53a0a8" title="string escaping as described in RFC 6901 (Sect. 4)" alt="" coords="188,208,290,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="114,236,172,228,173,233,115,242"/>
+<area shape="rect" id="Node000008" href="$classbasic__json.html#a727e3cfb5a874314d8deb12cb53a8105" title="find an element in a JSON object" alt="" coords="183,259,295,285"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="115,252,168,259,167,265,114,257"/>
+<area shape="rect" id="Node000010" href="$classbasic__json.html#a7f3817060c2bec896a99cb2c236b9c27" title="inserts element into array" alt="" coords="177,309,300,336"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="87,258,163,295,179,301,177,306,161,300,85,263"/>
+<area shape="rect" id="Node000011" href="$classbasic__json.html#a3d13acce4e49e0d5ee768643a7b89010" title="add an object to an array" alt="" coords="162,360,316,387"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="73,259,110,301,135,325,163,346,172,351,170,356,160,350,132,329,106,305,69,262"/>
+<area shape="rect" id="Node000012" href="$classbasic__json.html#a086cbfd1ad4ba83a8127c87467a92f47" title="returns the number of elements" alt="" coords="181,411,296,437"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="69,259,102,325,130,363,163,397,170,401,167,405,160,401,125,367,98,328,64,262"/>
+<area shape="rect" id="Node000013" href="$classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef" title="return the type of the JSON value (explicit)" alt="" coords="181,461,297,488"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="66,260,77,297,95,347,124,401,142,426,163,447,169,451,165,456,160,451,138,429,119,404,90,349,71,298,61,261"/>
+<area shape="rect" id="Node000007" href="$namespacedetail.html#a6fd295e53b1dd4f46e235e6afee26d5e" title="replace all occurrences of a substring by another string" alt="" coords="364,208,526,235"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="291,219,348,219,348,224,291,224"/>
+<area shape="rect" id="Node000009" href="$structjson__sax.html#a3355ecd7e3e9806dcb80b2f8842b82ce" title="an object key was read" alt="" coords="394,259,496,285"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="295,269,378,269,378,275,295,275"/>
+</map>

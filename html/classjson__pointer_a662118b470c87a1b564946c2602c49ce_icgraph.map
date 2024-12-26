@@ -1,0 +1,9 @@
+<map id="json_pointer::pop_back" name="json_pointer::pop_back">
+<area shape="rect" id="Node000001" title="remove last reference token" alt="" coords="396,43,551,69"/>
+<area shape="rect" id="Node000002" href="$classjson__pointer.html#aa03c0c1206e171342d27a4583258858b" title="returns the parent of this JSON pointer" alt="" coords="195,5,330,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="381,46,330,39,331,33,381,41"/>
+<area shape="rect" id="Node000003" href="$classbasic__json.html#a693812b31e106dec9166e93d8f6dd7d7" title="applies a JSON patch in&#45;place without copying the object" alt="" coords="177,72,348,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="381,72,349,76,348,71,380,66"/>
+<area shape="rect" id="Node000004" href="$classbasic__json.html#a145a004c0a2fa5be84b260ecc98ab5d9" title="applies a JSON patch to a copy of the current object" alt="" coords="5,72,129,99"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="161,88,129,88,129,83,161,83"/>
+</map>

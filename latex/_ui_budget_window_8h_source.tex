@@ -1,0 +1,43 @@
+\doxysection{Ui\+Budget\+Window.\+h}
+\hypertarget{_ui_budget_window_8h_source}{}\label{_ui_budget_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_BUDGET\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_BUDGET\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Browser.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}UiMainWindow.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}UiAddBudgetWindow.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_budget_window}{UiBudgetWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ Fl\_Browser*\ budgetBrowser;\ }
+\DoxyCodeLine{00032\ \ \ \ \ Fl\_Button*\ newBudgetButton;\ }
+\DoxyCodeLine{00033\ \ \ \ \ Fl\_Button*\ closeButton;\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ close\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ new\_budget\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ populateBudgets();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_ui_budget_window_a55abbdb367293a97da043275a9690f9c}{UiBudgetWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_ui_budget_window_a2720d4ea6ef7e38a036c95db3ab0a0eb}{\string~UiBudgetWindow}}();}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

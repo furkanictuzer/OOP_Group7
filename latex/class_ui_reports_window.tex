@@ -1,0 +1,104 @@
+\doxysection{Ui\+Reports\+Window Class Reference}
+\hypertarget{class_ui_reports_window}{}\label{class_ui_reports_window}\index{UiReportsWindow@{UiReportsWindow}}
+
+
+A window for generating and displaying reports.  
+
+
+
+
+{\ttfamily \#include $<$Ui\+Reports\+Window.\+h$>$}
+
+
+
+Inherits Fl\+\_\+\+Window.
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ui_reports_window_ab9286443fa537aed8866266efe7dfd52}{Ui\+Reports\+Window}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructs the reports window. \end{DoxyCompactList}\item 
+\Hypertarget{class_ui_reports_window_a879075ac8b6d0d86d27b0da66a8646e9}\label{class_ui_reports_window_a879075ac8b6d0d86d27b0da66a8646e9} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ui\+Reports\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_ui_reports_window_a8cce17e5ff3590da32ec5cadba36175c}{back\+\_\+to\+\_\+main\+\_\+callback}} (Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}widget, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Callback function for navigating back to the main window. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_ui_reports_window_a48cc5b9d21664867cf33563bf2df161b}{generate\+\_\+callback}} (Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}widget, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Callback function for generating a report. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A window for generating and displaying reports. 
+
+This class represents the window where users can generate various reports based on selected parameters, such as date range, report type, and category. It also allows the user to save the report as a file if needed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ui_reports_window_ab9286443fa537aed8866266efe7dfd52}\index{UiReportsWindow@{UiReportsWindow}!UiReportsWindow@{UiReportsWindow}}
+\index{UiReportsWindow@{UiReportsWindow}!UiReportsWindow@{UiReportsWindow}}
+\doxysubsubsection{\texorpdfstring{UiReportsWindow()}{UiReportsWindow()}}
+{\footnotesize\ttfamily \label{class_ui_reports_window_ab9286443fa537aed8866266efe7dfd52} 
+Ui\+Reports\+Window\+::\+Ui\+Reports\+Window (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the reports window. 
+
+Initializes the reports window with options for selecting report parameters (date range, report type, category) and buttons for generating the report or returning to the main window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ui_reports_window_a8cce17e5ff3590da32ec5cadba36175c}\index{UiReportsWindow@{UiReportsWindow}!back\_to\_main\_callback@{back\_to\_main\_callback}}
+\index{back\_to\_main\_callback@{back\_to\_main\_callback}!UiReportsWindow@{UiReportsWindow}}
+\doxysubsubsection{\texorpdfstring{back\_to\_main\_callback()}{back\_to\_main\_callback()}}
+{\footnotesize\ttfamily \label{class_ui_reports_window_a8cce17e5ff3590da32ec5cadba36175c} 
+void Ui\+Reports\+Window\+::back\+\_\+to\+\_\+main\+\_\+callback (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}}]{widget}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for navigating back to the main window. 
+
+This function is triggered when the "{}\+Back"{} button is clicked, allowing the user to navigate back to the main window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that triggered the callback. \\
+\hline
+{\em data} & Additional data passed to the callback. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ui_reports_window_a48cc5b9d21664867cf33563bf2df161b}\index{UiReportsWindow@{UiReportsWindow}!generate\_callback@{generate\_callback}}
+\index{generate\_callback@{generate\_callback}!UiReportsWindow@{UiReportsWindow}}
+\doxysubsubsection{\texorpdfstring{generate\_callback()}{generate\_callback()}}
+{\footnotesize\ttfamily \label{class_ui_reports_window_a48cc5b9d21664867cf33563bf2df161b} 
+void Ui\+Reports\+Window\+::generate\+\_\+callback (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget \texorpdfstring{$\ast$}{*}}]{widget}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for generating a report. 
+
+This function is triggered when the "{}\+Generate"{} button is clicked. It handles the generation of the report based on the selected parameters and displays it in the report display area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget that triggered the callback. \\
+\hline
+{\em data} & Additional data passed to the callback. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ui\+Reports\+Window.\+h\item 
+Ui\+Reports\+Window.\+cpp\end{DoxyCompactItemize}

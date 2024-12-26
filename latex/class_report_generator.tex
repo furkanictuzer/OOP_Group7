@@ -1,0 +1,222 @@
+\doxysection{Report\+Generator Class Reference}
+\hypertarget{class_report_generator}{}\label{class_report_generator}\index{ReportGenerator@{ReportGenerator}}
+
+
+Provides functionality to generate various types of reports based on expenses and categories.  
+
+
+
+
+{\ttfamily \#include $<$Report\+Generator.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_a3e355d87565270afed7a7bb7ceaf0d59}{generate\+Weekly\+Report}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date)
+\begin{DoxyCompactList}\small\item\em Generates a weekly report starting from the given start date. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_abe6fe23046eccc46a8ea3797a0feb8e5}{generate\+Monthly\+Report}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date)
+\begin{DoxyCompactList}\small\item\em Generates a monthly report starting from the given start date. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_af202afd8716f29159281089236bf3be5}{generate\+Annual\+Report}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date)
+\begin{DoxyCompactList}\small\item\em Generates an annual report starting from the given start date. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_a0c8a04a91682f2b09b0e7a124c5d3132}{generate\+Report}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date)
+\begin{DoxyCompactList}\small\item\em Generates a report for a specific time range. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584}{generate\+Category\+Report}} (const \mbox{\hyperlink{class_category}{Category}} \&category)
+\begin{DoxyCompactList}\small\item\em Generates a report for a specific category. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_report}{Report}} \mbox{\hyperlink{class_report_generator_a3a78422334a928e4a781f1541569fbeb}{generate\+Category\+Report}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date, const \mbox{\hyperlink{class_category}{Category}} \&category)
+\begin{DoxyCompactList}\small\item\em Generates a report for a specific category within a time range. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \mbox{\hyperlink{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d}{get\+Related\+Expenses}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date, const std\+::vector$<$ \mbox{\hyperlink{class_category}{Category}} $>$ \&categories)
+\begin{DoxyCompactList}\small\item\em Retrieves the expenses related to a given time range and categories. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \mbox{\hyperlink{class_report_generator_a7b71830fdb6e25e58f53a8371508885a}{get\+Related\+Expenses}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start\+Date, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end\+Date, const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*} $>$ \&expenses)
+\begin{DoxyCompactList}\small\item\em Retrieves the expenses related to a given time range and expense list. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_report_generator_a1d94df811cb0791b9db077d22033f242}{reverse}} (const std\+::string str)
+\begin{DoxyCompactList}\small\item\em Reverses a given string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality to generate various types of reports based on expenses and categories. 
+
+This class includes methods to generate reports for different time periods (weekly, monthly, annual) and for specific categories of expenses. It also provides functionality to retrieve related expenses for a given time range and category. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_report_generator_af202afd8716f29159281089236bf3be5}\index{ReportGenerator@{ReportGenerator}!generateAnnualReport@{generateAnnualReport}}
+\index{generateAnnualReport@{generateAnnualReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateAnnualReport()}{generateAnnualReport()}}
+{\footnotesize\ttfamily \label{class_report_generator_af202afd8716f29159281089236bf3be5} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Annual\+Report (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates an annual report starting from the given start date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing annual expense data. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584}\index{ReportGenerator@{ReportGenerator}!generateCategoryReport@{generateCategoryReport}}
+\index{generateCategoryReport@{generateCategoryReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateCategoryReport()}{generateCategoryReport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_report_generator_a681fa3f7ec46f460bdc5d5f85f4c3584} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Category\+Report (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_category}{Category}} \&}]{category}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a report for a specific category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category for which the report should be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing expenses for the specified category. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a3a78422334a928e4a781f1541569fbeb}\index{ReportGenerator@{ReportGenerator}!generateCategoryReport@{generateCategoryReport}}
+\index{generateCategoryReport@{generateCategoryReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateCategoryReport()}{generateCategoryReport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_report_generator_a3a78422334a928e4a781f1541569fbeb} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Category\+Report (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end\+Date}{, }\item[{const \mbox{\hyperlink{class_category}{Category}} \&}]{category}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a report for a specific category within a time range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+{\em end\+Date} & The end date for the report. \\
+\hline
+{\em category} & The category for which the report should be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing expenses for the specified category within the time range. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_abe6fe23046eccc46a8ea3797a0feb8e5}\index{ReportGenerator@{ReportGenerator}!generateMonthlyReport@{generateMonthlyReport}}
+\index{generateMonthlyReport@{generateMonthlyReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateMonthlyReport()}{generateMonthlyReport()}}
+{\footnotesize\ttfamily \label{class_report_generator_abe6fe23046eccc46a8ea3797a0feb8e5} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Monthly\+Report (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a monthly report starting from the given start date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing monthly expense data. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a0c8a04a91682f2b09b0e7a124c5d3132}\index{ReportGenerator@{ReportGenerator}!generateReport@{generateReport}}
+\index{generateReport@{generateReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateReport()}{generateReport()}}
+{\footnotesize\ttfamily \label{class_report_generator_a0c8a04a91682f2b09b0e7a124c5d3132} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Report (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a report for a specific time range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+{\em end\+Date} & The end date for the report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing expense data for the specified time range. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a3e355d87565270afed7a7bb7ceaf0d59}\index{ReportGenerator@{ReportGenerator}!generateWeeklyReport@{generateWeeklyReport}}
+\index{generateWeeklyReport@{generateWeeklyReport}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{generateWeeklyReport()}{generateWeeklyReport()}}
+{\footnotesize\ttfamily \label{class_report_generator_a3e355d87565270afed7a7bb7ceaf0d59} 
+\mbox{\hyperlink{class_report}{Report}} Report\+Generator\+::generate\+Weekly\+Report (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a weekly report starting from the given start date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the report. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_report}{Report} object containing weekly expense data. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d}\index{ReportGenerator@{ReportGenerator}!getRelatedExpenses@{getRelatedExpenses}}
+\index{getRelatedExpenses@{getRelatedExpenses}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{getRelatedExpenses()}{getRelatedExpenses()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_report_generator_a39ef95c6cf606e1018b6ce2ea234f16d} 
+std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Report\+Generator\+::get\+Related\+Expenses (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end\+Date}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_category}{Category}} $>$ \&}]{categories}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the expenses related to a given time range and categories. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the expenses to be retrieved. \\
+\hline
+{\em end\+Date} & The end date for the expenses to be retrieved. \\
+\hline
+{\em categories} & The categories for which expenses should be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of expenses that are related to the time range and categories. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a7b71830fdb6e25e58f53a8371508885a}\index{ReportGenerator@{ReportGenerator}!getRelatedExpenses@{getRelatedExpenses}}
+\index{getRelatedExpenses@{getRelatedExpenses}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{getRelatedExpenses()}{getRelatedExpenses()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_report_generator_a7b71830fdb6e25e58f53a8371508885a} 
+std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ Report\+Generator\+::get\+Related\+Expenses (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start\+Date}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end\+Date}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} \texorpdfstring{$\ast$}{*} $>$ \&}]{expenses}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieves the expenses related to a given time range and expense list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date for the expenses to be retrieved. \\
+\hline
+{\em end\+Date} & The end date for the expenses to be retrieved. \\
+\hline
+{\em expenses} & A vector of \doxylink{class_expense}{Expense} pointers for which the related expenses should be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of expenses that are related to the time range and provided expenses. 
+\end{DoxyReturn}
+\Hypertarget{class_report_generator_a1d94df811cb0791b9db077d22033f242}\index{ReportGenerator@{ReportGenerator}!reverse@{reverse}}
+\index{reverse@{reverse}!ReportGenerator@{ReportGenerator}}
+\doxysubsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily \label{class_report_generator_a1d94df811cb0791b9db077d22033f242} 
+static std\+::string Report\+Generator\+::reverse (\begin{DoxyParamCaption}\item[{const std\+::string}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reverses a given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be reversed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reversed string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Report\+Generator.\+h\item 
+Report\+Generator.\+cpp\end{DoxyCompactItemize}

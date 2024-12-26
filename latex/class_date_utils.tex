@@ -1,0 +1,70 @@
+\doxysection{Date\+Utils Class Reference}
+\hypertarget{class_date_utils}{}\label{class_date_utils}\index{DateUtils@{DateUtils}}
+
+
+Provides utility functions for converting between time strings and time points.  
+
+
+
+
+{\ttfamily \#include $<$Date\+Utils.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_date_utils_a0dda05c74b5a2bc32a44bdf3ac224c60}{string\+To\+Time\+Point}} (const std\+::string \&time\+Str)
+\begin{DoxyCompactList}\small\item\em Converts a string representation of a time to a time\+\_\+point. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_date_utils_ac2dbb796889de328332b99f2dbcc4c13}{time\+Point\+To\+String}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&time\+Point)
+\begin{DoxyCompactList}\small\item\em Converts a time\+\_\+point to a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides utility functions for converting between time strings and time points. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_date_utils_a0dda05c74b5a2bc32a44bdf3ac224c60}\index{DateUtils@{DateUtils}!stringToTimePoint@{stringToTimePoint}}
+\index{stringToTimePoint@{stringToTimePoint}!DateUtils@{DateUtils}}
+\doxysubsubsection{\texorpdfstring{stringToTimePoint()}{stringToTimePoint()}}
+{\footnotesize\ttfamily \label{class_date_utils_a0dda05c74b5a2bc32a44bdf3ac224c60} 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point Date\+Utils\+::string\+To\+Time\+Point (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{time\+Str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a string representation of a time to a time\+\_\+point. 
+
+This function parses a time string (in a specific format) and converts it to a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Str} & A string representing the time to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} object representing the parsed time. 
+\end{DoxyReturn}
+\Hypertarget{class_date_utils_ac2dbb796889de328332b99f2dbcc4c13}\index{DateUtils@{DateUtils}!timePointToString@{timePointToString}}
+\index{timePointToString@{timePointToString}!DateUtils@{DateUtils}}
+\doxysubsubsection{\texorpdfstring{timePointToString()}{timePointToString()}}
+{\footnotesize\ttfamily \label{class_date_utils_ac2dbb796889de328332b99f2dbcc4c13} 
+std\+::string Date\+Utils\+::time\+Point\+To\+String (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{time\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a time\+\_\+point to a string representation. 
+
+This function converts a {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} to a string in a readable format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Point} & The {\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point} to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the given time point. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Date\+Utils.\+h\item 
+Date\+Utils.\+cpp\end{DoxyCompactItemize}

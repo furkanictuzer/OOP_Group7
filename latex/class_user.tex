@@ -1,0 +1,337 @@
+\doxysection{User Class Reference}
+\hypertarget{class_user}{}\label{class_user}\index{User@{User}}
+
+
+Represents a user of the application with associated data like username, password, categories, and budgets.  
+
+
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_aa9c2212480bb8813a9f2d26480509a42}{User}} (int id, const std\+::string \&name, const std\+::string \&pass, double bal)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_user}{User} object with the given parameters. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_user_aa32cbeea96f119361cc7d3165ba3164d}{user\+Info}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the user information as a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_user_a7eff012d6182f6829329620d8e21b124}{get\+User\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the username of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_aef164db6d604f8f6880e0b4849a3db40}{set\+Username}} (const std\+::string \&new\+\_\+username)
+\begin{DoxyCompactList}\small\item\em Sets a new username for the user. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_user_a180e5acdc4b150463652d90d54caa8fc}{get\+Password}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the password of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a8e4b2829988017a04d985b9534f373fc}{set\+Password}} (const std\+::string \&new\+\_\+password)
+\begin{DoxyCompactList}\small\item\em Sets a new password for the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a1d070012e614ea61a6bcb764d27bf837}{add\+Category}} (const \mbox{\hyperlink{class_category}{Category}} \&category)
+\begin{DoxyCompactList}\small\item\em Adds a category to the user\textquotesingle{}s list of categories. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_af630c42e2765f6dbfa78cc2074bb932b}{remove\+Category}} (const \mbox{\hyperlink{class_category}{Category}} \&category)
+\begin{DoxyCompactList}\small\item\em Removes a category from the user\textquotesingle{}s list of categories. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_user_afc6d6b84e71c2ed877ca8aa4c2435ae2}{get\+Balance}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current balance of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a44af1b7b8663734215e91351956cf1fa}{add\+Budget}} (const \mbox{\hyperlink{class_budget}{Budget}} \&budget)
+\begin{DoxyCompactList}\small\item\em Adds a budget to the user\textquotesingle{}s list of budgets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_budget}{Budget}} \mbox{\hyperlink{class_user_a12fcf19f3915bac5cf7e0b797379bcf6}{get\+Current\+Budget}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current budget of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a29814365d876b0280a552becbd3edcb0}{update\+User\+Info}} (const std\+::string \&new\+\_\+username, const std\+::string \&new\+\_\+password)
+\begin{DoxyCompactList}\small\item\em Updates the user\textquotesingle{}s information (username and password). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_a7d5a13642ead5085710f83c0e0d053e8}{delete\+Account}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the user\textquotesingle{}s account. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_user_ac5a839e8c9b3bb68858d8c206a32885d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the unique ID of the user. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_category}{Category}} $>$ \mbox{\hyperlink{class_user_a4dcca1475ba385fbbbac9c791b04ee27}{get\+Categories}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of categories associated with the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a8ffc410e3697accfbf8f561dd960283b}{get\+Category\+By\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Retrieves a category by its name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_user_a82f5293f357cba65ec3b852ef3e6d17c}{get\+Expense\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the number of expenses in the user\textquotesingle{}s categories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a user of the application with associated data like username, password, categories, and budgets. 
+
+The \doxylink{class_user}{User} class is responsible for storing and managing user information, including their username, password, categories, budgets, and balance. It also provides functions to update user information, add or remove categories, and handle the user\textquotesingle{}s finances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_aa9c2212480bb8813a9f2d26480509a42}\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily \label{class_user_aa9c2212480bb8813a9f2d26480509a42} 
+User\+::\+User (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{pass}{, }\item[{double}]{bal}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_user}{User} object with the given parameters. 
+
+Initializes the user with a unique ID, username, password, and balance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique ID for the user. \\
+\hline
+{\em name} & The username of the user. \\
+\hline
+{\em pass} & The password of the user. \\
+\hline
+{\em bal} & The initial balance of the user. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_a44af1b7b8663734215e91351956cf1fa}\index{User@{User}!addBudget@{addBudget}}
+\index{addBudget@{addBudget}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addBudget()}{addBudget()}}
+{\footnotesize\ttfamily \label{class_user_a44af1b7b8663734215e91351956cf1fa} 
+void User\+::add\+Budget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_budget}{Budget}} \&}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Adds a budget to the user\textquotesingle{}s list of budgets. 
+
+This function adds a new budget to the user\textquotesingle{}s list of budgets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_a1d070012e614ea61a6bcb764d27bf837}\index{User@{User}!addCategory@{addCategory}}
+\index{addCategory@{addCategory}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addCategory()}{addCategory()}}
+{\footnotesize\ttfamily \label{class_user_a1d070012e614ea61a6bcb764d27bf837} 
+void User\+::add\+Category (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_category}{Category}} \&}]{category}{}\end{DoxyParamCaption})}
+
+
+
+Adds a category to the user\textquotesingle{}s list of categories. 
+
+This function adds a new category to the user\textquotesingle{}s list of categories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_a7d5a13642ead5085710f83c0e0d053e8}\index{User@{User}!deleteAccount@{deleteAccount}}
+\index{deleteAccount@{deleteAccount}!User@{User}}
+\doxysubsubsection{\texorpdfstring{deleteAccount()}{deleteAccount()}}
+{\footnotesize\ttfamily \label{class_user_a7d5a13642ead5085710f83c0e0d053e8} 
+bool User\+::delete\+Account (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the user\textquotesingle{}s account. 
+
+This function deletes the user\textquotesingle{}s account and returns whether the deletion was successful.
+
+\begin{DoxyReturn}{Returns}
+True if the account was successfully deleted, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_user_afc6d6b84e71c2ed877ca8aa4c2435ae2}\index{User@{User}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily \label{class_user_afc6d6b84e71c2ed877ca8aa4c2435ae2} 
+double User\+::get\+Balance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current balance of the user. 
+
+\begin{DoxyReturn}{Returns}
+The current balance of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a4dcca1475ba385fbbbac9c791b04ee27}\index{User@{User}!getCategories@{getCategories}}
+\index{getCategories@{getCategories}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getCategories()}{getCategories()}}
+{\footnotesize\ttfamily \label{class_user_a4dcca1475ba385fbbbac9c791b04ee27} 
+vector$<$ \mbox{\hyperlink{class_category}{Category}} $>$ User\+::get\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of categories associated with the user. 
+
+\begin{DoxyReturn}{Returns}
+A vector of categories associated with the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a8ffc410e3697accfbf8f561dd960283b}\index{User@{User}!getCategoryByName@{getCategoryByName}}
+\index{getCategoryByName@{getCategoryByName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getCategoryByName()}{getCategoryByName()}}
+{\footnotesize\ttfamily \label{class_user_a8ffc410e3697accfbf8f561dd960283b} 
+\mbox{\hyperlink{class_category}{Category}} \texorpdfstring{$\ast$}{*} User\+::get\+Category\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a category by its name. 
+
+This function searches for a category by its name and returns a pointer to the category if found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the category to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the category if found, otherwise nullptr. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a12fcf19f3915bac5cf7e0b797379bcf6}\index{User@{User}!getCurrentBudget@{getCurrentBudget}}
+\index{getCurrentBudget@{getCurrentBudget}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getCurrentBudget()}{getCurrentBudget()}}
+{\footnotesize\ttfamily \label{class_user_a12fcf19f3915bac5cf7e0b797379bcf6} 
+\mbox{\hyperlink{class_budget}{Budget}} User\+::get\+Current\+Budget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current budget of the user. 
+
+This function returns the user\textquotesingle{}s current budget. If no budget is set, it should return an empty budget.
+
+\begin{DoxyReturn}{Returns}
+The current budget of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a82f5293f357cba65ec3b852ef3e6d17c}\index{User@{User}!getExpenseCount@{getExpenseCount}}
+\index{getExpenseCount@{getExpenseCount}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getExpenseCount()}{getExpenseCount()}}
+{\footnotesize\ttfamily \label{class_user_a82f5293f357cba65ec3b852ef3e6d17c} 
+int User\+::get\+Expense\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the number of expenses in the user\textquotesingle{}s categories. 
+
+This function returns the total number of expenses across all categories for the user.
+
+\begin{DoxyReturn}{Returns}
+The number of expenses for the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a180e5acdc4b150463652d90d54caa8fc}\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily \label{class_user_a180e5acdc4b150463652d90d54caa8fc} 
+std\+::string User\+::get\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the password of the user. 
+
+\begin{DoxyReturn}{Returns}
+The password of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_ac5a839e8c9b3bb68858d8c206a32885d}\index{User@{User}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{class_user_ac5a839e8c9b3bb68858d8c206a32885d} 
+int User\+::get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the unique ID of the user. 
+
+\begin{DoxyReturn}{Returns}
+The unique ID of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_a7eff012d6182f6829329620d8e21b124}\index{User@{User}!getUserName@{getUserName}}
+\index{getUserName@{getUserName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUserName()}{getUserName()}}
+{\footnotesize\ttfamily \label{class_user_a7eff012d6182f6829329620d8e21b124} 
+std\+::string User\+::get\+User\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the username of the user. 
+
+\begin{DoxyReturn}{Returns}
+The username of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_af630c42e2765f6dbfa78cc2074bb932b}\index{User@{User}!removeCategory@{removeCategory}}
+\index{removeCategory@{removeCategory}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeCategory()}{removeCategory()}}
+{\footnotesize\ttfamily \label{class_user_af630c42e2765f6dbfa78cc2074bb932b} 
+void User\+::remove\+Category (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_category}{Category}} \&}]{category}{}\end{DoxyParamCaption})}
+
+
+
+Removes a category from the user\textquotesingle{}s list of categories. 
+
+This function removes a category from the user\textquotesingle{}s list of categories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_a8e4b2829988017a04d985b9534f373fc}\index{User@{User}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily \label{class_user_a8e4b2829988017a04d985b9534f373fc} 
+void User\+::set\+Password (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+password}{}\end{DoxyParamCaption})}
+
+
+
+Sets a new password for the user. 
+
+This function updates the user\textquotesingle{}s password with the provided new password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+password} & The new password to be set for the user. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_aef164db6d604f8f6880e0b4849a3db40}\index{User@{User}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setUsername()}{setUsername()}}
+{\footnotesize\ttfamily \label{class_user_aef164db6d604f8f6880e0b4849a3db40} 
+void User\+::set\+Username (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+username}{}\end{DoxyParamCaption})}
+
+
+
+Sets a new username for the user. 
+
+This function updates the user\textquotesingle{}s username with the provided new username.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+username} & The new username to be set for the user. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_a29814365d876b0280a552becbd3edcb0}\index{User@{User}!updateUserInfo@{updateUserInfo}}
+\index{updateUserInfo@{updateUserInfo}!User@{User}}
+\doxysubsubsection{\texorpdfstring{updateUserInfo()}{updateUserInfo()}}
+{\footnotesize\ttfamily \label{class_user_a29814365d876b0280a552becbd3edcb0} 
+void User\+::update\+User\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+\_\+username}{, }\item[{const std\+::string \&}]{new\+\_\+password}{}\end{DoxyParamCaption})}
+
+
+
+Updates the user\textquotesingle{}s information (username and password). 
+
+This function allows the user to update their username and password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+username} & The new username to be set. \\
+\hline
+{\em new\+\_\+password} & The new password to be set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_aa32cbeea96f119361cc7d3165ba3164d}\index{User@{User}!userInfo@{userInfo}}
+\index{userInfo@{userInfo}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userInfo()}{userInfo()}}
+{\footnotesize\ttfamily \label{class_user_aa32cbeea96f119361cc7d3165ba3164d} 
+std\+::string User\+::user\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the user information as a string. 
+
+This function returns a formatted string containing the user\textquotesingle{}s username and balance.
+
+\begin{DoxyReturn}{Returns}
+A string representing the user\textquotesingle{}s information. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+User.\+h\item 
+User.\+cpp\end{DoxyCompactItemize}

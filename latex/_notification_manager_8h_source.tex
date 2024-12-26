@@ -1,0 +1,38 @@
+\doxysection{Notification\+Manager.\+h}
+\hypertarget{_notification_manager_8h_source}{}\label{_notification_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NOTIFICATIONMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NOTIFICATIONMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <FL/fl\_ask.H>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}MockClock.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}RepeatedExpense.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notification_manager}{NotificationManager}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<RepeatedExpense>\ repeatedExpenses;}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<Budget>\ budgets;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_mock_clock}{MockClock}}\ mockClock;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_notification_manager}{NotificationManager}}(\mbox{\hyperlink{class_mock_clock}{MockClock}}\ mc);}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<RepeatedExpense>\ getExpensesToNotify();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ addExpense(\mbox{\hyperlink{class_repeated_expense}{RepeatedExpense}}\ newExpense);}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<Budget>\ getBudgetsToNotify();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ addBudget(\mbox{\hyperlink{class_budget}{Budget}}\ newBudget);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ checkBudgets();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ checkExpenses();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ notify(\textcolor{keywordtype}{string}\ message);}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATIONMANAGER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{Ui\+Reports\+Window.\+h}
+\hypertarget{_ui_reports_window_8h_source}{}\label{_ui_reports_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_REPORTS\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_REPORTS\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Input.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Box.H>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Choice.H>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Browser.H>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Check\_Button.H>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <FL/fl\_ask.H>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Report.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}ReportGenerator.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}DateUtils.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}UiMainWindow.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_reports_window}{UiReportsWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ Fl\_Choice*\ reportTypeChoice;\ }
+\DoxyCodeLine{00037\ \ \ \ \ Fl\_Choice*\ startDayChoice;\ }
+\DoxyCodeLine{00038\ \ \ \ \ Fl\_Choice*\ startMonthChoice;\ }
+\DoxyCodeLine{00039\ \ \ \ \ Fl\_Choice*\ startYearChoice;\ }
+\DoxyCodeLine{00040\ \ \ \ \ Fl\_Choice*\ endDayChoice;\ }
+\DoxyCodeLine{00041\ \ \ \ \ Fl\_Choice*\ endMonthChoice;\ }
+\DoxyCodeLine{00042\ \ \ \ \ Fl\_Choice*\ endYearChoice;\ }
+\DoxyCodeLine{00043\ \ \ \ \ Fl\_Choice*\ categoryChoice;\ }
+\DoxyCodeLine{00044\ \ \ \ \ Fl\_Button*\ generateButton;\ }
+\DoxyCodeLine{00045\ \ \ \ \ Fl\_Button*\ backButton;\ }
+\DoxyCodeLine{00046\ \ \ \ \ Fl\_Browser*\ reportDisplayArea;\ }
+\DoxyCodeLine{00047\ \ \ \ \ Fl\_Check\_Button*\ createFileCheckButton;\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ populateDateChoices(Fl\_Choice*\ dayChoice,\ Fl\_Choice*\ monthChoice,\ Fl\_Choice*\ yearChoice);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ populateCategoryChoices();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ report\_type\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_ui_reports_window_ab9286443fa537aed8866266efe7dfd52}{UiReportsWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_ui_reports_window_a879075ac8b6d0d86d27b0da66a8646e9}{\string~UiReportsWindow}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_reports_window_a8cce17e5ff3590da32ec5cadba36175c}{back\_to\_main\_callback}}(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_reports_window_a48cc5b9d21664867cf33563bf2df161b}{generate\_callback}}(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_REPORTS\_WINDOW\_H}}
+
+\end{DoxyCode}

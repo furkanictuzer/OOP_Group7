@@ -1,0 +1,59 @@
+\doxysection{Ui\+Add\+Budget\+Window.\+h}
+\hypertarget{_ui_add_budget_window_8h_source}{}\label{_ui_add_budget_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_ADD\_BUDGET\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_ADD\_BUDGET\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Browser.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Input.H>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Choice.H>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <FL/fl\_ask.H>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Expense.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}UiMainWindow.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}UiAddExpenseWindow.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}UiBudgetWindow.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}DateUtils.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_add_budget_window}{UiAddBudgetWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ Fl\_Input*\ nameInput;\ }
+\DoxyCodeLine{00040\ \ \ \ \ Fl\_Choice*\ dayChoiceStart;\ }
+\DoxyCodeLine{00041\ \ \ \ \ Fl\_Choice*\ monthChoiceStart;\ }
+\DoxyCodeLine{00042\ \ \ \ \ Fl\_Choice*\ yearChoiceStart;\ }
+\DoxyCodeLine{00043\ \ \ \ \ Fl\_Choice*\ dayChoiceEnd;\ }
+\DoxyCodeLine{00044\ \ \ \ \ Fl\_Choice*\ monthChoiceEnd;\ }
+\DoxyCodeLine{00045\ \ \ \ \ Fl\_Choice*\ yearChoiceEnd;\ }
+\DoxyCodeLine{00046\ \ \ \ \ Fl\_Input*\ amountInput;\ }
+\DoxyCodeLine{00047\ \ \ \ \ Fl\_Input*\ sourceInput;\ }
+\DoxyCodeLine{00048\ \ \ \ \ Fl\_Button*\ cancelButton;\ }
+\DoxyCodeLine{00049\ \ \ \ \ Fl\_Button*\ addButton;\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ add\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ cancel\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ populateDateChoices();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_ui_add_budget_window_aff59cb3135dbaac71a0c8ff628254770}{UiAddBudgetWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_ui_add_budget_window_a36b2125491ec1ec3f141c568bf778931}{\string~UiAddBudgetWindow}}();}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

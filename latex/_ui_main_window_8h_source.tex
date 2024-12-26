@@ -1,0 +1,41 @@
+\doxysection{Ui\+Main\+Window.\+h}
+\hypertarget{_ui_main_window_8h_source}{}\label{_ui_main_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_MAIN\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_MAIN\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Box.H>}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}UiExpenseWindow.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}UiCategoryWindow.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}UiBudgetWindow.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}UiReportsWindow.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}UiProfileWindow.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}NotificationManager.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}MockClock.h"{}}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_main_window}{UiMainWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ Fl\_Button*\ expenses\_button;}
+\DoxyCodeLine{00020\ \ \ \ \ Fl\_Button*\ set\_budget\_button;}
+\DoxyCodeLine{00021\ \ \ \ \ Fl\_Button*\ my\_categories\_button;}
+\DoxyCodeLine{00022\ \ \ \ \ Fl\_Button*\ get\_report\_button;}
+\DoxyCodeLine{00023\ \ \ \ \ Fl\_Button*\ profile\_button;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ button\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_ui_main_window}{UiMainWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToExpense();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToBudget();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToCategories();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToReport();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ navigateToProfile();}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAIN\_WINDOW\_H}}
+
+\end{DoxyCode}

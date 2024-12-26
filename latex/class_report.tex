@@ -1,0 +1,110 @@
+\doxysection{Report Class Reference}
+\hypertarget{class_report}{}\label{class_report}\index{Report@{Report}}
+
+
+Represents a report that aggregates expenses within a specific time period.  
+
+
+
+
+{\ttfamily \#include $<$Report.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_report_ae3150817fcf4ebf814358baf5bd72e8f}{Report}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_report}{Report}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_report_ad7291b90cc1df665813138f136a6d5db}{Report}} (const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \&expenses, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&start, const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&end)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_report}{Report} with the specified expenses and time range. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_report_a7b7bec148be4b79e95bcc22337ec5b9e}{generate\+Report\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Generates a detailed string of the report. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_report_a75f388469b1d224aeecdbaeb664ca1c4}{generate\+File}} ()
+\begin{DoxyCompactList}\small\item\em Generates and saves the report to a file. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \& \mbox{\hyperlink{class_report_aebe569de8a49a0d68901479e5944f21b}{get\+Expenses}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the expenses included in the report. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a report that aggregates expenses within a specific time period. 
+
+This class is used to generate reports that summarize the expenses occurring between a given start and end time. It provides functionality to generate a detailed string report and save the report to a file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_report_ae3150817fcf4ebf814358baf5bd72e8f}\index{Report@{Report}!Report@{Report}}
+\index{Report@{Report}!Report@{Report}}
+\doxysubsubsection{\texorpdfstring{Report()}{Report()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_report_ae3150817fcf4ebf814358baf5bd72e8f} 
+Report\+::\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \doxylink{class_report}{Report}. 
+
+Initializes an empty report. \Hypertarget{class_report_ad7291b90cc1df665813138f136a6d5db}\index{Report@{Report}!Report@{Report}}
+\index{Report@{Report}!Report@{Report}}
+\doxysubsubsection{\texorpdfstring{Report()}{Report()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_report_ad7291b90cc1df665813138f136a6d5db} 
+Report\+::\+Report (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \&}]{expenses}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{start}{, }\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{end}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_report}{Report} with the specified expenses and time range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expenses} & The list of expenses included in the report. \\
+\hline
+{\em start} & The start time for the report period. \\
+\hline
+{\em end} & The end time for the report period. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_report_a75f388469b1d224aeecdbaeb664ca1c4}\index{Report@{Report}!generateFile@{generateFile}}
+\index{generateFile@{generateFile}!Report@{Report}}
+\doxysubsubsection{\texorpdfstring{generateFile()}{generateFile()}}
+{\footnotesize\ttfamily \label{class_report_a75f388469b1d224aeecdbaeb664ca1c4} 
+void Report\+::generate\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates and saves the report to a file. 
+
+This method creates a file containing the details of the report, which can be saved for future reference. \Hypertarget{class_report_a7b7bec148be4b79e95bcc22337ec5b9e}\index{Report@{Report}!generateReportDetails@{generateReportDetails}}
+\index{generateReportDetails@{generateReportDetails}!Report@{Report}}
+\doxysubsubsection{\texorpdfstring{generateReportDetails()}{generateReportDetails()}}
+{\footnotesize\ttfamily \label{class_report_a7b7bec148be4b79e95bcc22337ec5b9e} 
+std\+::string Report\+::generate\+Report\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Generates a detailed string of the report. 
+
+This method generates a summary report of all expenses within the specified time period.
+
+\begin{DoxyReturn}{Returns}
+A string containing the details of the report. 
+\end{DoxyReturn}
+\Hypertarget{class_report_aebe569de8a49a0d68901479e5944f21b}\index{Report@{Report}!getExpenses@{getExpenses}}
+\index{getExpenses@{getExpenses}!Report@{Report}}
+\doxysubsubsection{\texorpdfstring{getExpenses()}{getExpenses()}}
+{\footnotesize\ttfamily \label{class_report_aebe569de8a49a0d68901479e5944f21b} 
+const std\+::vector$<$ \mbox{\hyperlink{class_expense}{Expense}} $>$ \& Report\+::get\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the expenses included in the report. 
+
+This method returns the list of expenses associated with the report.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of expenses. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Report.\+h\item 
+Report.\+cpp\end{DoxyCompactItemize}

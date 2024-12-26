@@ -1,0 +1,74 @@
+\doxysection{Authentication\+Manager Class Reference}
+\hypertarget{class_authentication_manager}{}\label{class_authentication_manager}\index{AuthenticationManager@{AuthenticationManager}}
+
+
+This class is responsible for managing user authentication processes such as login and registration.  
+
+
+
+
+{\ttfamily \#include $<$Authentication\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_authentication_manager_a13bdbdbf21f1ed0b1e0232876b55260d}{try\+To\+Login}} (string username, string password)
+\begin{DoxyCompactList}\small\item\em Attempts to log in a user with the provided username and password. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_authentication_manager_affc211df78c031f1d96dbb2ba028f341}{try\+To\+Register}} (string username, string password)
+\begin{DoxyCompactList}\small\item\em Attempts to register a new user with the provided username and password. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for managing user authentication processes such as login and registration. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_authentication_manager_a13bdbdbf21f1ed0b1e0232876b55260d}\index{AuthenticationManager@{AuthenticationManager}!tryToLogin@{tryToLogin}}
+\index{tryToLogin@{tryToLogin}!AuthenticationManager@{AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{tryToLogin()}{tryToLogin()}}
+{\footnotesize\ttfamily \label{class_authentication_manager_a13bdbdbf21f1ed0b1e0232876b55260d} 
+bool Authentication\+Manager\+::try\+To\+Login (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to log in a user with the provided username and password. 
+
+This function checks the provided credentials against stored data and returns true if login is successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user trying to log in. \\
+\hline
+{\em password} & The password of the user trying to log in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the login attempt is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_authentication_manager_affc211df78c031f1d96dbb2ba028f341}\index{AuthenticationManager@{AuthenticationManager}!tryToRegister@{tryToRegister}}
+\index{tryToRegister@{tryToRegister}!AuthenticationManager@{AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{tryToRegister()}{tryToRegister()}}
+{\footnotesize\ttfamily \label{class_authentication_manager_affc211df78c031f1d96dbb2ba028f341} 
+bool Authentication\+Manager\+::try\+To\+Register (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to register a new user with the provided username and password. 
+
+This function checks if the username is available and registers the user if the conditions are met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username the user wants to register. \\
+\hline
+{\em password} & The password the user wants to set for their account. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the registration is successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Authentication\+Manager.\+h\item 
+Authentication\+Manager.\+cpp\end{DoxyCompactItemize}

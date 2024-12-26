@@ -1,0 +1,39 @@
+\doxysection{Ui\+Category\+Window.\+h}
+\hypertarget{_ui_category_window_8h_source}{}\label{_ui_category_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_CATEGORY\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_CATEGORY\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <FL/Fl.H>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Window.H>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Input.H>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Button.H>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <FL/Fl\_Browser.H>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <FL/fl\_ask.H>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}FileManager.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}UiMainWindow.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_category_window}{UiCategoryWindow}}\ :\ \textcolor{keyword}{public}\ Fl\_Window\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ Fl\_Input*\ category\_name\_input;\ }
+\DoxyCodeLine{00026\ \ \ \ \ Fl\_Button*\ add\_button;\ }
+\DoxyCodeLine{00027\ \ \ \ \ Fl\_Button*\ cancel\_button;\ }
+\DoxyCodeLine{00028\ \ \ \ \ Fl\_Browser*\ category\_list;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ add\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ cancel\_callback(Fl\_Widget*\ widget,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCategoryList();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_ui_category_window_a2977070480d3e0930850fe33ab8a7bc4}{UiCategoryWindow}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_ui_category_window_a5f59a0293ec8ec9d87e2e75e4d4bbd57}{\string~UiCategoryWindow}}();}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_CATEGORY\_WINDOW\_H}}
+
+\end{DoxyCode}

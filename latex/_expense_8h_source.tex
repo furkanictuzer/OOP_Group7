@@ -1,0 +1,45 @@
+\doxysection{Expense.\+h}
+\hypertarget{_expense_8h_source}{}\label{_expense_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EXPENSE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EXPENSE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Category.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_category}{Category}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expense}{Expense}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ amount;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ std::chrono::system\_clock::time\_point\ date;\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_category}{Category}}\ *category;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ description;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_expense_a3103ca0f802c6cf11e42d3fc41c5f529}{Expense}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{double}\ amount,\ \textcolor{keyword}{const}\ std::chrono::system\_clock::time\_point\ \&date,\ \textcolor{keyword}{const}\ std::string\ \&description,\ \mbox{\hyperlink{class_category}{Category}}\ *category);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expense_a24cc45ee132c0b59bf38135e1592e047}{setExpenseDetails}}(\textcolor{keywordtype}{double}\ amount,\ \textcolor{keyword}{const}\ std::string\ \&description);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{class_expense_a57e38f5ee636c9a64c6ec5b046b22e6d}{getExpenseDetails}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_expense_ab83eaf6ccd16eccb0895145da2152f96}{getAmount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expense_a24773d6376de1ac351c18f78a69e559d}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ std::chrono::system\_clock::time\_point\ \mbox{\hyperlink{class_expense_af14d231fcc73ad3e6c596ea6b30960d0}{getDate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_category}{Category}}\ *\mbox{\hyperlink{class_expense_a3a1be33dd3f814853baf619ce8079e5e}{getCategory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \mbox{\hyperlink{class_expense_a1824965ee510f575c8f2124b503866e3}{getDescription}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_expense_a7c3d1745d9411ba1c091911ebc875034}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expense}{Expense}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EXPENSE\_H}}
+
+\end{DoxyCode}
