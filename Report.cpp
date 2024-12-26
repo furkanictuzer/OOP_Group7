@@ -45,7 +45,8 @@ std::string Report::generateReportDetails() const
 
 void Report::generateFile() //Function to generate report file
 {
-    std::ofstream outFile("report.txt");
+    std::string filepath = DateUtils::timePointToString(start) + "_" + DateUtils::timePointToString(end) + "_report";
+    std::ofstream outFile(filepath);
     if (outFile.is_open()) {
         outFile << generateReportDetails();
         outFile.close();
