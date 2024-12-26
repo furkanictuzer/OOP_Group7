@@ -5,6 +5,7 @@
 #include "DateUtils.h"
 #include "ExpenseManager.h"
 #include "FileManager.h"
+#include <iomanip> // Include for std::setw and std::setfill
 
 UiAddExpenseWindow::UiAddExpenseWindow(int width, int height)
     : Fl_Window(width, height, "Add Expense") {
@@ -79,7 +80,13 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
         return;
     }
 
-    std::string date = year + "-" + std::to_string(window->month_choice->value() + 1) + "-" + day;
+    // Ensure the date string is in the format YYYY-MM-DD HH:MM:SS
+    std::ostringstream dateStream;
+    dateStream << year << "-"
+               << std::setw(2) << std::setfill('0') << (window->month_choice->value() + 1) << "-"
+               << std::setw(2) << std::setfill('0') << std::stoi(day) << " 14:30:00";
+    std::string date = dateStream.str();
+    std::cout << "Date: " << date << std::endl;
 
     User& user = FileManager::getMainUser();
     Category* category_ptr = user.getCategoryByName(category);
@@ -95,19 +102,27 @@ void UiAddExpenseWindow::save_callback(Fl_Widget* widget, void* data) {
         RepeatedExpense expense(user.getExpenseCount() + 1, std::stod(amount), DateUtils::stringToTimePoint(date), description, category_ptr, repeat_count, repeat_interval);
         ExpenseManager::addExpense(expense);
     } else {
-        Expense expense(user.getExpenseCount() + 1, std::stod(amount), DateUtils::stringToTimePoint(date), description, category_ptr);
-        ExpenseManager::addExpense(expense);
+        try
+        {
+            Expense expense(user.getExpenseCount() + 1, std::stod(amount), DateUtils::stringToTimePoint(date), description, category_ptr);
+            ExpenseManager::addExpense(expense);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
+        
     }
 
     std::cout << "Expense saved: " << amount << ", " << category << ", " << date << ", " << description << ", Repeated: " << is_repeated << std::endl;
     fl_message("Expense saved successfully.");
 
     window->hide();
-    UiExpenseWindow* expense_window = new UiExpenseWindow(window->w(), window->y());
-    expense_window->show();
 }
 
-void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) {
+void UiAddExpenseWindow::cancel_callback(Fl_Widget* widget, void* data) 
+{
     UiAddExpenseWindow* window = (UiAddExpenseWindow*)data;
     window->hide();
 }

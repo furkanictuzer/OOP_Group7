@@ -93,8 +93,15 @@ void UiReportsWindow::generate_callback(Fl_Widget* widget, void* data)
         std::string startDay = startDayPtr;
         std::string startMonth = startMonthPtr;
         std::string startYear = startYearPtr;
-        std::string startDateStr = startYear + "-" + startMonth + "-" + startDay;
-        auto startDate = DateUtils::stringToTimePoint(startDateStr);
+        std::string startDateStr = startYear + "-" + startMonth + "-" + startDay + " 00:00:00";
+
+        std::ostringstream startDateStream;
+        startDateStream << startYear << "-"
+               << std::setw(2) << std::setfill('0') << (reports_window->startMonthChoice->value() + 1) << "-"
+               << std::setw(2) << std::setfill('0') << std::stoi(startDay) << " 00:00:00";
+        std::string start = startDateStream.str();
+
+        auto startDate = DateUtils::stringToTimePoint(start);
 
         // Variables for end date
         std::string endDay, endMonth, endYear, endDateStr;
@@ -117,8 +124,15 @@ void UiReportsWindow::generate_callback(Fl_Widget* widget, void* data)
             endDay = endDayPtr;
             endMonth = endMonthPtr;
             endYear = endYearPtr;
-            endDateStr = endYear + "-" + endMonth + "-" + endDay;
-            endDate = DateUtils::stringToTimePoint(endDateStr);
+            endDateStr = endYear + "-" + endMonth + "-" + endDay + " 23:59:59";
+
+            std::ostringstream endDateStream;
+            endDateStream << endYear << "-"
+                    << std::setw(2) << std::setfill('0') << (reports_window->endMonthChoice->value() + 1) << "-"
+                    << std::setw(2) << std::setfill('0') << std::stoi(endDay) << " 23:59:59";
+            std::string end = endDateStream.str();
+
+            endDate = DateUtils::stringToTimePoint(end);
 
             if (reportType == 4) { // Category Report
                 categoryName = reports_window->categoryChoice->text();

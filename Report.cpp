@@ -10,17 +10,6 @@ using namespace std;
 Report::Report(const std::vector<Expense>& expenses, const std::chrono::system_clock::time_point& start, const std::chrono::system_clock::time_point& end)
     : expenses(expenses), start(start), end(end) {}
 
-// Example usage of the helper function
-void exampleUsage() {
-    std::string startTimeStr = "2021.05.01";
-    std::string endTimeStr = "2021.05.07";
-    auto startTime = DateUtils::stringToTimePoint(startTimeStr);
-    auto endTime = DateUtils::stringToTimePoint(endTimeStr);
-
-    std::vector<Expense> expenses;
-    Report report(expenses, startTime, endTime);
-}
-
 std::string Report::generateReportDetails() const 
 {
     if (expenses.empty())
@@ -29,10 +18,11 @@ std::string Report::generateReportDetails() const
     }    
 
     std::ostringstream oss;
-    std::time_t startTime = std::chrono::system_clock::to_time_t(start);
-    std::time_t endTime = std::chrono::system_clock::to_time_t(end);
-    oss << "Report from " << std::put_time(std::localtime(&startTime), "%Y-%m-%d")
-        << " to " << std::put_time(std::localtime(&endTime), "%Y-%m-%d") << "\n";
+    std::string startTime = DateUtils::timePointToString(start);
+    std::string endTime = DateUtils::timePointToString(end);    
+
+    oss << "Report from " << startTime
+        << " to " << endTime << "\n";
     oss << "------------------------------------------------------------------------------------------------------------------------\n";
     oss << std::left << std::setw(10) << "ID"
         << std::setw(15) << "Amount"

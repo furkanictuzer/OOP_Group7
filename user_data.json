@@ -1,5 +1,30 @@
 {
     "balance": 0.0,
+    "categories": [
+        {
+            "expenses": [
+                {
+                    "amount": 10.0,
+                    "date": "2022-04-03",
+                    "description": "asdas",
+                    "id": 1
+                },
+                {
+                    "amount": 1.0,
+                    "date": "2025-05-01",
+                    "description": "asdaf",
+                    "id": 2
+                },
+                {
+                    "amount": 5.0,
+                    "date": "2022-03-03",
+                    "description": "asdasd",
+                    "id": 3
+                }
+            ],
+            "name": "Food"
+        }
+    ],
     "password": "1234",
     "user_id": 1,
     "username": "furkan"

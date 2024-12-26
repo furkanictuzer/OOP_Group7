@@ -98,13 +98,3 @@ double ExpenseManager::getTotalExpenseByMonth(int month, int year) {
     }
     return total;
 }
-
-std::chrono::system_clock::time_point ExpenseManager::stringToTimePoint(const std::string& timeStr) {
-    // Implement the conversion from string to time_point
-    // This is just a placeholder implementation
-    std::tm tm = {};
-    std::istringstream ss(timeStr);
-    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
-    std::time_t time = std::mktime(&tm);
-    return std::chrono::system_clock::from_time_t(time);
-}
