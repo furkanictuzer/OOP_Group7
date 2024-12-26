@@ -3,6 +3,7 @@
 
 bool AuthenticationManager::tryToLogin(string username, string password)
 {
+    cout << "Trying to login" << endl;
     if (FileManager::doesUserExist(username))
     {
         FileManager::loadDataFromFile();

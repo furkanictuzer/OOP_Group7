@@ -111,8 +111,32 @@ public:
      * @param budget The budget to be added.
      */
     void addBudget(const Budget& budget);
-    Budget getCurrentBudget();
+
+    /**
+     * @brief Retrieves the current budget of the user.
+     * 
+     * This function returns the most recent budget added by the user.
+     * 
+     * @return The current budget of the user.
+     */
+    Budget& getCurrentBudget();
+
+    /**
+     * @brief Updates the user's information with new username and password.
+     * 
+     * This function updates the user's username and password with the provided new values.
+     * 
+     * @param new_username The new username to be set for the user.
+     * @param new_password The new password to be set for the user.
+     */
     void updateUserInfo(const std::string& new_username, const std::string& new_password);
+
+    /**
+     * @brief Retrieves the list of budgets associated with the user.
+     * 
+     * @return A vector of budgets associated with the user.
+     */
+    vector<Budget> getBudgets() const;
 
     /**
      * @brief Deletes the user's account.
@@ -155,6 +179,15 @@ public:
      * @return The number of expenses for the user.
      */
     int getExpenseCount() const;
+
+    /**
+     * @brief Retrieves the number of budgets associated with the user.
+     * 
+     * This function returns the total number of budgets set by the user.
+     * 
+     * @return The number of budgets for the user.
+     */
+    int getBudgetCount() const;
 };
 
 #endif // USER_H

@@ -57,6 +57,11 @@ Budget& User::getCurrentBudget()
     this->budgets.at(budgets.size() - 1);
 }
 
+vector<Budget> User::getBudgets() const
+{
+    return budgets;
+}
+
 void User::updateUserInfo(const std::string& new_username, const std::string& new_password) {
     username = new_username;
     password = new_password;
@@ -148,4 +153,9 @@ int User::getExpenseCount() const
         count += category.getExpenseCount();
     }
     return count;
+}
+
+int User::getBudgetCount() const
+{
+    return budgets.size();
 }

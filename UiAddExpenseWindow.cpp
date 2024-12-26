@@ -12,8 +12,8 @@ UiAddExpenseWindow::UiAddExpenseWindow(int width, int height)
     amount_input = new Fl_Input(120, 20, 260, 30, "Amount:");
     category_choice = new Fl_Choice(120, 60, 260, 30, "Category:");
     day_choice = new Fl_Choice(120, 100, 60, 30, "Day:");
-    month_choice = new Fl_Choice(220, 100, 60, 30, "Month:");
-    year_choice = new Fl_Choice(320, 100, 60, 30, "Year:");
+    month_choice = new Fl_Choice(230, 100, 60, 30, "Month:");
+    year_choice = new Fl_Choice(330, 100, 60, 30, "Year:");
     description_input = new Fl_Multiline_Input(120, 140, 260, 60, "Description:");
     repeated_expense_check = new Fl_Check_Button(120, 210, 260, 30, "Is this a repeated expense?");
     repeat_count_input = new Fl_Input(120, 250, 260, 30, "Repeat Count:"); // New input field for repeat count

@@ -1,16 +1,13 @@
 #include "Budget.h"
 
-Budget::Budget(string name, double amount, string date, string endDate, string source)
-{
-	// Initializing attirbutes
+Budget::Budget(int id, string name, double amount, double spentAmount, std::chrono::system_clock::time_point date, std::chrono::system_clock::time_point endDate, string source){
+	this->id = id;
 	this->name = name;
-	srand(time(0));
-	this->id = rand() % 10000; // Budget id is determined randomly
 	this->amount = amount;
+	this->spentAmount = spentAmount;
 	this->date = date;
 	this->endDate = endDate;
 	this->source = source;
-	this->spentAmount = 0;
 }
 
 string Budget::getName() const
@@ -25,7 +22,7 @@ int Budget::getID() const
 
 string Budget::getTimeInterval() const
 {
-	return date + "-" + this->endDate;
+	return DateUtils::timePointToString(this->date) + "-" + DateUtils::timePointToString(this->endDate);
 }
 
 void Budget::setSpentAmount(double newSpentAmount)
@@ -46,7 +43,7 @@ void Budget::setSourceDetails(string newSource)
 	source = newSource;
 }
 
-string Budget::getSourcetDetails() const
+string Budget::getSourceDetails() const
 {
 	// Accesing source of the budget
 	return source;
@@ -62,4 +59,16 @@ double Budget::getBudgetAmount() const
 {
 	// Accessing budget amount
 	return amount;
+}
+
+std::chrono::system_clock::time_point Budget::getStartDate() const
+{
+	// Accessing start date
+	return date;
+}
+
+std::chrono::system_clock::time_point Budget::getEndDate() const
+{
+	// Accessing end date
+	return endDate;
 }

@@ -27,15 +27,18 @@ void UiBudgetWindow::populateBudgets()
     // Clear the browser content
     budgetBrowser->clear();
 
+    User& user = FileManager::getMainUser();
+
     // Iterate over budgets
-    for (const auto& budget : ExpenseManager::getBudgets()) 
+    for (const auto& budget : user.getBudgets()) 
     {
         // Create budget information string
         std::ostringstream budgetInfo;
-        budgetInfo << "@b Budget: \n" << budget.getName()
+        budgetInfo << "\n\n "
+                   <<"Budget: " << budget.getName()
                    << " | Amount: " << std::fixed << std::setprecision(2) << budget.getBudgetAmount()
                    << " | Spent: " << budget.getSpentAmount()
-                   << " | Source: " << budget.getSourcetDetails()
+                   << " | Source: " << budget.getSourceDetails()
                    << " | Interval: " << budget.getTimeInterval();
 
         // Add budget information to the browser
@@ -55,6 +58,7 @@ void UiBudgetWindow::close_callback(Fl_Widget* widget, void* data)
 void UiBudgetWindow::new_budget_callback(Fl_Widget* widget, void* data) 
 {
     UiBudgetWindow* window = (UiBudgetWindow*)data;
+    window->hide();
 
     UiAddBudgetWindow* add_budget_window = new UiAddBudgetWindow(window->w(), window->h());
     add_budget_window->show();

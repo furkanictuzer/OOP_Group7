@@ -3,6 +3,7 @@
 #include "Category.h"
 #include "Expense.h"
 #include "RepeatedExpense.h"
+#include "Budget.h"
 #include "DateUtils.h"
 #include <fstream>
 #include <iostream>
@@ -10,11 +11,13 @@
 #include <sstream>
 
 const std::string FileManager::fileName = "user_data.json";
-User FileManager::main_user(0,"", "", 0);
+User FileManager::main_user(0, "", "", 0);
 
-void FileManager::saveDataToFile(const User* user) {
+void FileManager::saveDataToFile(const User *user)
+{
     std::ofstream outFile(fileName);
-    if (!outFile.is_open()) {
+    if (!outFile.is_open())
+    {
         std::cerr << "Failed to open file for writing.\n";
         return;
     }
@@ -25,22 +28,18 @@ void FileManager::saveDataToFile(const User* user) {
     jsonData["balance"] = user->getBalance();
     jsonData["password"] = user->getPassword();
 
-    for (const auto& category : user->getCategories()) {
+    for (const auto &category : user->getCategories())
+    {
         json categoryData;
         categoryData["name"] = category.getCategoryName();
 
-        for (const auto& expense : category.getExpenses()) {
+        for (const auto &expense : category.getExpenses())
+        {
             json expenseData;
             expenseData["id"] = expense->getId();
             expenseData["amount"] = expense->getAmount();
             expenseData["date"] = DateUtils::timePointToString(expense->getDate());
             expenseData["description"] = expense->getDescription();
-
-            // Check if the expense is a RepeatedExpense
-            const RepeatedExpense* repeatedExpense = dynamic_cast<const RepeatedExpense*>(expense);
-            if (repeatedExpense) {
-                expenseData["repeat_count"] = repeatedExpense->getRepeatCount();
-            }
 
             categoryData["expenses"].push_back(expenseData);
         }
@@ -48,64 +47,122 @@ void FileManager::saveDataToFile(const User* user) {
         jsonData["categories"].push_back(categoryData);
     }
 
+    // Save budgets
+    for (const auto &budget : user->getBudgets())
+    {
+        json budgetData;
+        budgetData["id"] = budget.getID();
+        budgetData["name"] = budget.getName();
+        budgetData["amount"] = budget.getBudgetAmount();
+        budgetData["spent_amount"] = budget.getSpentAmount();
+        budgetData["start_date"] = DateUtils::timePointToString(budget.getStartDate());
+        budgetData["end_date"] = DateUtils::timePointToString(budget.getEndDate());
+        budgetData["source"] = budget.getSourceDetails();
+
+        jsonData["budgets"].push_back(budgetData);
+    }
+
     outFile << jsonData.dump(4);
     std::cout << "Data saved successfully to user_data.json.\n";
 }
 
-bool FileManager::loadDataFromFile() {
-    std::ifstream inFile(fileName);
-    if (!inFile.is_open()) {
-        std::cerr << "Failed to open file for reading.\n";
-        return false;
-    }
+bool FileManager::loadDataFromFile()
+{
+    try
+    {
+        std::ifstream inFile(fileName);
+        if (!inFile.is_open())
+        {
+            std::cerr << "Failed to open file for reading.\n";
+            return false;
+        }
 
-    json jsonData;
-    inFile >> jsonData;
+        json jsonData;
+        inFile >> jsonData;
 
-    int id = jsonData["user_id"].get<int>();
-    std::string username = jsonData["username"].get<std::string>();
-    double balance = jsonData["balance"].get<double>();
-    std::string password = jsonData["password"].get<std::string>();
-    std::cout << "User ID: " << id << ", Username: " << username << ", Balance: " << balance << ", Password: " << password << std::endl;
+        int id = jsonData["user_id"].get<int>();
+        std::string username = jsonData["username"].get<std::string>();
+        double balance = jsonData["balance"].get<double>();
+        std::string password = jsonData["password"].get<std::string>();
+        std::cout << "User ID: " << id << ", Username: " << username << ", Balance: " << balance << ", Password: " << password << std::endl;
 
-    User user(id, username, password, balance);
+        User user(id, username, password, balance);
 
-    for (const auto& categoryData : jsonData["categories"]) {
-        Category category(categoryData["name"].get<std::string>());
+        for (const auto &categoryData : jsonData["categories"])
+        {
+            Category category(categoryData["name"].get<std::string>());
+            cout << "Category: " << category.getCategoryName() << endl;
 
-        for (const auto& expenseData : categoryData["expenses"]) {
-            int expenseId = expenseData["id"].get<int>();
-            double amount = expenseData["amount"].get<double>();
-            auto date = DateUtils::stringToTimePoint(expenseData["date"].get<std::string>());
-            std::string description = expenseData["description"].get<std::string>();
+            if (!categoryData.contains("expenses"))
+            {
+                user.addCategory(category);
+                continue;
+            }
 
-            // Check if the expense has a repeat_count field
-            if (expenseData.contains("repeat_count")) {
-                int repeatCount = expenseData["repeat_count"].get<int>();
-                RepeatedExpense* repeatedExpense = new RepeatedExpense(expenseId, amount, date, description, &category, repeatCount, std::chrono::hours(30 * 24));
-                category.addExpense(repeatedExpense);
-            } else {
-                Expense* expense = new Expense(expenseId, amount, date, description, &category);
+            for (const auto &expenseData : categoryData["expenses"])
+            {
+                cout << "There is an expense" << endl;
+                int expenseId = expenseData["id"].get<int>();
+                double amount = expenseData["amount"].get<double>();
+                auto date = DateUtils::stringToTimePoint(expenseData["date"].get<std::string>());
+                std::string description = expenseData["description"].get<std::string>();
+
+                cout << "Expense ID: " << expenseId << ", Amount: " << amount << ", Date: " << DateUtils::timePointToString(date) << ", Description: " << description << endl;
+
+                Expense *expense = new Expense(expenseId, amount, date, description, &category);
                 category.addExpense(expense);
+            }
+            cout << "Category expenses: " << category.getExpenseCount() << endl;
+
+            user.addCategory(category);
+        }
+
+        cout << "Total categories: " << user.getCategories().size() << endl;
+
+        // Load budgets
+        if (!jsonData["budgets"].empty())
+        {
+            if (jsonData.contains("budgets"))
+            {
+                for (const auto &budgetData : jsonData["budgets"])
+                {
+                    cout << "There is a budget" << endl;
+                    int budgetId = budgetData["id"].get<int>();
+                    string name = budgetData["name"].get<std::string>();
+                    double amount = budgetData["amount"].get<double>();
+                    double spentAmount = budgetData["spent_amount"].get<double>();
+                    auto startDate = DateUtils::stringToTimePoint(budgetData["start_date"].get<std::string>());
+                    auto endDate = DateUtils::stringToTimePoint(budgetData["end_date"].get<std::string>());
+                    string source = budgetData["source"].get<std::string>();
+
+                    Budget budget(budgetId, name, amount, spentAmount, startDate, endDate, source);
+                    user.addBudget(budget);
+                }
+                cout << "Total budgets: " << user.getBudgetCount() << endl;
             }
         }
 
-        user.addCategory(category);
+        main_user = user;
+        std::cout << "Data loaded successfully from user_data.json.\n";
+        return true;
     }
-
-    main_user = user;
-    std::cout << "Data loaded successfully from user_data.json.\n";
-    return true;
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
-bool FileManager::fileExists() {
+bool FileManager::fileExists()
+{
     std::ifstream file(fileName);
     return file.good();
 }
 
-void FileManager::deleteAllUser() {
+void FileManager::deleteAllUser()
+{
     std::ofstream outFile(fileName);
-    if (!outFile.is_open()) {
+    if (!outFile.is_open())
+    {
         std::cerr << "Failed to open file for writing.\n";
         return;
     }
@@ -116,10 +173,11 @@ void FileManager::deleteAllUser() {
     std::cout << "All user data deleted successfully.\n";
 }
 
-void FileManager::deleteUser(const std::string& username) 
+void FileManager::deleteUser(const std::string &username)
 {
     std::ifstream inFile(fileName);
-    if (!inFile.is_open()) {
+    if (!inFile.is_open())
+    {
         std::cerr << "Failed to open file for reading.\n";
         return;
     }
@@ -130,13 +188,16 @@ void FileManager::deleteUser(const std::string& username)
 
     // Remove the user with the specified username
     jsonData.erase(std::remove_if(jsonData.begin(), jsonData.end(),
-        [&username](const json& user) {
-            return user["username"].get<std::string>() == username;
-        }), jsonData.end());
+                                  [&username](const json &user)
+                                  {
+                                      return user["username"].get<std::string>() == username;
+                                  }),
+                   jsonData.end());
 
     // Write the updated data back to the file
     std::ofstream outFile(fileName);
-    if (!outFile.is_open()) {
+    if (!outFile.is_open())
+    {
         std::cerr << "Failed to open file for writing.\n";
         return;
     }
@@ -145,9 +206,11 @@ void FileManager::deleteUser(const std::string& username)
     outFile.close();
 }
 
-bool FileManager::doesUserExist(const std::string& username) {
+bool FileManager::doesUserExist(const std::string &username)
+{
     std::ifstream inFile(fileName);
-    if (!inFile.is_open()) {
+    if (!inFile.is_open())
+    {
         std::cerr << "Failed to open file for reading.\n";
         return false;
     }
@@ -155,31 +218,43 @@ bool FileManager::doesUserExist(const std::string& username) {
     json jsonData;
     inFile >> jsonData;
 
-    if (jsonData["username"].get<std::string>() == username) {
+    if (jsonData["username"].get<std::string>() == username)
+    {
+        cout << "User exists" << endl;
         return true;
     }
 
     return false;
 }
 
-User& FileManager::getMainUser() {
+User &FileManager::getMainUser()
+{
     return main_user;
 }
 
-void FileManager::setMainUser(const User& user) {
+void FileManager::setMainUser(const User &user)
+{
     main_user = user;
 }
 
 string FileManager::getMainUserPawword()
 {
-    std::ifstream inFile(fileName);
-    if (!inFile.is_open()) {
-        std::cerr << "Failed to open file for reading.\n";
-        return "";
+    try
+    {
+        std::ifstream inFile(fileName);
+        if (!inFile.is_open())
+        {
+            std::cerr << "Failed to open file for reading.\n";
+            return "";
+        }
+
+        json jsonData;
+        inFile >> jsonData;
+
+        return jsonData["password"].get<std::string>();
     }
-
-    json jsonData;
-    inFile >> jsonData;
-
-    return jsonData["password"].get<std::string>();
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }

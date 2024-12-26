@@ -4,6 +4,8 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include <chrono> 
+#include "DateUtils.h"
 
 using namespace std;
 
@@ -18,8 +20,8 @@ private:
     int id; ///< The unique identifier for the budget.
     double amount; ///< The total amount allocated for the budget.
     double spentAmount; ///< The total amount spent from the budget.
-    string date; ///< The start date of the budget.
-    string endDate; ///< The end date of the budget.
+    std::chrono::system_clock::time_point date; ///< The start date of the budget.
+    std::chrono::system_clock::time_point endDate; ///< The end date of the budget.
     string source; ///< The source of the budget (e.g., savings, income, etc.).
 
 public:
@@ -32,7 +34,7 @@ public:
      * @param endDate The end date of the budget.
      * @param source The source of the budget.
      */
-    Budget(string name, double amount, string date, string endDate, string source);
+    Budget(int id, string name, double amount, double spentAmount, std::chrono::system_clock::time_point date, std::chrono::system_clock::time_point endDate, string source);
 
     /**
      * @brief Gets the name of the budget.
@@ -76,7 +78,21 @@ public:
      * @brief Gets the source details of the budget.
      * @return The source of the budget.
      */
-    string getSourcetDetails() const;
+    string getSourceDetails() const;
+
+    /**
+     * @brief Sets a new start date for the budget.
+     * 
+     * @param newDate The new start date for the budget.
+     */
+    std::chrono::system_clock::time_point getStartDate() const;
+
+    /**
+     * @brief Sets a new start date for the budget.
+     * 
+     * @param newDate The new start date for the budget.
+     */
+    std::chrono::system_clock::time_point getEndDate() const;
 
     /**
      * @brief Sets a new budget amount.

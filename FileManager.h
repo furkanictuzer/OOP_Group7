@@ -9,6 +9,9 @@
 #include "Category.h"
 #include "Expense.h"
 #include "DateUtils.h"
+#include "Budget.h"
+#include <chrono>
+#include "ExpenseManager.h"
 
 using json = nlohmann::json;
 

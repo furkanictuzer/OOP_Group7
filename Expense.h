@@ -23,6 +23,8 @@ private:
 
 public:
     Expense(int id, double amount, const std::chrono::system_clock::time_point& date, const std::string& description, Category* category);
+    virtual ~Expense();
+
     void setExpenseDetails(double amount, const std::string& description);
     std::string getExpenseDetails() const;
 
