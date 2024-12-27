@@ -12,7 +12,7 @@ TARGET = makefileOutput.exe
 SRC1 = AuthenticationManager.cpp Budget.cpp Category.cpp DateParser.cpp DateUtils.cpp Expense.cpp ExpenseManager.cpp 
 SRC2 = FileManager.cpp MockClock.cpp NotificationManager.cpp RepeatedExpense.cpp Report.cpp ReportGenerator.cpp
 SRC3 = UiAddBudgetWindow.cpp UiAddExpenseWindow.cpp UiBudgetWindow.cpp UiCategoryWindow.cpp UiExpenseWindow.cpp
-SRC4 = UiLoginWindow.cpp UiMainWindow.cpp UiProfileWindow.cpp UiRegisterWindow.cpp UiReportsWindow.cpp User.cpp
+SRC4 = UiLoginWindow.cpp UiMainWindow.cpp UiProfileWindow.cpp UiRegisterWindow.cpp UiReportsWindow.cpp User.cpp main.cpp
 
 # Object files
 OBJ1 = $(SRC1:.cpp=.o)
